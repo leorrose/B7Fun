@@ -8,9 +8,11 @@ pipeline {
 				}
 			}
             steps {
-				sh 'pip install -r requirements.txt'
-				sh 'cd B7FunDjango'
-				sh 'python manage.py runserver'
+				withEnv(["HOME=${env.WORKSPACE}"]) {
+					sh 'pip install -r requirements.txt'
+					sh 'cd B7FunDjango'
+					sh 'python manage.py runserver'
+				}
             }
         }
         stage('Test') {
@@ -20,9 +22,11 @@ pipeline {
 				}
 			}
             steps {
-				sh 'pip install -r requirements.txt'
-				sh 'cd B7FunDjango'
-                sh 'python manage.py test'
+				withEnv(["HOME=${env.WORKSPACE}"]) {
+					sh 'pip install -r requirements.txt'
+					sh 'cd B7FunDjango'
+					sh 'python manage.py test'
+				}
             }
         }
     }
