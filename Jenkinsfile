@@ -10,7 +10,9 @@ pipeline {
             steps {
 				withEnv(["HOME=${env.WORKSPACE}"]) {
 					sh 'pip install -r requirements.txt'
-					sh 'cd B7FunDjango & python manage.py runserver'
+					dir("B7FunDjango") {
+						sh 'python manage.py runserver'
+					}
 				}
             }
         }
@@ -23,7 +25,9 @@ pipeline {
             steps {
 				withEnv(["HOME=${env.WORKSPACE}"]) {
 					sh 'pip install -r requirements.txt'
-					sh 'cd B7FunDjango & python manage.py test'
+					dir("B7FunDjango") {
+						sh 'python manage.py test'
+					}
 				}
             }
         }
