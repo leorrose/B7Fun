@@ -8,8 +8,8 @@ pipeline {
 				}
 			}
             steps {
-				sh 'pip install -r requirements.txt
-				sh "start runWin.bat"
+				sh 'pip install -r requirements.txt'
+				sh 'start runWin.bat'
             }
         }
         stage('Test') {
@@ -19,8 +19,8 @@ pipeline {
 				}
 			}
             steps {
-				sh "cd B7FunDjango"
-                sh "python manage.py test"
+				sh 'cd B7FunDjango'
+                sh 'python manage.py test'
             }
         }
     }
