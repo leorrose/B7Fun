@@ -1,6 +1,11 @@
 pipeline {
     agent none
     stages {
+		agent {
+			docker {
+				image 'python:3'
+			}
+		}
         stage('Build') {
             steps {
 				sh "start installationWin.bat"
