@@ -6,14 +6,13 @@ A sport and fun activities social network for beersheba city. part of opendata p
 <pre>
 Setup project (on Windows):  
 1. Clone repository  
-2. Run installationWin.bat  
+2. Run installationWin.bat and wait till console closes. then run project  
 </pre>
 
 <hr/>
 <br/>
 <pre>
 Run project (on Windows):  
-1. Open cmd from B7Fun folder  
-2. Run runWin.bat  
+1. Run runWin.bat  
 </pre>
 
