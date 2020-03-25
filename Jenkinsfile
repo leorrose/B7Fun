@@ -8,7 +8,7 @@ pipeline {
 				}
 			}
             steps {
-				sh "start installationWin.bat"
+				sh 'pip install -r requirements.txt
 				sh "start runWin.bat"
             }
         }
