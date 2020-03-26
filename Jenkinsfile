@@ -15,7 +15,9 @@ pipeline {
         stage('Run Tests') {
             steps {
 				dir("B7FunDjango") {
-					sh 'python manage.py test'
+					withEnv(["HOME=${env.WORKSPACE}"]) {
+						sh 'python manage.py test'
+					}
 				}
 			}
         }
