@@ -33,10 +33,10 @@ pipeline {
 			deleteDir()
 		}
 		success {
-			mail to:"B7FunService@gmail.com", subject:"SUCCESS: ${currentBuild.fullDisplayName}", body: "Test ${BUILD_NUMBER} SUCCESS"
+			sh 'echo Test ${BUILD_NUMBER} SUCCESS'
 		}
 		failure {
-			mail to:"B7FunService@gmail.com", subject:"FAILURE: ${currentBuild.fullDisplayName}", body: "Test ${BUILD_NUMBER} FAILURE"
+			sh 'echo Test ${BUILD_NUMBER} FAILURE'
 		}
 	}
 }
