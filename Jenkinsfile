@@ -14,9 +14,23 @@ pipeline {
         }
         stage('Run Tests') {
             steps {
-				dir("B7FunDjango") {
-					withEnv(["HOME=${env.WORKSPACE}"]) {
-						sh 'python manage.py test'
+				def testsError = null
+				try {
+					dir("B7FunDjango") {
+						withEnv(["HOME=${env.WORKSPACE}"]) {
+							sh 'python manage.py test'
+						}
+					}
+					catch(err) {
+						testsError = err
+						currentBuild.result = 'FAILURE'
+					}
+					finally {
+						junit 'reports/junit.xml'
+
+						if (testsError) {
+							throw testsError
+						}
 					}
 				}
 			}
