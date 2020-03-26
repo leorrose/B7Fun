@@ -4,6 +4,12 @@ pipeline {
 			image 'python:3.6-alpine'
 		}
 	}
+	triggers {
+        cron('H * * * *')
+    }
+	options {
+        timeout(time: 30, unit: 'MINUTES')
+    }
     stages {
         stage('Install Application Dependencies') {
             steps {
@@ -36,4 +42,15 @@ pipeline {
 			}
         }
     }
+	post {
+		always {
+			deleteDir()
+		}
+		success {
+			mail to:"B7FunService@gmail.com", subject:"SUCCESS: ${currentBuild.fullDisplayName}", body: "Test ${BUILD_NUMBER} SUCCESS"
+		}
+		failure {
+			mail to:"B7FunService@gmail.com", subject:"FAILURE: ${currentBuild.fullDisplayName}", body: "Test ${BUILD_NUMBER} FAILURE"
+		}
+	}
 }
