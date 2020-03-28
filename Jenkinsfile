@@ -5,7 +5,7 @@ pipeline {
 		}
 	}
 	triggers {
-        cron('H * * * *')
+        gitlab(triggerOnPush: true)
     }
 	options {
         timeout(time: 30, unit: 'MINUTES')
