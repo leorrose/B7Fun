@@ -5,7 +5,7 @@ pipeline {
 		}
 	}
 	triggers {
-        gitlab(triggerOnPush: true)
+        githubPush()
     }
 	options {
         timeout(time: 30, unit: 'MINUTES')
