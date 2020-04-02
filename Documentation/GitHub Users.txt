@@ -1,0 +1,15 @@
+ori:
+email = oritabibi7778@gmail.com
+name = oritabibi
+
+hadar:
+email = hadar0934@gmail.com
+name = hadar9
+
+Leor:
+email = leor.rose@gmail.com
+name = leorrose
+
+Yahav:
+email = yahavba356@gmail.com
+name = yahavba
