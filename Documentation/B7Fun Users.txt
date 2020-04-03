@@ -1,0 +1,12 @@
+Mongo Db atlas user:
+B7FunDb@gmail.com
+ProjectDb1#
+
+service user (for mails):
+B7FunService@gmail.com
+ProjectService1#
+
+db acsess user:
+B7Fun
+B7FunDb
+
