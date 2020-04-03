@@ -1,11 +1,31 @@
-{% extends 'basetemp.html' %}
+{% extends 'baseWithoutLogout.html' %}
     {%block content%}
-    <title>Login </title> </br>
-    <h1>Login</h1>
-    <form class="site-form" action="/accounts/login" method="post">
-        {%csrf_token%}
-        {{form.as_p}}
-        <input type = "submit" value="Login">
-    </form>
-
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    <div class="row">
+        <div class="col-1 col-lg-4"></div>
+        <div class="col-10 col-lg-4 jumbotron" style="border: solid 1px #0275d8; background-color:transparent !important;">
+            <form class="site-form" action="/accounts/login" method="post">
+                {%csrf_token%}
+                <h4 class="display-4 text-center" style="rtl"> התחברות למערכת </h4>
+                </br>
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-10">
+                        {{form.email}}
+                        {{form.password}}
+                        <button type="submit" class="btn btn-primary btn-lg btn-block"> התחבר/י </button>
+                    </div>
+                    <div class="col-1"></div>
+                </div>
+            </form>
+        </div>
+        <div class="col-1 col-lg-4"></div>
+    </div>
 {%endblock%}
