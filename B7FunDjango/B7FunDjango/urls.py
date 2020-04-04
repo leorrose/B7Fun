@@ -6,6 +6,7 @@ from django.conf import settings
 
 urlpatterns = [
     path('', include('accounts.urls')),
+    path('feed/', include('feed.urls'))
 ]
 
 urlpatterns += staticfiles_urlpatterns()

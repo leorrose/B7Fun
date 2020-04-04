@@ -16,7 +16,7 @@ def signup_view(request):
             last_name = form.cleaned_data.get('last_name')
             new_user = User.objects.create_user(email=email, username=username, password=password, first_name=first_name, last_name=last_name)
             login(request, new_user)
-           # return redirect('dog_gardens:list')
+            return redirect('feed:feed')
     else:
         form = SignUpForm()
     return render(request, 'accounts/signup.html', {'form': form})
@@ -30,13 +30,12 @@ def login_view(request):
             password = form.cleaned_data.get('password')
             user = User.objects.get(email=email,)
             login(request, user)
-           # return redirect('dog_gardens:list')
+            return redirect('feed:feed')
     else:
         form = LoginForm()
     return render(request,'accounts/login.html', {'form':form})
 
 
 def logout_view(request):
-    if request.method == 'POST':
-        logout(request)
-        return redirect('accounts:login')
+    logout(request)
+    return redirect('accounts:login')

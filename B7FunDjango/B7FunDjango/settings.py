@@ -51,7 +51,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'feed.urls'
+ROOT_URLCONF = 'B7FunDjango.urls'
 
 TEMPLATES = [
     {
