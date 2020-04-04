@@ -1,36 +1,35 @@
 {% extends 'baseWithoutLogout.html' %}
-    {%block content%}
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    <div class="row">
-        <div class="col-1 col-lg-4"></div>
-        <div class="col-10 col-lg-4 jumbotron" style="border: solid 1px #0275d8; background-color:transparent !important;">
-            <form class="site-form" action="/accounts/login" method="post">
-                {%csrf_token%}
-                <h4 class="display-4 text-center" style="rtl"> התחברות למערכת </h4>
-                </br>
-                <div class="row">
-                    <div class="col-1"></div>
-                    <div class="col-10">
-                        {{form.email}}
-                        {{form.password}}
-                        <button type="submit" class="btn btn-primary btn-lg btn-block"> התחבר/י </button>
+{%block content%}
+    <div class="container d-flex flex-column  h-100">
+        <div class="flex-grow-1"></div>
+        <div class="row justify-content-center">
+            <div class="col-10 col-md-8 col-lg-6 jumbotron" style="background-color:transparent !important;">
+                <div class="p-3 border border-primary"> 
+                    <form class="site-form" action="/accounts/login" method="post">
+                        {%csrf_token%}
+                        <h2 class="h2 text-center" dir="rtl"> התחברות למערכת </h2>
+                        </br>
+                        <div class="row d-flex flex-row">
+                            <div class="flex-grow-1"></div>
+                            <div class="col-10">
+                                <p dir="rtl" class="mb-0 text-right"> {{ form.email.label }} </p>
+                                {{form.email}}
+                                <p dir="rtl" class="mt-1 mb-0 text-right"> {{ form.password.label }} </p>
+                                {{form.password}}
+                                </br>
+                                <button type="submit" class="btn btn-primary btn-lg btn-block"> התחבר/י </button>
+                            </div>
+                            <div class="flex-grow-1"></div>
+                        </div>
+                    </form>
+                    </br>
+                    <div class="row text-center">
+                        <a class="col-6" href="/accounts/signup/" dir="rtl"> הירשם </a>
+                        <a class="col-6" href="/accounts/forgotPassword/" dir="rtl"> שכחת סיסמא? </a>
                     </div>
-                    <div class="col-1"></div>
                 </div>
-            </form>
-            </br>
-            <div class="row text-center">
-                <a class="col-6" href="/accounts/signup/" dir="rtl"> הירשם </a>
-                <a class="col-6" href="/accounts/forgotPassword/" dir="rtl"> שכחת סיסמא? </a>
             </div>
         </div>
-        <div class="col-1 col-lg-4"></div>
+        <div class="flex-grow-1"></div>
     </div>
 {%endblock%}
