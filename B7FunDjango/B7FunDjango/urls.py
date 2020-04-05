@@ -8,6 +8,8 @@ urlpatterns = [
     path('', include('accounts.urls')),
     path('feed/', include('feed.urls')),
     path('admin/', admin.site.urls),
+    path('Profile/', include('Profile.urls')),
+    path('admin/',admin.site.urls)
 
 ]
 
