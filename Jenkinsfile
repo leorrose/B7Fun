@@ -14,7 +14,6 @@ pipeline {
         stage('Install Application Dependencies') {
             steps {
 				sh """
-				python -m pip install --upgrade pip
 				pip install virtualenv
 				virtualenv env
 				virtualenv env
