@@ -14,9 +14,7 @@ pipeline {
         stage('Install Application Dependencies') {
             steps {
 				withEnv(["HOME=${env.WORKSPACE}"]) {
-					sh 'apt-get build-dep python-imaging'
-					sh 'apt-get install libjpeg62 libjpeg62-dev'
-					sh 'pip install PIL'
+					sh 'pip install -U Pillow'
 					sh 'pip install -r requirements.txt'			
 				}
             }
