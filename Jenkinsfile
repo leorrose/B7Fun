@@ -12,8 +12,8 @@ pipeline {
     }
     stages {
         stage('Install Application Dependencies') {
-			sh 'echo python --version'
             steps {
+				sh 'echo python --version'
 				withEnv(["HOME=${env.WORKSPACE}"]) {
 					sh 'python3 -m pip uninstall PIL'
 					sh 'python3 -m pip install --upgrade pip'
