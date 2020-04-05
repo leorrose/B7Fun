@@ -8,8 +8,8 @@ class SignUpForm(forms.ModelForm):
     last_name = forms.CharField(label='שם משפחה',widget=forms.TextInput(attrs={'class': 'form-control'}))
     user_name = forms.CharField(label='שם משתמש',widget=forms.TextInput(attrs={'class': 'form-control'}))
     email = forms.EmailField(label='דוא"ל', widget=forms.EmailInput(attrs={'class': 'form-control'}))
-    password = forms.CharField(label='סיסמא',widget=forms.PasswordInput(attrs={'class': 'form-control'}))
-    confirm_password = forms.CharField(label='וודא סיסמא',widget=forms.PasswordInput(attrs={'class': 'form-control'}))
+    password = forms.CharField(label='סיסמה',widget=forms.PasswordInput(attrs={'class': 'form-control'}))
+    confirm_password = forms.CharField(label='וודא סיסמה',widget=forms.PasswordInput(attrs={'class': 'form-control'}))
     about = forms.CharField(label='ספר על עצמך', widget=forms.TextInput(attrs={'class': 'form-control'}))
     profile_image = forms.ImageField(label='תמונת פרופיל', required=False, widget=forms.FileInput(attrs={'class': 'form-control-file'}))
 
