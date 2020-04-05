@@ -1,10 +1,43 @@
 {% extends 'base.html' %}
-    {%block content%}
-    <title>Signup </title> </br>
-    <h1>Signup</h1>
-    <form class="site-form" action="/accounts/signup" method="post">
-        {%csrf_token%}
-        {{form.as_p}}
-        <input type = "submit" value="Signup">
-    </form>
+{%block content%}
+    <div class="container d-flex flex-column  h-100" >
+        <div class="flex-grow-1"></div>
+        <div class="row justify-content-center">
+            <div class="col-10 col-md-8 col-lg-6 jumbotron" style="background-color:transparent !important;" >
+                <div class="p-3 border border-primary" style="background-color:#fff;">
+                    <form class="site-form" action="/accounts/signup" method="post">
+                        {%csrf_token%}
+                        <h2 class="h2 text-center" dir="rtl"> הירשם למערכת </h2>
+                        </br>
+                        <div class="row d-flex flex-row">
+                            <div class="flex-grow-1"></div>
+                            <div class="col-10">
+                                <p dir="rtl" class="mb-0 text-right"> {{ form.first_name.label }} </p>
+                                {{form.first_name}}
+                                <p dir="rtl" class="mt-1 mb-0 text-right"> {{ form.last_name.label }} </p>
+                                {{form.last_name}}
+                                <p dir="rtl" class="mb-0 text-right"> {{ form.email.label }} </p>
+                                {{form.email}}
+                                <p dir="rtl" class="mb-0 text-right"> {{ form.password.label }} </p>
+                                {{form.password}}
+                                <p dir="rtl" class="mb-0 text-right"> {{ form.confirm_password.label }} </p>
+                                {{form.confirm_password}}
+                                <p dir="rtl" class="mb-0 text-right"> {{ form.user_name.label }} </p>
+                                {{form.user_name}}
+                                <p dir="rtl" class="mb-0 text-right"> {{ form.about.label }} </p>
+                                {{form.about}}
+                                <p dir="rtl" class="mb-0 text-right"> {{ form.profile_image.label }} </p>
+                                {{form.profile_image}}
+                                </br>
+                                <button type="submit" class="btn btn-primary btn-lg btn-block"> הירשם </button>
+                            </div>
+                            <div class="flex-grow-1"></div>
+                        </div>
+                    </form>
+                    </br>
+                </div>
+            </div>
+        </div>
+        <div class="flex-grow-1"></div>
+    </div>
 {%endblock%}
