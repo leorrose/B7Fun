@@ -17,7 +17,7 @@ pipeline {
 				pip install virtualenv
 				virtualenv env
 				virtualenv env
-				.env/Scripts/activate
+				.env/bin/activate
 				pip install -r requirements.txt
 				"""
             }
