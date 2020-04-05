@@ -14,7 +14,7 @@ pipeline {
         stage('Install Application Dependencies') {
             steps {
 				withEnv(["HOME=${env.WORKSPACE}"]) {
-					sh 'pip install -r --no-cache-dir requirements.txt'
+					sh 'pip install -r requirements.txt'
 				}
             }
         }
