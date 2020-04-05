@@ -11,7 +11,7 @@ class SignUpForm(forms.ModelForm):
     password = forms.CharField(label='סיסמה',widget=forms.PasswordInput(attrs={'class': 'form-control'}))
     confirm_password = forms.CharField(label='וודא סיסמה',widget=forms.PasswordInput(attrs={'class': 'form-control'}))
     about = forms.CharField(label='ספר על עצמך', widget=forms.TextInput(attrs={'class': 'form-control'}))
-    profile_image = forms.ImageField(label='תמונת פרופיל', required=False, )
+    profile_image = forms.ImageField(label='תמונת פרופיל', required=False, widget=forms.FileInput(attrs={'class': 'form-control-file'}))
 
     class Meta:
         model = User
@@ -22,6 +22,8 @@ class SignUpForm(forms.ModelForm):
         confirm_password = self.cleaned_data.get('confirm_password')
         if password != confirm_password:
             raise forms.ValidationError("Passwords do not match")
+        if len(password) < 4:
+            raise forms.ValidationError("Passwords most be 4 chars long")
         return self.cleaned_data
 
     def clean_email(self):
