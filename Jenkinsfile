@@ -14,12 +14,15 @@ pipeline {
         stage('Install Application Dependencies') {
             steps {
 				withEnv(["HOME=${env.WORKSPACE}"]) {
-					if (isUnix()) {
+					try {
 						sh 'sudo apt-get build-dep python-imaging'
 						sh 'sudo apt-get install libjpeg62 libjpeg62-dev'
 						sh 'pip install PIL'
-					}
-					sh 'pip install -r requirements.txt'
+					} catch (err) {
+						sh 'pip install -r requirements.txt'
+					} finally {
+						sh 'pip install -r requirements.txt'
+					}					
 				}
             }
         }
