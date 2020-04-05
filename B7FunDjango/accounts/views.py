@@ -1,6 +1,5 @@
 from django.shortcuts import render,redirect
-from django.contrib.auth.hashers import check_password
-from django.contrib.auth import login,logout
+from django.contrib.auth import login, logout
 from .forms import SignUpForm, LoginForm
 from .models import User
 
@@ -10,11 +9,19 @@ def signup_view(request):
         form = SignUpForm(request.POST)
         if form.is_valid():
             email = form.cleaned_data.get('email')
-            username = form.cleaned_data.get('username')
-            password = form.cleaned_data.get('password1')
+            user_name = form.cleaned_data.get('user_name')
+            password = form.cleaned_data.get('password')
             first_name = form.cleaned_data.get('first_name')
             last_name = form.cleaned_data.get('last_name')
-            new_user = User.objects.create_user(email=email, username=username, password=password, first_name=first_name, last_name=last_name)
+            about = form.cleaned_data.get('about')
+            profile_image = form.cleaned_data.get('profile_image')
+            new_user = User.objects.create_user(email=email,
+                                                user_name=user_name,
+                                                password=password,
+                                                first_name=first_name,
+                                                last_name=last_name,
+                                                about=about,
+                                                profile_image=profile_image)
             login(request, new_user)
             return redirect('feed:feed')
     else:
