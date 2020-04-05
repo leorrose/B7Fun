@@ -15,6 +15,7 @@ pipeline {
             steps {
 				withEnv(["HOME=${env.WORKSPACE}"]) {
 					sh 'python -m pip install -U --force-reinstall pip'
+					sh 'easy_install pillow'
 					sh 'pip install -r requirements.txt'
 				}
             }
