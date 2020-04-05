@@ -1,7 +1,7 @@
 pipeline {
     agent {
 		docker {
-			image 'python:3.6-alpine'
+			image 'python:3-alpine'
 		}
 	}
 	triggers {
@@ -14,7 +14,6 @@ pipeline {
         stage('Install Application Dependencies') {
             steps {
 				withEnv(["HOME=${env.WORKSPACE}"]) {
-					sh	'pip install Pillow==6.2.1 --user'
 					sh 'pip install -r requirements.txt --user'
 				}
             }
@@ -37,7 +36,9 @@ pipeline {
 			sh 'echo Test ${BUILD_NUMBER} SUCCESS'
 		}
 		failure {
-			sh 'echo Test ${BUILD_NUMBER} FAILURE'
+			mail to: 'B7FunService@gmail.com',
+			subject: "Failed Pipline: Test ${BUILD_NUMBER} Failure",
+			body: "Failed Pipline: Test ${BUILD_NUMBER} Failure"
 		}
 	}
 }

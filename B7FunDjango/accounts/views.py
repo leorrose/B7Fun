@@ -6,7 +6,7 @@ from .models import User
 
 def signup_view(request):
     if request.method == 'POST':
-        form = SignUpForm(request.POST)
+        form = SignUpForm(request.POST, request.FILES)
         if form.is_valid():
             email = form.cleaned_data.get('email')
             user_name = form.cleaned_data.get('user_name')
