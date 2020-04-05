@@ -5,6 +5,6 @@ from . import views
 app_name = 'Profile'
 
 urlpatterns = [
-    path('myProfile', views.myProfile, name='myProfile'),
+    # path('myProfile', views.myProfile, name='myProfile'),
     path('editProfile', views.editProfile, name='editProfile')
 ]
