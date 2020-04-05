@@ -1,8 +1,7 @@
 pipeline {
     agent {
 		docker {
-			image 'alpine-pillow
-'
+			image 'contraslash/alpine-pillow'
 		}
 	}
 	triggers {
