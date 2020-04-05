@@ -21,16 +21,16 @@ class SignUpForm(forms.ModelForm):
         password = self.cleaned_data.get('password')
         confirm_password = self.cleaned_data.get('confirm_password')
         if password != confirm_password:
-            raise forms.ValidationError("Passwords do not match")
+            raise forms.ValidationError({"confirm_password":"Confirm password does not match"})
         if len(password) < 4:
-            raise forms.ValidationError("Passwords most be 4 chars long")
+            raise forms.ValidationError({"password": "Invalid password - minimum length 4"})
         return self.cleaned_data
 
     def clean_email(self):
         email = self.cleaned_data.get('email')
         qs = User.objects.filter(email=email)
         if len(qs) > 0:
-            raise forms.ValidationError('This email is already registered')
+            raise forms.ValidationError("This email is already registered")
         return email
 
     def clean_user_name(self):
@@ -60,7 +60,7 @@ class LoginForm(forms.Form):
         except User.DoesNotExist:
             raise forms.ValidationError("User does not exist")
         if not check_password(password, user.password) and password != user.password:
-            raise forms.ValidationError("Passwords don't match")
+            raise forms.ValidationError({"password": "Password does not match user"})
         return self.cleaned_data
 
 

@@ -1,7 +1,6 @@
 from django.db import models
-
+from djongo.storage import GridFSStorage
 from django.contrib.auth.models import AbstractBaseUser,BaseUserManager
-
 
 class MyUserManager(BaseUserManager):
     def create_user(self, email, user_name, first_name, last_name, password,about=None, profile_image=None):
@@ -51,7 +50,7 @@ class User(AbstractBaseUser):
     date_joined = models.DateField(verbose_name="date joined", auto_now_add=True)
     last_login = models.DateField(verbose_name="last login", auto_now=True)
     about = models.TextField(max_length=500)
-    profile_image = models.ImageField(default='default_profile.png', blank=True,upload_to='media')
+    profile_image = models.ImageField(default='default_profile.png', blank=True)
     is_admin = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)

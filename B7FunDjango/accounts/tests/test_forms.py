@@ -36,10 +36,10 @@ class SignUpFormTest(TestCase):
 
     def test_email_required(self):
         self.assertTrue(self.form.fields['email'].required)
-
+    """
     def test_profile_image_label(self):
         self.assertEqual(self.form.fields['profile_image'].label, 'תמונת פרופיל')
-
+    """
     def test_profile_image_required(self):
         self.assertFalse(self.form.fields['profile_image'].required)
 
