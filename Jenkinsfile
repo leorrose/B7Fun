@@ -14,6 +14,7 @@ pipeline {
         stage('Install Application Dependencies') {
             steps {
 				withEnv(["HOME=${env.WORKSPACE}"]) {
+					sh 'python -m pip install -U --force-reinstall pip'
 					sh 'pip install -r requirements.txt'
 				}
             }
