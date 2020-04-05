@@ -6,7 +6,9 @@ from django.conf import settings
 
 urlpatterns = [
     path('', include('accounts.urls')),
-    path('feed/', include('feed.urls'))
+    path('admin/', include('accounts.urls')),
+    path('feed/', include('feed.urls')),
+    path('Profile/', include('Profile.urls'))
 ]
 
 urlpatterns += staticfiles_urlpatterns()
