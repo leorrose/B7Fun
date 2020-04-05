@@ -1,7 +1,7 @@
 pipeline {
     agent {
 		docker {
-			image 'python:3.8-alpine'
+			image 'python:3.6-alpine'
 		}
 	}
 	triggers {
@@ -14,6 +14,8 @@ pipeline {
         stage('Install Application Dependencies') {
             steps {
 				withEnv(["HOME=${env.WORKSPACE}"]) {
+					sh 'python3 -m --user pip install --upgrade pip'
+					sh 'python3 -m --user pip install --upgrade Pillow'
 					sh 'pip install -r requirements.txt --user'
 				}
             }
