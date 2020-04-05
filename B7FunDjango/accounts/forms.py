@@ -59,3 +59,5 @@ class LoginForm(forms.Form):
         if not check_password(password, user.password) and password != user.password:
             raise forms.ValidationError("Passwords don't match")
         return self.cleaned_data
+
+
