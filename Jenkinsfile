@@ -13,10 +13,14 @@ pipeline {
     stages {
         stage('Install Application Dependencies') {
             steps {
-				withEnv(["HOME=${env.WORKSPACE}"]) {
-					sh 'pip install -U Pillow'
-					sh 'pip install -r requirements.txt'			
-				}
+				sh """
+				python -m pip install --upgrade pip
+				pip install virtualenv
+				virtualenv env
+				virtualenv env
+				.env/Scripts/activate
+				pip install -r requirements.txt
+				"""
             }
         }
         stage('Run Tests') {
