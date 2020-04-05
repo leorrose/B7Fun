@@ -6,10 +6,10 @@ from django.conf import settings
 
 urlpatterns = [
     path('', include('accounts.urls')),
-    path('admin/', include('accounts.urls')),
     path('feed/', include('feed.urls')),
     path('Profile/', include('Profile.urls')),
-    path('admin/',admin.site.urls)
+    path('admin/', admin.site.urls),
+    path('posts/', include('postsFeed.urls')),
 ]
 
 urlpatterns += staticfiles_urlpatterns()
