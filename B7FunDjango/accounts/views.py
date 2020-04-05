@@ -37,6 +37,8 @@ def login_view(request):
             password = form.cleaned_data.get('password')
             user = User.objects.get(email=email,)
             login(request, user)
+            if user.is_admin:
+                return redirect('admin:index')
             return redirect('feed:feed')
     else:
         form = LoginForm()
