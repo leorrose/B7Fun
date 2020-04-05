@@ -14,6 +14,7 @@ pipeline {
         stage('Install Application Dependencies') {
             steps {
 				withEnv(["HOME=${env.WORKSPACE}"]) {
+					sh 'python3 -m pip install Pillow'
 					sh 'pip install -r --no-cache-dir requirements.txt'
 				}
             }
