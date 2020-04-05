@@ -37,6 +37,8 @@ def login_view(request):
             password = form.cleaned_data.get('password')
             user = User.objects.get(email=email,)
             login(request, user)
+            if user.is_admin:
+                return redirect('admin:index')
             return redirect('feed:feed')
     else:
         form = LoginForm()
@@ -44,5 +46,12 @@ def login_view(request):
 
 
 def logout_view(request):
+<<<<<<< HEAD
+    if request.method == 'POST':
+        logout(request)
+        return redirect('accounts:login')
+
+=======
     logout(request)
     return redirect('accounts:login')
+>>>>>>> d4bfb58a561f3aee85694d9435e528044a5d83fb
