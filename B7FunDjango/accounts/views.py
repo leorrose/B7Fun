@@ -46,12 +46,5 @@ def login_view(request):
 
 
 def logout_view(request):
-<<<<<<< HEAD
-    if request.method == 'POST':
-        logout(request)
-        return redirect('accounts:login')
-
-=======
     logout(request)
     return redirect('accounts:login')
->>>>>>> d4bfb58a561f3aee85694d9435e528044a5d83fb
