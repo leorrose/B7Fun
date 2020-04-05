@@ -1,7 +1,7 @@
 pipeline {
     agent {
 		docker {
-			image 'py3-pillow'
+			image 'python:3.6.10-alpine'
 		}
 	}
 	triggers {
