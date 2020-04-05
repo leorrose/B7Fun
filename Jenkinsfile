@@ -14,6 +14,7 @@ pipeline {
         stage('Install Application Dependencies') {
             steps {
 				withEnv(["HOME=${env.WORKSPACE}"]) {
+					sh	'pip install Pillow==6.2.1 --user'
 					sh 'pip install -r requirements.txt --user'
 				}
             }
