@@ -14,20 +14,65 @@
                             <div class="col-10">
                                 <p dir="rtl" class="mb-0 text-right"> {{ form.first_name.label }} </p>
                                 {{form.first_name}}
+                                {% if form.first_name.errors %}
+                                    {% for error in form.first_name.errors%}
+                                        <p class="text-danger m-0">* {{error}}</p>
+                                    {% endfor %}
+                                {% endif %}
                                 <p dir="rtl" class="mt-1 mb-0 text-right"> {{ form.last_name.label }} </p>
                                 {{form.last_name}}
+                                {% if form.last_name.errors %}
+                                    {% for error in form.last_name.errors%}
+                                        <p class="text-danger m-0">* {{error}}</p>
+                                    {% endfor %}
+                                {% endif %}
                                 <p dir="rtl" class="mb-0 text-right"> {{ form.email.label }} </p>
                                 {{form.email}}
+                                {% if form.email.errors %}
+                                    {% for error in form.email.errors%}
+                                        <p class="text-danger m-0">* {{error}}</p>
+                                    {% endfor %}
+                                {% endif %}
                                 <p dir="rtl" class="mb-0 text-right"> {{ form.password.label }} </p>
                                 {{form.password}}
+                                {% if form.password.errors %}
+                                    {% for error in form.password.errors%}
+                                        <p class="text-danger m-0">* {{error}}</p>
+                                    {% endfor %}
+                                {% endif %}
                                 <p dir="rtl" class="mb-0 text-right"> {{ form.confirm_password.label }} </p>
                                 {{form.confirm_password}}
+                                {% if form.confirm_password.errors %}
+                                    {% for error in form.confirm_password.errors%}
+                                        <p class="text-danger m-0">* {{error}}</p>
+                                    {% endfor %}
+                                {% endif %}
                                 <p dir="rtl" class="mb-0 text-right"> {{ form.user_name.label }} </p>
                                 {{form.user_name}}
+                                {% if form.user_name.errors %}
+                                    {% for error in form.user_name.errors%}
+                                        <p class="text-danger m-0">* {{error}}</p>
+                                    {% endfor %}
+                                {% endif %}
                                 <p dir="rtl" class="mb-0 text-right"> {{ form.about.label }} </p>
                                 {{form.about}}
+                                {% if form.about.errors %}
+                                    {% for error in form.about.errors%}
+                                        <p class="text-danger m-0">* {{error}}</p>
+                                    {% endfor %}
+                                {% endif %}
                                 <p dir="rtl" class="mb-0 text-right"> {{ form.profile_image.label }} </p>
                                 {{form.profile_image}}
+                                {% if form.profile_image.errors %}
+                                    {% for error in form.profile_image.errors%}
+                                        <p class="text-danger m-0">* {{error}}</p>
+                                    {% endfor %}
+                                {% endif %}
+                                {% if form.non_field_errors %}
+                                    {% for error in form.non_field_errors %}
+                                        <p class="text-danger m-0">* {{error}}</p>
+                                    {% endfor %}
+                                {% endif %}
                                 </br>
                                 <button type="submit" class="btn btn-primary btn-lg btn-block"> הירשם </button>
                             </div>
