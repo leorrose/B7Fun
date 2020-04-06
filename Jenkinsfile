@@ -38,9 +38,7 @@ pipeline {
 			sh 'echo Test ${BUILD_NUMBER} SUCCESS'
 		}
 		failure {
-			mail to: 'B7FunService@gmail.com',
-			subject: "Failed Pipline: Test ${BUILD_NUMBER} Failure",
-			body: "Failed Pipline: Test ${BUILD_NUMBER} Failure"
+			sh 'echo Test ${BUILD_NUMBER} Failure'
 		}
 	}
 }

@@ -139,3 +139,6 @@ EMAIL_HOST_USER = 'b7funservice@gmail.com'
 EMAIL_HOST_PASSWORD = 'ProjectService1#'
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
+
+# logout when browser close
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
