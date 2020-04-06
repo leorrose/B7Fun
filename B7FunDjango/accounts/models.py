@@ -1,5 +1,4 @@
-from djongo import models
-from djongo.storage import GridFSStorage
+from django.db import models
 from django.contrib.auth.models import AbstractBaseUser,BaseUserManager
 
 class MyUserManager(BaseUserManager):

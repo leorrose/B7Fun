@@ -22,7 +22,7 @@ pipeline {
             steps {
 				dir("B7FunDjango") {
 					withEnv(["HOME=${env.WORKSPACE}"]) {
-						sh 'python manage.py test'
+						sh 'python manage.py test accounts.test'
 					}
 				}
 			}
