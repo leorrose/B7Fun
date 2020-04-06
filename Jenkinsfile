@@ -14,8 +14,6 @@ pipeline {
         stage('Install Application Dependencies') {
             steps {
 				withEnv(["HOME=${env.WORKSPACE}"]) {
-					sh 'python3 -m pip install --upgrade pip'
-					sh 'python3 -m pip install --upgrade Pillow'
 					sh 'pip install -r requirements.txt --user'
 				}
             }
