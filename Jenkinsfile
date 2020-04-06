@@ -1,7 +1,7 @@
 pipeline {
     agent {
 		docker {
-			image 'leorrose13/python-alpine-pillow:tagname'
+			image 'leorrose13/python-alpine-pillow:firsttry'
 		}
 	}
 	triggers {
