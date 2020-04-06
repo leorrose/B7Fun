@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-10 col-md-8 col-lg-6 jumbotron" style="background-color:transparent !important;">
                 <div class="p-3 border border-primary" style="background-color:#fff;">
-                    <form class="site-form" action="/accounts/login" method="post">
+                    <form class="site-form" action="/login" method="post">
                         {%csrf_token%}
                         <h2 class="h2 text-center" dir="rtl"> התחברות למערכת </h2>
                         </br>
@@ -39,7 +39,7 @@
                     </form>
                     </br>
                     <div class="row text-center">
-                        <a class="col-6" href="/accounts/signup" dir="rtl"> הירשם </a>
+                        <a class="col-6" href="/signup" dir="rtl"> הירשם </a>
                         <a class="col-6" href="password-reset/" dir="rtl"> שכחת סיסמה? </a>
                     </div>
                 </div>
