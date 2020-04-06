@@ -22,6 +22,8 @@ pipeline {
             steps {
 				dir("B7FunDjango") {
 					withEnv(["HOME=${env.WORKSPACE}"]) {
+						sh 'python manage.py makemigrations'
+						sh 'python manage.py migrate'
 						sh 'python manage.py test accounts.tests'
 					}
 				}
