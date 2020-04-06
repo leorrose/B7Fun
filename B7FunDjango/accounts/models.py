@@ -2,6 +2,8 @@ from django.db import models
 from django.contrib.auth.models import AbstractBaseUser,BaseUserManager
 
 class MyUserManager(BaseUserManager):
+    use_in_migrations = True
+
     def create_user(self, email, user_name, first_name, last_name, password,about=None, profile_image=None):
         if not email:
             raise ValueError("user must have an email")
@@ -47,7 +49,7 @@ class User(AbstractBaseUser):
     first_name = models.CharField(max_length=30, verbose_name="first name")
     last_name = models.CharField(max_length=30, verbose_name="last name")
     date_joined = models.DateField(verbose_name="date joined", auto_now_add=True)
-    last_login = models.DateField(verbose_name="last login", auto_now=True)
+    last_login = models.DateTimeField(verbose_name="last login", auto_now=True, blank=True, null=True)
     about = models.TextField(max_length=500)
     profile_image = models.ImageField(default='default_profile.png', blank=True)
     is_admin = models.BooleanField(default=False)
