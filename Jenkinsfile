@@ -2,7 +2,6 @@ pipeline {
     agent {
 		docker {
 			image 'leorrose13/python-alpine-pillow:firsttry'
-			image 'python:3.6-alpine'
 		}
 	}
 	triggers {
@@ -15,7 +14,7 @@ pipeline {
         stage('Install Application Dependencies') {
             steps {
 				withEnv(["HOME=${env.WORKSPACE}"]) {
-					sh 'python -m pip install -r requirements.txt --user'
+					sh 'pip3 install -r requirements.txt --user'
 				}
             }
         }
