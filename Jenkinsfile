@@ -2,7 +2,7 @@ pipeline {
     agent {
 		docker {
 			image 'leorrose13/python-alpine-pillow:firsttry'
-			image 'Python:3.6-alpine'
+			image 'python:3.6-alpine'
 		}
 	}
 	triggers {
