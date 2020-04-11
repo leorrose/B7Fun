@@ -1,24 +1,23 @@
-from django.shortcuts import render,redirect
-from django.contrib.auth.hashers import check_password
-from django.contrib.auth import login,logout
-from accounts.forms import SignUpForm
+from django.shortcuts import redirect,render
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import update_session_auth_hash
+from django.contrib import messages
+from django.contrib.auth.forms import PasswordChangeForm
+from .forms import UpdateProfileImage, UpdateUserDetails
 from accounts.models import User
+import os
 
-def editProfile(request):
-    if request.method == 'POST':
-        form = SignUpForm(request.POST)
-        if form.is_valid():
-            last_name = form.cleaned_data.get('last_name')
-            updateUser = User.objects.get(email=request.user.email)
-            updateUser.email = form.cleaned_data.get('email')
-            updateUser.username = form.cleaned_data.get('username')
-            updateUser.password = form.cleaned_data.get('password1')
-            updateUser.first_name = form.cleaned_data.get('first_name')
-            updateUser.last_name = form.cleaned_data.get('last_name')
-            updateUser.save()
-            logout(request, request.user)
-            login(request, updateUser)
-            return redirect('Profile:myProfile')
-    print(User.objects.get(email=request.user.email))
-    form = SignUpForm(instance = User.objects.get(email=request.user.email))
-    return render(request,'Profile/editProfile.html', {'form': SignUpForm})
+
+@login_required(login_url='/')
+def myProfile(request, err=None):
+    UpdateProfileImageForm = UpdateProfileImage()
+    changePasswordForm = form = PasswordChangeForm(request.user)
+    changePasswordForm.fields['old_password'].widget.attrs.update({'class': 'form-control'})
+    changePasswordForm.fields['new_password1'].widget.attrs.update({'class': 'form-control'})
+    changePasswordForm.fields['new_password2'].widget.attrs.update({'class': 'form-control'})
+    UpdateUserDetailsForm = UpdateUserDetails(initial={'email': request.user.email, 'first_name': request.user.first_name, 'last_name': request.user.last_name,
+        'user_name': request.user.user_name, 'about': request.user.about})
+    return render(request, 'Profile/myProfile.html', {'VMuser': User.objects.get(email=request.user.email), "UpdateProfileImageForm": UpdateProfileImageForm,
+    "UpdateUserDetailsForm": UpdateUserDetailsForm, "changePasswordForm": changePasswordForm, "errors": err})
+
+
