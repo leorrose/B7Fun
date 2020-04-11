@@ -79,6 +79,130 @@
 
 
 
+<div class="modal fade" id="updatProfileModal" tabindex="-1" role="dialog" aria-labelledby="updatProfileModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn btn btn-outline-dark btn-sm" data-dismiss="modal" aria-label="Close">
+                    <span class="text-left" aria-hidden="true">&times;</span>
+                </button>
+                <h5 class="modal-title ml-auto" id="updatProfileModalLabel" dir="rtl">עדכון תמונת פרופיל</h5>
+            </div>
+            <div class="modal-body">
+                <form class="site-form" action="/Profile/editProfileImage" method="post" enctype="multipart/form-data">
+                    {%csrf_token%}
+                    {{UpdateProfileImageForm.profile_image}}
+                    {% if UpdateProfileImageForm.profile_image.errors %}
+                        {% for error in UpdateProfileImageForm.profile_image.errors%}
+                            <p class="text-danger m-0">* {{error}}</p>
+                        {% endfor %}
+                    {% endif %}
+                    </br>
+                    <button type="submit" class="btn btn-primary btn-block">עדכן תמונת פרופיל</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 
+
+<div class="modal fade" id="detailsUpdate" tabindex="-1" role="dialog" aria-labelledby="detailsUpdateLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn btn btn-outline-dark btn-sm" data-dismiss="modal" aria-label="Close">
+                    <span class="text-left" aria-hidden="true">&times;</span>
+                </button>
+                <h5 class="modal-title ml-auto" id="updatProfileModalLabel" dir="rtl">עדכון פרטים אישיים</h5>
+            </div>
+            <div class="modal-body">
+                <form class="site-form" action="/Profile/editUserDetails" method="post">
+                    {%csrf_token%}
+                    <div class="row d-flex flex-row">
+                        <div class="flex-grow-1"></div>
+                        <div class="col-10">
+                            <p dir="rtl" class="mb-0 text-right"> {{ UpdateUserDetailsForm.first_name.label }} </p>
+                            {{UpdateUserDetailsForm.first_name}}
+                            {% if UpdateUserDetailsForm.first_name.errors %}
+                                {% for error in UpdateUserDetailsForm.first_name.errors%}
+                                    <p class="text-danger m-0">* {{error}}</p>
+                                {% endfor %}
+                            {% endif %}
+                            <p dir="rtl" class="mt-1 mb-0 text-right"> {{ UpdateUserDetailsForm.last_name.label }} </p>
+                            {{UpdateUserDetailsForm.last_name}}
+                            {% if UpdateUserDetailsForm.last_name.errors %}
+                                {% for error in UpdateUserDetailsForm.last_name.errors%}
+                                    <p class="text-danger m-0">* {{error}}</p>
+                                {% endfor %}
+                            {% endif %}
+                            <p dir="rtl" class="mb-0 text-right"> {{ UpdateUserDetailsForm.email.label }} </p>
+                            {{UpdateUserDetailsForm.email}}
+                            {% if UpdateUserDetailsForm.email.errors %}
+                                {% for error in UpdateUserDetailsForm.email.errors%}
+                                    <p class="text-danger m-0">* {{error}}</p>
+                                {% endfor %}
+                            {% endif %}
+                            <p dir="rtl" class="mb-0 text-right"> {{ UpdateUserDetailsForm.user_name.label }} </p>
+                            {{UpdateUserDetailsForm.user_name}}
+                            {% if UpdateUserDetailsForm.user_name.errors %}
+                                {% for error in UpdateUserDetailsForm.user_name.errors%}
+                                    <p class="text-danger m-0">* {{error}}</p>
+                                {% endfor %}
+                            {% endif %}
+                            <p dir="rtl" class="mb-0 text-right"> {{ UpdateUserDetailsForm.about.label }} </p>
+                            {{UpdateUserDetailsForm.about}}
+                            {% if UpdateUserDetailsForm.about.errors %}
+                                {% for error in UpdateUserDetailsForm.about.errors%}
+                                    <p class="text-danger m-0">* {{error}}</p>
+                                {% endfor %}
+                            {% endif %}
+                            <p dir="rtl" class="mb-0 text-right"> {{ UpdateUserDetailsForm.profile_image.label }} </p>
+                            {{UpdateUserDetailsForm.profile_image}}
+                            {% if UpdateUserDetailsForm.profile_image.errors %}
+                                {% for error in UpdateUserDetailsForm.profile_image.errors%}
+                                    <p class="text-danger m-0">* {{error}}</p>
+                                {% endfor %}
+                            {% endif %}
+                            {% if UpdateUserDetailsForm.non_field_errors %}
+                                {% for error in UpdateUserDetailsForm.non_field_errors %}
+                                    <p class="text-danger m-0">* {{error}}</p>
+                                {% endfor %}
+                            {% endif %}
+                            </br>
+                        </div>
+                        <div class="flex-grow-1"></div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">עדכן</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="passwordChange" tabindex="-1" role="dialog" aria-labelledby="passwordChangeLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn btn btn-outline-dark btn-sm" data-dismiss="modal" aria-label="Close">
+                    <span class="text-left" aria-hidden="true">&times;</span>
+                </button>
+                <h5 class="modal-title ml-auto" id="passwordChangeLabel" dir="rtl">עדכון תמונת פרופיל</h5>
+            </div>
+            <div class="modal-body">
+                <form class="site-form"  action="/Profile/change_password" method="post" >
+                    {%csrf_token%}
+                    <p dir="rtl" class="mb-0 text-right"> סיסמא ישנה </p>
+                    {{changePasswordForm.old_password}}
+                    <p dir="rtl" class="mb-0 text-right"> סיסמא חדשה </p>
+                    {{changePasswordForm.new_password1}}
+                    <p dir="rtl" class="mb-0 text-right"> וודא סיסמא </p>
+                    {{changePasswordForm.new_password2}}
+                    </br>
+                    <button type="submit" class="btn btn-primary btn-block">שנה סיסמא</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 
 {%endblock%}

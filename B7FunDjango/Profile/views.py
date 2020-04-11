@@ -20,4 +20,56 @@ def myProfile(request, err=None):
     return render(request, 'Profile/myProfile.html', {'VMuser': User.objects.get(email=request.user.email), "UpdateProfileImageForm": UpdateProfileImageForm,
     "UpdateUserDetailsForm": UpdateUserDetailsForm, "changePasswordForm": changePasswordForm, "errors": err})
 
+@login_required(login_url='/')
+def editProfileImage(request):
+    if request.method == 'POST':
+        form = UpdateProfileImage(request.POST, request.FILES)
+        if form.is_valid():
+            if request.user.profile_image and os.path.isfile(request.user.profile_image.path):
+                os.remove(request.user.profile_image.path)
+            request.user.profile_image = form.cleaned_data.get('profile_image')
+            request.user.save()
+    return redirect('Profile:myProfile')
+
+@login_required(login_url='/')
+def editUserDetails(request):
+    if request.method == 'POST':
+        form = UpdateUserDetails(request.POST)
+        if form.is_valid():
+            errorMessage = [] if form.errors=={} else [form.errors.values()]
+            if( form.cleaned_data.get('user_name') != request.user.user_name and len(User.objects.filter(user_name=form.cleaned_data.get('user_name'))) > 0):
+                errorMessage.append("user name already exists, please choose different user name")
+            else:
+                request.user.user_name = form.cleaned_data.get('user_name')
+
+            if( form.cleaned_data.get('email') != request.user.email and len(User.objects.filter(email=form.cleaned_data.get('email'))) > 0):
+                errorMessage.append("user email already exists, please choose different email")
+            else:
+                request.user.email = form.cleaned_data.get('email')
+
+            request.user.first_name = form.cleaned_data.get('first_name')
+            request.user.last_name = form.cleaned_data.get('last_name')
+            request.user.about = form.cleaned_data.get('about')
+            request.user.save()
+            if errorMessage != []:
+                return redirect('Profile:myProfile', err=", ".join(errorMessage))
+        else:
+            errorMessage = [] if form.errors=={} else list(map(lambda x: "".join(x) , form.errors.values()))
+            errorMessage += [] if form.non_field_errors else list(map(lambda x: "".join(x) , form.non_field_errors.values()))
+            return redirect('Profile:myProfile', err=", ".join(errorMessage))
+    return redirect('Profile:myProfile')
+
+@login_required(login_url='/')
+def change_password(request):
+    if request.method == 'POST':
+        form = PasswordChangeForm(request.user, request.POST)
+        if form.is_valid():
+            user = form.save()
+            update_session_auth_hash(request, user)
+            return redirect('Profile:myProfile')
+        else:
+            errorMessage = [] if form.errors=={} else list(map(lambda x: "".join(x) , form.errors.values()))
+            errorMessage += [] if form.non_field_errors else list(map(lambda x: "".join(x) , form.non_field_errors.values()))
+            return redirect('Profile:myProfile', err=", ".join(errorMessage))
+    return redirect('Profile:myProfile')
 
