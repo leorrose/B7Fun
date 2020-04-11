@@ -1,7 +1,7 @@
 from django import forms
 from .models import User
 from django.contrib.auth.hashers import check_password
-
+from django.contrib.auth.password_validation import validate_password
 
 class SignUpForm(forms.ModelForm):
     first_name = forms.CharField(label='שם פרטי', widget=forms.TextInput(attrs={'class': 'form-control'}))
@@ -17,13 +17,11 @@ class SignUpForm(forms.ModelForm):
         model = User
         fields = ('email', 'user_name')
 
-    def clean(self):
+    def clean_confirm_password(self):
         password = self.cleaned_data.get('password')
         confirm_password = self.cleaned_data.get('confirm_password')
         if password != confirm_password:
             raise forms.ValidationError({"confirm_password":"Confirm password does not match"})
-        if len(password) < 4:
-            raise forms.ValidationError({"password": "Invalid password - minimum length 4"})
         return self.cleaned_data
 
     def clean_email(self):
@@ -39,6 +37,15 @@ class SignUpForm(forms.ModelForm):
         if len(qs) > 0:
             raise forms.ValidationError('This user name is already registered')
         return user_name
+
+    def _post_clean(self):
+        super()._post_clean()
+        password = self.cleaned_data['password']
+        if password:
+            try:
+                validate_password(password, self.instance)
+            except forms.ValidationError as error:
+                self.add_error('password', error)
 
     def save(self, commit=True):
         user = super(SignUpForm,self).save(commit=False)
