@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'baseWithNav.html' %}
 {%block content%}
 </br>
 <div class="container d-flex flex-column h-100" >
@@ -13,8 +13,13 @@
                 {% endif %}
                 <div class="card-img-overlay">
                     <button type="button" class="btn bg-light btn-sm" data-toggle="modal" data-target="#updatProfileModal">
-                        <i class="fa fa-pencil fa-fw"></i>
+                        <i class="fa fa-pencil"></i>
                     </button>
+                    <a href="/Profile/rotatePic">
+                        <button type="button" class="btn bg-light btn-sm">
+                            <i class="fa fa-repeat"></i>
+                        </button>
+                    </a>
                 </div>
                 <div class="card-header bg-white w-100">
                     <h3 class="card-title text-center" dir="rtl">{{ VMuser.user_name }}</h3>
@@ -57,14 +62,14 @@
                 </div>
                 <!-- Button trigger modal -->
             </div>
-            <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#detailsUpdate">
+            <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#detailsUpdate" style="max-width: 40rem;">
                 ערוך פרטי פרופיל
             </button>
-            <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#passwordChange">
+            <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#passwordChange" style="max-width: 40rem;">
                 שינוי סיסמא
             </button>
             {% if errors%}
-                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <div class="alert alert-danger alert-dismissible fade show" role="alert" style="max-width: 40rem;">
                     {{errors}}
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>

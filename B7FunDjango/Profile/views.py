@@ -6,6 +6,7 @@ from django.contrib.auth.forms import PasswordChangeForm
 from .forms import UpdateProfileImage, UpdateUserDetails
 from accounts.models import User
 import os
+from PIL import Image
 
 
 @login_required(login_url='/')
@@ -29,6 +30,10 @@ def editProfileImage(request):
                 os.remove(request.user.profile_image.path)
             request.user.profile_image = form.cleaned_data.get('profile_image')
             request.user.save()
+        else:
+            errorMessage = [] if form.errors=={} else list(map(lambda x: "".join(x) , form.errors.values()))
+            errorMessage += [] if form.non_field_errors else list(map(lambda x: "".join(x) , form.non_field_errors.values()))
+            return redirect('Profile:myProfile', err=", ".join(errorMessage))
     return redirect('Profile:myProfile')
 
 @login_required(login_url='/')
@@ -73,3 +78,10 @@ def change_password(request):
             return redirect('Profile:myProfile', err=", ".join(errorMessage))
     return redirect('Profile:myProfile')
 
+@login_required(login_url='/')
+def rotatePic(request):
+    if request.user.profile_image and os.path.isfile(request.user.profile_image.path):
+        img = Image.open(request.user.profile_image.path)
+        img = img.rotate(90, expand=False, fillcolor='white')
+        img.save(request.user.profile_image.path, "JPEG")
+    return redirect('Profile:myProfile')
