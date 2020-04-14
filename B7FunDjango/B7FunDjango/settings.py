@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/2.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.2/ref/settings/
 """
-
+import sys
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -77,18 +77,26 @@ WSGI_APPLICATION = 'B7FunDjango.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-DATABASES = {
-    'default' :{
-        'ENGINE': 'djongo',
-        'NAME': 'B7FunDb',
-        'CLIENT': {
-            'host': 'mongodb+srv://B7Fun:B7FunDb@b7fun-2ldf3.mongodb.net/test?retryWrites=true&w=majority',
-            'username': 'B7Fun',
-            'password': 'B7FunDb',
-            'authMechanism': 'SCRAM-SHA-1'
+if 'test' in sys.argv:
+    DATABASES = {
+        'default' : {
+            'ENGINE': 'djongo',
+            'NAME': 'B7FunDbTest',
         }
     }
-}
+else:
+    DATABASES = {
+        'default' :{
+            'ENGINE': 'djongo',
+            'NAME': 'B7FunDb',
+            'CLIENT': {
+                'host': 'mongodb+srv://B7Fun:B7FunDb@b7fun-2ldf3.mongodb.net/test?retryWrites=true&w=majority',
+                'username': 'B7Fun',
+                'password': 'B7FunDb',
+                'authMechanism': 'SCRAM-SHA-1'
+            }
+        }
+    }
 
 AUTH_USER_MODEL = 'accounts.User'
 
@@ -124,7 +132,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = ( os.path.join(BASE_DIR, 'assets'),)
+STATICFILES_DIRS = ( os.path.join(BASE_DIR, 'static'),)
 
 # media files
 MEDIA_URL = '/media/'

@@ -64,3 +64,69 @@ class UserModelTest(TestCase):
     def test_is_staff(self):
         user = User.objects.get(email='test@text.com')
         self.assertEqual(user.is_staff, False)
+
+    def test_create_user_no_email(self):
+        try:
+            User.objects.create_user(email='',
+                            user_name='test_create_user_no_email',
+                            first_name='first name',
+                            last_name='last name',
+                            about='This is test',
+                            password="test_create_user_no_email",
+                            profile_image=None,)
+        except ValueError as err:
+            self.assertEqual(str(err), "user must have an email")
+    
+    def test_create_user_no_user_name(self):
+        try:
+            User.objects.create_user(email='test_create_user_no_user_name@text.com',
+                            user_name="",
+                            first_name='first name',
+                            last_name='last name',
+                            about='This is test',
+                            password="test_create_user_no_user_name",
+                            profile_image=None,)
+        except ValueError as err:
+            self.assertEqual(str(err), "user must have an user name")
+
+    def test_create_user_no_password(self):
+        try:
+            User.objects.create_user(email='test_create_user_no_password@text.com',
+                            user_name='test_create_user_no_password',
+                            first_name='first name',
+                            last_name='last name',
+                            about='This is test',
+                            password="",
+                            profile_image=None,)
+        except ValueError as err:
+            self.assertEqual(str(err), "user must have password")
+
+    def test_create_super_user(self):
+        usr = User.objects.create_superuser(email='test_create_super_user@text.com',
+                        user_name='test_create_super_user',
+                        first_name='first name',
+                        last_name='last name',
+                        password="test_create_super_user",)
+        self.assertTrue(usr)
+        self.assertTrue(usr.has_perm(perm="test"))
+    
+    def test_user_str(self):
+        usr = User.objects.create_user(email='test_create_user_no_password@text.com',
+                            user_name='test_create_user_no_password',
+                            first_name='first name',
+                            last_name='last name',
+                            about='This is test',
+                            password="test_user_str",
+                            profile_image=None,)
+        self.assertTrue(usr.__str__(), "test_create_user_no_password-test_create_user_no_password@text.com")
+
+    def test_user_has_module_perms(self):
+        usr = User.objects.create_user(email='test_create_user_no_password@text.com',
+                            user_name='test_create_user_no_password',
+                            first_name='first name',
+                            last_name='last name',
+                            about='This is test',
+                            password="test_user_has_module_perms",
+                            profile_image=None,)
+        self.assertTrue(usr.has_module_perms(app_label="test"))
+    

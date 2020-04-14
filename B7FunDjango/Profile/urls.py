@@ -10,6 +10,5 @@ urlpatterns = [
     path('editProfileImage', views.editProfileImage, name='editProfileImage'),
     path('editUserDetails', views.editUserDetails, name='editUserDetails'),
     path('change_password', views.change_password, name='change_password'),
-    path('rotatePic', views.rotatePic, name='rotatePic'),
-
+    path('rotatePic', views.rotatePic, name='rotatePic')
 ]

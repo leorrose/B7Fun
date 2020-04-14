@@ -26,9 +26,12 @@ def editProfileImage(request):
     if request.method == 'POST':
         form = UpdateProfileImage(request.POST, request.FILES)
         if form.is_valid():
-            if request.user.profile_image and os.path.isfile(request.user.profile_image.path):
+            if request.user.profile_image and request.user.profile_image.name!="default_profile.png" and os.path.exists(request.user.profile_image.path):
                 os.remove(request.user.profile_image.path)
-            request.user.profile_image = form.cleaned_data.get('profile_image')
+            if form.cleaned_data.get('profile_image'):
+                request.user.profile_image = form.cleaned_data.get('profile_image')
+            else:
+                request.user.profile_image = "default_profile.png"
             request.user.save()
         else:
             errorMessage = [] if form.errors=={} else list(map(lambda x: "".join(x) , form.errors.values()))
@@ -80,8 +83,8 @@ def change_password(request):
 
 @login_required(login_url='/')
 def rotatePic(request):
-    if request.user.profile_image and os.path.isfile(request.user.profile_image.path):
+    if request.user.profile_image and request.user.profile_image.name!="default_profile.png" and os.path.exists(request.user.profile_image.path):
         img = Image.open(request.user.profile_image.path)
         img = img.rotate(90, expand=False, fillcolor='white')
-        img.save(request.user.profile_image.path, "JPEG")
+        img.save(request.user.profile_image.path)
     return redirect('Profile:myProfile')
