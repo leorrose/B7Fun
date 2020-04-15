@@ -76,13 +76,12 @@ WSGI_APPLICATION = 'B7FunDjango.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
-
 """
 if 'test' in sys.argv:
     DATABASES = {
         'default' :{
             'ENGINE': 'djongo',
-            'NAME':  os.path.join(BASE_DIR, 'B7FunDb')
+            'NAME':  'B7FunDb'
         }
     }
 else:
@@ -111,6 +110,8 @@ DATABASES = {
         }
     }
 }
+
+
 
 AUTH_USER_MODEL = 'accounts.User'
 
