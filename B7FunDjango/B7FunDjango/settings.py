@@ -81,7 +81,13 @@ if 'test' in sys.argv:
     DATABASES = {
         'default' :{
             'ENGINE': 'djongo',
-            'NAME':  'B7FunDb'
+            'NAME':  'B7FunDb',
+            'CLIENT': {
+                'host': '',
+                'username': 'B7Fun',
+                'password': 'B7FunDb',
+                'authMechanism': 'SCRAM-SHA-1'
+            }
         }
     }
 else:
