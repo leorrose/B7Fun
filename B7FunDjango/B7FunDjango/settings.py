@@ -76,7 +76,7 @@ WSGI_APPLICATION = 'B7FunDjango.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
-"""
+
 if 'test' in sys.argv:
     DATABASES = {
         'default' :{
@@ -110,7 +110,7 @@ DATABASES = {
         }
     }
 }
-
+"""
 
 
 AUTH_USER_MODEL = 'accounts.User'
@@ -165,3 +165,7 @@ EMAIL_USE_SSL = False
 
 # logout when browser close
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+
+
+LOGOUT_REDIRECT_URL = "/login"
+LOGIN_URL = "/login"

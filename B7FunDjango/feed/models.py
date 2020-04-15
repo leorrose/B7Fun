@@ -8,6 +8,7 @@ class community_centers(models.Model):
 
     class Meta:
         db_table = 'community_centers'
+        verbose_name_plural = 'community centers'
 
     def __str__(self):
         return self.Name
@@ -22,6 +23,7 @@ class dog_gardens(models.Model):
 
     class Meta:
         db_table = 'dog_gardens'
+        verbose_name_plural = 'dog gardens'
 
     def __str__(self):
         return self.Name
@@ -35,6 +37,7 @@ class elderly_social_club(models.Model):
 
     class Meta:
         db_table = 'elderly_social_club'
+        verbose_name_plural = 'elderly social clubs'
 
     def __str__(self):
         return self.Name
@@ -59,7 +62,8 @@ class playgrounds(models.Model):
     Name = models.CharField(max_length=255, verbose_name="Name")
 
     class Meta:
-        db_table = 'playgrounds'
+        db_table = 'play_grounds'
+        verbose_name_plural = 'play grounds'
 
     def __str__(self):
         return self.Name
@@ -87,6 +91,7 @@ class sport_facilities(models.Model):
 
     class Meta:
         db_table = 'sport_facilities'
+        verbose_name_plural = 'sport facilities'
 
     def __str__(self):
         return self.Name
@@ -98,6 +103,7 @@ class urban_nature(models.Model):
     
     class Meta:
         db_table = 'urban_nature'
+        verbose_name_plural = 'urban nature'
 
     def __str__(self):
         return self.MainFeature
