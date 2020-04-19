@@ -18,12 +18,20 @@ pipeline {
 				}
             }
         }
-        stage('Run Tests') {
+		stage('Run migrations') {
             steps {
 				dir("B7FunDjango") {
 					withEnv(["HOME=${env.WORKSPACE}"]) {
 						sh 'python manage.py makemigrations'
 						sh 'python manage.py migrate'
+					}
+				}
+			}
+        }
+        stage('Run Tests') {
+            steps {
+				dir("B7FunDjango") {
+					withEnv(["HOME=${env.WORKSPACE}"]) {
 						sh 'python manage.py test accounts.tests.test_apps'
 					}
 				}
