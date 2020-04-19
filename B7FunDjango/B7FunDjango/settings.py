@@ -82,8 +82,10 @@ if 'test' in sys.argv:
         'default' :{
             'ENGINE': 'djongo',
             'NAME':  'B7FunDb',
-            'host': 'localhost',
-            'port': 27017,
+            'CLIENT': { 
+                'host': 'localhost',
+                'port': 27017
+            }
         }
     }
 else:
