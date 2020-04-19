@@ -33,7 +33,7 @@ pipeline {
 	post {
 		always {
 			dir("B7FunDjango") {
-				junit 'test-reports/*.xml'
+				junit 'test-reports/unittest/*.xml'
 			}
 			deleteDir()
 		}
