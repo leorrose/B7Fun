@@ -8,6 +8,7 @@ pipeline {
         githubPush()
     }
 	options {
+		skipDefaultCheckout(true)
         timeout(time: 60, unit: 'MINUTES')
     }
     stages {
@@ -18,7 +19,7 @@ pipeline {
 				}
             }
         }
-		stage('Run migrations') {
+		stage('Run Migrations') {
             steps {
 				dir("B7FunDjango") {
 					withEnv(["HOME=${env.WORKSPACE}"]) {
@@ -33,17 +34,11 @@ pipeline {
 				dir("B7FunDjango") {
 					withEnv(["HOME=${env.WORKSPACE}"]) {
 						sh 'python manage.py test accounts.tests.test_apps'
+						junit 'test-reports/unittest/*.xml'
 					}
 				}
+				deleteDir()
 			}
         }
     }
-	post {
-		always {
-			dir("B7FunDjango") {
-				junit 'test-reports/unittest/*.xml'
-			}
-			deleteDir()
-		}
-	}
 }
