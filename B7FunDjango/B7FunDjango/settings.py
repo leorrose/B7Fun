@@ -76,6 +76,7 @@ WSGI_APPLICATION = 'B7FunDjango.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
+
 """
 if 'test' in sys.argv:
     DATABASES = {
@@ -173,3 +174,4 @@ LOGIN_URL = "/login"
 TEST_RUNNER = 'xmlrunner.extra.djangotestrunner.XMLTestRunner'
 TEST_OUTPUT_DIR = './test-reports/unittest'
 TEST_OUTPUT_FILE_NAME = 'unittest.xml'
+TEST_OUTPUT_VERBOSE = 1

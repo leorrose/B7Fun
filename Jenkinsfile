@@ -8,9 +8,15 @@ pipeline {
         githubPush()
     }
 	options {
+		skipDefaultCheckout(true)
         timeout(time: 60, unit: 'MINUTES')
     }
     stages {
+		stage('Repository Fetch') {
+			steps {
+				checkout scm
+			}
+		}
         stage('Application Setup') {
             steps {
 				withEnv(["HOME=${env.WORKSPACE}"]) {
