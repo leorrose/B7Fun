@@ -32,13 +32,8 @@ pipeline {
     }
 	post {
 		always {
+			junit 'test-reports/*.xml'
 			deleteDir()
-		}
-		success {
-			sh 'echo Test ${BUILD_NUMBER} SUCCESS'
-		}
-		failure {
-			sh 'echo Test ${BUILD_NUMBER} Failure'
 		}
 	}
 }

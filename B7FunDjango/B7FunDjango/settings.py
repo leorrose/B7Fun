@@ -76,12 +76,14 @@ WSGI_APPLICATION = 'B7FunDjango.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
-"""
+
 if 'test' in sys.argv:
     DATABASES = {
         'default' :{
             'ENGINE': 'djongo',
-            'NAME':  'B7FunDb'
+            'NAME':  'B7FunDb',
+            'host': 'mongo',
+            "port": 27017,
         }
     }
 else:
@@ -110,7 +112,7 @@ DATABASES = {
         }
     }
 }
-
+"""
 
 AUTH_USER_MODEL = 'accounts.User'
 
@@ -168,3 +170,8 @@ SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
 LOGOUT_REDIRECT_URL = "/login"
 LOGIN_URL = "/login"
+
+#testing
+TEST_RUNNER = 'xmlrunner.extra.djangotestrunner.XMLTestRunner'
+TEST_OUTPUT_DIR = './test-reports/unittest'
+TEST_OUTPUT_FILE_NAME = 'unittest.xml'
