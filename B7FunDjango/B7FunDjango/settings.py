@@ -82,7 +82,7 @@ if 'test' in sys.argv:
         'default' :{
             'ENGINE': 'djongo',
             'NAME':  'B7FunDb',
-            'host': 'mongodb+srv://B7Fun:B7FunDb@b7fun-2ldf3.mongodb.net/test?retryWrites=true&w=majority',
+            'host': 'localhost',
             'port': 27017,
         }
     }
