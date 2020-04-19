@@ -8,7 +8,6 @@ pipeline {
         githubPush()
     }
 	options {
-		skipDefaultCheckout(true)
         timeout(time: 60, unit: 'MINUTES')
     }
     stages {
