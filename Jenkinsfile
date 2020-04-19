@@ -24,7 +24,7 @@ pipeline {
 					withEnv(["HOME=${env.WORKSPACE}"]) {
 						sh 'python manage.py makemigrations'
 						sh 'python manage.py migrate'
-						sh 'python manage.py test'
+						sh 'python manage.py test accounts.tests.test_apps'
 					}
 				}
 			}
@@ -32,7 +32,9 @@ pipeline {
     }
 	post {
 		always {
-			junit 'test-reports/*.xml'
+			dir("B7FunDjango") {
+				junit 'test-reports/*.xml'
+			}
 			deleteDir()
 		}
 	}
