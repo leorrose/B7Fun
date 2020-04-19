@@ -81,11 +81,6 @@ if 'test' in sys.argv:
     DATABASES = {
         'default' :{
             'ENGINE': 'djongo',
-            'NAME':  'B7FunDb',
-            'CLIENT': { 
-                'host': 'localhost',
-                'port': 27017
-            }
         }
     }
 else:
