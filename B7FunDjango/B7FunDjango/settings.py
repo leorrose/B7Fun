@@ -81,8 +81,7 @@ if 'test' in sys.argv:
     DATABASES = {
         'default' :{
             'ENGINE': 'djongo',
-            'NAME': 'your-db-name',
-            'HOST': 'your-db-host'
+            'NAME': 'B7FunDb'        
         }
     }
 else:
