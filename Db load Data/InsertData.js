@@ -2,7 +2,6 @@ db.sport_facilities.remove({})
 db.sport_facilities.insertMany([
     {
         "Type": "מגרש כדורסל – 19X32 מ'",
-        "Name": "אור",
         "street": "מאיר יערי",
         "Operator": "ניהול עצמי",
         "Seats": "0.0",
@@ -19,11 +18,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "50.0",
         "neighborhood": "יא",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "אור"
     },
     {
         "Type": "מגרש ספורט משולב – 43X32 מ'",
-        "Name": "אוריין",
         "street": "טבנקין",
         "Operator": "ניהול עצמי",
         "Seats": "0.0",
@@ -40,11 +39,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "ה'",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "אוריין"
     },
     {
         "Type": "אולם ספורט קטן – 15x24 מ'",
-        "Name": "אוריין",
         "street": "טבנקין",
         "Operator": "ניהול עצמי",
         "Seats": "0.0",
@@ -61,11 +60,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "ה'",
         "handicapped": "נגיש לנכים",
-        "association": "כיוונים"
+        "association": "כיוונים",
+        "name": "אוריין"
     },
     {
         "Type": "אולם ספורט קטן – 20x10 מ'",
-        "Name": "אשכול",
         "street": "מגידו",
         "Operator": "ניהול עצמי",
         "Seats": "0.0",
@@ -82,11 +81,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "12.0",
         "neighborhood": "ט'",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "אשכול"
     },
     {
         "Type": "מגרש כדורסל – 19X32 מ'",
-        "Name": "אשכול",
         "street": "מגידו",
         "Operator": "ניהול עצמי",
         "Seats": "0.0",
@@ -103,11 +102,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "12.0",
         "neighborhood": "ט'",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "אשכול"
     },
     {
         "Type": "מגרש ספורט משולב – 43X32 מ'",
-        "Name": "בארי",
         "street": "אסף שמחוני",
         "Operator": "ניהול עצמי",
         "Seats": "0.0",
@@ -124,11 +123,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "483.0",
         "neighborhood": "עיר עתיקה",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "בארי"
     },
     {
         "Type": "מגרש ספורט משולב – 43X32 מ'",
-        "Name": "יחדיו",
         "street": "חטיבה 8",
         "Operator": "ניהול עצמי",
         "Seats": "0.0",
@@ -145,11 +144,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "12.0",
         "neighborhood": "נווה זאב",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "יחדיו"
     },
     {
         "Type": "מגרש מיני פיץ'",
-        "Name": "מרגליות",
         "street": "ההגנה",
         "Operator": "כיוונים",
         "Seats": "0.0",
@@ -166,11 +165,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "10.0",
         "neighborhood": "עיר עתיקה",
         "handicapped": "נגיש לנכים",
-        "association": "לא"
+        "association": "לא",
+        "name": "מרגליות"
     },
     {
         "Type": "מגרש כדורגל – 45X90 מ'",
-        "Name": "מגרש כדורגל נאות לון",
         "street": "שמחה הולברג",
         "Operator": "כיוונים",
         "Seats": "0.0",
@@ -187,11 +186,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "6.0",
         "neighborhood": "נאות לון",
         "handicapped": "נגיש לנכים",
-        "association": "כיוונים פוטבול וקהילה"
+        "association": "כיוונים פוטבול וקהילה",
+        "name": "מגרש כדורגל נאות לון"
     },
     {
         "Type": "5 מגרשי טניס שדה",
-        "Name": "נאות לון",
         "street": "שמחה הולברג",
         "Operator": "כיוונים",
         "Seats": "0.0",
@@ -208,11 +207,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "6.0",
         "neighborhood": "נאות לון",
         "handicapped": "נגיש לנכים",
-        "association": "חוגי טניס כיוונים וקהילה"
+        "association": "חוגי טניס כיוונים וקהילה",
+        "name": "נאות לון"
     },
     {
         "Type": "מגרש כדורסל – 19X32 מ'",
-        "Name": "נאות לון",
         "street": "שמחה הולברג",
         "Operator": "ניהול עצמי",
         "Seats": "0.0",
@@ -229,11 +228,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "6.0",
         "neighborhood": "נאות לון",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "נאות לון"
     },
     {
         "Type": "מתקן פתוח לכושר גופני",
-        "Name": "פארק כושר נאות לון",
         "street": "יגאל ידין",
         "Operator": "כיוונים",
         "Seats": "0.0",
@@ -250,11 +249,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "6.0",
         "neighborhood": "נאות לון",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "פארק כושר נאות לון"
     },
     {
         "Type": "אצטדיון כדורגל – 105X70 מ'",
-        "Name": "נווה נוי",
         "street": "נווה נוי",
         "Operator": "כיוונים",
         "Seats": "0.0",
@@ -271,11 +270,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "נווה נוי",
         "handicapped": "נגיש לנכים",
-        "association": "מכבי"
+        "association": "מכבי",
+        "name": "נווה נוי"
     },
     {
         "Type": "מגרש כדורסל – 19X32 מ'",
-        "Name": "תומר",
         "street": "מבצע נחשון",
         "Operator": "ניהול עצמי",
         "Seats": "0.0",
@@ -292,11 +291,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "ו' החדשה",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "תומר"
     },
     {
         "Type": "מגרש כדורסל – 19X32 מ'",
-        "Name": "שז\"ר",
         "street": "מבצע עובדה",
         "Operator": "כיוונים",
         "Seats": "0.0",
@@ -313,11 +312,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "43.0",
         "neighborhood": "ו' החדשה",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "שז\"ר"
     },
     {
         "Type": "אולם ספורט קטן – 15x24 מ'",
-        "Name": "שז\"ר",
         "street": "מבצע עובדה",
         "Operator": "כיוונים",
         "Seats": "0.0",
@@ -334,11 +333,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "43.0",
         "neighborhood": "ו' החדשה",
         "handicapped": "נגיש לנכים",
-        "association": "הפועל"
+        "association": "הפועל",
+        "name": "שז\"ר"
     },
     {
         "Type": "אולם ספורט גדול - 45X24 מ'",
-        "Name": "רעות",
         "street": "בזל",
         "Operator": "ניהול עצמי",
         "Seats": "0.0",
@@ -355,11 +354,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "א",
         "handicapped": "נגיש לנכים",
-        "association": "בית\"ר"
+        "association": "בית\"ר",
+        "name": "רעות"
     },
     {
         "Type": "מגרש ספורט משולב – 43X32 מ'",
-        "Name": "רעות",
         "street": "בזל",
         "Operator": "ניהול עצמי",
         "Seats": "0.0",
@@ -376,11 +375,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "א",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "רעות"
     },
     {
         "Type": "מגרש כדורסל – 19X32 מ'",
-        "Name": "רננות",
         "street": "אבן גבירול",
         "Operator": "ניהול עצמי",
         "Seats": "0.0",
@@ -397,11 +396,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "10.0",
         "neighborhood": "ב'",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "רננות"
     },
     {
         "Type": "מגרש כדורסל – 19X32 מ'",
-        "Name": "רמות",
         "street": "הדעת פינת המדע",
         "Operator": "ניהול עצמי",
         "Seats": "0.0",
@@ -418,11 +417,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "רמות",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "רמות"
     },
     {
         "Type": "מגרש ספורט משולב – 43X32 מ'",
-        "Name": "רמב\"ם",
         "street": "קדושי בגדד",
         "Operator": "ניהול עצמי",
         "Seats": "0.0",
@@ -439,11 +438,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "1.0",
         "neighborhood": "ג'",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "רמב\"ם"
     },
     {
         "Type": "מגרש כדורסל – 19X32 מ'",
-        "Name": "רימונים",
         "street": "ישעיהו",
         "Operator": "ניהול עצמי",
         "Seats": "0.0",
@@ -460,11 +459,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "1.0",
         "neighborhood": "יי\"א",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "רימונים"
     },
     {
         "Type": "אצטדיון כדורגל עירוני – 105X68 מ'",
-        "Name": "טרנר",
         "street": "הצדיק מירושלים",
         "Operator": "כיוונים",
         "Seats": "0.0",
@@ -481,11 +480,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "1.0",
         "neighborhood": "נחל עשן",
         "handicapped": "נגיש לנכים",
-        "association": "הפועל ב\"ש"
+        "association": "הפועל ב\"ש",
+        "name": "טרנר"
     },
     {
         "Type": "מגרש טניס",
-        "Name": "קאנטרי קלאב",
         "street": "",
         "Operator": "קאנטרי קלאב",
         "Seats": "0.0",
@@ -502,11 +501,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "קאנטרי קלאב"
     },
     {
         "Type": "בריכת שחיה - 20X50 מ'",
-        "Name": "קאנטרי קלאב",
         "street": "",
         "Operator": "קאנטרי קלאב",
         "Seats": "0.0",
@@ -523,11 +522,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "קאנטרי קלאב"
     },
     {
         "Type": "בריכת שחיה - 25X12.5 מ'",
-        "Name": "קאנטרי קלאב",
         "street": "",
         "Operator": "קאנטרי קלאב",
         "Seats": "0.0",
@@ -544,11 +543,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "קאנטרי קלאב"
     },
     {
         "Type": "מגרש ספורט משולב – 43X32 מ'",
-        "Name": "קאנטרי קלאב",
         "street": "",
         "Operator": "קאנטרי קלאב",
         "Seats": "0.0",
@@ -565,11 +564,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "קאנטרי קלאב"
     },
     {
         "Type": "אחר: מתקן ספורט כללי",
-        "Name": "קאנטרי קלאב",
         "street": "",
         "Operator": "קאנטרי קלאב",
         "Seats": "0.0",
@@ -586,11 +585,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "קאנטרי קלאב"
     },
     {
         "Type": "מגרש כדורסל – 19X32 מ'",
-        "Name": "בה\"ס מקיף אמית",
         "street": "מרדכי מקלף יעקב דורי",
         "Operator": "ניהול עצמי",
         "Seats": "0.0",
@@ -607,11 +606,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "ו' החדשה",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "בה\"ס מקיף אמית"
     },
     {
         "Type": "אולם ספורט קטן – 15x24 מ'",
-        "Name": "בה\"ס מקיף אמי\"ת",
         "street": "מרדכי מקלף יעקב דורי",
         "Operator": "ניהול עצמי",
         "Seats": "0.0",
@@ -628,11 +627,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "ו' החדשה",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "בה\"ס מקיף אמי\"ת"
     },
     {
         "Type": "מגרש ספורט משולב – 43X32 מ'",
-        "Name": "נתיבי עם",
         "street": "שד' ירושלים",
         "Operator": "ניהול עצמי",
         "Seats": "0.0",
@@ -649,11 +648,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "ט'",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "נתיבי עם"
     },
     {
         "Type": "מגרש כדורסל – 19X32 מ'",
-        "Name": "נתיבות יורם",
         "street": "בצלאל",
         "Operator": "ניהול עצמי",
         "Seats": "0.0",
@@ -670,11 +669,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "35.0",
         "neighborhood": "ב'",
         "handicapped": "אין נגישות לנכים",
-        "association": ""
+        "association": "",
+        "name": "נתיבות יורם"
     },
     {
         "Type": "מגרש ספורט משולב – 43X32 מ'",
-        "Name": "נעורים",
         "street": "אלכסנדר ינאי",
         "Operator": "כיוונים",
         "Seats": "0.0",
@@ -691,11 +690,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "12.0",
         "neighborhood": "ד'",
         "handicapped": "נגיש לנכים",
-        "association": "כיוונים"
+        "association": "כיוונים",
+        "name": "נעורים"
     },
     {
         "Type": "מגרש כדורגל גדול– 45X90 מ'",
-        "Name": "נירים",
         "street": "רש\"י",
         "Operator": "כיוונים",
         "Seats": "150.0",
@@ -712,11 +711,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "3.0",
         "neighborhood": "ד'",
         "handicapped": "נגיש לנכים",
-        "association": "כיוונים"
+        "association": "כיוונים",
+        "name": "נירים"
     },
     {
         "Type": "מגרש ספורט משולב – 43X32 מ'",
-        "Name": "נחל בקע",
         "street": "",
         "Operator": "כיוונים",
         "Seats": "0.0",
@@ -733,11 +732,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "נחל בקע"
     },
     {
         "Type": "אולם ספורט גדול - 45X24 מ'",
-        "Name": "מרכז הספורט באוניברסיטת בן גוריון",
         "street": "",
         "Operator": "אוניברסיטת בן גוריון",
         "Seats": "0.0",
@@ -754,11 +753,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "מרכז הספורט באוניברסיטת בן גוריון"
     },
     {
         "Type": "מגרש טניס",
-        "Name": "מרכז הספורט באוניברסיטת בן גוריון",
         "street": "",
         "Operator": "אוניברסיטת בן גוריון",
         "Seats": "0.0",
@@ -775,11 +774,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "מרכז הספורט באוניברסיטת בן גוריון"
     },
     {
         "Type": "בריכת שחיה - 20X50 מ'",
-        "Name": "מרכז הספורט באוניברסיטת בן גוריון",
         "street": "",
         "Operator": "אוניברסיטת בן גוריון",
         "Seats": "0.0",
@@ -796,11 +795,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "מרכז הספורט באוניברסיטת בן גוריון"
     },
     {
         "Type": "מגרש כדורסל – 19X32 מ'",
-        "Name": "בה\"ס נווה מנחם",
         "street": "רבקה",
         "Operator": "ניהול עצמי",
         "Seats": "0.0",
@@ -817,11 +816,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "6.0",
         "neighborhood": "נחל עשן",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "בה\"ס נווה מנחם"
     },
     {
         "Type": "בריכת שחיה - 25X12.5 מ'",
-        "Name": "מרכז הספורט באוניברסיטת בן גוריון",
         "street": "",
         "Operator": "אוניברסיטת בן גוריון",
         "Seats": "0.0",
@@ -838,11 +837,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "מרכז הספורט באוניברסיטת בן גוריון"
     },
     {
         "Type": "אולם ספורט קטן – 20x10 מ'",
-        "Name": "מרכז האבקות- בן צבי",
         "street": "התלמוד",
         "Operator": "כיוונים",
         "Seats": "0.0",
@@ -859,11 +858,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "ד'",
         "handicapped": "נגיש לנכים",
-        "association": "עמי"
+        "association": "עמי",
+        "name": "מרכז האבקות- בן צבי"
     },
     {
         "Type": "מגרש ספורט משולב – 43X32 מ'",
-        "Name": "מקיף רגר",
         "street": "נפתלי הרץ אימבר",
         "Operator": "כיוונים",
         "Seats": "0.0",
@@ -880,11 +879,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "נווה זאב",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "מקיף רגר"
     },
     {
         "Type": "אולם ספורט גדול - 45X24 מ'",
-        "Name": "מקיף רגר",
         "street": "נפתלי הרץ אימבר",
         "Operator": "כיוונים",
         "Seats": "0.0",
@@ -901,11 +900,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "נווה זאב",
         "handicapped": "נגיש לנכים",
-        "association": "כיוונים, מכבי"
+        "association": "כיוונים, מכבי",
+        "name": "מקיף רגר"
     },
     {
         "Type": "מגרש ספורט משולב – 43X32 מ'",
-        "Name": "מקיף רבין",
         "street": "מרדכי נמיר",
         "Operator": "ניהול עצמי",
         "Seats": "0.0",
@@ -922,11 +921,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "יי\"א",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "מקיף רבין"
     },
     {
         "Type": "אולם ספורט גדול - 45X24 מ'",
-        "Name": "מקיף רבין",
         "street": "מרדכי נמיר",
         "Operator": "ניהול עצמי",
         "Seats": "0.0",
@@ -943,11 +942,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "יי\"א",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "מקיף רבין"
     },
     {
         "Type": "מגרש כדורסל – 19X32 מ'",
-        "Name": "אלומות",
         "street": "רחבת יהודה הנשיא",
         "Operator": "ניהול עצמי",
         "Seats": "0.0",
@@ -964,11 +963,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "ד'",
         "handicapped": "אין נגישות לנכים",
-        "association": ""
+        "association": "",
+        "name": "אלומות"
     },
     {
         "Type": "אולם ספורט קטן – 15x24 מ'",
-        "Name": "אלון",
         "street": "",
         "Operator": "ניהול עצמי",
         "Seats": "0.0",
@@ -985,11 +984,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "אלון"
     },
     {
         "Type": "אולם ספורט גדול - 45X24 מ'",
-        "Name": "אמי\"ת- מקיף ד' לשעבר",
         "street": "יהודה הלוי",
         "Operator": "כיוונים",
         "Seats": "500.0",
@@ -1006,11 +1005,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "שכ' ד'",
         "handicapped": "נגיש לנכים",
-        "association": "בית\"ר, הפועל"
+        "association": "בית\"ר, הפועל",
+        "name": "אמי\"ת- מקיף ד' לשעבר"
     },
     {
         "Type": "מגרש ספורט משולב – 43X32 מ'",
-        "Name": "אמי\"ת- מקיף ד' לשעבר",
         "street": "יהודה הלוי",
         "Operator": "כיוונים",
         "Seats": "0.0",
@@ -1027,11 +1026,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "שכ' ד'",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "אמי\"ת- מקיף ד' לשעבר"
     },
     {
         "Type": "מגרש כדורסל – 19X32 מ'",
-        "Name": "אמירים תל\"י",
         "street": "קלאוזנר",
         "Operator": "ניהול עצמי",
         "Seats": "0.0",
@@ -1048,11 +1047,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "ו' הישנה",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "אמירים תל\"י"
     },
     {
         "Type": "מגרש כדורסל – 19X32 מ'",
-        "Name": "אפיק",
         "street": "הרב הרצוג",
         "Operator": "ניהול עצמי",
         "Seats": "0.0",
@@ -1069,11 +1068,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "יי\"א",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "אפיק"
     },
     {
         "Type": "מגרש כדורסל – 19X32 מ'",
-        "Name": "אפיקים בנגב",
         "street": "הדעת",
         "Operator": "ניהול עצמי",
         "Seats": "0.0",
@@ -1090,11 +1089,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "89.0",
         "neighborhood": "רמות",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "אפיקים בנגב"
     },
     {
         "Type": "מגרש ספורט משולב – 43X32 מ'",
-        "Name": "מקיף ז'",
         "street": "",
         "Operator": "רשת עמל",
         "Seats": "0.0",
@@ -1111,11 +1110,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "מקיף ז'"
     },
     {
         "Type": "אולם ספורט גדול - 45X24 מ'",
-        "Name": "מקיף ז'",
         "street": "",
         "Operator": "רשת עמל",
         "Seats": "0.0",
@@ -1132,11 +1131,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "מקיף ז'"
     },
     {
         "Type": "מגרש כדורגל – 45X90 מ'",
-        "Name": "מקיף ו'",
         "street": "בית אל",
         "Operator": "כיוונים",
         "Seats": "0.0",
@@ -1153,11 +1152,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "ט'",
         "handicapped": "נגיש לנכים",
-        "association": "הפועל, מכבי בני הנגב"
+        "association": "הפועל, מכבי בני הנגב",
+        "name": "מקיף ו'"
     },
     {
         "Type": "מגרש ספורט משולב – 43X32 מ'",
-        "Name": "מולדת",
         "street": "שד' ירושלים",
         "Operator": "ניהול עצמי",
         "Seats": "0.0",
@@ -1174,11 +1173,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "שכ' ט'",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "מולדת"
     },
     {
         "Type": "אצטדיון/מסלול אתלטיקה קלה – 6-4 מסלולים, 250 או 300 מ'",
-        "Name": "מכללת קיי",
         "street": "יהודה הלוי",
         "Operator": "מכללת קיי",
         "Seats": "0.0",
@@ -1195,11 +1194,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "ו' החדשה",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "מכללת קיי"
     },
     {
         "Type": "מגרש טניס",
-        "Name": "מכללת קיי",
         "street": "יהודה הלוי",
         "Operator": "מכללת קיי",
         "Seats": "0.0",
@@ -1216,11 +1215,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "ו' החדשה",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "מכללת קיי"
     },
     {
         "Type": "מגרש כדורסל – 19X32 מ'",
-        "Name": "מענית",
         "street": "כיכר הגנים",
         "Operator": "ניהול עצמי",
         "Seats": "0.0",
@@ -1237,11 +1236,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "נווה נוי",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "מענית"
     },
     {
         "Type": "אצטדיון/מסלול אתלטיקה קלה – 6-4 מסלולים, 250 או 300 מ'",
-        "Name": "מקיף א'",
         "street": "דרך השלום",
         "Operator": "כיוונים",
         "Seats": "0.0",
@@ -1258,11 +1257,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "15.0",
         "neighborhood": "ג'",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "מקיף א'"
     },
     {
         "Type": "אצטדיון/מסלול אתלטיקה קלה – 6-4 מסלולים, 250 או 300 מ'",
-        "Name": "מקיף ג'",
         "street": "דרך שמשון",
         "Operator": "כיוונים",
         "Seats": "0.0",
@@ -1279,11 +1278,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "1.0",
         "neighborhood": "ב'",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "מקיף ג'"
     },
     {
         "Type": "אולם ספורט בינוני – 32x19 מ'",
-        "Name": "מקיף ג'",
         "street": "דרך שמשון",
         "Operator": "כיוונים",
         "Seats": "0.0",
@@ -1300,11 +1299,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "1.0",
         "neighborhood": "ב'",
         "handicapped": "נגיש לנכים",
-        "association": "הפועל"
+        "association": "הפועל",
+        "name": "מקיף ג'"
     },
     {
         "Type": "מגרש ספורט משולב – 43X32 מ'",
-        "Name": "מקיף טוביהו",
         "street": "דוד הראובני",
         "Operator": "כיוונים",
         "Seats": "0.0",
@@ -1321,11 +1320,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "27.0",
         "neighborhood": "נחל עשן",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "מקיף טוביהו"
     },
     {
         "Type": "אולם ספורט גדול - 45X24 מ'",
-        "Name": "מקיף טוביהו",
         "street": "דוד הראובני",
         "Operator": "כיוונים",
         "Seats": "0.0",
@@ -1342,11 +1341,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "27.0",
         "neighborhood": "נחל עשן",
         "handicapped": "נגיש לנכים",
-        "association": "הפועל, מכבי דרום, כיוונים"
+        "association": "הפועל, מכבי דרום, כיוונים",
+        "name": "מקיף טוביהו"
     },
     {
         "Type": "מגרש מיני פיץ'",
-        "Name": "ד' מרכז- מגרש ארסנל",
         "street": "",
         "Operator": "כיוונים",
         "Seats": "0.0",
@@ -1363,11 +1362,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "ד'",
         "handicapped": "נגיש לנכים",
-        "association": "לא"
+        "association": "לא",
+        "name": "ד' מרכז- מגרש ארסנל"
     },
     {
         "Type": "אולם ספורט גדול - 45X24 מ'",
-        "Name": "דניס השרדות",
         "street": "יהודה הלוי",
         "Operator": "כיוונים",
         "Seats": "0.0",
@@ -1384,11 +1383,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "ד'",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "דניס השרדות"
     },
     {
         "Type": "מגרש כדורגל – 45X90 מ'",
-        "Name": "טאובל",
         "street": "בן גוריון",
         "Operator": "כיוונים",
         "Seats": "0.0",
@@ -1405,11 +1404,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "ג'",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "טאובל"
     },
     {
         "Type": "מגרש טניס",
-        "Name": "טאובל",
         "street": "בן גוריון",
         "Operator": "כיוונים",
         "Seats": "0.0",
@@ -1426,11 +1425,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "ג'",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "טאובל"
     },
     {
         "Type": "בריכת שחיה - 20X50 מ'",
-        "Name": "בית החייל",
         "street": "בית לחם",
         "Operator": "בית החייל",
         "Seats": "0.0",
@@ -1447,11 +1446,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "2.0",
         "neighborhood": "ט'",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "בית החייל"
     },
     {
         "Type": "מגרש כדורסל – 19X32 מ'",
-        "Name": "בית החייל",
         "street": "בית לחם",
         "Operator": "בית החייל",
         "Seats": "0.0",
@@ -1468,11 +1467,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "2.0",
         "neighborhood": "ט'",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "בית החייל"
     },
     {
         "Type": "אחר: מתקן ספורט כללי",
-        "Name": "בית החייל",
         "street": "בית לחם",
         "Operator": "בית החייל",
         "Seats": "0.0",
@@ -1489,11 +1488,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "2.0",
         "neighborhood": "ט'",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "בית החייל"
     },
     {
         "Type": "בריכת שחיה - 25X12.5 מ'",
-        "Name": "בית יציב",
         "street": "העצמאות",
         "Operator": "בית יציב",
         "Seats": "0.0",
@@ -1510,11 +1509,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "79.0",
         "neighborhood": "ט'",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "בית יציב"
     },
     {
         "Type": "מגרש כדורסל – 19X32 מ'",
-        "Name": "בר אילן- מוריה",
         "street": "מנדלי מוכר ספרים",
         "Operator": "ניהול עצמי",
         "Seats": "0.0",
@@ -1531,11 +1530,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "א'",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "בר אילן- מוריה"
     },
     {
         "Type": "מגרש כדורסל – 19X32 מ'",
-        "Name": "היובל",
         "street": "המלכים",
         "Operator": "ניהול עצמי",
         "Seats": "0.0",
@@ -1552,11 +1551,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "10.0",
         "neighborhood": "נחל עשן",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "היובל"
     },
     {
         "Type": "מתקן פתוח לכושר גופני",
-        "Name": "נווה זאב",
         "street": "",
         "Operator": "כיוונים",
         "Seats": "0.0",
@@ -1573,11 +1572,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "נווה זאב",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "נווה זאב"
     },
     {
         "Type": "מגרש טניס",
-        "Name": "מרכז הטניס הישראלי",
         "street": "",
         "Operator": "מרכז הטניס",
         "Seats": "0.0",
@@ -1594,11 +1593,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "מרכז הטניס הישראלי"
     },
     {
         "Type": "מגרש טניס",
-        "Name": "מרכז הטניס שכונה א'",
         "street": "",
         "Operator": "מרכז הטניס",
         "Seats": "0.0",
@@ -1615,11 +1614,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "מרכז הטניס שכונה א'"
     },
     {
         "Type": "מגרש כדורסל – 19X32 מ'",
-        "Name": "נטעים",
         "street": "גולומב",
         "Operator": "ניהול עצמי",
         "Seats": "0.0",
@@ -1636,11 +1635,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "ג'",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "נטעים"
     },
     {
         "Type": "אולם ספורט קטן – 20x10 מ'",
-        "Name": "נטעים",
         "street": "גולומב",
         "Operator": "ניהול עצמי",
         "Seats": "0.0",
@@ -1657,11 +1656,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "ג'",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "נטעים"
     },
     {
         "Type": "4 מגרש כדורגל – 45X90 מ' דשא טיבעי\n1 מגרש כדורגל 45X90 מ' דשא סינטטי",
-        "Name": "5 מגרשי כדורגל פיקה",
         "street": "הצדיק מירושלים",
         "Operator": "כיוונים",
         "Seats": "1000.0",
@@ -1678,11 +1677,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "1.0",
         "neighborhood": "נחל עשן",
         "handicapped": "נגיש לנכים",
-        "association": "אגודות  הפועל, בית\"ר ומכבי"
+        "association": "אגודות  הפועל, בית\"ר ומכבי",
+        "name": "5 מגרשי כדורגל פיקה"
     },
     {
         "Type": "מגרש כדורסל – 19X32 מ'",
-        "Name": "יובלים",
         "street": "שבטה",
         "Operator": "ניהול עצמי",
         "Seats": "0.0",
@@ -1699,11 +1698,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "ט'",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "יובלים"
     },
     {
         "Type": "מגרש כדורסל – 19X32 מ'",
-        "Name": "אילנות",
         "street": "בורלא יהודה",
         "Operator": "ניהול עצמי",
         "Seats": "0.0",
@@ -1720,11 +1719,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "19.0",
         "neighborhood": "ה'",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "אילנות"
     },
     {
         "Type": "אולם ספורט בינוני – 32x19 מ'",
-        "Name": "אילנות",
         "street": "בורלא יהודה",
         "Operator": "ניהול עצמי",
         "Seats": "100.0",
@@ -1741,11 +1740,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "19.0",
         "neighborhood": "ה'",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "אילנות"
     },
     {
         "Type": "מגרש כדורסל – 19X32 מ'",
-        "Name": "דגניה",
         "street": "ז'בוטינסקי",
         "Operator": "ניהול עצמי",
         "Seats": "0.0",
@@ -1762,11 +1761,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "17.0",
         "neighborhood": "ג'",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "דגניה"
     },
     {
         "Type": "מגרש חול קבוע לכדורעף או לקטרגל או לכדוריד חופים",
-        "Name": "מרכז הספורט באוניברסיטת בן גוריון",
         "street": "",
         "Operator": "אוניברסיטת בן גוריון",
         "Seats": "0.0",
@@ -1783,11 +1782,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "מרכז הספורט באוניברסיטת בן גוריון"
     },
     {
         "Type": "מגרש ספורט משולב – 43X32 מ'",
-        "Name": "מרכז הספורט באוניברסיטת בן גוריון",
         "street": "",
         "Operator": "אוניברסיטת בן גוריון",
         "Seats": "0.0",
@@ -1804,11 +1803,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "מרכז הספורט באוניברסיטת בן גוריון"
     },
     {
         "Type": "אחר: מתקן ספורט כללי",
-        "Name": "מרכז הספורט באוניברסיטת בן גוריון",
         "street": "",
         "Operator": "אוניברסיטת בן גוריון",
         "Seats": "0.0",
@@ -1825,11 +1824,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "מרכז הספורט באוניברסיטת בן גוריון"
     },
     {
         "Type": "אחר: מתקן ספורט כללי",
-        "Name": "מרכז האבקות ליד מקיף ג'",
         "street": "ליד מקיף ג'",
         "Operator": "כיוונים",
         "Seats": "0.0",
@@ -1846,11 +1845,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "ב'",
         "handicapped": "אין נגישות לנכים",
-        "association": "הפועל"
+        "association": "הפועל",
+        "name": "מרכז האבקות ליד מקיף ג'"
     },
     {
         "Type": "מגרש כדורסל – 19X32 מ'",
-        "Name": "אולפנת אמי\"ת",
         "street": "וינגייט",
         "Operator": "כיוונים",
         "Seats": "0.0",
@@ -1867,11 +1866,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "ג'",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "אולפנת אמי\"ת"
     },
     {
         "Type": "אולם ספורט בינוני – 32x19 מ'",
-        "Name": "אולפנת אמי\"ת",
         "street": "וינגייט",
         "Operator": "כיוונים",
         "Seats": "100.0",
@@ -1888,11 +1887,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "ג'",
         "handicapped": "נגיש לנכים",
-        "association": "מכבי דרום"
+        "association": "מכבי דרום",
+        "name": "אולפנת אמי\"ת"
     },
     {
         "Type": "מגרש ספורט משולב – 43X32 מ'",
-        "Name": "אמירים תל\"י",
         "street": "קלאוזנר",
         "Operator": "ניהול עצמי",
         "Seats": "0.0",
@@ -1909,11 +1908,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "ו' הישנה",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "אמירים תל\"י"
     },
     {
         "Type": "מגרש כדורסל – 19X32 מ'",
-        "Name": "אשלים פנימייה",
         "street": "",
         "Operator": "ניהול עצמי",
         "Seats": "0.0",
@@ -1930,11 +1929,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "אשלים פנימייה"
     },
     {
         "Type": "אולם ספורט קטן – 15x24 מ'",
-        "Name": "אשלים פנימייה",
         "street": "",
         "Operator": "ניהול עצמי",
         "Seats": "0.0",
@@ -1951,11 +1950,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "אשלים פנימייה"
     },
     {
         "Type": "אולם ספורט קטן – 20x10 מ'",
-        "Name": "בית העיוור",
         "street": "שאול המלך",
         "Operator": "בית העיור",
         "Seats": "0.0",
@@ -1972,11 +1971,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "1.0",
         "neighborhood": "ו' החדשה",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "בית העיוור"
     },
     {
         "Type": "מגרש ספורט משולב – 43X32 מ'",
-        "Name": "בן גוריון",
         "street": "שד' אורי צבי גרינברג",
         "Operator": "ניהול עצמי",
         "Seats": "0.0",
@@ -1993,11 +1992,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "רמות",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "בן גוריון"
     },
     {
         "Type": "אולם ספורט קטן – 15x24 מ'",
-        "Name": "בן גוריון",
         "street": "שד' אורי צבי גרינברג",
         "Operator": "ניהול עצמי",
         "Seats": "0.0",
@@ -2014,11 +2013,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "רמות",
         "handicapped": "נגיש לנכים",
-        "association": "כיוונים"
+        "association": "כיוונים",
+        "name": "בן גוריון"
     },
     {
         "Type": "מגרש ספורט משולב – 43X32 מ'",
-        "Name": "גבים",
         "street": "חתם סופר",
         "Operator": "ניהול עצמי",
         "Seats": "0.0",
@@ -2035,11 +2034,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "יי\"א",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "גבים"
     },
     {
         "Type": "אולם ספורט קטן – 20x10 מ'",
-        "Name": "גבים",
         "street": "חתם סופר",
         "Operator": "ניהול עצמי",
         "Seats": "0.0",
@@ -2056,11 +2055,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "יי\"א",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "גבים"
     },
     {
         "Type": "אולם ספורט קטן – 20x10 מ'",
-        "Name": "דגניה",
         "street": "ז'בוטינסקי",
         "Operator": "ניהול עצמי",
         "Seats": "0.0",
@@ -2077,11 +2076,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "17.0",
         "neighborhood": "ג'",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "דגניה"
     },
     {
         "Type": "מגרש כדורסל – 19X32 מ'",
-        "Name": "חב\"ד עוזיאל",
         "street": "בן יאיר",
         "Operator": "ניהול עצמי",
         "Seats": "0.0",
@@ -2098,11 +2097,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "19.0",
         "neighborhood": "ד'",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "חב\"ד עוזיאל"
     },
     {
         "Type": "אולם ספורט קטן – 20x10 מ'",
-        "Name": "חב\"ד עוזיאל",
         "street": "בן יאיר",
         "Operator": "ניהול עצמי",
         "Seats": "0.0",
@@ -2119,11 +2118,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "19.0",
         "neighborhood": "ד'",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "חב\"ד עוזיאל"
     },
     {
         "Type": "מגרש ספורט משולב – 43X32 מ'",
-        "Name": "חזון עובדיה",
         "street": "גוש עציון",
         "Operator": "ניהול עצמי",
         "Seats": "0.0",
@@ -2140,11 +2139,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "13.0",
         "neighborhood": "ג'",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "חזון עובדיה"
     },
     {
         "Type": "אולם ספורט קטן – 15x24 מ'",
-        "Name": "חזון עובדיה",
         "street": "גוש עציון",
         "Operator": "ניהול עצמי",
         "Seats": "0.0",
@@ -2161,11 +2160,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "13.0",
         "neighborhood": "ג'",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "חזון עובדיה"
     },
     {
         "Type": "מגרש ספורט משולב – 43X32 מ'",
-        "Name": "טאובל",
         "street": "בן גוריון",
         "Operator": "כיוונים",
         "Seats": "0.0",
@@ -2182,11 +2181,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "ג'",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "טאובל"
     },
     {
         "Type": "מגרש ספורט משולב – 43X32 מ'",
-        "Name": "מאיר",
         "street": "מבצע עובדה",
         "Operator": "ניהול עצמי",
         "Seats": "0.0",
@@ -2203,11 +2202,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "116.0",
         "neighborhood": "ו' החדשה",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "מאיר"
     },
     {
         "Type": "אולם ספורט קטן – 20x10 מ'",
-        "Name": "בה\"ס מאיר",
         "street": "מבצע עובדה",
         "Operator": "ניהול עצמי",
         "Seats": "0.0",
@@ -2224,11 +2223,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "116.0",
         "neighborhood": "ו' החדשה",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "בה\"ס מאיר"
     },
     {
         "Type": "מגרש ספורט משולב – 43X32 מ'",
-        "Name": "ישיבת בני עקיבא",
         "street": "התלמוד",
         "Operator": "ישיבת בני עקיבא",
         "Seats": "0.0",
@@ -2245,11 +2244,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "2.0",
         "neighborhood": "ד'",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "ישיבת בני עקיבא"
     },
     {
         "Type": "מגרש ספורט משולב – 43X32 מ'",
-        "Name": "מצפה",
         "street": "יהודה הלוי",
         "Operator": "ניהול עצמי",
         "Seats": "0.0",
@@ -2266,11 +2265,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "ד'",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "מצפה"
     },
     {
         "Type": "מגרש ספורט משולב – 43X32 מ'",
-        "Name": "ישיבת אמית",
         "street": "",
         "Operator": "ניהול עצמי",
         "Seats": "0.0",
@@ -2287,11 +2286,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "",
         "handicapped": "אין נגישות לנכים",
-        "association": ""
+        "association": "",
+        "name": "ישיבת אמית"
     },
     {
         "Type": "אולם ספורט גדול - 45X24 מ'",
-        "Name": "מקיף ה'",
         "street": "",
         "Operator": "כיוונים",
         "Seats": "0.0",
@@ -2308,11 +2307,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "",
         "handicapped": "אין נגישות לנכים",
-        "association": "אליצור, הפועל ובית\"ר"
+        "association": "אליצור, הפועל ובית\"ר",
+        "name": "מקיף ה'"
     },
     {
         "Type": "אולם ספורט גדול - 45X24 מ'",
-        "Name": "מקיף ו'",
         "street": "בית אל",
         "Operator": "כיוונים",
         "Seats": "0.0",
@@ -2329,11 +2328,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "ט'",
         "handicapped": "נגיש לנכים",
-        "association": "כיוונים, ליגה למקומות עבודה"
+        "association": "כיוונים, ליגה למקומות עבודה",
+        "name": "מקיף ו'"
     },
     {
         "Type": "מגרש פטאנק או כדורת דשא",
-        "Name": "מתנ\"ס יא'",
         "street": "מרדכי נמיר",
         "Operator": "כיוונים",
         "Seats": "0.0",
@@ -2350,11 +2349,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "11.0",
         "neighborhood": "יא'",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "מתנ\"ס יא'"
     },
     {
         "Type": "מגרש מיני פיץ'",
-        "Name": "מתנ\"ס יא'",
         "street": "מרדכי נמיר",
         "Operator": "כיוונים",
         "Seats": "0.0",
@@ -2371,11 +2370,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "11.0",
         "neighborhood": "יא'",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "מתנ\"ס יא'"
     },
     {
         "Type": "מגרש כדורסל – 19X32 מ'",
-        "Name": "יוסף קארו",
         "street": "אברהם אבינו",
         "Operator": "ניהול עצמי",
         "Seats": "0.0",
@@ -2392,11 +2391,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "15.0",
         "neighborhood": "ד'",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "יוסף קארו"
     },
     {
         "Type": "מגרש ספורט משולב – 43X32 מ'",
-        "Name": "מכללת קיי",
         "street": "יהודה הלוי",
         "Operator": "מכללת קיי",
         "Seats": "0.0",
@@ -2413,11 +2412,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "ו' החדשה",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "מכללת קיי"
     },
     {
         "Type": "אולם ספורט בינוני – 32x19 מ'",
-        "Name": "מכללת קיי",
         "street": "יהודה הלוי",
         "Operator": "מכללת קיי",
         "Seats": "0.0",
@@ -2434,11 +2433,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "ו' החדשה",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "מכללת קיי"
     },
     {
         "Type": "אולם ספורט בינוני – 32x19 מ'",
-        "Name": "מקיף א'",
         "street": "דרך השלום",
         "Operator": "כיוונים",
         "Seats": "0.0",
@@ -2455,11 +2454,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "15.0",
         "neighborhood": "ג'",
         "handicapped": "נגיש לנכים",
-        "association": "ניקה,מכבי, כיוונים"
+        "association": "ניקה,מכבי, כיוונים",
+        "name": "מקיף א'"
     },
     {
         "Type": "מגרש ספורט משולב – 43X32 מ'",
-        "Name": "מקיף ו'",
         "street": "בית אל",
         "Operator": "כיוונים",
         "Seats": "0.0",
@@ -2476,11 +2475,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "ט'",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "מקיף ו'"
     },
     {
         "Type": "מגרש פטאנק או כדורת דשא",
-        "Name": "פטאנק שלנו",
         "street": "יהודה הלוי",
         "Operator": "כיוונים",
         "Seats": "0.0",
@@ -2497,11 +2496,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "פטאנק שלנו"
     },
     {
         "Type": "",
-        "Name": "יסודות",
         "street": "מנדלסון משה",
         "Operator": "ניהול עצמי",
         "Seats": "0.0",
@@ -2518,11 +2517,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "40.0",
         "neighborhood": "ב'",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "יסודות"
     },
     {
         "Type": "מגרש ספורט משולב – 43X32 מ'",
-        "Name": "מקיף א'",
         "street": "דרך השלום",
         "Operator": "כיוונים",
         "Seats": "0.0",
@@ -2539,11 +2538,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "15.0",
         "neighborhood": "ג'",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "מקיף א'"
     },
     {
         "Type": "מגרש ספורט משולב – 43X32 מ'",
-        "Name": "מקיף ג'",
         "street": "דרך שמשון",
         "Operator": "כיוונים",
         "Seats": "0.0",
@@ -2560,11 +2559,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "1.0",
         "neighborhood": "ב'",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "מקיף ג'"
     },
     {
         "Type": "אולם ספורט בינוני – 32x19 מ'",
-        "Name": "מקיף ו'",
         "street": "בית אל",
         "Operator": "כיוונים",
         "Seats": "0.0",
@@ -2581,11 +2580,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "ט'",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "מקיף ו'"
     },
     {
         "Type": "אולם ספורט בינוני – 32x19 מ'",
-        "Name": "טכני",
         "street": "אילן רמון",
         "Operator": "טכני",
         "Seats": "0.0",
@@ -2602,11 +2601,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "טכני"
     },
     {
         "Type": "מגרש ספורט משולב – 43X32 מ'",
-        "Name": "טכני",
         "street": "אילן רמון",
         "Operator": "טכני",
         "Seats": "0.0",
@@ -2623,11 +2622,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "טכני"
     },
     {
         "Type": "מגרש משולב כדורסל וקטרגל",
-        "Name": "מתחם רמב\"ם",
         "street": "כיכר רמב\"ם",
         "Operator": "כיוונים",
         "Seats": "0.0",
@@ -2644,11 +2643,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "רמב\"ם",
         "handicapped": "נגיש לנכים",
-        "association": "לא"
+        "association": "לא",
+        "name": "מתחם רמב\"ם"
     },
     {
         "Type": "רמות שלמה בן יוסף",
-        "Name": "רמות שלמה בן יוסף",
         "street": "שלמה בן יוסף",
         "Operator": "כיוונים",
         "Seats": "0.0",
@@ -2665,11 +2664,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "רמות שלמה בן יוסף"
     },
     {
         "Type": "גן כרמל - רמות",
-        "Name": "גן כרמל - רמות",
         "street": "רמות",
         "Operator": "כיוונים",
         "Seats": "0.0",
@@ -2686,11 +2685,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "רמות",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "גן כרמל - רמות"
     },
     {
         "Type": "כדוסל",
-        "Name": "גן מרדכי",
         "street": "שכונה ג'",
         "Operator": "כיוונים",
         "Seats": "0.0",
@@ -2707,11 +2706,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "ה' הישנה",
         "handicapped": "",
-        "association": "לא"
+        "association": "לא",
+        "name": "גן מרדכי"
     },
     {
         "Type": "מגרש קט רגל רבי עקיבא (המכתש)",
-        "Name": "מגרש רבי עקיבא",
         "street": "שכונה ד' - בר גיורא/רבי עקעבא",
         "Operator": "כיוונים",
         "Seats": "0.0",
@@ -2728,11 +2727,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "ד'",
         "handicapped": "אין נגישות לנכים",
-        "association": "לא"
+        "association": "לא",
+        "name": "מגרש רבי עקיבא"
     },
     {
         "Type": "קטרגל",
-        "Name": "מרבד הקסמים",
         "street": "שכונה ה'",
         "Operator": "כיוונים",
         "Seats": "0.0",
@@ -2749,11 +2748,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "ה' הישנה",
         "handicapped": "נגיש לנכים",
-        "association": "לא"
+        "association": "לא",
+        "name": "מרבד הקסמים"
     },
     {
         "Type": "קט רגל",
-        "Name": "גאולים",
         "street": "שכונה ה'",
         "Operator": "כיוונים",
         "Seats": "0.0",
@@ -2770,11 +2769,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "",
         "handicapped": "נגיש לנכים",
-        "association": "לא"
+        "association": "לא",
+        "name": "גאולים"
     },
     {
         "Type": "נווה זאב",
-        "Name": "י.ל פרץ",
         "street": "נווה זאב י.ל.פרץ",
         "Operator": "כיוונים",
         "Seats": "0.0",
@@ -2791,11 +2790,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "נווה זאב",
         "handicapped": "נגיש לנכים",
-        "association": "לא"
+        "association": "לא",
+        "name": "י.ל פרץ"
     },
     {
         "Type": "כדורסל",
-        "Name": "רח'  רונאל",
         "street": "נווהזאב",
         "Operator": "כיוונים",
         "Seats": "0.0",
@@ -2812,11 +2811,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "נווה זאב",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "רח'  רונאל"
     },
     {
         "Type": "כדורסל",
-        "Name": "פיברג",
         "street": "נווה זאב",
         "Operator": "כיוונים",
         "Seats": "0.0",
@@ -2833,11 +2832,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "נווה זאב",
         "handicapped": "נגיש לנכים",
-        "association": "לא"
+        "association": "לא",
+        "name": "פיברג"
     },
     {
         "Type": "נווה זאב",
-        "Name": "נווה זאב",
         "street": "פארק כיכר הטנק",
         "Operator": "כיוונים",
         "Seats": "0.0",
@@ -2854,11 +2853,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "נווה זאב"
     },
     {
         "Type": "מתקן פתוח לכושר גופני",
-        "Name": "רמות",
         "street": "פבלו",
         "Operator": "כיוונים",
         "Seats": "0.0",
@@ -2875,11 +2874,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "רמות",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "רמות"
     },
     {
         "Type": "מתקן פתוח לכושר גופני",
-        "Name": "פארק האוסטרלי",
         "street": "שכונה ו' החדשה",
         "Operator": "כיוונים",
         "Seats": "0.0",
@@ -2896,11 +2895,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "ו' החדשה",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "פארק האוסטרלי"
     },
     {
         "Type": "מתקן פתוח לכושר גופני",
-        "Name": "שכונה ב",
         "street": "ביאליק- ליד קולנוע חן",
         "Operator": "כיוונים",
         "Seats": "0.0",
@@ -2917,11 +2916,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "ב'",
         "handicapped": "נגיש לנכים",
-        "association": ""
+        "association": "",
+        "name": "שכונה ב"
     },
     {
         "Type": "קט רגל",
-        "Name": "גולומב",
         "street": "רחוב גולומב- שכונה ג'",
         "Operator": "כיוונים",
         "Seats": "0.0",
@@ -2938,11 +2937,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "",
         "handicapped": "",
-        "association": "לא"
+        "association": "לא",
+        "name": "גולומב"
     },
     {
         "Type": "כדורסל",
-        "Name": "",
         "street": "טדסקי גד",
         "Operator": "כיוונים",
         "Seats": "0.0",
@@ -2959,11 +2958,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "רמות",
         "handicapped": "",
-        "association": ""
+        "association": "",
+        "name": ""
     },
     {
         "Type": "",
-        "Name": "שצ\"פ מגרש קטרגל",
         "street": "",
         "Operator": "",
         "Seats": "0.0",
@@ -2980,11 +2979,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "",
         "handicapped": "",
-        "association": ""
+        "association": "",
+        "name": "שצ\"פ מגרש קטרגל"
     },
     {
         "Type": "קט רגל וינגייט",
-        "Name": "",
         "street": "וינגייט",
         "Operator": "כיוונים",
         "Seats": "0.0",
@@ -3001,11 +3000,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "ג",
         "handicapped": "",
-        "association": "לא"
+        "association": "לא",
+        "name": ""
     },
     {
         "Type": "גלגיליות",
-        "Name": "טאובל",
         "street": "",
         "Operator": "",
         "Seats": "0.0",
@@ -3022,11 +3021,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "ג",
         "handicapped": "",
-        "association": "לא"
+        "association": "לא",
+        "name": "טאובל"
     },
     {
         "Type": "משולב כדורסל וקט רגל",
-        "Name": "חנה סנש",
         "street": "",
         "Operator": "",
         "Seats": "0.0",
@@ -3043,11 +3042,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "",
         "handicapped": "",
-        "association": "לא"
+        "association": "לא",
+        "name": "חנה סנש"
     },
     {
         "Type": "משולב כדורסל וכדורגל",
-        "Name": "חוגלה",
         "street": "חוגלה",
         "Operator": "כיוונים",
         "Seats": "0.0",
@@ -3064,11 +3063,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "ה' הישנה",
         "handicapped": "",
-        "association": "לא"
+        "association": "לא",
+        "name": "חוגלה"
     },
     {
         "Type": "קט רגל",
-        "Name": "יעלים",
         "street": "יעלים",
         "Operator": "כיוונים",
         "Seats": "0.0",
@@ -3085,11 +3084,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "94.0",
         "neighborhood": "ה' הישנה",
         "handicapped": "",
-        "association": "לא"
+        "association": "לא",
+        "name": "יעלים"
     },
     {
         "Type": "מגרש כדורגל נירים 70X35 (קטן)",
-        "Name": "נירים",
         "street": "",
         "Operator": "כיוונים",
         "Seats": "0.0",
@@ -3106,11 +3105,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "ד'",
         "handicapped": "כן",
-        "association": "קהילה וכיוונים"
+        "association": "קהילה וכיוונים",
+        "name": "נירים"
     },
     {
         "Type": "אולם ספורט רב תכליתי",
-        "Name": "הקונכיה",
         "street": "הצדיק מירושלים",
         "Operator": "כיוונים",
         "Seats": "3000.0",
@@ -3127,11 +3126,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "1.0",
         "neighborhood": "נחל עשן",
         "handicapped": "כן",
-        "association": "הפועל כדורסל ומכבי כדוריד"
+        "association": "הפועל כדורסל ומכבי כדוריד",
+        "name": "הקונכיה"
     },
     {
         "Type": "פארק כושר",
-        "Name": "טוביהו",
         "street": "",
         "Operator": "כיוונים",
         "Seats": "0.0",
@@ -3148,11 +3147,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "נחל עשן",
         "handicapped": "כן",
-        "association": "לא"
+        "association": "לא",
+        "name": "טוביהו"
     },
     {
         "Type": "פארק כושר",
-        "Name": "מקיף טוביהו",
         "street": "",
         "Operator": "כיוונים",
         "Seats": "0.0",
@@ -3169,11 +3168,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "נחל עשן",
         "handicapped": "לא",
-        "association": "לא"
+        "association": "לא",
+        "name": "מקיף טוביהו"
     },
     {
         "Type": "משולב 2 מדרשי כדורסל וקטרגל",
-        "Name": "שצ\"פ נאות לון",
         "street": "שמחה הוצברג",
         "Operator": "כיוונים",
         "Seats": "0.0",
@@ -3190,11 +3189,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "נאות לון",
         "handicapped": "כן",
-        "association": "פתוח"
+        "association": "פתוח",
+        "name": "שצ\"פ נאות לון"
     },
     {
         "Type": "מינץ",
-        "Name": "מינץ",
         "street": "שכונה ה'",
         "Operator": "כיוונים",
         "Seats": "0.0",
@@ -3211,11 +3210,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "",
         "handicapped": "",
-        "association": ""
+        "association": "",
+        "name": "מינץ"
     },
     {
         "Type": "כושר גופני",
-        "Name": "פארק כושר סוקולוב",
         "street": "",
         "Operator": "כיוונים",
         "Seats": "0.0",
@@ -3232,11 +3231,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "א'",
         "handicapped": "",
-        "association": "לא"
+        "association": "לא",
+        "name": "פארק כושר סוקולוב"
     },
     {
         "Type": "מגרש קטרגל",
-        "Name": "שצ\"פ חתם סופר",
         "street": "חתם סופר",
         "Operator": "כיוונים",
         "Seats": "0.0",
@@ -3253,11 +3252,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "י\"א",
         "handicapped": "",
-        "association": "לא"
+        "association": "לא",
+        "name": "שצ\"פ חתם סופר"
     },
     {
         "Type": "כושר גופני",
-        "Name": "פארק כושר נחל בקע",
         "street": "הצנחנים",
         "Operator": "כיוונים",
         "Seats": "0.0",
@@ -3274,11 +3273,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "נחל בקע",
         "handicapped": "",
-        "association": "לא"
+        "association": "לא",
+        "name": "פארק כושר נחל בקע"
     },
     {
         "Type": "מגרש משולב- קט רגל וכדורסל",
-        "Name": "פלח 7",
         "street": "ינשוף",
         "Operator": "כיוונים",
         "Seats": "0.0",
@@ -3295,11 +3294,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "פלח 7",
         "handicapped": "כן",
-        "association": ""
+        "association": "",
+        "name": "פלח 7"
     },
     {
         "Type": "קט רגל",
-        "Name": "גד טדסקי",
         "street": "גד טדסקי",
         "Operator": "כיוונים",
         "Seats": "0.0",
@@ -3316,11 +3315,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "רמות",
         "handicapped": "כן",
-        "association": ""
+        "association": "",
+        "name": "גד טדסקי"
     },
     {
         "Type": "פארק כושר",
-        "Name": "ג'ו אלון",
         "street": "ג'ו אלון",
         "Operator": "כן",
         "Seats": "0.0",
@@ -3337,11 +3336,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "שכונה ט'",
         "handicapped": "כן",
-        "association": ""
+        "association": "",
+        "name": "ג'ו אלון"
     },
     {
         "Type": "מתקן אימון כושר גופני",
-        "Name": "גן סיאטל",
         "street": "רגר- פינת רינגלבלום",
         "Operator": "כיוונים",
         "Seats": "0.0",
@@ -3358,11 +3357,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "שכ' ו' הישנה",
         "handicapped": "כן",
-        "association": ""
+        "association": "",
+        "name": "גן סיאטל"
     },
     {
         "Type": "מתקן אימון כושר גופני",
-        "Name": "וינגייט",
         "street": "וינגיט פינת חנה סנש",
         "Operator": "כיוונים",
         "Seats": "0.0",
@@ -3379,11 +3378,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "שכונה ג'",
         "handicapped": "",
-        "association": ""
+        "association": "",
+        "name": "וינגייט"
     },
     {
         "Type": "מתקן אימון כושר גופני",
-        "Name": "גן הראשונים",
         "street": "רגר פינת ויימצן",
         "Operator": "כיוונים",
         "Seats": "0.0",
@@ -3400,11 +3399,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "שכונה א'",
         "handicapped": "",
-        "association": ""
+        "association": "",
+        "name": "גן הראשונים"
     },
     {
         "Type": "מתקן כושר אימון גופני",
-        "Name": "גן אפרסמון נווה נוי",
         "street": "אפרסמון",
         "Operator": "כיוונים",
         "Seats": "0.0",
@@ -3421,11 +3420,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "נווה נוי",
         "handicapped": "",
-        "association": ""
+        "association": "",
+        "name": "גן אפרסמון נווה נוי"
     },
     {
         "Type": "מתקן אימון כושר גופני",
-        "Name": "יצחק ולבר",
         "street": "יצחק ולבר",
         "Operator": "כיוונים",
         "Seats": "0.0",
@@ -3442,11 +3441,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "נאות לון",
         "handicapped": "",
-        "association": ""
+        "association": "",
+        "name": "יצחק ולבר"
     },
     {
         "Type": "מתקן אימון כושר גופני",
-        "Name": "רבקה",
         "street": "רבקה",
         "Operator": "כיוונים",
         "Seats": "0.0",
@@ -3463,11 +3462,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "נחל עשן",
         "handicapped": "",
-        "association": ""
+        "association": "",
+        "name": "רבקה"
     },
     {
         "Type": "מתקן אימון כושר גופני",
-        "Name": "פארק מרמלדה",
         "street": "שד' בן גוריון",
         "Operator": "כיוונים",
         "Seats": "0.0",
@@ -3484,11 +3483,11 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "שכונה ג'",
         "handicapped": "",
-        "association": ""
+        "association": "",
+        "name": "פארק מרמלדה"
     },
     {
         "Type": "שצ\"פ כדורסל יחיד",
-        "Name": "עין גדי",
         "street": "",
         "Operator": "כיוונים",
         "Seats": "0.0",
@@ -3505,7 +3504,8 @@ db.sport_facilities.insertMany([
         "HouseNumber": "0.0",
         "neighborhood": "ט'",
         "handicapped": "כן",
-        "association": ""
+        "association": "",
+        "name": "עין גדי"
     }
 ]);db.playgrounds.remove({})
 db.playgrounds.insertMany([
@@ -3523,10 +3523,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "יש",
         "surface": "משטח גומי",
-        "Name": "פארק ליכטנשטיין",
         "lat": "31.25260739400005",
         "lon": "34.79351963000005",
-        "id": 0
+        "id": 0,
+        "name": "פארק ליכטנשטיין"
     },
     {
         "combined1": "1",
@@ -3542,10 +3542,10 @@ db.playgrounds.insertMany([
         "other": "3-מתקן טיפוס פרחים, פרפר שיווי משקל, מתקן דמוי אומגה.\n\nהק",
         "shadowing": "יש",
         "surface": "משטח גומי",
-        "Name": "גדולי ישראל",
         "lat": "31.254098706000036",
         "lon": "34.776095929000064",
-        "id": 1
+        "id": 1,
+        "name": "גדולי ישראל"
     },
     {
         "combined1": "1",
@@ -3561,10 +3561,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "קדושי בגדד",
         "lat": "31.25313644000005",
         "lon": "34.780937135000045",
-        "id": 2
+        "id": 2,
+        "name": "קדושי בגדד"
     },
     {
         "combined1": "0",
@@ -3580,10 +3580,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח חול",
-        "Name": "מרבד הקסמים - סופר פארם",
         "lat": "31.251583486000072",
         "lon": "34.78489738700006",
-        "id": 3
+        "id": 3,
+        "name": "מרבד הקסמים - סופר פארם"
     },
     {
         "combined1": "1",
@@ -3599,10 +3599,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "מרבד הקסמים 14",
         "lat": "31.25038915400006",
         "lon": "34.78309768100007",
-        "id": 4
+        "id": 4,
+        "name": "מרבד הקסמים 14"
     },
     {
         "combined1": "0",
@@ -3618,10 +3618,10 @@ db.playgrounds.insertMany([
         "other": "*נדנדה- קן לציפור.",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "חוגלה",
         "lat": "31.24941654400004",
         "lon": "34.78214500000007",
-        "id": 5
+        "id": 5,
+        "name": "חוגלה"
     },
     {
         "combined1": "0",
@@ -3637,10 +3637,10 @@ db.playgrounds.insertMany([
         "other": "משולב בעל 6 מגדלים.",
         "shadowing": "אי",
         "surface": "משטח חול",
-        "Name": "שמחה הולצברג",
         "lat": "31.244142590000024",
         "lon": "34.76378800200007",
-        "id": 6
+        "id": 6,
+        "name": "שמחה הולצברג"
     },
     {
         "combined1": "1",
@@ -3656,10 +3656,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח חול",
-        "Name": "עבדת",
         "lat": "31.24526561500005",
         "lon": "34.767345152000075",
-        "id": 7
+        "id": 7,
+        "name": "עבדת"
     },
     {
         "combined1": "1",
@@ -3675,10 +3675,10 @@ db.playgrounds.insertMany([
         "other": "1-מתקן כושר/אקסטרים.\n\nמשולב בעל 4 מגדלים.",
         "shadowing": "אי",
         "surface": "משטח חול",
-        "Name": "אלחריזי",
         "lat": "31.251229074000037",
         "lon": "34.764040634000025",
-        "id": 8
+        "id": 8,
+        "name": "אלחריזי"
     },
     {
         "combined1": "0",
@@ -3694,10 +3694,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח חול",
-        "Name": "גאונים - קאפח",
         "lat": "31.252876601000025",
         "lon": "34.76160168900003",
-        "id": 9
+        "id": 9,
+        "name": "גאונים - קאפח"
     },
     {
         "combined1": "0",
@@ -3713,10 +3713,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "שומרון",
         "lat": "31.24671278200003",
         "lon": "34.76641962900004",
-        "id": 10
+        "id": 10,
+        "name": "שומרון"
     },
     {
         "combined1": "0",
@@ -3732,10 +3732,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "שלמה טנא",
         "lat": "31.235060177000037",
         "lon": "34.78551401200008",
-        "id": 11
+        "id": 11,
+        "name": "שלמה טנא"
     },
     {
         "combined1": "1",
@@ -3751,10 +3751,10 @@ db.playgrounds.insertMany([
         "other": "מדובר בנדנדת סירה",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "גדודים - שבטים",
         "lat": "31.237031520000073",
         "lon": "34.78202737700008",
-        "id": 12
+        "id": 12,
+        "name": "גדודים - שבטים"
     },
     {
         "combined1": "0",
@@ -3770,10 +3770,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "רמב\"ם 52",
         "lat": "31.24466235400007",
         "lon": "34.78810897500006",
-        "id": 13
+        "id": 13,
+        "name": "רמב\"ם 52"
     },
     {
         "combined1": "1",
@@ -3789,10 +3789,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "מרגליות ההגנה",
         "lat": "31.23746972300006",
         "lon": "34.78541024700007",
-        "id": 14
+        "id": 14,
+        "name": "מרגליות ההגנה"
     },
     {
         "combined1": "0",
@@ -3808,10 +3808,10 @@ db.playgrounds.insertMany([
         "other": "1- מתקן אקסטרים",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "דרור 29",
         "lat": "31.227826203000063",
         "lon": "34.76941308200003",
-        "id": 15
+        "id": 15,
+        "name": "דרור 29"
     },
     {
         "combined1": "0",
@@ -3827,10 +3827,10 @@ db.playgrounds.insertMany([
         "other": "1-מתקן אקסטרים",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "דרור 17",
         "lat": "31.229157572000076",
         "lon": "34.76967302300005",
-        "id": 16
+        "id": 16,
+        "name": "דרור 17"
     },
     {
         "combined1": "0",
@@ -3846,10 +3846,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "חסידה 1",
         "lat": "31.23034577800007",
         "lon": "34.76814040000005",
-        "id": 17
+        "id": 17,
+        "name": "חסידה 1"
     },
     {
         "combined1": "0",
@@ -3865,10 +3865,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "יציאת אירופה",
         "lat": "31.251722993000044",
         "lon": "34.78425438200003",
-        "id": 18
+        "id": 18,
+        "name": "יציאת אירופה"
     },
     {
         "combined1": "0",
@@ -3884,10 +3884,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "קרל נטר",
         "lat": "31.272757881000075",
         "lon": "34.825941999000065",
-        "id": 19
+        "id": 19,
+        "name": "קרל נטר"
     },
     {
         "combined1": "1",
@@ -3903,10 +3903,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "ישראל גלילי 27",
         "lat": "31.28464589300006",
         "lon": "34.80396966400008",
-        "id": 20
+        "id": 20,
+        "name": "ישראל גלילי 27"
     },
     {
         "combined1": "3",
@@ -3922,10 +3922,10 @@ db.playgrounds.insertMany([
         "other": "5\n3-כפיפות בטן\n3-שיווי משקל\n2-מתקן טיפוס\n2-חצובת כושר\n1-סולם",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "יוחנן בדר",
         "lat": "31.272732336000047",
         "lon": "34.82509318600006",
-        "id": 21
+        "id": 21,
+        "name": "יוחנן בדר"
     },
     {
         "combined1": "1",
@@ -3941,10 +3941,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "מרכז מסחרי יעלים",
         "lat": "31.251549322000074",
         "lon": "34.77997376900004",
-        "id": 22
+        "id": 22,
+        "name": "מרכז מסחרי יעלים"
     },
     {
         "combined1": "1",
@@ -3960,10 +3960,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח חול",
-        "Name": "ילדי טהרן",
         "lat": "31.25622221900005",
         "lon": "34.77687413600006",
-        "id": 23
+        "id": 23,
+        "name": "ילדי טהרן"
     },
     {
         "combined1": "1",
@@ -3979,10 +3979,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח חול",
-        "Name": "עוזי נרקיס",
         "lat": "31.283048106000024",
         "lon": "34.80463918100003",
-        "id": 24
+        "id": 24,
+        "name": "עוזי נרקיס"
     },
     {
         "combined1": "0",
@@ -3998,10 +3998,10 @@ db.playgrounds.insertMany([
         "other": "1-איקס מיקס",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "משה פריבס",
         "lat": "31.27975433100005",
         "lon": "34.800423382000076",
-        "id": 25
+        "id": 25,
+        "name": "משה פריבס"
     },
     {
         "combined1": "1",
@@ -4017,10 +4017,10 @@ db.playgrounds.insertMany([
         "other": "3\nאומגה\nפטריה\nסביבון",
         "shadowing": "אי",
         "surface": "משטח חול",
-        "Name": "טיילת עמיצור",
         "lat": "31.281068556000037",
         "lon": "34.79672082500008",
-        "id": 26
+        "id": 26,
+        "name": "טיילת עמיצור"
     },
     {
         "combined1": "2",
@@ -4036,10 +4036,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "מודעי -אברהם השופט",
         "lat": "31.26917932300006",
         "lon": "34.81094266000008",
-        "id": 27
+        "id": 27,
+        "name": "מודעי -אברהם השופט"
     },
     {
         "combined1": "0",
@@ -4055,10 +4055,10 @@ db.playgrounds.insertMany([
         "other": "1\nאיקס אפס",
         "shadowing": "אי",
         "surface": "משטח חול",
-        "Name": "קלמן פורט",
         "lat": "31.28602135500006",
         "lon": "34.80481599400008",
-        "id": 28
+        "id": 28,
+        "name": "קלמן פורט"
     },
     {
         "combined1": "0",
@@ -4074,10 +4074,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "דב ברנע",
         "lat": "31.285923855000078",
         "lon": "34.80250422000006",
-        "id": 29
+        "id": 29,
+        "name": "דב ברנע"
     },
     {
         "combined1": "0",
@@ -4093,10 +4093,10 @@ db.playgrounds.insertMany([
         "other": "1\nצבעים",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "שלמה בן יוסף",
         "lat": "31.27043354500006",
         "lon": "34.81367902200003",
-        "id": 30
+        "id": 30,
+        "name": "שלמה בן יוסף"
     },
     {
         "combined1": "1",
@@ -4112,10 +4112,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "מרד -אלישר",
         "lat": "31.273364798000046",
         "lon": "34.816371667000055",
-        "id": 31
+        "id": 31,
+        "name": "מרד -אלישר"
     },
     {
         "combined1": "0",
@@ -4131,10 +4131,10 @@ db.playgrounds.insertMany([
         "other": "1-מיוחד בעל 6 מגדלים",
         "shadowing": "אי",
         "surface": "חצץ סומסום",
-        "Name": "יעקב חזן מייוחד",
         "lat": "31.276238472000045",
         "lon": "34.819207439000024",
-        "id": 32
+        "id": 32,
+        "name": "יעקב חזן מייוחד"
     },
     {
         "combined1": "0",
@@ -4150,10 +4150,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח חול",
-        "Name": "לאו פיקרד 47",
         "lat": "31.278510350000033",
         "lon": "34.80209186400003",
-        "id": 33
+        "id": 33,
+        "name": "לאו פיקרד 47"
     },
     {
         "combined1": "1",
@@ -4169,10 +4169,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "צבי רן",
         "lat": "31.273539251000045",
         "lon": "34.81768842900004",
-        "id": 34
+        "id": 34,
+        "name": "צבי רן"
     },
     {
         "combined1": "1",
@@ -4188,10 +4188,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "אייזנשטדט",
         "lat": "31.276771371000052",
         "lon": "34.82411691400006",
-        "id": 35
+        "id": 35,
+        "name": "אייזנשטדט"
     },
     {
         "combined1": "0",
@@ -4207,10 +4207,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "פלדברג",
         "lat": "31.27510383400005",
         "lon": "34.82567809400007",
-        "id": 36
+        "id": 36,
+        "name": "פלדברג"
     },
     {
         "combined1": "1",
@@ -4226,10 +4226,10 @@ db.playgrounds.insertMany([
         "other": "2\nמתח\nגל רץ",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "אברהם אמיר מול מעון ילדים",
         "lat": "31.276871077000067",
         "lon": "34.82291571600007",
-        "id": 37
+        "id": 37,
+        "name": "אברהם אמיר מול מעון ילדים"
     },
     {
         "combined1": "1",
@@ -4245,10 +4245,10 @@ db.playgrounds.insertMany([
         "other": "2\nהגה כוח \nגל רץ",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "דוד ילין מור",
         "lat": "31.27422092300003",
         "lon": "34.823661249000054",
-        "id": 38
+        "id": 38,
+        "name": "דוד ילין מור"
     },
     {
         "combined1": "1",
@@ -4264,10 +4264,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "יוחנן בדר -קרל נטר",
         "lat": "31.27300057100007",
         "lon": "34.82445222500007",
-        "id": 39
+        "id": 39,
+        "name": "יוחנן בדר -קרל נטר"
     },
     {
         "combined1": "2",
@@ -4283,10 +4283,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "יש",
         "surface": "משטח גומי",
-        "Name": "פארק מטוס",
         "lat": "31.27258209300004",
         "lon": "34.80368633900002",
-        "id": 40
+        "id": 40,
+        "name": "פארק מטוס"
     },
     {
         "combined1": "0",
@@ -4302,10 +4302,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח חול",
-        "Name": "גלילי 30",
         "lat": "31.285807727000076",
         "lon": "34.804402107000044",
-        "id": 41
+        "id": 41,
+        "name": "גלילי 30"
     },
     {
         "combined1": "1",
@@ -4321,10 +4321,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "יש",
         "surface": "משטח גומי",
-        "Name": "גן מרדכי",
         "lat": "31.24698389400004",
         "lon": "34.78225579600007",
-        "id": 42
+        "id": 42,
+        "name": "גן מרדכי"
     },
     {
         "combined1": "1",
@@ -4340,10 +4340,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח חול",
-        "Name": "אפרים מקלט",
         "lat": "31.240019432000054",
         "lon": "34.78332056700003",
-        "id": 43
+        "id": 43,
+        "name": "אפרים מקלט"
     },
     {
         "combined1": "0",
@@ -4359,10 +4359,10 @@ db.playgrounds.insertMany([
         "other": "מיוחד- 6 מגדלים\n4 שונות \nהגה\nמתקן סל\nהליקופטר\nקרוסלה סביב",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "רמב\"ם פלמח עצמאות",
         "lat": "31.24436927000005",
         "lon": "34.78282550700004",
-        "id": 44
+        "id": 44,
+        "name": "רמב\"ם פלמח עצמאות"
     },
     {
         "combined1": "1",
@@ -4378,10 +4378,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "סרן דב מאחורי בית 9",
         "lat": "31.23547374800006",
         "lon": "34.77842373300007",
-        "id": 45
+        "id": 45,
+        "name": "סרן דב מאחורי בית 9"
     },
     {
         "combined1": "0",
@@ -4397,10 +4397,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח חול",
-        "Name": "פארק הגשר",
         "lat": "31.235597710000036",
         "lon": "34.77766639600003",
-        "id": 46
+        "id": 46,
+        "name": "פארק הגשר"
     },
     {
         "combined1": "1",
@@ -4416,10 +4416,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "דב רונאל 9",
         "lat": "31.240644794000048",
         "lon": "34.77196174200003",
-        "id": 47
+        "id": 47,
+        "name": "דב רונאל 9"
     },
     {
         "combined1": "0",
@@ -4435,10 +4435,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "י.ל פרץ",
         "lat": "31.240557669000054",
         "lon": "34.780087888000025",
-        "id": 48
+        "id": 48,
+        "name": "י.ל פרץ"
     },
     {
         "combined1": "0",
@@ -4454,10 +4454,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח חול",
-        "Name": "אביגדור המאירי",
         "lat": "31.241327089000038",
         "lon": "34.77410045200003",
-        "id": 49
+        "id": 49,
+        "name": "אביגדור המאירי"
     },
     {
         "combined1": "1",
@@ -4473,10 +4473,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח חול",
-        "Name": "פיירברג 29",
         "lat": "31.23560141200005",
         "lon": "34.77328154400004",
-        "id": 50
+        "id": 50,
+        "name": "פיירברג 29"
     },
     {
         "combined1": "1",
@@ -4492,10 +4492,10 @@ db.playgrounds.insertMany([
         "other": "1\nאיקס עיגול",
         "shadowing": "אי",
         "surface": "משטח חול",
-        "Name": "שופמן גרשום",
         "lat": "31.23848416100003",
         "lon": "34.775389543000074",
-        "id": 51
+        "id": 51,
+        "name": "שופמן גרשום"
     },
     {
         "combined1": "0",
@@ -4511,10 +4511,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח חול",
-        "Name": "שדר' אימבר 2",
         "lat": "31.23658947000007",
         "lon": "34.768330442000035",
-        "id": 52
+        "id": 52,
+        "name": "שדר' אימבר 2"
     },
     {
         "combined1": "1",
@@ -4530,10 +4530,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח חול",
-        "Name": "פיירברג 21",
         "lat": "31.235251746000074",
         "lon": "34.77511785400003",
-        "id": 53
+        "id": 53,
+        "name": "פיירברג 21"
     },
     {
         "combined1": "0",
@@ -4549,10 +4549,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח חול",
-        "Name": "פיכמן - שופמן",
         "lat": "31.23743553500003",
         "lon": "34.775063905000025",
-        "id": 54
+        "id": 54,
+        "name": "פיכמן - שופמן"
     },
     {
         "combined1": "1",
@@ -4568,10 +4568,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "ג'ו אלון - אשבל",
         "lat": "31.24219000900007",
         "lon": "34.77606098500007",
-        "id": 55
+        "id": 55,
+        "name": "ג'ו אלון - אשבל"
     },
     {
         "combined1": "2",
@@ -4587,10 +4587,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "קיפניס",
         "lat": "31.237893963000033",
         "lon": "34.780767465000054",
-        "id": 56
+        "id": 56,
+        "name": "קיפניס"
     },
     {
         "combined1": "0",
@@ -4606,10 +4606,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "אנקור פינת בז",
         "lat": "31.231012597000074",
         "lon": "34.771594837000066",
-        "id": 57
+        "id": 57,
+        "name": "אנקור פינת בז"
     },
     {
         "combined1": "0",
@@ -4625,10 +4625,10 @@ db.playgrounds.insertMany([
         "other": "2\nסקייט החלקה \nמשטח דריכה",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "חסידה 35",
         "lat": "31.22775741600003",
         "lon": "34.76728824000003",
-        "id": 58
+        "id": 58,
+        "name": "חסידה 35"
     },
     {
         "combined1": "0",
@@ -4644,10 +4644,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "קפריסין",
         "lat": "31.254223384000056",
         "lon": "34.78058688900006",
-        "id": 59
+        "id": 59,
+        "name": "קפריסין"
     },
     {
         "combined1": "0",
@@ -4663,10 +4663,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח חול",
-        "Name": "אורות ישראל 60",
         "lat": "31.23653955900005",
         "lon": "34.76351566900007",
-        "id": 60
+        "id": 60,
+        "name": "אורות ישראל 60"
     },
     {
         "combined1": "0",
@@ -4682,10 +4682,10 @@ db.playgrounds.insertMany([
         "other": "5\nכפיפות\n2*מתח\nמקבילית \nטבעות",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "אורות ישראל 6",
         "lat": "31.23724081900008",
         "lon": "34.76396224600006",
-        "id": 61
+        "id": 61,
+        "name": "אורות ישראל 6"
     },
     {
         "combined1": "0",
@@ -4701,10 +4701,10 @@ db.playgrounds.insertMany([
         "other": "1-נדנדת סירה",
         "shadowing": "אי",
         "surface": "משטח חול",
-        "Name": "פארק מי מרום",
         "lat": "31.237827355000036",
         "lon": "34.76416642800007",
-        "id": 62
+        "id": 62,
+        "name": "פארק מי מרום"
     },
     {
         "combined1": "1",
@@ -4720,10 +4720,10 @@ db.playgrounds.insertMany([
         "other": "1\nסביבון\n\n*יש גם חלק עם חול!",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "פארק אביסרור\nדב רונאל 39",
         "lat": "31.239484531000073",
         "lon": "34.77059168300008",
-        "id": 63
+        "id": 63,
+        "name": "פארק אביסרור\nדב רונאל 39"
     },
     {
         "combined1": "1",
@@ -4739,10 +4739,10 @@ db.playgrounds.insertMany([
         "other": "3\n3- פטריות",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "גדעון האוזנר",
         "lat": "31.28598948700005",
         "lon": "34.80525904000007",
-        "id": 64
+        "id": 64,
+        "name": "גדעון האוזנר"
     },
     {
         "combined1": "1",
@@ -4758,10 +4758,10 @@ db.playgrounds.insertMany([
         "other": "2\nגל רץ\nהגה כח",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "אברהם אמיר 4",
         "lat": "31.276036361000024",
         "lon": "34.82262783500005",
-        "id": 65
+        "id": 65,
+        "name": "אברהם אמיר 4"
     },
     {
         "combined1": "0",
@@ -4777,10 +4777,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "יש",
         "surface": "משטח גומי",
-        "Name": "גרוסמן - רוזנבלום",
         "lat": "31.237108613000032",
         "lon": "34.76689011000008",
-        "id": 66
+        "id": 66,
+        "name": "גרוסמן - רוזנבלום"
     },
     {
         "combined1": "1",
@@ -4796,10 +4796,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "",
         "surface": "משטח גומי",
-        "Name": "חטיבה שמונה",
         "lat": "31.23915445500006",
         "lon": "34.77810247800005",
-        "id": 67
+        "id": 67,
+        "name": "חטיבה שמונה"
     },
     {
         "combined1": "1",
@@ -4815,10 +4815,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח חול",
-        "Name": "מבצע אסף",
         "lat": "31.237392700000044",
         "lon": "34.78080886200007",
-        "id": 68
+        "id": 68,
+        "name": "מבצע אסף"
     },
     {
         "combined1": "0",
@@ -4834,10 +4834,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "טל חרמון 6",
         "lat": "31.235103388000027",
         "lon": "34.76560948300005",
-        "id": 69
+        "id": 69,
+        "name": "טל חרמון 6"
     },
     {
         "combined1": "0",
@@ -4853,10 +4853,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח חול",
-        "Name": "בר ניסן",
         "lat": "31.239679694000074",
         "lon": "34.76485559300005",
-        "id": 70
+        "id": 70,
+        "name": "בר ניסן"
     },
     {
         "combined1": "0",
@@ -4872,10 +4872,10 @@ db.playgrounds.insertMany([
         "other": "2\n* כדור פלסטיק עם צד פתוח cozy cocoon\n* מתקן טיפוס אתגרי",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "טיומקין",
         "lat": "31.240026828000055",
         "lon": "34.76735318000004",
-        "id": 71
+        "id": 71,
+        "name": "טיומקין"
     },
     {
         "combined1": "0",
@@ -4891,10 +4891,10 @@ db.playgrounds.insertMany([
         "other": "1 קיר טיפוס + צינור טיפוס+ 3 פיטריות+4 חיות",
         "shadowing": "יש",
         "surface": "משטח גומי",
-        "Name": "אביבית -צבר",
         "lat": "31.230911224000067",
         "lon": "34.79471414600005",
-        "id": 72
+        "id": 72,
+        "name": "אביבית -צבר"
     },
     {
         "combined1": "0",
@@ -4910,10 +4910,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח חול",
-        "Name": "חצב צבעוני סתוונית",
         "lat": "31.229533941000057",
         "lon": "34.77954348900005",
-        "id": 73
+        "id": 73,
+        "name": "חצב צבעוני סתוונית"
     },
     {
         "combined1": "0",
@@ -4929,10 +4929,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "דשא סינטטי",
-        "Name": "אורן 10",
         "lat": "31.231885543000033",
         "lon": "34.784656056000074",
-        "id": 74
+        "id": 74,
+        "name": "אורן 10"
     },
     {
         "combined1": "0",
@@ -4948,10 +4948,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "דשא סינטטי",
-        "Name": "אוכמנית 57",
         "lat": "31.232248928000047",
         "lon": "34.78206898800005",
-        "id": 75
+        "id": 75,
+        "name": "אוכמנית 57"
     },
     {
         "combined1": "1",
@@ -4967,10 +4967,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "כלנית",
         "lat": "31.232670174000077",
         "lon": "34.78144831800006",
-        "id": 76
+        "id": 76,
+        "name": "כלנית"
     },
     {
         "combined1": "1",
@@ -4986,10 +4986,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח חול",
-        "Name": "חרצית",
         "lat": "31.232730469000046",
         "lon": "34.78920263100008",
-        "id": 77
+        "id": 77,
+        "name": "חרצית"
     },
     {
         "combined1": "0",
@@ -5005,10 +5005,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "כלנית55",
         "lat": "31.231728059000034",
         "lon": "34.77771890300005",
-        "id": 78
+        "id": 78,
+        "name": "כלנית55"
     },
     {
         "combined1": "0",
@@ -5024,10 +5024,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "אורן -כרכום",
         "lat": "31.231129082000052",
         "lon": "34.784908038000026",
-        "id": 79
+        "id": 79,
+        "name": "אורן -כרכום"
     },
     {
         "combined1": "0",
@@ -5043,10 +5043,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "",
         "surface": "",
-        "Name": "ארץ חמדה 44",
         "lat": "31.23500843000005",
         "lon": "34.764670773000034",
-        "id": 80
+        "id": 80,
+        "name": "ארץ חמדה 44"
     },
     {
         "combined1": "0",
@@ -5062,10 +5062,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "אורות ישראל",
         "lat": "31.236051818000078",
         "lon": "34.764566796000054",
-        "id": 81
+        "id": 81,
+        "name": "אורות ישראל"
     },
     {
         "combined1": "1",
@@ -5081,10 +5081,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח חול",
-        "Name": "יסמין",
         "lat": "31.231215614000064",
         "lon": "34.79157367400006",
-        "id": 82
+        "id": 82,
+        "name": "יסמין"
     },
     {
         "combined1": "0",
@@ -5100,10 +5100,10 @@ db.playgrounds.insertMany([
         "other": "2\nמתקן הליקופטר\nסביבון",
         "shadowing": "אי",
         "surface": "משטח חול",
-        "Name": "הר בוקר עליון",
         "lat": "31.274674263000065",
         "lon": "34.810424529000045",
-        "id": 83
+        "id": 83,
+        "name": "הר בוקר עליון"
     },
     {
         "combined1": "1",
@@ -5119,10 +5119,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "הר כנען",
         "lat": "31.274587016000055",
         "lon": "34.814388370000074",
-        "id": 84
+        "id": 84,
+        "name": "הר כנען"
     },
     {
         "combined1": "0",
@@ -5138,10 +5138,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "יוסף בן דוד 23",
         "lat": "31.273603561000073",
         "lon": "34.80193010600004",
-        "id": 85
+        "id": 85,
+        "name": "יוסף בן דוד 23"
     },
     {
         "combined1": "0",
@@ -5157,10 +5157,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "משעול טס",
         "lat": "31.27337078200003",
         "lon": "34.80227421200004",
-        "id": 86
+        "id": 86,
+        "name": "משעול טס"
     },
     {
         "combined1": "1",
@@ -5176,10 +5176,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח חול",
-        "Name": "נחמן אביגד",
         "lat": "31.275112731000036",
         "lon": "34.80064998900008",
-        "id": 87
+        "id": 87,
+        "name": "נחמן אביגד"
     },
     {
         "combined1": "1",
@@ -5195,10 +5195,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח חול",
-        "Name": "יעקב חזן",
         "lat": "31.275303784000073",
         "lon": "34.81655957900006",
-        "id": 88
+        "id": 88,
+        "name": "יעקב חזן"
     },
     {
         "combined1": "0",
@@ -5214,10 +5214,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "יוסף תקוע",
         "lat": "31.27705370700005",
         "lon": "34.819874621000054",
-        "id": 89
+        "id": 89,
+        "name": "יוסף תקוע"
     },
     {
         "combined1": "1",
@@ -5233,10 +5233,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "אברהם אמיר -פלדברג",
         "lat": "31.27591562400005",
         "lon": "34.824324482000065",
-        "id": 90
+        "id": 90,
+        "name": "אברהם אמיר -פלדברג"
     },
     {
         "combined1": "1",
@@ -5252,10 +5252,10 @@ db.playgrounds.insertMany([
         "other": "2 \nמתקן פרמידה\nמתקן טיפוס מתכת",
         "shadowing": "אי",
         "surface": "משטח חול",
-        "Name": "הר בוקר תחתון",
         "lat": "31.27494635200003",
         "lon": "34.810441457000024",
-        "id": 91
+        "id": 91,
+        "name": "הר בוקר תחתון"
     },
     {
         "combined1": "1",
@@ -5271,10 +5271,10 @@ db.playgrounds.insertMany([
         "other": "2\nמתקן הליקופטר\nמתקן הגה כוח",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "אליהו חכים",
         "lat": "31.27257303300007",
         "lon": "34.81361858400004",
-        "id": 92
+        "id": 92,
+        "name": "אליהו חכים"
     },
     {
         "combined1": "1",
@@ -5290,10 +5290,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "אביגדור הכט",
         "lat": "31.248105415000055",
         "lon": "34.77564158100006",
-        "id": 93
+        "id": 93,
+        "name": "אביגדור הכט"
     },
     {
         "combined1": "0",
@@ -5309,10 +5309,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח חול",
-        "Name": "יריחו 31",
         "lat": "31.244974098000057",
         "lon": "34.77693758100003",
-        "id": 94
+        "id": 94,
+        "name": "יריחו 31"
     },
     {
         "combined1": "0",
@@ -5328,10 +5328,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "יש",
         "surface": "משטח גומי",
-        "Name": "יריחו חדש",
         "lat": "31.243666707000045",
         "lon": "34.77710801600006",
-        "id": 95
+        "id": 95,
+        "name": "יריחו חדש"
     },
     {
         "combined1": "0",
@@ -5347,10 +5347,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח חול",
-        "Name": "שד ירושלים 40 בית כנסת",
         "lat": "31.244691015000058",
         "lon": "34.77606236300005",
-        "id": 96
+        "id": 96,
+        "name": "שד ירושלים 40 בית כנסת"
     },
     {
         "combined1": "1",
@@ -5366,10 +5366,10 @@ db.playgrounds.insertMany([
         "other": "יש חלק עם משטח חול",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "ממשית",
         "lat": "31.24439540000003",
         "lon": "34.768920206000075",
-        "id": 97
+        "id": 97,
+        "name": "ממשית"
     },
     {
         "combined1": "1",
@@ -5385,10 +5385,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "יש",
         "surface": "משטח גומי",
-        "Name": "עין גדי",
         "lat": "31.24803966500008",
         "lon": "34.77038551100003",
-        "id": 98
+        "id": 98,
+        "name": "עין גדי"
     },
     {
         "combined1": "0",
@@ -5404,10 +5404,10 @@ db.playgrounds.insertMany([
         "other": "1 -איקס עיגול",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "שיבטה",
         "lat": "31.245443429000034",
         "lon": "34.76970127100003",
-        "id": 99
+        "id": 99,
+        "name": "שיבטה"
     },
     {
         "combined1": "0",
@@ -5423,10 +5423,10 @@ db.playgrounds.insertMany([
         "other": "2 -איקס עיגול וחשבוניה",
         "shadowing": "אי",
         "surface": "משטח חול",
-        "Name": "שער הגיא ב\"הס יובלים",
         "lat": "31.245966491000047",
         "lon": "34.770962885000074",
-        "id": 100
+        "id": 100,
+        "name": "שער הגיא ב\"הס יובלים"
     },
     {
         "combined1": "0",
@@ -5442,10 +5442,10 @@ db.playgrounds.insertMany([
         "other": "קרוסלה ריבו\n8 שונות - אקסטרים וקיר טיפוס",
         "shadowing": "יש",
         "surface": "משטח גומי",
-        "Name": "גן שלושה חדש",
         "lat": "31.247118470000032",
         "lon": "34.776837184000044",
-        "id": 101
+        "id": 101,
+        "name": "גן שלושה חדש"
     },
     {
         "combined1": "0",
@@ -5461,10 +5461,10 @@ db.playgrounds.insertMany([
         "other": "קן לציפור",
         "shadowing": "יש",
         "surface": "משטח גומי",
-        "Name": "גן שלושה",
         "lat": "31.247073027000056",
         "lon": "34.77716513400003",
-        "id": 102
+        "id": 102,
+        "name": "גן שלושה"
     },
     {
         "combined1": "1",
@@ -5480,10 +5480,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "יש",
         "surface": "משטח גומי",
-        "Name": "פשוש",
         "lat": "31.229924964000077",
         "lon": "34.763893550000034",
-        "id": 103
+        "id": 103,
+        "name": "פשוש"
     },
     {
         "combined1": "1",
@@ -5499,10 +5499,10 @@ db.playgrounds.insertMany([
         "other": "1- נדנדת סוס מחבל",
         "shadowing": "",
         "surface": "",
-        "Name": "צוקית",
         "lat": "31.232065977000047",
         "lon": "34.76403913100006",
-        "id": 104
+        "id": 104,
+        "name": "צוקית"
     },
     {
         "combined1": "1",
@@ -5518,10 +5518,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "יש",
         "surface": "משטח גומי",
-        "Name": "דיה",
         "lat": "31.23082032900004",
         "lon": "34.76159655400005",
-        "id": 105
+        "id": 105,
+        "name": "דיה"
     },
     {
         "combined1": "0",
@@ -5537,10 +5537,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "יש",
         "surface": "משטח גומי",
-        "Name": "משה חובב חדש",
         "lat": "31.219929240000056",
         "lon": "34.77344537700003",
-        "id": 106
+        "id": 106,
+        "name": "משה חובב חדש"
     },
     {
         "combined1": "0",
@@ -5556,10 +5556,10 @@ db.playgrounds.insertMany([
         "other": "1",
         "shadowing": "יש",
         "surface": "משטח גומי",
-        "Name": "משה חובב 55 מקלט",
         "lat": "31.22295069300003",
         "lon": "34.77641950800006",
-        "id": 107
+        "id": 107,
+        "name": "משה חובב 55 מקלט"
     },
     {
         "combined1": "0",
@@ -5575,10 +5575,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "פארק צנחנים",
         "lat": "31.224028920000023",
         "lon": "34.77807903200005",
-        "id": 108
+        "id": 108,
+        "name": "פארק צנחנים"
     },
     {
         "combined1": "1",
@@ -5594,10 +5594,10 @@ db.playgrounds.insertMany([
         "other": "2- פטריה וקיר טיפוס",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "גן פרטוש- חיים בן חיים",
         "lat": "31.222265691000075",
         "lon": "34.77421402600004",
-        "id": 109
+        "id": 109,
+        "name": "גן פרטוש- חיים בן חיים"
     },
     {
         "combined1": "0",
@@ -5613,10 +5613,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח חול",
-        "Name": "זינדר מול חובב 64",
         "lat": "31.22326259700003",
         "lon": "34.77690510300005",
-        "id": 110
+        "id": 110,
+        "name": "זינדר מול חובב 64"
     },
     {
         "combined1": "1",
@@ -5632,10 +5632,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח חול",
-        "Name": "משה ולנסקי",
         "lat": "31.245608856000047",
         "lon": "34.761256529000036",
-        "id": 111
+        "id": 111,
+        "name": "משה ולנסקי"
     },
     {
         "combined1": "1",
@@ -5651,10 +5651,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח חול",
-        "Name": "רודנסקי רובינא",
         "lat": "31.271209010000064",
         "lon": "34.77195898600007",
-        "id": 112
+        "id": 112,
+        "name": "רודנסקי רובינא"
     },
     {
         "combined1": "0",
@@ -5670,10 +5670,10 @@ db.playgrounds.insertMany([
         "other": "1- מתקן טיפוס פרמידת חבלים",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "רובינא מרכז מסחרי",
         "lat": "31.269961033000072",
         "lon": "34.77002898300003",
-        "id": 113
+        "id": 113,
+        "name": "רובינא מרכז מסחרי"
     },
     {
         "combined1": "1",
@@ -5689,10 +5689,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח חול",
-        "Name": "אמנון ק\"ח",
         "lat": "31.266808593000064",
         "lon": "34.766469880000045",
-        "id": 114
+        "id": 114,
+        "name": "אמנון ק\"ח"
     },
     {
         "combined1": "2",
@@ -5708,10 +5708,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "הארונסון",
         "lat": "31.26655604000007",
         "lon": "34.76169372500004",
-        "id": 115
+        "id": 115,
+        "name": "הארונסון"
     },
     {
         "combined1": "1",
@@ -5727,10 +5727,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "פרופסור זאב ויניק",
         "lat": "31.25884508200005",
         "lon": "34.75906939400005",
-        "id": 116
+        "id": 116,
+        "name": "פרופסור זאב ויניק"
     },
     {
         "combined1": "0",
@@ -5746,10 +5746,10 @@ db.playgrounds.insertMany([
         "other": "2 - קן לציפור",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "אחינועם חווה רבקה קטן חדש",
         "lat": "31.268822654000076",
         "lon": "34.76251768100008",
-        "id": 117
+        "id": 117,
+        "name": "אחינועם חווה רבקה קטן חדש"
     },
     {
         "combined1": "0",
@@ -5765,10 +5765,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "אחינועם חווה רבקה",
         "lat": "31.268802600000072",
         "lon": "34.76275808500003",
-        "id": 118
+        "id": 118,
+        "name": "אחינועם חווה רבקה"
     },
     {
         "combined1": "1",
@@ -5784,10 +5784,10 @@ db.playgrounds.insertMany([
         "other": "1 - סקייט",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "אחינועם חווה רבקה גדול",
         "lat": "31.269075669000074",
         "lon": "34.762884607000046",
-        "id": 119
+        "id": 119,
+        "name": "אחינועם חווה רבקה גדול"
     },
     {
         "combined1": "1",
@@ -5803,10 +5803,10 @@ db.playgrounds.insertMany([
         "other": "7 - מתקן חצובה עם משטח שטוח\nמתקן מסילה\nתליה\nבית בובות\nפטר",
         "shadowing": "יש",
         "surface": "משטח גומי",
-        "Name": "שאול ואליהו לוזון חדש",
         "lat": "31.266767216000062",
         "lon": "34.75820960100003",
-        "id": 120
+        "id": 120,
+        "name": "שאול ואליהו לוזון חדש"
     },
     {
         "combined1": "1",
@@ -5822,10 +5822,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח חול",
-        "Name": "אבוחצירה -מרדכי מקלף",
         "lat": "31.26824741200005",
         "lon": "34.776915279000036",
-        "id": 121
+        "id": 121,
+        "name": "אבוחצירה -מרדכי מקלף"
     },
     {
         "combined1": "1",
@@ -5841,10 +5841,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח חול",
-        "Name": "מבצע ברוש",
         "lat": "31.26603423000006",
         "lon": "34.78427014000005",
-        "id": 122
+        "id": 122,
+        "name": "מבצע ברוש"
     },
     {
         "combined1": "1",
@@ -5860,10 +5860,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח חול",
-        "Name": "אקצין 28",
         "lat": "31.269884726000043",
         "lon": "34.77719538300005",
-        "id": 123
+        "id": 123,
+        "name": "אקצין 28"
     },
     {
         "combined1": "1",
@@ -5879,10 +5879,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח חול",
-        "Name": "אקצין 24",
         "lat": "31.270240906000026",
         "lon": "34.77738269500003",
-        "id": 124
+        "id": 124,
+        "name": "אקצין 24"
     },
     {
         "combined1": "1",
@@ -5898,10 +5898,10 @@ db.playgrounds.insertMany([
         "other": "1 - מתקן סל",
         "shadowing": "אי",
         "surface": "משטח חול",
-        "Name": "מבצע ארז מעבר ציבורי",
         "lat": "31.26505055800004",
         "lon": "34.78370819500003",
-        "id": 125
+        "id": 125,
+        "name": "מבצע ארז מעבר ציבורי"
     },
     {
         "combined1": "0",
@@ -5917,10 +5917,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "פארק טייסים",
         "lat": "31.259411986000032",
         "lon": "34.777953152000066",
-        "id": 126
+        "id": 126,
+        "name": "פארק טייסים"
     },
     {
         "combined1": "0",
@@ -5936,10 +5936,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח חול",
-        "Name": "מבצע עובדה 48",
         "lat": "31.260446407000074",
         "lon": "34.77621985700006",
-        "id": 127
+        "id": 127,
+        "name": "מבצע עובדה 48"
     },
     {
         "combined1": "1",
@@ -5955,10 +5955,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח חול",
-        "Name": "דורי ליד גן ציון",
         "lat": "31.26493878100007",
         "lon": "34.78117198600006",
-        "id": 128
+        "id": 128,
+        "name": "דורי ליד גן ציון"
     },
     {
         "combined1": "0",
@@ -5974,10 +5974,10 @@ db.playgrounds.insertMany([
         "other": "1 - גלגל רץ",
         "shadowing": "אי",
         "surface": "משטח חול",
-        "Name": "גדעון השופט",
         "lat": "31.26231722600005",
         "lon": "34.778877442000066",
-        "id": 129
+        "id": 129,
+        "name": "גדעון השופט"
     },
     {
         "combined1": "1",
@@ -5993,10 +5993,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח חול",
-        "Name": "בן נון",
         "lat": "31.263562112000045",
         "lon": "34.77594688800008",
-        "id": 130
+        "id": 130,
+        "name": "בן נון"
     },
     {
         "combined1": "0",
@@ -6012,10 +6012,10 @@ db.playgrounds.insertMany([
         "other": "נדנדה אחת היא קן לציפור",
         "shadowing": "יש",
         "surface": "משטח גומי",
-        "Name": "גן חביב",
         "lat": "31.25930730500005",
         "lon": "34.78117551200006",
-        "id": 131
+        "id": 131,
+        "name": "גן חביב"
     },
     {
         "combined1": "1",
@@ -6031,10 +6031,10 @@ db.playgrounds.insertMany([
         "other": "1 - דמות מכונית",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "שטיין 5",
         "lat": "31.26552335300005",
         "lon": "34.77132554700006",
-        "id": 132
+        "id": 132,
+        "name": "שטיין 5"
     },
     {
         "combined1": "1",
@@ -6050,10 +6050,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "טולדנו 3-5",
         "lat": "31.267014741000025",
         "lon": "34.77876493700006",
-        "id": 133
+        "id": 133,
+        "name": "טולדנו 3-5"
     },
     {
         "combined1": "1",
@@ -6069,10 +6069,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "טולדנו 7",
         "lat": "31.26743101200003",
         "lon": "34.777984321000076",
-        "id": 134
+        "id": 134,
+        "name": "טולדנו 7"
     },
     {
         "combined1": "1",
@@ -6088,10 +6088,10 @@ db.playgrounds.insertMany([
         "other": "1 - קיר טיפוס",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "גן נדב",
         "lat": "31.263056521000067",
         "lon": "34.78721593500006",
-        "id": 135
+        "id": 135,
+        "name": "גן נדב"
     },
     {
         "combined1": "1",
@@ -6107,10 +6107,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח חול",
-        "Name": "משה סנה -משה שרת",
         "lat": "31.258180825000068",
         "lon": "34.76755250000008",
-        "id": 136
+        "id": 136,
+        "name": "משה סנה -משה שרת"
     },
     {
         "combined1": "1",
@@ -6126,10 +6126,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח חול",
-        "Name": "גולדה מאיר",
         "lat": "31.261372170000072",
         "lon": "34.76415800700005",
-        "id": 137
+        "id": 137,
+        "name": "גולדה מאיר"
     },
     {
         "combined1": "0",
@@ -6145,10 +6145,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "דב יוסף",
         "lat": "31.256154808000076",
         "lon": "34.764235702000065",
-        "id": 138
+        "id": 138,
+        "name": "דב יוסף"
     },
     {
         "combined1": "1",
@@ -6164,10 +6164,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "גן ראול",
         "lat": "31.25439355700007",
         "lon": "34.76882486000005",
-        "id": 139
+        "id": 139,
+        "name": "גן ראול"
     },
     {
         "combined1": "0",
@@ -6183,10 +6183,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח חול",
-        "Name": "פארק יא'  4",
         "lat": "31.262078105000057",
         "lon": "34.76819480300003",
-        "id": 140
+        "id": 140,
+        "name": "פארק יא'  4"
     },
     {
         "combined1": "0",
@@ -6202,10 +6202,10 @@ db.playgrounds.insertMany([
         "other": "1 - מתקן פרמידה כבלים",
         "shadowing": "אי",
         "surface": "משטח חול",
-        "Name": "פארק יא 3",
         "lat": "31.26074799500003",
         "lon": "34.76580547200007",
-        "id": 141
+        "id": 141,
+        "name": "פארק יא 3"
     },
     {
         "combined1": "0",
@@ -6221,10 +6221,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח חול",
-        "Name": "פארק יא 1",
         "lat": "31.25850684900007",
         "lon": "34.76536770300004",
-        "id": 142
+        "id": 142,
+        "name": "פארק יא 1"
     },
     {
         "combined1": "1",
@@ -6240,10 +6240,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "החיד\"א 35",
         "lat": "31.253265086000056",
         "lon": "34.76951716700006",
-        "id": 143
+        "id": 143,
+        "name": "החיד\"א 35"
     },
     {
         "combined1": "1",
@@ -6259,10 +6259,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "החיד\"א 59",
         "lat": "31.253615186000047",
         "lon": "34.76790727200006",
-        "id": 144
+        "id": 144,
+        "name": "החיד\"א 59"
     },
     {
         "combined1": "0",
@@ -6278,10 +6278,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "ארתור רופין הרצל קלעי",
         "lat": "31.264639811000052",
         "lon": "34.768506321000075",
-        "id": 145
+        "id": 145,
+        "name": "ארתור רופין הרצל קלעי"
     },
     {
         "combined1": "0",
@@ -6297,10 +6297,10 @@ db.playgrounds.insertMany([
         "other": "4- מתקן רב ערסלים\nומתקן מיוחד פרמידה כבלים",
         "shadowing": "יש",
         "surface": "משטח גומי",
-        "Name": "פארק אוסטרלי",
         "lat": "31.260104649000027",
         "lon": "34.77339279900008",
-        "id": 146
+        "id": 146,
+        "name": "פארק אוסטרלי"
     },
     {
         "combined1": "1",
@@ -6316,10 +6316,10 @@ db.playgrounds.insertMany([
         "other": "9",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "פארק אוסטרלי מתחם קטן",
         "lat": "31.25951054500007",
         "lon": "34.77341772200003",
-        "id": 147
+        "id": 147,
+        "name": "פארק אוסטרלי מתחם קטן"
     },
     {
         "combined1": "0",
@@ -6335,10 +6335,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "שיטרית",
         "lat": "31.254495543000075",
         "lon": "34.76520994800006",
-        "id": 148
+        "id": 148,
+        "name": "שיטרית"
     },
     {
         "combined1": "1",
@@ -6354,10 +6354,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח חול",
-        "Name": "מיכאל חזני",
         "lat": "31.26183433700004",
         "lon": "34.770212291000064",
-        "id": 149
+        "id": 149,
+        "name": "מיכאל חזני"
     },
     {
         "combined1": "1",
@@ -6373,10 +6373,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "אלפסי קוק",
         "lat": "31.258151960000077",
         "lon": "34.771787809000045",
-        "id": 150
+        "id": 150,
+        "name": "אלפסי קוק"
     },
     {
         "combined1": "1",
@@ -6392,10 +6392,10 @@ db.playgrounds.insertMany([
         "other": "משולב 1 -  מתקן דמוי דחפור \nנדנדה קן לציפור",
         "shadowing": "יש",
         "surface": "משטח גומי",
-        "Name": "פארק נחל באר שבע  - קטן",
         "lat": "31.234411871000077",
         "lon": "34.80610706400006",
-        "id": 151
+        "id": 151,
+        "name": "פארק נחל באר שבע  - קטן"
     },
     {
         "combined1": "0",
@@ -6411,10 +6411,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "יצחק שיפר",
         "lat": "31.271116388000053",
         "lon": "34.79932282200008",
-        "id": 152
+        "id": 152,
+        "name": "יצחק שיפר"
     },
     {
         "combined1": "0",
@@ -6430,10 +6430,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח חול",
-        "Name": "גן סלקום",
         "lat": "31.265753120000056",
         "lon": "34.80129042100003",
-        "id": 153
+        "id": 153,
+        "name": "גן סלקום"
     },
     {
         "combined1": "0",
@@ -6449,10 +6449,10 @@ db.playgrounds.insertMany([
         "other": "3 - מסלול פטריות 3*3\nואחד מיוחד",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "גן סיאטל",
         "lat": "31.26673018300005",
         "lon": "34.79875737200007",
-        "id": 154
+        "id": 154,
+        "name": "גן סיאטל"
     },
     {
         "combined1": "1",
@@ -6468,10 +6468,10 @@ db.playgrounds.insertMany([
         "other": "1 - סביבון ישיבה משטח עץ",
         "shadowing": "יש",
         "surface": "משטח גומי",
-        "Name": "אייסים 12",
         "lat": "31.268656070000077",
         "lon": "34.79205752900003",
-        "id": 155
+        "id": 155,
+        "name": "אייסים 12"
     },
     {
         "combined1": "1",
@@ -6487,10 +6487,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "יש",
         "surface": "משטח גומי",
-        "Name": "אייסים 6",
         "lat": "31.267681801000037",
         "lon": "34.79110887200005",
-        "id": 156
+        "id": 156,
+        "name": "אייסים 6"
     },
     {
         "combined1": "1",
@@ -6506,10 +6506,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "בר גיורא 23",
         "lat": "31.261721926000064",
         "lon": "34.792303950000075",
-        "id": 157
+        "id": 157,
+        "name": "בר גיורא 23"
     },
     {
         "combined1": "1",
@@ -6525,10 +6525,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח חול",
-        "Name": "יעקב אבינו מעונות סטודנטים",
         "lat": "31.26352085700006",
         "lon": "34.79765805300008",
-        "id": 158
+        "id": 158,
+        "name": "יעקב אבינו מעונות סטודנטים"
     },
     {
         "combined1": "1",
@@ -6544,10 +6544,10 @@ db.playgrounds.insertMany([
         "other": "נתדנדת סירה",
         "shadowing": "אי",
         "surface": "משטח חול",
-        "Name": "גן לימון",
         "lat": "31.27060680200003",
         "lon": "34.79025149900008",
-        "id": 159
+        "id": 159,
+        "name": "גן לימון"
     },
     {
         "combined1": "1",
@@ -6563,10 +6563,10 @@ db.playgrounds.insertMany([
         "other": "1 - קורת שיווי משקל",
         "shadowing": "אי",
         "surface": "משטח חול",
-        "Name": "פארק הדסה",
         "lat": "31.273849554000037",
         "lon": "34.79574368300007",
-        "id": 160
+        "id": 160,
+        "name": "פארק הדסה"
     },
     {
         "combined1": "1",
@@ -6582,10 +6582,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "גן יונתן",
         "lat": "31.27137198400004",
         "lon": "34.79707947900005",
-        "id": 161
+        "id": 161,
+        "name": "גן יונתן"
     },
     {
         "combined1": "0",
@@ -6601,10 +6601,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח חול",
-        "Name": "הבשור",
         "lat": "31.26579213200006",
         "lon": "34.79769754900008",
-        "id": 162
+        "id": 162,
+        "name": "הבשור"
     },
     {
         "combined1": "0",
@@ -6620,10 +6620,10 @@ db.playgrounds.insertMany([
         "other": "5\nואחד מיוחד",
         "shadowing": "אי",
         "surface": "משטח חול",
-        "Name": "אילן רמון",
         "lat": "31.267308985000057",
         "lon": "34.78748595500008",
-        "id": 163
+        "id": 163,
+        "name": "אילן רמון"
     },
     {
         "combined1": "0",
@@ -6639,10 +6639,10 @@ db.playgrounds.insertMany([
         "other": "משולב ספורט טיפוס",
         "shadowing": "",
         "surface": "משטח גומי",
-        "Name": "תלמוד 54",
         "lat": "31.269389944000068",
         "lon": "34.78670424000006",
-        "id": 164
+        "id": 164,
+        "name": "תלמוד 54"
     },
     {
         "combined1": "1",
@@ -6658,10 +6658,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח חול",
-        "Name": "גן הפיל",
         "lat": "31.266217406000067",
         "lon": "34.79180344400004",
-        "id": 165
+        "id": 165,
+        "name": "גן הפיל"
     },
     {
         "combined1": "0",
@@ -6677,10 +6677,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "נחליאלי",
         "lat": "31.26693884200006",
         "lon": "34.79377026100008",
-        "id": 166
+        "id": 166,
+        "name": "נחליאלי"
     },
     {
         "combined1": "0",
@@ -6696,10 +6696,10 @@ db.playgrounds.insertMany([
         "other": "1 - קוזי קוקון מפלסטיק",
         "shadowing": "יש",
         "surface": "משטח גומי",
-        "Name": "כיכר האבות",
         "lat": "31.261949549000065",
         "lon": "34.79424797100006",
-        "id": 167
+        "id": 167,
+        "name": "כיכר האבות"
     },
     {
         "combined1": "3",
@@ -6715,10 +6715,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח חול",
-        "Name": "גן מעפילים",
         "lat": "31.249811843000032",
         "lon": "34.806652771000074",
-        "id": 168
+        "id": 168,
+        "name": "גן מעפילים"
     },
     {
         "combined1": "1",
@@ -6734,10 +6734,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח חול",
-        "Name": "כ\"ג 13",
         "lat": "31.250060666000024",
         "lon": "34.806063264000045",
-        "id": 169
+        "id": 169,
+        "name": "כ\"ג 13"
     },
     {
         "combined1": "0",
@@ -6753,10 +6753,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "וינגייט 55",
         "lat": "31.25749466900004",
         "lon": "34.803824923000036",
-        "id": 170
+        "id": 170,
+        "name": "וינגייט 55"
     },
     {
         "combined1": "1",
@@ -6772,10 +6772,10 @@ db.playgrounds.insertMany([
         "other": "2",
         "shadowing": "יש",
         "surface": "משטח גומי",
-        "Name": "פארק מרמלדה",
         "lat": "31.259714470000063",
         "lon": "34.810856596000065",
-        "id": 171
+        "id": 171,
+        "name": "פארק מרמלדה"
     },
     {
         "combined1": "1",
@@ -6791,10 +6791,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח חול",
-        "Name": "מרכז חן",
         "lat": "31.25432323700005",
         "lon": "34.791159864000065",
-        "id": 172
+        "id": 172,
+        "name": "מרכז חן"
     },
     {
         "combined1": "1",
@@ -6810,10 +6810,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח חול",
-        "Name": "כיכר קפלן",
         "lat": "31.249332879000065",
         "lon": "34.79149310300005",
-        "id": 173
+        "id": 173,
+        "name": "כיכר קפלן"
     },
     {
         "combined1": "1",
@@ -6829,10 +6829,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "מצדה 59",
         "lat": "31.258410138000045",
         "lon": "34.790338374000044",
-        "id": 174
+        "id": 174,
+        "name": "מצדה 59"
     },
     {
         "combined1": "0",
@@ -6848,10 +6848,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "סעדיה גאון",
         "lat": "31.257349125000076",
         "lon": "34.78910657500006",
-        "id": 175
+        "id": 175,
+        "name": "סעדיה גאון"
     },
     {
         "combined1": "0",
@@ -6867,10 +6867,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "יש",
         "surface": "משטח גומי",
-        "Name": "פארק ראשונים נעמ\"ת",
         "lat": "31.248757391000026",
         "lon": "34.79748011000004",
-        "id": 176
+        "id": 176,
+        "name": "פארק ראשונים נעמ\"ת"
     },
     {
         "combined1": "1",
@@ -6886,10 +6886,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "מוריה 17",
         "lat": "31.24786462000003",
         "lon": "34.78480226200003",
-        "id": 177
+        "id": 177,
+        "name": "מוריה 17"
     },
     {
         "combined1": "0",
@@ -6905,10 +6905,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "",
         "surface": "",
-        "Name": "גן ראשונים מול בית משפט",
         "lat": "31.247398907000047",
         "lon": "34.796433722000074",
-        "id": 178
+        "id": 178,
+        "name": "גן ראשונים מול בית משפט"
     },
     {
         "combined1": "1",
@@ -6924,10 +6924,10 @@ db.playgrounds.insertMany([
         "other": "2 - כפיפות בטן ואופניים",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "קפלן מד\"א",
         "lat": "31.24869178600005",
         "lon": "34.79110941300007",
-        "id": 179
+        "id": 179,
+        "name": "קפלן מד\"א"
     },
     {
         "combined1": "2",
@@ -6943,10 +6943,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "יש",
         "surface": "משטח גומי",
-        "Name": "סוקולוב",
         "lat": "31.246459086000073",
         "lon": "34.78867082100004",
-        "id": 180
+        "id": 180,
+        "name": "סוקולוב"
     },
     {
         "combined1": "1",
@@ -6962,10 +6962,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "יש",
         "surface": "משטח גומי",
-        "Name": "מניפה",
         "lat": "31.249107284000047",
         "lon": "34.78741702600007",
-        "id": 181
+        "id": 181,
+        "name": "מניפה"
     },
     {
         "combined1": "0",
@@ -6981,10 +6981,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "",
         "surface": "",
-        "Name": "נשר",
         "lat": "31.226171226000076",
         "lon": "34.766554893000034",
-        "id": 182
+        "id": 182,
+        "name": "נשר"
     },
     {
         "combined1": "0",
@@ -7000,10 +7000,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "",
         "surface": "",
-        "Name": "ינשוף פינת חוחית עליון",
         "lat": "31.228143078000073",
         "lon": "34.765379479000046",
-        "id": 183
+        "id": 183,
+        "name": "ינשוף פינת חוחית עליון"
     },
     {
         "combined1": "0",
@@ -7019,10 +7019,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "",
         "surface": "",
-        "Name": "חוחית",
         "lat": "31.227753747000065",
         "lon": "34.76318193900005",
-        "id": 184
+        "id": 184,
+        "name": "חוחית"
     },
     {
         "combined1": "0",
@@ -7038,10 +7038,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "",
         "surface": "",
-        "Name": "ינשוף",
         "lat": "31.229656356000078",
         "lon": "34.76521046600004",
-        "id": 185
+        "id": 185,
+        "name": "ינשוף"
     },
     {
         "combined1": "1",
@@ -7057,10 +7057,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח חול",
-        "Name": "מרפ\"ד",
         "lat": "31.261017345000027",
         "lon": "34.79778304800004",
-        "id": 186
+        "id": 186,
+        "name": "מרפ\"ד"
     },
     {
         "combined1": "0",
@@ -7076,10 +7076,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח חול",
-        "Name": "כיפה סנהדרין",
         "lat": "31.26861852600007",
         "lon": "34.785726227000055",
-        "id": 187
+        "id": 187,
+        "name": "כיפה סנהדרין"
     },
     {
         "combined1": "0",
@@ -7095,10 +7095,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "אי",
         "surface": "משטח גומי",
-        "Name": "פארק אלי כהן חנה סנש",
         "lat": "31.257596799000055",
         "lon": "34.808854448000034",
-        "id": 188
+        "id": 188,
+        "name": "פארק אלי כהן חנה סנש"
     },
     {
         "combined1": "0",
@@ -7114,10 +7114,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "יש",
         "surface": "משטח גומי",
-        "Name": "פארק נחל באר שבע  - גדול",
         "lat": "31.237897668000073",
         "lon": "34.81984358200003",
-        "id": 189
+        "id": 189,
+        "name": "פארק נחל באר שבע  - גדול"
     },
     {
         "combined1": "0",
@@ -7133,10 +7133,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "",
         "surface": "",
-        "Name": "עיט",
         "lat": "31.224085097000057",
         "lon": "34.76424766500003",
-        "id": 190
+        "id": 190,
+        "name": "עיט"
     },
     {
         "combined1": "1",
@@ -7152,10 +7152,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "",
         "surface": "משטח חול",
-        "Name": "צבעוני- דודאים מול ורד 14",
         "lat": "31.232014554000045",
         "lon": "34.77920218600008",
-        "id": 191
+        "id": 191,
+        "name": "צבעוני- דודאים מול ורד 14"
     },
     {
         "combined1": "2",
@@ -7171,10 +7171,10 @@ db.playgrounds.insertMany([
         "other": "נדנדה קן לציפור",
         "shadowing": "יש",
         "surface": "משטח גומי",
-        "Name": "גן ברוך",
         "lat": "31.243081979000067",
         "lon": "34.77957404000006",
-        "id": 192
+        "id": 192,
+        "name": "גן ברוך"
     },
     {
         "combined1": "0",
@@ -7190,10 +7190,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "",
         "surface": "",
-        "Name": "עיט נשר",
         "lat": "31.22646955400006",
         "lon": "34.76510300700005",
-        "id": 193
+        "id": 193,
+        "name": "עיט נשר"
     },
     {
         "combined1": "0",
@@ -7209,10 +7209,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "",
         "surface": "",
-        "Name": "ינשוף פינת חוחית תחתון",
         "lat": "31.227914310000074",
         "lon": "34.765463096000076",
-        "id": 194
+        "id": 194,
+        "name": "ינשוף פינת חוחית תחתון"
     },
     {
         "combined1": "0",
@@ -7228,10 +7228,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "",
         "surface": "",
-        "Name": "אפרים לרון",
         "lat": "31.23087077200006",
         "lon": "34.76563449200006",
-        "id": 195
+        "id": 195,
+        "name": "אפרים לרון"
     },
     {
         "combined1": "1",
@@ -7247,10 +7247,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "יש",
         "surface": "",
-        "Name": "פארק לוזון",
         "lat": "31.26672121000007",
         "lon": "34.757974743000034",
-        "id": 196
+        "id": 196,
+        "name": "פארק לוזון"
     },
     {
         "combined1": "0",
@@ -7266,10 +7266,10 @@ db.playgrounds.insertMany([
         "other": "פירמידה ,סקי",
         "shadowing": "יש",
         "surface": "משטח גומי",
-        "Name": "זריצקי נווה טל אקסטרים 3",
         "lat": "31.259804706000068",
         "lon": "34.75975573000005",
-        "id": 197
+        "id": 197,
+        "name": "זריצקי נווה טל אקסטרים 3"
     },
     {
         "combined1": "1",
@@ -7285,10 +7285,10 @@ db.playgrounds.insertMany([
         "other": "2 סביבון",
         "shadowing": "",
         "surface": "משטח גומי",
-        "Name": "מודעי מול מפעל הפיס",
         "lat": "31.269649220000076",
         "lon": "34.81089615600007",
-        "id": 198
+        "id": 198,
+        "name": "מודעי מול מפעל הפיס"
     },
     {
         "combined1": "1",
@@ -7304,10 +7304,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "",
         "surface": "משטח חול",
-        "Name": "מרד מול 12",
         "lat": "31.268538953000075",
         "lon": "34.81631067700005",
-        "id": 199
+        "id": 199,
+        "name": "מרד מול 12"
     },
     {
         "combined1": "0",
@@ -7323,10 +7323,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "",
         "surface": "",
-        "Name": "רחבת החייל",
         "lat": "31.261186205000058",
         "lon": "34.77561949500006",
-        "id": 200
+        "id": 200,
+        "name": "רחבת החייל"
     },
     {
         "combined1": "0",
@@ -7342,10 +7342,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "",
         "surface": "משטח גומי",
-        "Name": "נחום גולדמן 17",
         "lat": "31.278948297000056",
         "lon": "34.80324504200007",
-        "id": 201
+        "id": 201,
+        "name": "נחום גולדמן 17"
     },
     {
         "combined1": "0",
@@ -7361,10 +7361,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "",
         "surface": "",
-        "Name": "אבוחצירא מקלף 2",
         "lat": "31.26899994100006",
         "lon": "34.77891296200005",
-        "id": 202
+        "id": 202,
+        "name": "אבוחצירא מקלף 2"
     },
     {
         "combined1": "1",
@@ -7380,10 +7380,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "",
         "surface": "",
-        "Name": "אבוחצירא מקלף 1",
         "lat": "31.268932488000075",
         "lon": "34.77908134300003",
-        "id": 203
+        "id": 203,
+        "name": "אבוחצירא מקלף 1"
     },
     {
         "combined1": "0",
@@ -7399,10 +7399,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "",
         "surface": "",
-        "Name": "פארק וקנין מערבי",
         "lat": "31.265276848000042",
         "lon": "34.77345302900005",
-        "id": 204
+        "id": 204,
+        "name": "פארק וקנין מערבי"
     },
     {
         "combined1": "0",
@@ -7418,10 +7418,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "",
         "surface": "",
-        "Name": "פארק וקנין מרכזי",
         "lat": "31.265279313000065",
         "lon": "34.773841111000024",
-        "id": 205
+        "id": 205,
+        "name": "פארק וקנין מרכזי"
     },
     {
         "combined1": "0",
@@ -7437,10 +7437,10 @@ db.playgrounds.insertMany([
         "other": "3",
         "shadowing": "",
         "surface": "",
-        "Name": "פארק וקנין מזרחי",
         "lat": "31.26588004300004",
         "lon": "34.77551553100005",
-        "id": 206
+        "id": 206,
+        "name": "פארק וקנין מזרחי"
     },
     {
         "combined1": "0",
@@ -7456,10 +7456,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "",
         "surface": "",
-        "Name": "פליקס שפירא",
         "lat": "31.281989114000055",
         "lon": "34.800510436000025",
-        "id": 207
+        "id": 207,
+        "name": "פליקס שפירא"
     },
     {
         "combined1": "0",
@@ -7475,10 +7475,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "",
         "surface": "",
-        "Name": "שמשון עמיצור -רוטנשטרייך",
         "lat": "31.281938799000045",
         "lon": "34.798054888000024",
-        "id": 208
+        "id": 208,
+        "name": "שמשון עמיצור -רוטנשטרייך"
     },
     {
         "combined1": "0",
@@ -7494,10 +7494,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "",
         "surface": "",
-        "Name": "משה קהירי -נחום סנה",
         "lat": "31.284170300000028",
         "lon": "34.80009671600004",
-        "id": 209
+        "id": 209,
+        "name": "משה קהירי -נחום סנה"
     },
     {
         "combined1": "0",
@@ -7513,10 +7513,10 @@ db.playgrounds.insertMany([
         "other": "3",
         "shadowing": "",
         "surface": "",
-        "Name": "חיים שושנה",
         "lat": "31.284033787000055",
         "lon": "34.79756701900004",
-        "id": 210
+        "id": 210,
+        "name": "חיים שושנה"
     },
     {
         "combined1": "0",
@@ -7532,10 +7532,10 @@ db.playgrounds.insertMany([
         "other": "2",
         "shadowing": "",
         "surface": "",
-        "Name": "חיים שושנה רפאל",
         "lat": "31.284767113000044",
         "lon": "34.79674360100006",
-        "id": 211
+        "id": 211,
+        "name": "חיים שושנה רפאל"
     },
     {
         "combined1": "0",
@@ -7551,10 +7551,10 @@ db.playgrounds.insertMany([
         "other": "7",
         "shadowing": "",
         "surface": "",
-        "Name": "עמיצור שושנה טיילת",
         "lat": "31.282675334000032",
         "lon": "34.79669622500006",
-        "id": 212
+        "id": 212,
+        "name": "עמיצור שושנה טיילת"
     },
     {
         "combined1": "1",
@@ -7570,10 +7570,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "",
         "surface": "",
-        "Name": "נחום שריג עליון",
         "lat": "31.28358215600008",
         "lon": "34.80632590100004",
-        "id": 213
+        "id": 213,
+        "name": "נחום שריג עליון"
     },
     {
         "combined1": "1",
@@ -7589,10 +7589,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "",
         "surface": "",
-        "Name": "נחום שריג תחתון",
         "lat": "31.283905751000077",
         "lon": "34.80663867900006",
-        "id": 214
+        "id": 214,
+        "name": "נחום שריג תחתון"
     },
     {
         "combined1": "1",
@@ -7608,10 +7608,10 @@ db.playgrounds.insertMany([
         "other": "1",
         "shadowing": "",
         "surface": "",
-        "Name": "נחום שריג 39",
         "lat": "31.284615890000055",
         "lon": "34.805478126000025",
-        "id": 215
+        "id": 215,
+        "name": "נחום שריג 39"
     },
     {
         "combined1": "1",
@@ -7627,10 +7627,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "",
         "surface": "",
-        "Name": "נחום שריג 1",
         "lat": "31.281237544000078",
         "lon": "34.80535671600006",
-        "id": 216
+        "id": 216,
+        "name": "נחום שריג 1"
     },
     {
         "combined1": "0",
@@ -7646,10 +7646,10 @@ db.playgrounds.insertMany([
         "other": "3",
         "shadowing": "",
         "surface": "",
-        "Name": "נחום שריג 2",
         "lat": "31.280996791000064",
         "lon": "34.80563349700003",
-        "id": 217
+        "id": 217,
+        "name": "נחום שריג 2"
     },
     {
         "combined1": "0",
@@ -7665,10 +7665,10 @@ db.playgrounds.insertMany([
         "other": "3",
         "shadowing": "",
         "surface": "",
-        "Name": "נחום סריג 3",
         "lat": "31.28087537500005",
         "lon": "34.805725005000056",
-        "id": 218
+        "id": 218,
+        "name": "נחום סריג 3"
     },
     {
         "combined1": "1",
@@ -7684,10 +7684,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "",
         "surface": "",
-        "Name": "נחום שריג 4",
         "lat": "31.280771164000043",
         "lon": "34.80597828700007",
-        "id": 219
+        "id": 219,
+        "name": "נחום שריג 4"
     },
     {
         "combined1": "1",
@@ -7703,10 +7703,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "",
         "surface": "",
-        "Name": "נחום גולדמן עליון",
         "lat": "31.280078463000052",
         "lon": "34.80404390000007",
-        "id": 220
+        "id": 220,
+        "name": "נחום גולדמן עליון"
     },
     {
         "combined1": "0",
@@ -7722,10 +7722,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "",
         "surface": "",
-        "Name": "נחום גולדמן אמצעי",
         "lat": "31.280212396000024",
         "lon": "34.80332585200006",
-        "id": 221
+        "id": 221,
+        "name": "נחום גולדמן אמצעי"
     },
     {
         "combined1": "1",
@@ -7741,10 +7741,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "",
         "surface": "",
-        "Name": "נחום גולדמן תחתון",
         "lat": "31.28050494100006",
         "lon": "34.80316846200003",
-        "id": 222
+        "id": 222,
+        "name": "נחום גולדמן תחתון"
     },
     {
         "combined1": "0",
@@ -7760,10 +7760,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "",
         "surface": "משטח גומי",
-        "Name": "יצחק מודעי -יעקב מרש",
         "lat": "31.266296215000068",
         "lon": "34.80959396000003",
-        "id": 223
+        "id": 223,
+        "name": "יצחק מודעי -יעקב מרש"
     },
     {
         "combined1": "1",
@@ -7779,10 +7779,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "",
         "surface": "משטח גומי",
-        "Name": "פארק פעמון",
         "lat": "31.235245125000063",
         "lon": "34.79158321600005",
-        "id": 224
+        "id": 224,
+        "name": "פארק פעמון"
     },
     {
         "combined1": "1",
@@ -7798,10 +7798,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "",
         "surface": "דשא סינטטי",
-        "Name": "פרישמן חדש",
         "lat": "31.239902959000062",
         "lon": "34.77330974400007",
-        "id": 225
+        "id": 225,
+        "name": "פרישמן חדש"
     },
     {
         "combined1": "0",
@@ -7817,10 +7817,10 @@ db.playgrounds.insertMany([
         "other": "2",
         "shadowing": "",
         "surface": "משטח חול",
-        "Name": "פרישמן",
         "lat": "31.23987395100005",
         "lon": "34.773198783000055",
-        "id": 226
+        "id": 226,
+        "name": "פרישמן"
     },
     {
         "combined1": "1",
@@ -7836,10 +7836,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "",
         "surface": "משטח גומי",
-        "Name": "שמעוני 14 קומות",
         "lat": "31.254673325000056",
         "lon": "34.796016750000035",
-        "id": 227
+        "id": 227,
+        "name": "שמעוני 14 קומות"
     },
     {
         "combined1": "1",
@@ -7855,10 +7855,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "",
         "surface": "משטח גומי",
-        "Name": "שד הסופרים -אינשטיין",
         "lat": "31.256317799000044",
         "lon": "34.792070728000056",
-        "id": 228
+        "id": 228,
+        "name": "שד הסופרים -אינשטיין"
     },
     {
         "combined1": "0",
@@ -7874,10 +7874,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "יש",
         "surface": "משטח גומי",
-        "Name": "שרגא אברמסון",
         "lat": "31.277097755000057",
         "lon": "34.79775242200003",
-        "id": 229
+        "id": 229,
+        "name": "שרגא אברמסון"
     },
     {
         "combined1": "1",
@@ -7893,10 +7893,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "",
         "surface": "משטח גומי",
-        "Name": "בקי",
         "lat": "31.277683203000038",
         "lon": "34.79864872600007",
-        "id": 230
+        "id": 230,
+        "name": "בקי"
     },
     {
         "combined1": "0",
@@ -7912,10 +7912,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "",
         "surface": "משטח גומי",
-        "Name": "ישראל גלילי 7",
         "lat": "31.283475492000036",
         "lon": "34.80341777900003",
-        "id": 231
+        "id": 231,
+        "name": "ישראל גלילי 7"
     },
     {
         "combined1": "1",
@@ -7931,10 +7931,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "",
         "surface": "משטח גומי",
-        "Name": "ישראל גלילי 22",
         "lat": "31.284678816000053",
         "lon": "34.80362108200006",
-        "id": 232
+        "id": 232,
+        "name": "ישראל גלילי 22"
     },
     {
         "combined1": "0",
@@ -7950,10 +7950,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "",
         "surface": "משטח גומי",
-        "Name": "ישראל גלילי 13",
         "lat": "31.283394611000062",
         "lon": "34.804072477000034",
-        "id": 233
+        "id": 233,
+        "name": "ישראל גלילי 13"
     },
     {
         "combined1": "0",
@@ -7969,10 +7969,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "",
         "surface": "משטח גומי",
-        "Name": "ישראל גלילי 21",
         "lat": "31.284638232000077",
         "lon": "34.804453728000055",
-        "id": 234
+        "id": 234,
+        "name": "ישראל גלילי 21"
     },
     {
         "combined1": "0",
@@ -7988,10 +7988,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "",
         "surface": "משטח גומי",
-        "Name": "הנגבי מיכאל 14",
         "lat": "31.28453243900003",
         "lon": "34.80515646900005",
-        "id": 235
+        "id": 235,
+        "name": "הנגבי מיכאל 14"
     },
     {
         "combined1": "1",
@@ -8007,10 +8007,10 @@ db.playgrounds.insertMany([
         "other": "1",
         "shadowing": "",
         "surface": "משטח חול",
-        "Name": "ישראל גלילי 35",
         "lat": "31.285832214000038",
         "lon": "34.80384473700008",
-        "id": 236
+        "id": 236,
+        "name": "ישראל גלילי 35"
     },
     {
         "combined1": "1",
@@ -8026,10 +8026,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "",
         "surface": "משטח גומי",
-        "Name": "לוי אשכול",
         "lat": "31.28576062600007",
         "lon": "34.80308021700006",
-        "id": 237
+        "id": 237,
+        "name": "לוי אשכול"
     },
     {
         "combined1": "0",
@@ -8045,10 +8045,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "",
         "surface": "משטח חול",
-        "Name": "המדע הדעת",
         "lat": "31.26848657000005",
         "lon": "34.80675760200006",
-        "id": 238
+        "id": 238,
+        "name": "המדע הדעת"
     },
     {
         "combined1": "0",
@@ -8064,10 +8064,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "",
         "surface": "משטח גומי",
-        "Name": "מרמלדה 2",
         "lat": "31.259244574000036",
         "lon": "34.81134901300004",
-        "id": 239
+        "id": 239,
+        "name": "מרמלדה 2"
     },
     {
         "combined1": "0",
@@ -8083,10 +8083,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "",
         "surface": "משטח גומי",
-        "Name": "פארק הילדים שטח אי",
         "lat": "31.261518976000048",
         "lon": "34.76091670100004",
-        "id": 240
+        "id": 240,
+        "name": "פארק הילדים שטח אי"
     },
     {
         "combined1": "0",
@@ -8102,10 +8102,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "",
         "surface": "משטח גומי",
-        "Name": "זבולון המר- כרמל",
         "lat": "31.267856652000035",
         "lon": "34.813307261000034",
-        "id": 241
+        "id": 241,
+        "name": "זבולון המר- כרמל"
     },
     {
         "combined1": "0",
@@ -8121,10 +8121,10 @@ db.playgrounds.insertMany([
         "other": "3",
         "shadowing": "",
         "surface": "משטח חול",
-        "Name": "פארק הילדים שטח אומגה",
         "lat": "31.261848327000052",
         "lon": "34.763059214000066",
-        "id": 242
+        "id": 242,
+        "name": "פארק הילדים שטח אומגה"
     },
     {
         "combined1": "0",
@@ -8140,10 +8140,10 @@ db.playgrounds.insertMany([
         "other": "בית בובות, חללית,מסאית,סקייט",
         "shadowing": "",
         "surface": "",
-        "Name": "פארק הילדים שטח גדול",
         "lat": "31.26192941900007",
         "lon": "34.762144754000076",
-        "id": 243
+        "id": 243,
+        "name": "פארק הילדים שטח גדול"
     },
     {
         "combined1": "1",
@@ -8159,10 +8159,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "יש",
         "surface": "משטח גומי",
-        "Name": "זריצקי 11 -2",
         "lat": "31.259866570000042",
         "lon": "34.759872022000025",
-        "id": 244
+        "id": 244,
+        "name": "זריצקי 11 -2"
     },
     {
         "combined1": "1",
@@ -8178,10 +8178,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "יש",
         "surface": "משטח גומי",
-        "Name": "זריצקי 17 -1",
         "lat": "31.26019945300004",
         "lon": "34.76090661400008",
-        "id": 245
+        "id": 245,
+        "name": "זריצקי 17 -1"
     },
     {
         "combined1": "0",
@@ -8197,10 +8197,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "",
         "surface": "",
-        "Name": "",
         "lat": "31.231716273000075",
         "lon": "34.777715939000075",
-        "id": 246
+        "id": 246,
+        "name": ""
     },
     {
         "combined1": "0",
@@ -8216,10 +8216,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "",
         "surface": "",
-        "Name": "לונדה פנימי",
         "lat": "31.262620451000032",
         "lon": "34.76324618700005",
-        "id": 247
+        "id": 247,
+        "name": "לונדה פנימי"
     },
     {
         "combined1": "0",
@@ -8235,10 +8235,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "",
         "surface": "",
-        "Name": "לונדה חיצוני",
         "lat": "31.262359828000058",
         "lon": "34.763443245000076",
-        "id": 248
+        "id": 248,
+        "name": "לונדה חיצוני"
     },
     {
         "combined1": "0",
@@ -8254,10 +8254,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "",
         "surface": "",
-        "Name": "מבצע נחשון 48 חדש",
         "lat": "31.259943044000067",
         "lon": "34.78706397800005",
-        "id": 249
+        "id": 249,
+        "name": "מבצע נחשון 48 חדש"
     },
     {
         "combined1": "0",
@@ -8273,10 +8273,10 @@ db.playgrounds.insertMany([
         "other": "אופניים + ספסל כריש",
         "shadowing": "יש",
         "surface": "דשא סינטטי",
-        "Name": "מגידו",
         "lat": "31.243966551000028",
         "lon": "34.77347444700007",
-        "id": 250
+        "id": 250,
+        "name": "מגידו"
     },
     {
         "combined1": "0",
@@ -8292,10 +8292,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "",
         "surface": "",
-        "Name": "שפריר",
         "lat": "31.24849723400007",
         "lon": "34.80076695400004",
-        "id": 251
+        "id": 251,
+        "name": "שפריר"
     },
     {
         "combined1": "1",
@@ -8311,10 +8311,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "",
         "surface": "דשא סינטטי",
-        "Name": "משה קהירי -נחום סנה פעוטות",
         "lat": "31.284235124000077",
         "lon": "34.80015460200008",
-        "id": 252
+        "id": 252,
+        "name": "משה קהירי -נחום סנה פעוטות"
     },
     {
         "combined1": "0",
@@ -8330,10 +8330,10 @@ db.playgrounds.insertMany([
         "other": "ספסל כריש.",
         "shadowing": "יש",
         "surface": "דשא סינטטי",
-        "Name": "שצ\"פ מגידו",
         "lat": "31.243925328000046",
         "lon": "34.773990937000065",
-        "id": 253
+        "id": 253,
+        "name": "שצ\"פ מגידו"
     },
     {
         "combined1": "0",
@@ -8349,10 +8349,10 @@ db.playgrounds.insertMany([
         "other": "",
         "shadowing": "",
         "surface": "",
-        "Name": "רד\"ק",
         "lat": "31.256897739000067",
         "lon": "34.77117386900005",
-        "id": 254
+        "id": 254,
+        "name": "רד\"ק"
     }
 ]);db.elderly_social_club.remove({})
 db.elderly_social_club.insertMany([
@@ -8495,166 +8495,166 @@ db.elderly_social_club.insertMany([
 ]);db.community_centers.remove({})
 db.community_centers.insertMany([
     {
-        "Name": "מתנ\"ס לוי",
-        "Address": "אליהו הנ",
         "neighborhood": "ד",
         "lat": "31.26484752600004",
         "lon": "34.79166937200006",
-        "id": 0
+        "id": 0,
+        "address": "אליהו הנ",
+        "name": "מתנ\"ס לוי"
     },
     {
-        "Name": "מתנ\"ס ניר",
-        "Address": "רש\"י",
         "neighborhood": "ד",
         "lat": "31.268840041000033",
         "lon": "34.79054548500005",
-        "id": 1
+        "id": 1,
+        "address": "רש\"י",
+        "name": "מתנ\"ס ניר"
     },
     {
-        "Name": "מתנ\"ס נעו",
-        "Address": "אלכסנדר",
         "neighborhood": "ד",
         "lat": "31.26427025000004",
         "lon": "34.79691495000003",
-        "id": 2
+        "id": 2,
+        "address": "אלכסנדר",
+        "name": "מתנ\"ס נעו"
     },
     {
-        "Name": "מתנ\"ס פאנ",
-        "Address": "נרבוני-ק",
         "neighborhood": "ד",
         "lat": "31.268131894000078",
         "lon": "34.79878442200004",
-        "id": 3
+        "id": 3,
+        "address": "נרבוני-ק",
+        "name": "מתנ\"ס פאנ"
     },
     {
-        "Name": "מתנ\"ס טאו",
-        "Address": "ארלוזורו",
         "neighborhood": "ג",
         "lat": "31.25778581800006",
         "lon": "34.80619763300007",
-        "id": 4
+        "id": 4,
+        "address": "ארלוזורו",
+        "name": "מתנ\"ס טאו"
     },
     {
-        "Name": "מתנ\"ס - י'",
-        "Address": "מרדכי נמ",
         "neighborhood": "י'א",
         "lat": "31.26073076700004",
         "lon": "34.766232614000046",
-        "id": 5
+        "id": 5,
+        "address": "מרדכי נמ",
+        "name": "מתנ\"ס - י'"
     },
     {
-        "Name": "מרכז הצע",
-        "Address": "הרצל",
         "neighborhood": "עיר עתיק",
         "lat": "31.238687155000036",
         "lon": "34.78740138000006",
-        "id": 6
+        "id": 6,
+        "address": "הרצל",
+        "name": "מרכז הצע"
     },
     {
-        "Name": "מתנ\"ס רמו",
-        "Address": "הערים הת",
         "neighborhood": "רמות",
         "lat": "31.28066651000006",
         "lon": "34.799942421000026",
-        "id": 7
+        "id": 7,
+        "address": "הערים הת",
+        "name": "מתנ\"ס רמו"
     },
     {
-        "Name": "מתנ\"ס נוו",
-        "Address": "שמאלי אל",
         "neighborhood": "נווה זאב",
         "lat": "31.240824471000053",
         "lon": "34.771003869000026",
-        "id": 8
+        "id": 8,
+        "address": "שמאלי אל",
+        "name": "מתנ\"ס נוו"
     },
     {
-        "Name": "מתנס נוו",
-        "Address": "פלפלון",
         "neighborhood": "נווה נוי",
         "lat": "31.229110521000052",
         "lon": "34.78324701100007",
-        "id": 9
+        "id": 9,
+        "address": "פלפלון",
+        "name": "מתנס נוו"
     },
     {
-        "Name": "מתנ\"ס פלח",
-        "Address": "פינסקר",
         "neighborhood": "נווה זאב",
         "lat": "31.235086140000078",
         "lon": "34.76993285700007",
-        "id": 10
+        "id": 10,
+        "address": "פינסקר",
+        "name": "מתנ\"ס פלח"
     }
 ]);db.dog_gardens.remove({})
 db.dog_gardens.insertMany([
     {
-        "Name": "גן הראשונים",
         "SHAPE_Length": "141.14854665200",
         "SHAPE_Area": "1032.21312083000",
         "lat": "31.247125",
         "lon": "34.795926",
-        "id": 0
+        "id": 0,
+        "name": "גן הראשונים"
     },
     {
-        "Name": "פארק קפלן",
         "SHAPE_Length": "124.35385947700",
         "SHAPE_Area": "845.20681752400",
         "lat": "31.248668",
         "lon": "34.790501",
-        "id": 1
+        "id": 1,
+        "name": "פארק קפלן"
     },
     {
-        "Name": "פארק אופירה - שכ' ט",
         "SHAPE_Length": "155.40505151600",
         "SHAPE_Area": "1577.79359843000",
         "lat": "31.245386",
         "lon": "34.770757",
-        "id": 2
+        "id": 2,
+        "name": "פארק אופירה - שכ' ט"
     },
     {
-        "Name": "פארק שומרון - נאות לון",
         "SHAPE_Length": "159.00380834600",
         "SHAPE_Area": "1072.99406091000",
         "lat": "31.247045",
         "lon": "34.765799",
-        "id": 3
+        "id": 3,
+        "name": "פארק שומרון - נאות לון"
     },
     {
-        "Name": "חת\"ם הסופר -שכ' יא'",
         "SHAPE_Length": "128.05677763200",
         "SHAPE_Area": "942.23879814800",
         "lat": "31.255443",
         "lon": "34.768457",
-        "id": 4
+        "id": 4,
+        "name": "חת\"ם הסופר -שכ' יא'"
     },
     {
-        "Name": "פארק ה'",
         "SHAPE_Length": "167.93668385000",
         "SHAPE_Area": "1763.44133273000",
         "lat": "31.251512",
         "lon": "34.776865",
-        "id": 5
+        "id": 5,
+        "name": "פארק ה'"
     },
     {
-        "Name": "פארק ד'",
         "SHAPE_Length": "183.70400824100",
         "SHAPE_Area": "1885.38728698000",
         "lat": "31.267111",
         "lon": "34.788341",
-        "id": 6
+        "id": 6,
+        "name": "פארק ד'"
     },
     {
-        "Name": "מרגליות",
         "SHAPE_Length": "174.98250792600",
         "SHAPE_Area": "1013.59813696000",
         "lat": "31.237095",
         "lon": "34.785059",
-        "id": 7
+        "id": 7,
+        "name": "מרגליות"
     },
     {
-        "Name": "גן ארגנטינה",
         "SHAPE_Length": "90.08967310590",
         "SHAPE_Area": "496.31857327600",
         "lat": "31.252596",
         "lon": "34.794595",
-        "id": 8
+        "id": 8,
+        "name": "גן ארגנטינה"
     }
 ]);db.urban_nature.remove({})
 db.urban_nature.insertMany([

@@ -1041,33 +1041,40 @@ urban_nature = [
 {"MainFeatur": "אתר פריחה - צבעונים, שמשונים, נוריות, שלהבית קיצרת-שיניים", "lat": "31.29625857600007", "lon": "34.81934789200005"}
 ]
 
-# add id remvove ID
-
-for i in range(0, len(sports)):
-    sports[i]["id"] = i
-    sports[i]["HouseNumber"] = sports[i]["HouseNumbe"]
-    sports[i]["neighborhood"] = sports[i]["neighborho"]
-    sports[i]["handicapped"] = sports[i]["handicappe"]
-    sports[i]["association"] = sports[i]["associatio"]
-    del sports[i]["HouseNumbe"]
-    del sports[i]["neighborho"]
-    del sports[i]["handicappe"]
-    del sports[i]["associatio"]
-
-for i in range(0, len(playgrounds)):
-    playgrounds[i]["id"] = i
-    
-for i in range(0, len(elderly_social_club)):
-    elderly_social_club[i]["id"] = i
-    del elderly_social_club[i]["Id"]
-
 for i in range(0, len(community_centers)):
-    community_centers[i]["id"] = i
-
-
+	community_centers[i]["id"] = i
+	community_centers[i]["address"] = community_centers[i]["Address"]
+	community_centers[i]["name"] = community_centers[i]["Name"]
+	del community_centers[i]["Address"]
+	del community_centers[i]["Name"]
+	
 for i in range(0, len(dog_gardens)):
-    dog_gardens[i]["id"] = i
-
+	dog_gardens[i]["id"] = i
+	dog_gardens[i]["name"] = dog_gardens[i]["Name"]
+	del dog_gardens[i]["Name"]
+	
+for i in range(0, len(elderly_social_club)):
+	elderly_social_club[i]["id"] = i
+	del elderly_social_club[i]["Id"]
+	
+for i in range(0, len(playgrounds)):
+	playgrounds[i]["id"] = i
+	playgrounds[i]["name"] = playgrounds[i]["Name"]
+	del playgrounds[i]["Name"]
+	
+for i in range(0, len(sports)):
+	sports[i]["id"] = i
+	sports[i]["HouseNumber"] = sports[i]["HouseNumbe"]
+	sports[i]["neighborhood"] = sports[i]["neighborho"]
+	sports[i]["handicapped"] = sports[i]["handicappe"]
+	sports[i]["association"] = sports[i]["associatio"]
+	sports[i]["name"] = sports[i]["Name"]
+	del sports[i]["Name"]
+	del sports[i]["HouseNumbe"]
+	del sports[i]["neighborho"]
+	del sports[i]["handicappe"]
+	del sports[i]["associatio"]
+    
 for i in range(0, len(urban_nature)):
     urban_nature[i]["id"] = i
     urban_nature[i]["MainFeature"] = urban_nature[i]["MainFeatur"]

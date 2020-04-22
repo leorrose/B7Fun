@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'leaflet',
     'accounts',
     'feed',
 	'Profile',
@@ -77,7 +78,6 @@ WSGI_APPLICATION = 'B7FunDjango.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-"""
 if 'test' in sys.argv:
     DATABASES = {
         'default' :{
@@ -111,7 +111,7 @@ DATABASES = {
         }
     }
 }
-
+"""
 
 AUTH_USER_MODEL = 'accounts.User'
 
@@ -159,7 +159,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST =  'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'b7funservice@gmail.com'
-EMAIL_HOST_PASSWORD = 'xvfrjnorytatpgms'
+EMAIL_HOST_PASSWORD = 'ttxankkfptlfblto'
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 
@@ -175,3 +175,32 @@ TEST_RUNNER = 'xmlrunner.extra.djangotestrunner.XMLTestRunner'
 TEST_OUTPUT_DIR = './test-reports/unittest'
 TEST_OUTPUT_FILE_NAME = 'unittest.xml'
 TEST_OUTPUT_VERBOSE = 1
+
+
+#maps 
+LEAFLET_CONFIG = {
+    'DEFAULT_CENTER': (31.2530, 34.7915),
+    'DEFAULT_ZOOM': 12,
+    'MIN_ZOOM': 3,
+    'MAX_ZOOM': 18,
+    'RESET_VIEW': False
+}
+
+
+# add logging to template 
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'loggers': {
+        'django.template': {
+            'handlers': ['console'],
+            'level': os.getenv('DJANGO_LOG_LEVEL', 'DEBUG'),
+        },
+    },
+}

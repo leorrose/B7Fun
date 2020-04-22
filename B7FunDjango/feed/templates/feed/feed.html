@@ -1,4 +1,219 @@
 {% extends 'baseWithNav.html' %}
+
+{% load leaflet_tags %}
+
+{% block extra_assets %}
+  {% leaflet_js %}
+  {% leaflet_css %}
+{% endblock %}
+
+{% block extra_style %}
+<style>
+    .leaflet-container {  /* all maps */
+        height: 600px;
+    }
+
+    #specialbigmap {
+        height: 800px;
+    }
+
+    /* Resize the "display_raw" textbox */
+    .django-leaflet-raw-textarea {
+        width: 100%;
+    }
+    .currentLocationIcon{
+        
+    }
+
+</style>
+{% endblock %}
+
 {% block  content%}
 
+    <script type="text/javascript">
+        let Icon = new L.Icon({
+            iconUrl: "",
+            shadowUrl: "/media/map_markers/marker-shadow.png",
+            iconSize: [25, 41],
+            iconAnchor: [12, 41],
+            popupAnchor: [1, -34],
+            shadowSize: [41, 41]
+        });
+        function map_init(map, options) {
+            getCurrentLocation(map, options);
+            add_community_centers(map, options);
+            add_dog_gardens(map, options);
+            add_elderly_social_club(map, options);
+            add_playgrounds(map, options);
+            add_sport_facilities(map, options);
+            add_urban_nature(map, options);
+        }
+        function add_community_centers(map, options){
+            Icon.options.iconUrl = "/media/map_markers/marker-icon-violet.png";
+            let collection = {{ community_centers | safe }};
+            Array.prototype.forEach.call(collection, function(mapItem){
+                var myMarker = L.marker([mapItem.lat, mapItem.lon], {icon: Icon}).addTo(map);
+                myMarker.on({
+                    click: function (e) {
+                    $("#feature-title").html("סוג מיקום - מרכז קהילתי");
+                    $("#feature-info").empty()
+                    $("#feature-info").append(`<div class="row"><p class="col-6"> שם:</p><p class="col-6"> ${mapItem.name} </p></div>`);
+                    $("#feature-info").append(`<div class="row"><p class="col-6"> כתובת:</p><p class="col-6"> ${mapItem.address} </p></div>`);
+                    $("#feature-info").append(`<div class="row"><p class="col-6"> שכונה:</p><p class="col-6"> ${mapItem.neighborhood} </p></div>`);
+                    $("#featureModal").modal("show");
+                }
+                });
+            });
+        }
+        function add_dog_gardens(map, options){
+            Icon.options.iconUrl = "/media/map_markers/marker-icon-green.png"; 
+            let collection = {{ dog_gardens | safe }};
+            Array.prototype.forEach.call(collection, function(mapItem){
+                var myMarker = L.marker([mapItem.lat, mapItem.lon], {icon: Icon}).addTo(map);
+                myMarker.on({
+                    click: function (e) {
+                    $("#feature-title").html("סוג מיקום - גינת כלבים");
+                    $("#feature-info").empty()
+                    $("#feature-info").append(`<div class="row"><p class="col-6"> שם:</p><p class="col-6"> ${mapItem.name} </p></div>`);
+                    $("#feature-info").append(`<div class="row"><p class="col-6"> גודל שטח:</p><p class="col-6"> ${mapItem.SHAPE_Area} </p></div>`);
+                    $("#featureModal").modal("show");
+                }
+                });
+            });
+        }
+        function add_elderly_social_club(map, options){
+            Icon.options.iconUrl = "/media/map_markers/marker-icon-orange.png"; 
+            let collection = {{ elderly_social_club | safe }};
+            Array.prototype.forEach.call(collection, function(mapItem){
+                var myMarker = L.marker([mapItem.lat, mapItem.lon], {icon: Icon}).addTo(map);
+                myMarker.on({
+                    click: function (e) {
+                    $("#feature-title").html("סוג מיקום - מועדונים חברתיים לקשיש");
+                    $("#feature-info").empty()
+                    $("#feature-info").append(`<div class="row"><p class="col-6"> שם:</p><p class="col-6"> ${mapItem.name} </p></div>`);
+                    $("#feature-info").append(`<div class="row"><p class="col-6"> כתובת:</p><p class="col-6"> ${mapItem.address} </p></div>`);
+                    $("#feature-info").append(`<div class="row"><p class="col-6"> סוג:</p><p class="col-6"> ${mapItem.Type} </p></div>`);
+                    $("#featureModal").modal("show");
+                }
+                });
+            });
+        }
+        function add_playgrounds(map, options){
+            Icon.options.iconUrl = "/media/map_markers/marker-icon-gold.png";
+            let collection = {{ playgrounds | safe }};
+            Array.prototype.forEach.call(collection, function(mapItem){
+                var myMarker = L.marker([mapItem.lat, mapItem.lon], {icon: Icon}).addTo(map);
+                myMarker.on({
+                    click: function (e) {
+                    $("#feature-title").html("סוג מיקום - מתקני משחקים");
+                    $("#feature-info").empty()
+                    $("#feature-info").append(`<div class="row"><p class="col-6"> שם:</p><p class="col-6"> ${mapItem.name} </p></div>`);
+                    $("#feature-info").append(`<div class="row"><p class="col-6">קיים הצללה:</p><p class="col-6"> ${mapItem.shadowing}  </p></div>`);
+                    $("#feature-info").append(`<div class="row"><p class="col-6"> משטח הפארק:</p><p class="col-6"> ${mapItem.surface}  </p></div>`);
+                    $("#feature-info").append(`<div class="row"><p class="col-6"> כמות קרוסלות:</p><p class="col-6"> ${mapItem.carrousel} </p></div>`);
+                    $("#feature-info").append(`<div class="row"><p class="col-6"> כמות מולטי פליי:</p><p class="col-6"> ${Number(mapItem.combined1) + Number(mapItem.combined2) + Number(mapItem.combined3)}  </p></div>`);
+                    $("#feature-info").append(`<div class="row"><p class="col-6"> כמות אומגות</p><p class="col-6"> ${mapItem.omega}  </p></div>`);
+                    $("#feature-info").append(`<div class="row"><p class="col-6"> כמות מולטי רוזרוז</p><p class="col-6"> ${mapItem.roserose}  </p></div>`);
+                    $("#feature-info").append(`<div class="row"><p class="col-6"> כמות מגלשות</p><p class="col-6"> ${mapItem.slid}  </p></div>`);
+                    $("#feature-info").append(`<div class="row"><p class="col-6"> כמות אין לי מושג</p><p class="col-6"> ${mapItem.SpecialCom}  </p></div>`);
+                    $("#feature-info").append(`<div class="row"><p class="col-6"> כמות אין לי מושג</p><p class="col-6"> ${mapItem.spring}  </p></div>`);
+                    $("#feature-info").append(`<div class="row"><p class="col-6"> כמות נדנדות</p><p class="col-6"> ${mapItem.Swing}  </p></div>`);
+                    $("#feature-info").append(`<div class="row"><p class="col-6"> עוד פרטים:</p><p class="col-6"> ${mapItem.other}  </p></div>`);
+                    $("#featureModal").modal("show");
+                }
+                });
+            });
+        }
+        function add_sport_facilities(map, options){
+            Icon.options.iconUrl = "/media/map_markers/marker-icon-red.png";
+            let collection = {{ sport_facilities | safe }};
+           Array.prototype.forEach.call(collection, function(mapItem){
+                var myMarker = L.marker([mapItem.lat, mapItem.lon], {icon: Icon}).addTo(map);
+                myMarker.on({
+                    click: function (e) {
+                    $("#feature-title").html("סוג מיקום - מתקני ספורט");
+                    $("#feature-info").empty()
+                    $("#feature-info").append(`<div class="row"><p class="col-6"> שם:</p><p class="col-6"> ${mapItem.name} </p></div>`);
+                    $("#feature-info").append(`<div class="row"><p class="col-6"> כתובת:</p><p class="col-6"> ${mapItem.street + " " + mapItem.HouseNumber} </p></div>`);
+                    $("#feature-info").append(`<div class="row"><p class="col-6"> שכונה:</p><p class="col-6"> ${mapItem.neighborhood} </p></div>`);
+                    $("#feature-info").append(`<div class="row"><p class="col-6"> סוג:</p><p class="col-6"> ${mapItem.Type} </p></div>`);
+                    $("#feature-info").append(`<div class="row"><p class="col-6">מפעיל:</p><p class="col-6"> ${mapItem.Operator}  </p></div>`);
+                    $("#feature-info").append(`<div class="row"><p class="col-6"> מספר כסאות:</p><p class="col-6"> ${mapItem.Seats}  </p></div>`);
+                    $("#feature-info").append(`<div class="row"><p class="col-6"> שעות פעילות:</p><p class="col-6"> ${mapItem.Activity} </p></div>`);
+                    $("#feature-info").append(`<div class="row"><p class="col-6"> גידור:</p><p class="col-6"> ${mapItem.fencing}  </p></div>`);
+                    $("#feature-info").append(`<div class="row"><p class="col-6"> תאורה:</p><p class="col-6"> ${mapItem.lighting}  </p></div>`);
+                    $("#feature-info").append(`<div class="row"><p class="col-6"> נגישות:</p><p class="col-6"> ${mapItem.handicapped}  </p></div>`);
+                    $("#feature-info").append(`<div class="row"><p class="col-6"> מצב המיקום:</p><p class="col-6"> ${mapItem.condition}  </p></div>`);
+                    $("#feature-info").append(`<div class="row"><p class="col-6"> שייך ל:</p><p class="col-6"> ${mapItem.Owner}  </p></div>`);
+                    $("#feature-info").append(`<div class="row"><p class="col-6"> שייך לביה"ס בשם:</p><p class="col-6"> ${mapItem.ForSchool}  </p></div>`);
+                    $("#feature-info").append(`<div class="row"><p class="col-6"> שייכות:</p><p class="col-6"> ${mapItem.association}  </p></div>`);
+                    $("#feature-info").append(`<div class="row"><p class="col-6"> סוג ספורט:</p><p class="col-6"> ${mapItem.SportType}  </p></div>`);
+                    $("#featureModal").modal("show");
+                }
+                });
+            });
+        }
+        function add_urban_nature(map, options){
+            Icon.options.iconUrl = "/media/map_markers/marker-icon-blue.png";
+            let collection = {{ urban_nature | safe }};
+            Array.prototype.forEach.call(collection, function(mapItem){
+                var myMarker = L.marker([mapItem.lat, mapItem.lon], {icon: Icon}).addTo(map);
+                myMarker.on({
+                    click: function (e) {
+                    $("#feature-title").html("סוג מיקום - אתרי טבע עירוני");
+                    $("#feature-info").empty()
+                    $("#feature-info").append(`<div class="row"><p class="col-6"> תיאור:</p><p class="col-6"> ${mapItem.MainFeature} </p></div>`);
+                    $("#featureModal").modal("show");
+                }
+                });
+            });
+        }
+        function getCurrentLocation(map, options) {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    Icon.options.iconUrl = "/media/map_markers/location-marker.png";
+                    Icon.options.iconSize = [30, 50];
+                    L.marker([position.coords.latitude, position.coords.longitude], {icon: Icon}).addTo(map);
+                    map.setView([position.coords.latitude, position.coords.longitude], 16);
+                },
+                function(error){
+                    window.alert("אנא אשר מיקום לשימוש מיטבי במפה");
+                },
+                {timeout:10000 , enableHighAccuracy:true});
+            } else {
+                window.alert("אנא אשר מיקום לשימוש מיטבי במפה");
+            }
+        }
+    </script>
+
+<div class="container h-100" >
+    <div class="row justify-content-center">
+        <div id="weather" class="col-10" style="background-color:red;">
+
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-10">
+            {% leaflet_map "B7FunMap" callback="window.map_init" %}
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        
+    </div>
+</div>  
+
+<!-- modal for marker popup -->
+<div class="modal fade" id="featureModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="btn btn btn-outline-dark btn-sm" data-dismiss="modal" aria-label="Close">
+            <span class="text-left" aria-hidden="true">&times;</span>
+        </button>
+        <h5 class="modal-title ml-auto" id="feature-title" dir="rtl"></h5>
+      </div>
+      <div class="modal-body text-right" id="feature-info" dir="rtl"></div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 {% endblock  %}

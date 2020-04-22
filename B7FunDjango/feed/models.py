@@ -1,9 +1,9 @@
 from django.db import models
 class community_centers(models.Model):
-    Address =  models.CharField(max_length=255, verbose_name="Address")
+    address =  models.CharField(max_length=255, verbose_name="Address")
     lat = models.CharField(max_length=255, verbose_name="lat")
     lon = models.CharField(max_length=255, verbose_name="lon")
-    Name = models.CharField(max_length=255, verbose_name="Name")
+    name = models.CharField(max_length=255, verbose_name="Name")
     neighborhood = models.CharField(max_length=255, verbose_name="neighborhood")
 
     class Meta:
@@ -17,7 +17,7 @@ class community_centers(models.Model):
 class dog_gardens(models.Model):
     lat = models.CharField(max_length=255, verbose_name="lat")
     lon = models.CharField(max_length=255, verbose_name="lon")
-    Name = models.CharField(max_length=255, verbose_name="Name")
+    name = models.CharField(max_length=255, verbose_name="Name")
     SHAPE_Area = models.CharField(max_length=255, verbose_name="SHAPE_Area")
     SHAPE_Length = models.CharField(max_length=255, verbose_name="SHAPE_Length")
 
@@ -29,10 +29,10 @@ class dog_gardens(models.Model):
         return self.Name
 
 class elderly_social_club(models.Model):
-    Address =  models.CharField(max_length=255, verbose_name="Address")
+    address =  models.CharField(max_length=255, verbose_name="Address")
     lat = models.CharField(max_length=255, verbose_name="lat")
     lon = models.CharField(max_length=255, verbose_name="lon")
-    Name = models.CharField(max_length=255, verbose_name="Name")
+    name = models.CharField(max_length=255, verbose_name="Name")
     Type = models.CharField(max_length=255, verbose_name="type")
 
     class Meta:
@@ -59,7 +59,7 @@ class playgrounds(models.Model):
     surface = models.CharField(max_length=255, verbose_name="surface")
     lat = models.CharField(max_length=255, verbose_name="lat")
     lon = models.CharField(max_length=255, verbose_name="lon")
-    Name = models.CharField(max_length=255, verbose_name="Name")
+    name = models.CharField(max_length=255, verbose_name="Name")
 
     class Meta:
         db_table = 'play_grounds'
@@ -70,7 +70,7 @@ class playgrounds(models.Model):
     
 class sport_facilities(models.Model):
     Type = models.CharField(max_length=255, verbose_name="shadowing")
-    Name = models.CharField(max_length=255, verbose_name="Name")
+    name = models.CharField(max_length=255, verbose_name="Name")
     street = models.CharField(max_length=255, verbose_name="street")
     HouseNumber = models.CharField(max_length=255, verbose_name="HouseNumber")
     neighborhood = models.CharField(max_length=255, verbose_name="neighborhood")
