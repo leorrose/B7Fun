@@ -3,7 +3,7 @@ class community_centers(models.Model):
     address =  models.CharField(max_length=255, verbose_name="Address")
     lat = models.CharField(max_length=255, verbose_name="lat")
     lon = models.CharField(max_length=255, verbose_name="lon")
-    name = models.CharField(max_length=255, verbose_name="Name")
+    name = models.CharField(max_length=255, verbose_name="name")
     neighborhood = models.CharField(max_length=255, verbose_name="neighborhood")
 
     class Meta:
@@ -11,13 +11,13 @@ class community_centers(models.Model):
         verbose_name_plural = 'community centers'
 
     def __str__(self):
-        return self.Name
+        return self.name
 
 
 class dog_gardens(models.Model):
     lat = models.CharField(max_length=255, verbose_name="lat")
     lon = models.CharField(max_length=255, verbose_name="lon")
-    name = models.CharField(max_length=255, verbose_name="Name")
+    name = models.CharField(max_length=255, verbose_name="name")
     SHAPE_Area = models.CharField(max_length=255, verbose_name="SHAPE_Area")
     SHAPE_Length = models.CharField(max_length=255, verbose_name="SHAPE_Length")
 
@@ -26,13 +26,13 @@ class dog_gardens(models.Model):
         verbose_name_plural = 'dog gardens'
 
     def __str__(self):
-        return self.Name
+        return self.name
 
 class elderly_social_club(models.Model):
     address =  models.CharField(max_length=255, verbose_name="Address")
     lat = models.CharField(max_length=255, verbose_name="lat")
     lon = models.CharField(max_length=255, verbose_name="lon")
-    name = models.CharField(max_length=255, verbose_name="Name")
+    name = models.CharField(max_length=255, verbose_name="name")
     Type = models.CharField(max_length=255, verbose_name="type")
 
     class Meta:
@@ -40,7 +40,7 @@ class elderly_social_club(models.Model):
         verbose_name_plural = 'elderly social clubs'
 
     def __str__(self):
-        return self.Name
+        return self.name
 
 
 class playgrounds(models.Model):
@@ -59,18 +59,18 @@ class playgrounds(models.Model):
     surface = models.CharField(max_length=255, verbose_name="surface")
     lat = models.CharField(max_length=255, verbose_name="lat")
     lon = models.CharField(max_length=255, verbose_name="lon")
-    name = models.CharField(max_length=255, verbose_name="Name")
+    name = models.CharField(max_length=255, verbose_name="name")
 
     class Meta:
         db_table = 'play_grounds'
         verbose_name_plural = 'play grounds'
 
     def __str__(self):
-        return self.Name
+        return self.name
     
 class sport_facilities(models.Model):
     Type = models.CharField(max_length=255, verbose_name="shadowing")
-    name = models.CharField(max_length=255, verbose_name="Name")
+    name = models.CharField(max_length=255, verbose_name="name")
     street = models.CharField(max_length=255, verbose_name="street")
     HouseNumber = models.CharField(max_length=255, verbose_name="HouseNumber")
     neighborhood = models.CharField(max_length=255, verbose_name="neighborhood")
@@ -94,7 +94,7 @@ class sport_facilities(models.Model):
         verbose_name_plural = 'sport facilities'
 
     def __str__(self):
-        return self.Name
+        return self.name
 
 class urban_nature(models.Model):
     MainFeature = models.CharField(max_length=255, verbose_name="MainFeature")

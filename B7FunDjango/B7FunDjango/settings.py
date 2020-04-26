@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'B7FunDjango.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
-
+"""
 if 'test' in sys.argv:
     DATABASES = {
         'default' :{
@@ -111,7 +111,7 @@ DATABASES = {
         }
     }
 }
-"""
+
 
 AUTH_USER_MODEL = 'accounts.User'
 

@@ -4,18 +4,18 @@ from feed.models import community_centers, dog_gardens, elderly_social_club, pla
 
 class community_centersTest(TestCase):
     def setUpTestData(self):
-        self.obj = community_centers.objects.create(Name='Name test',
-                            Address='Address test',
+        self.obj = community_centers.objects.create(name='name test',
+                            address='address test',
                             neighborhood='neighborhood test',
                             lat='lat test',
                             lon='lon test',
                             id=0)
 
-    def test_Name(self):
-        self.assertEqual(self.obj.Name, 'Name test')
+    def test_name(self):
+        self.assertEqual(self.obj.name, 'name test')
 
     def test_Address(self):
-        self.assertEquals(self.obj.Address, 'Address test')
+        self.assertEquals(self.obj.address, 'address test')
 
     def test_neighborhood(self):
         self.assertEquals(self.obj.neighborhood, 'neighborhood test')
@@ -29,11 +29,11 @@ class community_centersTest(TestCase):
     def test_id(self):
         self.assertEquals(self.obj.id, 0)
 
-    def test_Name_max_length(self):
-        self.assertEqual(self.obj._meta.get_field('Name').max_length, 255)
+    def test_name_max_length(self):
+        self.assertEqual(self.obj._meta.get_field('name').max_length, 255)
 
     def test_Address_max_length(self):
-        self.assertEquals(self.obj._meta.get_field('Address').max_length, 255)
+        self.assertEquals(self.obj._meta.get_field('address').max_length, 255)
 
     def test_neighborhood_max_length(self):
         self.assertEquals(self.obj._meta.get_field('neighborhood').max_length, 255)
@@ -45,11 +45,11 @@ class community_centersTest(TestCase):
         self.assertEquals(self.obj._meta.get_field('lon').max_length, 255)
 
     def test_str(self):
-        self.assertEquals(self.obj.__str__(), 'Name test')
+        self.assertEquals(self.obj.__str__(), 'name test')
 
 class dog_gardensTest(TestCase):
     def setUpTestData(self):
-        self.obj = dog_gardens.objects.create(Name='Name test',
+        self.obj = dog_gardens.objects.create(name='name test',
                             SHAPE_Length='SHAPE_Length test',
                             SHAPE_Area='SHAPE_Area test',
                             lat='lat test',
@@ -57,8 +57,8 @@ class dog_gardensTest(TestCase):
                             id=0)
 
 
-    def test_Name(self):
-        self.assertEqual(self.obj.Name, 'Name test')
+    def test_name(self):
+        self.assertEqual(self.obj.name, 'name test')
 
     def test_SHAPE_Length(self):
         self.assertEquals(self.obj.SHAPE_Length, 'SHAPE_Length test')
@@ -75,8 +75,8 @@ class dog_gardensTest(TestCase):
     def test_id(self):
         self.assertEquals(self.obj.id, 0)
 
-    def test_Name_max_length(self):
-        self.assertEqual(self.obj._meta.get_field('Name').max_length, 255)
+    def test_name_max_length(self):
+        self.assertEqual(self.obj._meta.get_field('name').max_length, 255)
 
     def test_SHAPE_Length_max_length(self):
         self.assertEquals(self.obj._meta.get_field('SHAPE_Length').max_length, 255)
@@ -91,23 +91,23 @@ class dog_gardensTest(TestCase):
         self.assertEquals(self.obj._meta.get_field('lon').max_length, 255)
 
     def test_str(self):
-        self.assertEquals(self.obj.__str__(), 'Name test')
+        self.assertEquals(self.obj.__str__(), 'name test')
 
 class elderly_social_clubTest(TestCase):
     def setUpTestData(self):
-        self.obj = elderly_social_club.objects.create(Name='Name test',
-                            Address='Address test',
+        self.obj = elderly_social_club.objects.create(name='name test',
+                            address='address test',
                             Type='Type test',
                             lat='lat test',
                             lon='lon test',
                             id=0)
 
 
-    def test_Name(self):
-        self.assertEqual(self.obj.Name, 'Name test')
+    def test_name(self):
+        self.assertEqual(self.obj.name, 'name test')
 
     def test_Address(self):
-        self.assertEquals(self.obj.Address, 'Address test')
+        self.assertEquals(self.obj.address, 'address test')
 
     def test_Type(self):
         self.assertEquals(self.obj.Type, 'Type test')
@@ -121,8 +121,8 @@ class elderly_social_clubTest(TestCase):
     def test_id(self):
         self.assertEquals(self.obj.id, 0)
 
-    def test_Name_max_length(self):
-        self.assertEqual(self.obj._meta.get_field('Name').max_length, 255)
+    def test_name_max_length(self):
+        self.assertEqual(self.obj._meta.get_field('name').max_length, 255)
 
     def test_Type_max_length(self):
         self.assertEquals(self.obj._meta.get_field('Type').max_length, 255)
@@ -134,11 +134,11 @@ class elderly_social_clubTest(TestCase):
         self.assertEquals(self.obj._meta.get_field('lon').max_length, 255)
 
     def test_str(self):
-        self.assertEquals(self.obj.__str__(), 'Name test')
+        self.assertEquals(self.obj.__str__(), 'name test')
 
 class playgroundsTest(TestCase):
     def setUpTestData(self):
-        self.obj = playgrounds.objects.create(Name='Name test',
+        self.obj = playgrounds.objects.create(name='name test',
                             carrousel=10,
                             combined1=10,
                             combined2=10,
@@ -157,8 +157,8 @@ class playgroundsTest(TestCase):
                             id=0)
 
 
-    def test_Name(self):
-        self.assertEqual(self.obj.Name, 'Name test')
+    def test_name(self):
+        self.assertEqual(self.obj.name, 'name test')
 
     def test_carrousel(self):
         self.assertEquals(self.obj.carrousel, 10)
@@ -208,8 +208,8 @@ class playgroundsTest(TestCase):
     def test_id(self):
         self.assertEquals(self.obj.id, 0)
 
-    def test_Name_max_length(self):
-        self.assertEqual(self.obj._meta.get_field('Name').max_length, 255)
+    def test_name_max_length(self):
+        self.assertEqual(self.obj._meta.get_field('name').max_length, 255)
     
     def test_other_max_length(self):
         self.assertEquals(self.obj._meta.get_field('other').max_length, 255)
@@ -227,11 +227,11 @@ class playgroundsTest(TestCase):
         self.assertEquals(self.obj._meta.get_field('lon').max_length, 255)
 
     def test_str(self):
-        self.assertEquals(self.obj.__str__(), 'Name test')
+        self.assertEquals(self.obj.__str__(), 'name test')
  
 class sport_facilitiesTest(TestCase):
     def setUpTestData(self):
-        self.obj = sport_facilities.objects.create(Name='Name test',
+        self.obj = sport_facilities.objects.create(name='name test',
                             Type='Type test',
                             street='street test',
                             HouseNumber='HouseNumber test',
@@ -250,8 +250,8 @@ class sport_facilitiesTest(TestCase):
                             lat='lat test',
                             lon='lon test',
                             id=0)
-    def test_Name(self):
-        self.assertEqual(self.obj.Name, 'Name test')
+    def test_name(self):
+        self.assertEqual(self.obj.name, 'name test')
 
     def test_Type(self):
         self.assertEquals(self.obj.Type, 'Type test')
@@ -304,8 +304,8 @@ class sport_facilitiesTest(TestCase):
     def test_id(self):
         self.assertEquals(self.obj.id, 0)
 
-    def test_Name_max_length(self):
-        self.assertEqual(self.obj._meta.get_field('Name').max_length, 255)
+    def test_name_max_length(self):
+        self.assertEqual(self.obj._meta.get_field('name').max_length, 255)
 
     def test_Type_max_length(self):
         self.assertEquals(self.obj._meta.get_field('Type').max_length, 255)
@@ -353,7 +353,7 @@ class sport_facilitiesTest(TestCase):
         self.assertEquals(self.obj._meta.get_field('lon').max_length, 255)
 
     def test_str(self):
-        self.assertEquals(self.obj.__str__(), 'Name test')
+        self.assertEquals(self.obj.__str__(), 'name test')
 
 class urban_natureTest(TestCase):
     def setUpTestData(self):
@@ -375,7 +375,7 @@ class urban_natureTest(TestCase):
     def test_id(self):
         self.assertEquals(self.obj.id, 0)
 
-    def test_Name_max_length(self):
+    def test_name_max_length(self):
         self.assertEqual(self.obj._meta.get_field('MainFeature').max_length, 255)
 
     def test_lat_max_length(self):
