@@ -3,11 +3,11 @@ from django.urls import reverse, resolve
 from django.test.client import Client
 from accounts.models import User
 
-class myProfileTest(TestCase):
+class feedTest(TestCase):
     def setUpTestData(self):
         self.client = Client()
-        self.user = User.objects.create(email='testmyProfileTest@text.com',
-                            user_name='myProfileTest user name',
+        self.user = User.objects.create(email='feedTest@text.com',
+                            user_name='feedTest user name',
                             first_name='first name',
                             last_name='last name',
                             about='This is test',
@@ -24,3 +24,33 @@ class myProfileTest(TestCase):
         response = self.client.get(reverse('feed:feed'))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'feed/feed.html')
+
+    def test_view_creates_community_centers_content(self):
+        response = self.client.get(reverse('feed:feed'))
+        self.assertEqual(response.status_code, 200)
+        self.assertTrue(response.context['community_centers'])
+    
+    def test_view_creates_dog_gardens_content(self):
+        response = self.client.get(reverse('feed:feed'))
+        self.assertEqual(response.status_code, 200)
+        self.assertTrue(response.context['dog_gardens'])
+    
+    def test_view_creates_elderly_social_club_content(self):
+        response = self.client.get(reverse('feed:feed'))
+        self.assertEqual(response.status_code, 200)
+        self.assertTrue(response.context['elderly_social_club'])
+    
+    def test_view_creates_playgrounds_content(self):
+        response = self.client.get(reverse('feed:feed'))
+        self.assertEqual(response.status_code, 200)
+        self.assertTrue(response.context['playgrounds'])
+    
+    def test_view_creates_sport_facilities_content(self):
+        response = self.client.get(reverse('feed:feed'))
+        self.assertEqual(response.status_code, 200)
+        self.assertTrue(response.context['sport_facilities'])
+    
+    def test_view_creates_urban_nature_content(self):
+        response = self.client.get(reverse('feed:feed'))
+        self.assertEqual(response.status_code, 200)
+        self.assertTrue(response.context['urban_nature'])

@@ -1060,6 +1060,8 @@ for i in range(0, len(elderly_social_club)):
 for i in range(0, len(playgrounds)):
 	playgrounds[i]["id"] = i
 	playgrounds[i]["name"] = playgrounds[i]["Name"]
+	if playgrounds[i]["shadowing"] == "אי":
+		playgrounds[i]["shadowing"] = "אין"
 	del playgrounds[i]["Name"]
 	
 for i in range(0, len(sports)):
