@@ -25,6 +25,36 @@ class feedTest(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'feed/feed.html')
 
+    def test_view_creates_community_centers_json_content(self):
+        response = self.client.get(reverse('feed:feed'))
+        self.assertEqual(response.status_code, 200)
+        self.assertTrue(response.context['community_centers_json'])
+    
+    def test_view_creates_dog_gardens_json_content(self):
+        response = self.client.get(reverse('feed:feed'))
+        self.assertEqual(response.status_code, 200)
+        self.assertTrue(response.context['dog_gardens_json'])
+    
+    def test_view_creates_elderly_social_club_json_content(self):
+        response = self.client.get(reverse('feed:feed'))
+        self.assertEqual(response.status_code, 200)
+        self.assertTrue(response.context['elderly_social_club_json'])
+
+    def test_view_creates_playgrounds_json_content(self):
+        response = self.client.get(reverse('feed:feed'))
+        self.assertEqual(response.status_code, 200)
+        self.assertTrue(response.context['playgrounds_json'])
+
+    def test_view_creates_sport_facilities_json_content(self):
+        response = self.client.get(reverse('feed:feed'))
+        self.assertEqual(response.status_code, 200)
+        self.assertTrue(response.context['sport_facilities_json'])
+
+    def test_view_creates_urban_nature_json_content(self):
+        response = self.client.get(reverse('feed:feed'))
+        self.assertEqual(response.status_code, 200)
+        self.assertTrue(response.context['urban_nature_json'])
+
     def test_view_creates_community_centers_content(self):
         response = self.client.get(reverse('feed:feed'))
         self.assertEqual(response.status_code, 200)
