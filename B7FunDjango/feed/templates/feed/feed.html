@@ -33,7 +33,7 @@
         let playgrounds_json = {{ playgrounds_json | safe }};
         let sport_facilities_json = {{ sport_facilities_json | safe }};
         let urban_nature_json = {{ urban_nature_json | safe }};
-
+        let timeout = undefined;
         window.onload = function(){
             $('#map').show('slow');
             $('#list').hide();
@@ -47,136 +47,7 @@
             $('#list').show('slow');
         }
 
-        function open_community_center_modal(id){
-            let res = community_centers_json.filter(x => x.id == id)[0];
-            if(res == [])
-                return;
-            $("#feature-title").html("סוג מיקום - מרכז קהילתי");
-            $("#feature-info").empty()
-            if(res.name != '' && res.name != undefined)
-                $("#feature-info").append(`<div class="row"><p class="col-6"> שם:</p><p class="col-6"> ${res.name} </p></div>`);
-            if(res.address != '' && res.address != undefined)
-                $("#feature-info").append(`<div class="row"><p class="col-6"> כתובת:</p><p class="col-6"> ${res.address} </p></div>`);
-            if(res.neighborhood != '' && res.neighborhood != undefined)
-                $("#feature-info").append(`<div class="row"><p class="col-6"> שכונה:</p><p class="col-6"> ${res.neighborhood} </p></div>`);
-            $("#featureModal").modal("show");
-        }
-
-        function open_dog_gardens_modal(id){
-            let res = dog_gardens_json.filter(x => x.id == id)[0];
-            if(res == [])
-                return;
-            $("#feature-title").html("סוג מיקום - גינת כלבים");
-            $("#feature-info").empty()
-            if(res.name != '' && res.name != undefined)
-                $("#feature-info").append(`<div class="row"><p class="col-6"> שם:</p><p class="col-6"> ${res.name} </p></div>`);
-            if(res.SHAPE_Area != '' && res.SHAPE_Area != undefined && !isNaN(res.SHAPE_Area))
-                $("#feature-info").append(`<div class="row"><p class="col-6"> גודל שטח (במטר):</p><p class="col-6"> ${parseInt(res.SHAPE_Area)} </p></div>`);
-            $("#featureModal").modal("show");
-        }
-
-        function open_elderly_social_club_modal(id){
-            let res = elderly_social_club_json.filter(x => x.id == id)[0];
-            if(res == [])
-                return;
-            $("#feature-title").html("סוג מיקום - מועדונים חברתיים לקשיש");
-            $("#feature-info").empty()
-            if(res.name != '' && res.name != undefined)
-                $("#feature-info").append(`<div class="row"><p class="col-6"> שם:</p><p class="col-6"> ${res.name} </p></div>`);
-            if(res.address != '' && res.address != undefined)
-                $("#feature-info").append(`<div class="row"><p class="col-6"> כתובת:</p><p class="col-6"> ${res.address} </p></div>`);
-            if(res.Type != '' && res.Type != undefined)
-                $("#feature-info").append(`<div class="row"><p class="col-6"> סוג:</p><p class="col-6"> ${res.Type} </p></div>`);
-            $("#featureModal").modal("show");
-        }
-
-        function open_playground_modal(id){
-            let res = playgrounds_json.filter(x => x.id == id)[0];
-            if(res == [])
-                return;
-            $("#feature-title").html("סוג מיקום - מתקני משחקים");
-            $("#feature-info").empty()
-            if(res.name != '' && res.name != undefined)
-                $("#feature-info").append(`<div class="row"><p class="col-6"> שם:</p><p class="col-6"> ${res.name} </p></div>`);
-            if(res.shadowing != '' && res.shadowing != undefined)
-                $("#feature-info").append(`<div class="row"><p class="col-6">קיים הצללה:</p><p class="col-6"> ${res.shadowing}  </p></div>`);
-            if(res.surface != '' && res.surface != undefined)
-                $("#feature-info").append(`<div class="row"><p class="col-6"> משטח הפארק:</p><p class="col-6"> ${res.surface}  </p></div>`);
-            if(res.carrousel != '' && res.carrousel != undefined)
-                $("#feature-info").append(`<div class="row"><p class="col-6"> כמות קרוסלות:</p><p class="col-6"> ${res.carrousel} </p></div>`);
-            let combinedNum = 0;
-            if(res.combined1 != '' && res.combined1 != undefined && !isNaN(res.combined1))
-                combinedNum += Number(res.combined1)
-            if(res.combined2 != '' && res.combined2 != undefined && !isNaN(res.combined2))
-                combinedNum += Number(res.combined2)
-            if(res.combined3 != '' && res.combined3 != undefined && !isNaN(res.combined3))
-                combinedNum += Number(res.combined3)
-            $("#feature-info").append(`<div class="row"><p class="col-6"> כמות מולטי פליי:</p><p class="col-6"> ${combinedNum}  </p></div>`);
-            if(res.omega != '' && res.omega != undefined)
-                $("#feature-info").append(`<div class="row"><p class="col-6"> כמות אומגות</p><p class="col-6"> ${res.omega}  </p></div>`);
-            if(res.roserose != '' && res.roserose != undefined)
-                $("#feature-info").append(`<div class="row"><p class="col-6"> כמות נדנדות עלה ורד </p><p class="col-6"> ${res.roserose}  </p></div>`);
-            if(res.slid != '' && res.slid != undefined)
-                $("#feature-info").append(`<div class="row"><p class="col-6"> כמות מגלשות</p><p class="col-6"> ${res.slid}  </p></div>`);
-            if(res.spring != '' && res.spring != undefined)
-                $("#feature-info").append(`<div class="row"><p class="col-6"> כמות דמויות קפיץ</p><p class="col-6"> ${res.spring}  </p></div>`);
-            if(res.Swing != '' && res.Swing != undefined)
-                $("#feature-info").append(`<div class="row"><p class="col-6"> כמות נדנדות</p><p class="col-6"> ${res.Swing}  </p></div>`);
-            if(res.other != '' && res.other != undefined)
-                $("#feature-info").append(`<div class="row"><p class="col-6"> עוד פרטים:</p><p class="col-6"> ${res.other}  </p></div>`);
-            $("#featureModal").modal("show");
-        }
-
-        function open_sport_facilities_modal(id){
-            let res = sport_facilities_json.filter(x => x.id == id)[0];
-            if(res == [])
-                return;
-            $("#feature-title").html("סוג מיקום - מתקני ספורט");
-            $("#feature-info").empty()
-            if(res.name != '' && res.name != undefined)
-                $("#feature-info").append(`<div class="row"><p class="col-6"> שם:</p><p class="col-6"> ${res.name} </p></div>`);
-            if(res.street != '' && res.street != undefined){
-                if(res.HouseNumber != '' && res.HouseNumber != undefined && !isNaN(res.HouseNumber)){
-                    $("#feature-info").append(`<div class="row"><p class="col-6"> כתובת:</p><p class="col-6"> ${res.street + " " + parseInt(res.HouseNumber)} </p></div>`);
-                }
-                else{
-                    $("#feature-info").append(`<div class="row"><p class="col-6"> כתובת:</p><p class="col-6"> ${res.street } </p></div>`);
-                }
-            }
-            if(res.neighborhood != '' && res.neighborhood != undefined)
-                $("#feature-info").append(`<div class="row"><p class="col-6"> שכונה:</p><p class="col-6"> ${res.neighborhood} </p></div>`);
-            if(res.Type != '' && res.Type != undefined)
-                $("#feature-info").append(`<div class="row"><p class="col-6"> סוג:</p><p class="col-6"> ${res.Type} </p></div>`);
-            if(res.Seats != '' && res.Seats != undefined && !isNaN(res.Seats))
-                $("#feature-info").append(`<div class="row"><p class="col-6"> מספר כסאות:</p><p class="col-6"> ${parseInt(res.Seats)}  </p></div>`);
-            if(res.Activity != '' && res.Activity != undefined)
-                $("#feature-info").append(`<div class="row"><p class="col-6"> שעות פעילות:</p><p class="col-6"> ${res.Activity} </p></div>`);
-            if(res.fencing != '' && res.fencing != undefined)
-                $("#feature-info").append(`<div class="row"><p class="col-6"> גידור:</p><p class="col-6"> ${res.fencing}  </p></div>`);
-            if(res.lighting != '' && res.lighting != undefined)
-                $("#feature-info").append(`<div class="row"><p class="col-6"> תאורה:</p><p class="col-6"> ${res.lighting}  </p></div>`);
-            if(res.handicapped != '' && res.handicapped != undefined)
-                $("#feature-info").append(`<div class="row"><p class="col-6"> נגישות:</p><p class="col-6"> ${res.handicapped}  </p></div>`);
-            if(res.condition != '' && res.condition != undefined)
-                $("#feature-info").append(`<div class="row"><p class="col-6"> מצב המיקום:</p><p class="col-6"> ${res.condition}  </p></div>`);
-            if(res.SportType != '' && res.SportType != undefined)
-                $("#feature-info").append(`<div class="row"><p class="col-6"> סוג ספורט:</p><p class="col-6"> ${res.SportType}  </p></div>`);
-            if(res.ForSchool != '' && res.ForSchool != undefined)
-                $("#feature-info").append(`<div class="row"><p class="col-6"> שייך לביה"ס בשם:</p><p class="col-6"> ${res.ForSchool}  </p></div>`);
-            $("#featureModal").modal("show");
-        }
-
-        function open_urban_nature_modal(id){
-            let res = urban_nature_json.filter(x => x.id == id)[0];
-            if(res == [])
-                return;
-            $("#feature-title").html("סוג מיקום - אתרי טבע עירוני");
-            $("#feature-info").empty()
-            if(res.MainFeature != '' && res.MainFeature != undefined)
-                $("#feature-info").append(`<div class="row"><p class="col-6"> תיאור:</p><p class="col-6"> ${res.MainFeature} </p></div>`);
-            $("#featureModal").modal("show");
-        }
-
+        
         let Icon = new L.Icon({
             iconUrl: "",
             shadowUrl: "/media/map_markers/marker-shadow.png",
@@ -188,23 +59,18 @@
         
         function map_init(map, options) {
             getCurrentLocation(map, options);
-            add_collection_to_map(map, options, community_centers_json, "/media/map_markers/marker-icon-violet.png", open_community_center_modal);
-            add_collection_to_map(map, options, dog_gardens_json, "/media/map_markers/marker-icon-green.png", open_dog_gardens_modal);
-            add_collection_to_map(map, options, elderly_social_club_json, "/media/map_markers/marker-icon-orange.png", open_elderly_social_club_modal);
-            add_collection_to_map(map, options, playgrounds_json, "/media/map_markers/marker-icon-gold.png", open_playground_modal);
-            add_collection_to_map(map, options, sport_facilities_json, "/media/map_markers/marker-icon-red.png", open_sport_facilities_modal);
-            add_collection_to_map(map, options, urban_nature_json, "/media/map_markers/marker-icon-blue.png", open_urban_nature_modal);
+            add_collection_to_map(map, options, community_centers_json, "/media/map_markers/marker-icon-violet.png");
+            add_collection_to_map(map, options, dog_gardens_json, "/media/map_markers/marker-icon-green.png");
+            add_collection_to_map(map, options, elderly_social_club_json, "/media/map_markers/marker-icon-orange.png");
+            add_collection_to_map(map, options, playgrounds_json, "/media/map_markers/marker-icon-gold.png");
+            add_collection_to_map(map, options, sport_facilities_json, "/media/map_markers/marker-icon-red.png");
+            add_collection_to_map(map, options, urban_nature_json, "/media/map_markers/marker-icon-blue.png");
         }
 
-        function add_collection_to_map(map, options, collection, iconUrl, modal_function){
+        function add_collection_to_map(map, options, collection, iconUrl){
             Icon.options.iconUrl = iconUrl;
             Array.prototype.forEach.call(collection, function(mapItem){
                 var myMarker = L.marker([mapItem.lat, mapItem.lon], {icon: Icon}).addTo(map);
-                myMarker.on({
-                    click: function (e) {
-                        modal_function(mapItem.id);
-                    }
-                });
             });
         }
 
@@ -223,6 +89,16 @@
             } else {
                 window.alert("אנא אשר מיקום לשימוש מיטבי במפה");
             }
+        }
+        function filterData(search_term){
+            let searchTerm = $("#search-box").val()
+            if(searchTerm != '' && searchTerm != undefined){
+                window.location.href = '{% url "feed:feed" %}' + `filter/${searchTerm}`;
+            }
+            else{
+                $("#search-box").blur();
+                $("#search-box").addClass("border border-danger");
+            }        
         }
     </script>
 
@@ -248,7 +124,7 @@
         </div>
     </div>
     <div class="row justify-content-center" id="list">
-        <div class="col-10 p-0" style="max-height:600px; overflow-y: scroll;">
+        <div class="col-10 p-0 bg-light" style="max-height:600px; min-height:600px; overflow-y: scroll;">
             <table class="table table-hover bg-light mb-0 w-100">
                     <thead class="thead-dark m-0 w-100">
                         <tr class="d-flex">
@@ -259,42 +135,42 @@
                     </thead>
                     <tbody>
                         {% for community_center in community_centers %}
-                        <tr class="d-flex" onclick="open_community_center_modal({{community_center.id|safe}})"> 
+                        <tr class="d-flex"> 
                             <td class="text-right col-4" dir="rtl" scope="row">מרכז קהילתי</td>
                             <td class="text-right col-4" dir="rtl"> {{ community_center.address }}</td>
                             <td class="text-right col-4" dir="rtl"> {{ community_center.name }} </td>
                         </tr>
                         {% endfor %}
                         {% for dog_garden in dog_gardens %}
-                        <tr class="d-flex" onclick="open_dog_gardens_modal({{dog_garden.id|safe}})">
+                        <tr class="d-flex">
                             <td class="text-right col-4" dir="rtl" scope="row">גינת כלבים</td>
                             <td class="text-right col-4" dir="rtl"></td>
                             <td class="text-right col-4" dir="rtl"> {{ dog_garden.name }} </td>
                         </tr>
                         {% endfor %}
                         {% for elderly_social_club_item in elderly_social_club %}
-                        <tr class="d-flex" onclick="open_elderly_social_club_modal({{elderly_social_club_item.id|safe}})">
+                        <tr class="d-flex">
                             <td class="text-right col-4" dir="rtl" scope="row">מועדון חברתי לקשיש</td>
                             <td class="text-right col-4" dir="rtl"> {{ elderly_social_club_item.address }}</td>
                             <td class="text-right col-4" dir="rtl"> {{ elderly_social_club_item.name }} </td>
-                        </tr class="d-flex">
+                        </tr>
                         {% endfor %}
                         {% for playground in playgrounds %}
-                        <tr class="d-flex" onclick="open_playground_modal({{playground.id|safe}})">
+                        <tr class="d-flex">
                             <td class="text-right col-4" dir="rtl" scope="row">מתקן משחקים</td>
                             <td class="text-right col-4" dir="rtl"></td>
                             <td class="text-right col-4" dir="rtl"> {{ playground.name }} </td>
                         </tr>
                         {% endfor %}
                         {% for sport_facilitie in sport_facilities %}
-                        <tr class="d-flex" onclick="open_sport_facilities_modal({{sport_facilitie.id|safe}})">
+                        <tr class="d-flex">
                             <td class="text-right col-4" dir="rtl" scope="row">מתקן ספורט</td>
-                            <td class="text-right col-4" dir="rtl"> {{ sport_facilitie.street }} {{" "}} {{sport_facilitie.HouseNumber}}</td>
+                            <td class="text-right col-4" dir="rtl"> {{ sport_facilitie.address }}</td>
                             <td class="text-right col-4" dir="rtl"> {{ sport_facilitie.name }} </td>
                         </tr>
                         {% endfor %}
                         {% for urban_nature_item in urban_nature %}
-                        <tr class="d-flex" onclick="open_urban_nature_modal({{urban_nature_item.id|safe}})">
+                        <tr class="d-flex">
                             <td class="text-right col-4" dir="rtl" scope="row">אתר טבע עירוני</td>
                             <td class="text-right col-4" dir="rtl"> </td>
                             <td class="text-right col-4" dir="rtl"> {{ urban_nature_item.MainFeature }} </td>
@@ -302,6 +178,16 @@
                         {% endfor %}
                     </tbody>
             </table>
+        </div>
+    </div>
+    <div class="row justify-content-center mt-1">
+        <div class="col-10 p-0">
+            <div class="form-group">
+                <input id="search-box" type="text" class="form-control text-right" placeholder="חפש מיקום לפי שם, כתובת או מאפיין של אתר טבע" dir="rtl"></input>
+                <button id="search-box-btn" type="button" class="btn btn-primary mt-1" onclick="filterData()">
+                    בצע סינון
+                </button>
+            </div> 
         </div>
     </div>
     

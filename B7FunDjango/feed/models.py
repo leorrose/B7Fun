@@ -71,8 +71,7 @@ class playgrounds(models.Model):
 class sport_facilities(models.Model):
     Type = models.CharField(max_length=255, verbose_name="shadowing")
     name = models.CharField(max_length=255, verbose_name="name")
-    street = models.CharField(max_length=255, verbose_name="street")
-    HouseNumber = models.CharField(max_length=255, verbose_name="HouseNumber")
+    address =  models.CharField(max_length=255, verbose_name="address")
     neighborhood = models.CharField(max_length=255, verbose_name="neighborhood")
     Operator = models.CharField(max_length=255, verbose_name="Operator")
     Seats = models.IntegerField(verbose_name="Seats")
