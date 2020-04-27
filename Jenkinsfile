@@ -43,7 +43,8 @@ pipeline {
 				dir("B7FunDjango") {
 					withEnv(["HOME=${env.WORKSPACE}"]) {
 						sh 'python -m coverage xml -o ./reports/coverage.xml'
-						cobertura coberturaReportFile: 'reports/coverage.xml'
+						sh 'python -m coverage report'
+						//cobertura coberturaReportFile: 'reports/coverage.xml'
 					}
 				}
 			}
