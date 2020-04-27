@@ -53,7 +53,7 @@ pipeline {
 		stage('Metric 2 - Test Trend Chart') {
 			steps {
 				dir("B7FunDjango") {
-				junit 'reports/unittest.xml'
+					junit allowEmptyResults: true, testResults: 'reports/unittest.xml', fingerprint: true
 				}
 			}
 		}
