@@ -66,6 +66,7 @@ pipeline {
 			steps {
 				dir("B7FunDjango") {
 				junit 'reports/unittest.xml'
+				}
 			}
 		}
 		
