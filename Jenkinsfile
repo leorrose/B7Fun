@@ -19,7 +19,6 @@ pipeline {
 		}
         stage('Application Setup') {
             steps {
-				sh 'install mongodb'
 				withEnv(["HOME=${env.WORKSPACE}"]) {
 					sh 'pip3 install -r requirements.txt --user'
 					dir("B7FunDjango") {

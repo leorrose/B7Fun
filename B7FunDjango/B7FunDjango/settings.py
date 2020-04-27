@@ -81,11 +81,9 @@ WSGI_APPLICATION = 'B7FunDjango.wsgi.application'
 
 if 'test' in sys.argv:
     DATABASES = {
-        'default' :{
-            'ENGINE': 'djongo',
-            'NAME': 'B7FunDb',
-            "host": 'mongo',
-            "port": 27017     
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': 'mydatabase'
         }
     }
 else:
