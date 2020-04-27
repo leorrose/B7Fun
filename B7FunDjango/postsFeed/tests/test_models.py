@@ -1,6 +1,7 @@
 from django.test import TestCase
 from postsFeed.models import PostFeed
 from datetime import datetime
+import pytz
 
 
 class PostFeedModelTest(TestCase):
@@ -18,7 +19,7 @@ class PostFeedModelTest(TestCase):
         self.assertEqual(self.post.body, 'post body post body post body post body post body')
 
     def test_date(self):
-        self.date = datetime.today()
+        self.date = datetime(2013, 11, 20, 20, 8, 7, 127325, tzinfo=pytz.UTC)
         self.post.date = self.date 
         self.post.save()
         self.assertEqual(self.date, self.post.date)

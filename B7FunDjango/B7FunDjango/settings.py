@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'B7FunDjango.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-"""
+
 if 'test' in sys.argv:
     DATABASES = {
         'default' :{
@@ -112,7 +112,7 @@ DATABASES = {
         }
     }
 }
-
+"""
 
 AUTH_USER_MODEL = 'accounts.User'
 
@@ -190,18 +190,19 @@ LEAFLET_CONFIG = {
 
 # add logging to template 
 
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'handlers': {
-        'console': {
-            'class': 'logging.StreamHandler',
+if 'test' not in sys.argv:
+    LOGGING = {
+        'version': 1,
+        'disable_existing_loggers': False,
+        'handlers': {
+            'console': {
+                'class': 'logging.StreamHandler',
+            },
         },
-    },
-    'loggers': {
-        'django.template': {
-            'handlers': ['console'],
-            'level': os.getenv('DJANGO_LOG_LEVEL', 'DEBUG'),
+        'loggers': {
+            'django.template': {
+                'handlers': ['console'],
+                'level': os.getenv('DJANGO_LOG_LEVEL', 'DEBUG'),
+            },
         },
-    },
-}
+    }

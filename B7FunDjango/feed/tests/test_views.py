@@ -58,29 +58,29 @@ class feedTest(TestCase):
     def test_view_creates_community_centers_content(self):
         response = self.client.get(reverse('feed:feed'))
         self.assertEqual(response.status_code, 200)
-        self.assertTrue(response.context['community_centers'])
+        self.assertEqual(response.context['community_centers'].count(),0)
     
     def test_view_creates_dog_gardens_content(self):
         response = self.client.get(reverse('feed:feed'))
         self.assertEqual(response.status_code, 200)
-        self.assertTrue(response.context['dog_gardens'])
+        self.assertEqual(response.context['dog_gardens'].count(),0)
     
     def test_view_creates_elderly_social_club_content(self):
         response = self.client.get(reverse('feed:feed'))
         self.assertEqual(response.status_code, 200)
-        self.assertTrue(response.context['elderly_social_club'])
+        self.assertEqual(response.context['elderly_social_club'].count(),0)
     
     def test_view_creates_playgrounds_content(self):
         response = self.client.get(reverse('feed:feed'))
         self.assertEqual(response.status_code, 200)
-        self.assertTrue(response.context['playgrounds'])
+        self.assertEqual(response.context['playgrounds'].count(),0)
     
     def test_view_creates_sport_facilities_content(self):
         response = self.client.get(reverse('feed:feed'))
         self.assertEqual(response.status_code, 200)
-        self.assertTrue(response.context['sport_facilities'])
+        self.assertEqual(response.context['sport_facilities'].count(),0)
     
     def test_view_creates_urban_nature_content(self):
         response = self.client.get(reverse('feed:feed'))
         self.assertEqual(response.status_code, 200)
-        self.assertTrue(response.context['urban_nature'])
+        self.assertEqual(response.context['urban_nature'].count(),0)

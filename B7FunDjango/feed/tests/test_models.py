@@ -233,8 +233,7 @@ class sport_facilitiesTest(TestCase):
     def setUpTestData(self):
         self.obj = sport_facilities.objects.create(name='name test',
                             Type='Type test',
-                            street='street test',
-                            HouseNumber='HouseNumber test',
+                            address='address test',
                             neighborhood='neighborhood test',
                             Operator='Operator test',
                             Seats=10,
@@ -256,11 +255,8 @@ class sport_facilitiesTest(TestCase):
     def test_Type(self):
         self.assertEquals(self.obj.Type, 'Type test')
 
-    def test_street(self):
-        self.assertEquals(self.obj.street, 'street test')
-
-    def test_HouseNumber(self):
-        self.assertEquals(self.obj.HouseNumber, 'HouseNumber test')
+    def test_address(self):
+        self.assertEquals(self.obj.address, 'address test')
     
     def test_neighborhood(self):
         self.assertEquals(self.obj.neighborhood, 'neighborhood test')
@@ -310,12 +306,9 @@ class sport_facilitiesTest(TestCase):
     def test_Type_max_length(self):
         self.assertEquals(self.obj._meta.get_field('Type').max_length, 255)
 
-    def test_street_max_length(self):
-        self.assertEquals(self.obj._meta.get_field('street').max_length, 255)
+    def test_address_max_length(self):
+        self.assertEquals(self.obj._meta.get_field('address').max_length, 255)
 
-    def test_HouseNumber_max_length(self):
-        self.assertEquals(self.obj._meta.get_field('HouseNumber').max_length, 255)
-    
     def test_Operator_max_length(self):
         self.assertEquals(self.obj._meta.get_field('Operator').max_length, 255)
     
