@@ -47,8 +47,7 @@ pipeline {
 		failure{
 			mail to: 'B7FunService@gmail.com',
 			subject: "STARTED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
-			body: "STARTED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]':
-				   Check console output at '${env.BUILD_URL}' ${env.JOB_NAME} [${env.BUILD_NUMBER}]"
+			body: "STARTED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]': Check console output at '${env.BUILD_URL}' ${env.JOB_NAME} [${env.BUILD_NUMBER}]"
 		}
 	}
 }
