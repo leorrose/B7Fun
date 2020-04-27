@@ -6,7 +6,7 @@ from django.core.files import File
 from unittest import mock
 
 class myProfileTest(TestCase):
-    def setUpTestData(self):
+    def setUp(self):
         self.client = Client()
         self.user = User.objects.create(email='testmyProfileTest@text.com',
                             user_name='myProfileTest user name',
@@ -81,7 +81,7 @@ class myProfileTest(TestCase):
         User.objects.filter(email=self.user.email).delete()
 
 class editProfileImageTest(TestCase):
-    def setUpTestData(self):
+    def setUp(self):
         self.image_mock = mock.MagicMock(spec=File, name='FileMock')                                                                                                          
         self.image_mock.name = 'test.jpg'
         self.user = User.objects.create(email='testeditProfileImageTest@text.com',
@@ -113,7 +113,7 @@ class editProfileImageTest(TestCase):
         User.objects.filter(email=self.user.email).delete()
 
 class editUserDetailsTest(TestCase):
-    def setUpTestData(self):
+    def setUp(self):
         self.data = {"email":'testeditUserDetailsTest@text.com',
         "user_name":'editeditUserDetailsTest user name',
         "first_name":'first name',
@@ -187,7 +187,7 @@ class editUserDetailsTest(TestCase):
         self.assertTrue(len(response.context["errors"]) > 0 )
 
 class change_passwordTest(TestCase):
-    def setUpTestData(self):
+    def setUp(self):
         self.data = {"old_password":'user password',
         "new_password1":'user test password',
         "new_password2":'user test password'}
@@ -220,7 +220,7 @@ class change_passwordTest(TestCase):
 
 
 class rotatePicTest(TestCase):
-    def setUpTestData(self):
+    def setUp(self):
         self.user = User.objects.create(email='testrotatePicTest@text.com',
                             user_name='editrotatePicTest user name',
                             first_name='first name',

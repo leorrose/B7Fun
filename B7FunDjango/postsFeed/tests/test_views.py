@@ -6,7 +6,7 @@ from accounts.models import User
 from postsFeed.models import PostFeed
 from datetime import datetime
 class PostsFeedTest(TestCase):
-    def setUpTestData(self):
+    def setUp(self):
         self.client = Client()
         self.user = User.objects.create(email='testPostsFeedTest@text.com',
                             user_name='PostsFeedTest user name',

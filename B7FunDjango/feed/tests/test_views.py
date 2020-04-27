@@ -4,7 +4,7 @@ from django.test.client import Client
 from accounts.models import User
 
 class feedTest(TestCase):
-    def setUpTestData(self):
+    def setUp(self):
         self.client = Client()
         self.user = User.objects.create(email='feedTest@text.com',
                             user_name='feedTest user name',

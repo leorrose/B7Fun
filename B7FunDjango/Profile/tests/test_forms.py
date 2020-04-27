@@ -5,7 +5,7 @@ import io
 
 
 class UpdateProfileImageFormTestCase(TestCase):
-    def setUpTestData(self):
+    def setUp(self):
         imgFile = io.StringIO('GIF87a\x01\x00\x01\x00\x80\x01\x00\x00\x00\x00ccc,\x00''\x00\x00\x00\x01\x00\x01\x00\x00\x02\x02D\x01\x00;')
         self.form_data = {'profile_image': imgFile}
 
@@ -26,7 +26,7 @@ class UpdateProfileImageFormTestCase(TestCase):
         self.assertFalse(form.is_valid())
 
 class UpdateUserDetailsFormTestCase(TestCase):
-    def setUpTestData(self):
+    def setUp(self):
         form_data = {'email': 'test@text.com',
                  'user_name': 'user name',
                  'first_name': 'first name',

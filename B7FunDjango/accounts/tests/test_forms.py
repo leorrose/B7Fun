@@ -4,7 +4,7 @@ from django import forms
 from accounts.models import User
 
 class SignUpFormTest(TestCase):
-    def setUpTestData(self):
+    def setUp(self):
         self.form_data = {'email': 'test@text.com',
         'user_name': 'user name',
         'first_name': 'first name',
@@ -99,7 +99,7 @@ class SignUpFormTest(TestCase):
         self.assertEqual(user.email, 'test@text.com')
 
 class LoginFormTest(TestCase):
-    def setUpTestData(self):
+    def setUp(self):
         form_data = {'email': 'test@text.com',
                  'password': 'SignUpFormTest13'}
         self.form = LoginForm(data=form_data)

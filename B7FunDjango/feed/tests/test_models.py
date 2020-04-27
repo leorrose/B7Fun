@@ -3,7 +3,7 @@ from feed.models import community_centers, dog_gardens, elderly_social_club, pla
 
 
 class community_centersTest(TestCase):
-    def setUpTestData(self):
+    def setUp(self):
         self.obj = community_centers.objects.create(name='name test',
                             address='address test',
                             neighborhood='neighborhood test',
@@ -48,7 +48,7 @@ class community_centersTest(TestCase):
         self.assertEquals(self.obj.__str__(), 'name test')
 
 class dog_gardensTest(TestCase):
-    def setUpTestData(self):
+    def setUp(self):
         self.obj = dog_gardens.objects.create(name='name test',
                             SHAPE_Length='SHAPE_Length test',
                             SHAPE_Area='SHAPE_Area test',
@@ -94,7 +94,7 @@ class dog_gardensTest(TestCase):
         self.assertEquals(self.obj.__str__(), 'name test')
 
 class elderly_social_clubTest(TestCase):
-    def setUpTestData(self):
+    def setUp(self):
         self.obj = elderly_social_club.objects.create(name='name test',
                             address='address test',
                             Type='Type test',
@@ -137,7 +137,7 @@ class elderly_social_clubTest(TestCase):
         self.assertEquals(self.obj.__str__(), 'name test')
 
 class playgroundsTest(TestCase):
-    def setUpTestData(self):
+    def setUp(self):
         self.obj = playgrounds.objects.create(name='name test',
                             carrousel=10,
                             combined1=10,
@@ -230,7 +230,7 @@ class playgroundsTest(TestCase):
         self.assertEquals(self.obj.__str__(), 'name test')
  
 class sport_facilitiesTest(TestCase):
-    def setUpTestData(self):
+    def setUp(self):
         self.obj = sport_facilities.objects.create(name='name test',
                             Type='Type test',
                             address='address test',
@@ -349,7 +349,7 @@ class sport_facilitiesTest(TestCase):
         self.assertEquals(self.obj.__str__(), 'name test')
 
 class urban_natureTest(TestCase):
-    def setUpTestData(self):
+    def setUp(self):
         self.obj = urban_nature.objects.create(MainFeature='MainFeature test',
                             lat='lat test',
                             lon='lon test',

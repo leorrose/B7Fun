@@ -5,7 +5,7 @@ import pytz
 
 
 class PostFeedModelTest(TestCase):
-    def setUpTestData(self):
+    def setUp(self):
         self.date = datetime.today()
         self.post = PostFeed.objects.create(title = 'new post',
                                 body = 'post body post body post body post body post body',
