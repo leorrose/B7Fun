@@ -43,20 +43,7 @@ pipeline {
 				dir("B7FunDjango") {
 					withEnv(["HOME=${env.WORKSPACE}"]) {
 						sh 'python -m coverage xml -o ./reports/coverage.xml'
-						step(
-							[$class: 'CoberturaPublisher',
-								autoUpdateHealth: false,
-                                autoUpdateStability: false,
-                                coberturaReportFile: 'reports/coverage.xml',
-                                failNoReports: false,
-                                failUnhealthy: false,
-                                failUnstable: false,
-                                maxNumberOfBuilds: 10,
-                                onlyStable: false,
-                                sourceEncoding: 'ASCII',
-                                 zoomCoverageChart: false
-							]
-						)
+						cobertura coberturaReportFile: 'reports/coverage.xml'
 					}
 				}
 			}
