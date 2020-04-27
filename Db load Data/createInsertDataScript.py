@@ -1066,11 +1066,12 @@ for i in range(0, len(playgrounds)):
 	
 for i in range(0, len(sports)):
 	sports[i]["id"] = i
-	sports[i]["HouseNumber"] = sports[i]["HouseNumbe"]
+	sports[i]["address"] = sports[i]["street"] + " " + str(int(float(sports[i]["HouseNumbe"])))
 	sports[i]["neighborhood"] = sports[i]["neighborho"]
 	sports[i]["handicapped"] = sports[i]["handicappe"]
 	sports[i]["association"] = sports[i]["associatio"]
 	sports[i]["name"] = sports[i]["Name"]
+	del sports[i]["street"]
 	del sports[i]["Name"]
 	del sports[i]["HouseNumbe"]
 	del sports[i]["neighborho"]
