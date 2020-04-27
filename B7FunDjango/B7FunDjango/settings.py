@@ -84,6 +84,7 @@ if 'test' in sys.argv:
         'default' :{
             'ENGINE': 'djongo',
             'NAME': 'B7FunDb',
+            "host": 'mongo',
             "port": 27017     
         }
     }
