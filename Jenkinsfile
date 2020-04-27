@@ -32,7 +32,7 @@ pipeline {
             steps {
 				dir("B7FunDjango") {
 					withEnv(["HOME=${env.WORKSPACE}"]) {
-						sh 'coverage run --source='.' manage.py test'
+						sh 'coverage manage.py test'
 					}
 				}
 			}
