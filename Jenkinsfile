@@ -42,7 +42,7 @@ pipeline {
 			steps {
 				dir("B7FunDjango") {
 					withEnv(["HOME=${env.WORKSPACE}"]) {
-						sh 'coverage xml -o ./reports/coverage.xml'
+						sh 'python -m coverage xml -o ./reports/coverage.xml'
 						step(
 							[$class: 'CoberturaPublisher',
 								autoUpdateHealth: false,
