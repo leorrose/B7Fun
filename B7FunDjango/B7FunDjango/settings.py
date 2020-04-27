@@ -1,3 +1,6 @@
+# pylint: disable=line-too-long
+# pylint: disable=invalid-name
+
 """
 Django settings for B7FunDjango project.
 
@@ -40,7 +43,7 @@ INSTALLED_APPS = [
     'leaflet',
     'accounts',
     'feed',
-	'Profile',
+    'Profile',
     'postsFeed',
 ]
 
@@ -88,7 +91,7 @@ if 'test' in sys.argv:
     }
 else:
     DATABASES = {
-        'default' :{
+        'default': {
             'ENGINE': 'djongo',
             'NAME': 'B7FunDb',
             'CLIENT': {
@@ -134,16 +137,16 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = ( os.path.join(BASE_DIR, 'static'),)
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
 # media files
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
-# mail service 
+# mail service
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST =  'smtp.gmail.com'
+EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'b7funservice@gmail.com'
 EMAIL_HOST_PASSWORD = 'ttxankkfptlfblto'
@@ -157,14 +160,14 @@ SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 LOGOUT_REDIRECT_URL = "/login"
 LOGIN_URL = "/login"
 
-#testing
+# testing
 TEST_RUNNER = 'xmlrunner.extra.djangotestrunner.XMLTestRunner'
 TEST_OUTPUT_DIR = './test-reports/unittest'
 TEST_OUTPUT_FILE_NAME = 'unittest.xml'
 TEST_OUTPUT_VERBOSE = 1
 
 
-#maps 
+# maps
 LEAFLET_CONFIG = {
     'DEFAULT_CENTER': (31.2530, 34.7915),
     'DEFAULT_ZOOM': 12,
@@ -174,7 +177,7 @@ LEAFLET_CONFIG = {
 }
 
 
-# add logging to template 
+# add logging to template
 
 if 'test' not in sys.argv:
     LOGGING = {

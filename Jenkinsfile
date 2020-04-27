@@ -28,22 +28,49 @@ pipeline {
 				}
             }
         }
-        stage('Run Tests') {
+		stage('Run Tests') {
             steps {
 				dir("B7FunDjango") {
 					withEnv(["HOME=${env.WORKSPACE}"]) {
-						sh 'python manage.py test'
+						sh 'coverage run --source='.' manage.py test'
 					}
 				}
 			}
         }
-    }
-	post {
-		always {
-			dir("B7FunDjango") {
-				junit 'test-reports/unittest/unittest.xml'
+		
+		stage('Metric 1 - unit test coverage') {
+			steps {
+				dir("B7FunDjango") {
+					withEnv(["HOME=${env.WORKSPACE}"]) {
+						sh 'coverage xml -o ./reports/coverage.xml'
+						step(
+							[$class: 'CoberturaPublisher',
+								autoUpdateHealth: false,
+                                autoUpdateStability: false,
+                                coberturaReportFile: 'reports/coverage.xml',
+                                failNoReports: false,
+                                failUnhealthy: false,
+                                failUnstable: false,
+                                maxNumberOfBuilds: 10,
+                                onlyStable: false,
+                                sourceEncoding: 'ASCII',
+                                 zoomCoverageChart: false
+							]
+						)
+					}
+				}
 			}
 		}
+		
+		stage('Metric 2 - Test Trend Chart') {
+			steps {
+				dir("B7FunDjango") {
+				junit 'reports/unittest.xml'
+			}
+		}
+		
+    }
+	post {
 		failure{
 			mail to: 'B7FunService@gmail.com',
 			subject: "Failed: Job '${env.JOB_NAME}' ['${env.BUILD_NUMBER}']",
