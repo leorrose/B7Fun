@@ -83,7 +83,8 @@ if 'test' in sys.argv:
     DATABASES = {
         'default' :{
             'ENGINE': 'djongo',
-            'NAME': 'B7FunDb'        
+            'NAME': 'B7FunDb',
+            "port": 27017     
         }
     }
 else:
