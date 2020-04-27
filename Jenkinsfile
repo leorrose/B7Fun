@@ -32,7 +32,7 @@ pipeline {
             steps {
 				dir("B7FunDjango") {
 					withEnv(["HOME=${env.WORKSPACE}"]) {
-						sh 'python manage.py test'
+						sh 'python manage.py '
 					}
 				}
 			}
@@ -43,6 +43,13 @@ pipeline {
 			dir("B7FunDjango") {
 				junit 'test-reports/unittest/*.xml'
 			}
+		}
+		failure{
+			mail to: 'B7FunService@gmail.com',
+			subject: "STARTED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
+			body: """<p>STARTED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]':</p>
+              <p>Check console output at &QUOT;<a href='${env.BUILD_URL}'>${env.JOB_NAME} [${env.BUILD_NUMBER}]</a>&QUOT;</p>""",
+            recipientProviders: [[$class: 'DevelopersRecipientProvider']]
 		}
 	}
 }

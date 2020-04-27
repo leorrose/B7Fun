@@ -99,20 +99,6 @@ else:
             }
         }
     }
-"""
-DATABASES = {
-    'default' :{
-        'ENGINE': 'djongo',
-        'NAME': 'B7FunDb',
-        'CLIENT': {
-            'host': 'mongodb+srv://B7Fun:B7FunDb@b7fun-2ldf3.mongodb.net/test?retryWrites=true&w=majority',
-            'username': 'B7Fun',
-            'password': 'B7FunDb',
-            'authMechanism': 'SCRAM-SHA-1'
-        }
-    }
-}
-"""
 
 AUTH_USER_MODEL = 'accounts.User'
 
