@@ -41,7 +41,7 @@ pipeline {
 	post {
 		always {
 			dir("B7FunDjango") {
-				junit 'test-reports/unittest/*.xml'
+				junit 'test-reports/unittest/unittest.xml'
 			}
 		}
 		failure{
