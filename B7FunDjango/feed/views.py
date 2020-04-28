@@ -4,7 +4,6 @@
 
 import json
 from django.shortcuts import render
-import requests
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from .models import community_centers, dog_gardens, elderly_social_club, playgrounds,\
