@@ -53,7 +53,9 @@ pipeline {
 		stage('Metric 2 - pylint python code convention') {
 			steps {
 				dir("B7FunDjango") {
-					sh 'python -m pylint --load-plugins=pylint_django --disable=R0801 accounts'
+					withEnv(["HOME=${env.WORKSPACE}"]) {
+						sh 'python -m pylint --load-plugins=pylint_django --disable=R0801 accounts'
+					}
 				}
 			}
 		}
