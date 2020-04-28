@@ -219,9 +219,9 @@
             }
         }
         function filterData(search_term){
-            let searchTerm = $("#search-box").val()
-            if(searchTerm != '' && searchTerm != undefined){
-                window.location.href = '{% url "feed:feed" %}' + `filter/${searchTerm}`;
+            let search_term = $("#search-box").val()
+            if(search_term != '' && search_term != undefined){
+                window.location.href = '{% url "feed:feed" %}' + `filter_data/${search_term}`;
             }
             else{
                 $("#search-box").blur();

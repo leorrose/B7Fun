@@ -1,17 +1,22 @@
+# pylint: disable=missing-module-docstring
+# pylint: disable=missing-function-docstring
+# pylint: disable=missing-class-docstring
+
 from django.test import TestCase
-from django.urls import reverse, resolve
+from django.urls import reverse
 from django.test.client import Client
 from accounts.models import User
 
-class feedTest(TestCase):
+
+class FeedTest(TestCase):
     def setUp(self):
         self.client = Client()
         self.user = User.objects.create(email='feedTest@text.com',
-                            user_name='feedTest user name',
-                            first_name='first name',
-                            last_name='last name',
-                            about='This is test',
-                            profile_image=None)
+                                        user_name='feedTest user name',
+                                        first_name='first name',
+                                        last_name='last name',
+                                        about='This is test',
+                                        profile_image=None)
         self.user.set_password('user password')
         self.user.save()
         self.client.force_login(self.user)
@@ -29,12 +34,12 @@ class feedTest(TestCase):
         response = self.client.get(reverse('feed:feed'))
         self.assertEqual(response.status_code, 200)
         self.assertTrue(response.context['community_centers_json'])
-    
+
     def test_view_creates_dog_gardens_json_content(self):
         response = self.client.get(reverse('feed:feed'))
         self.assertEqual(response.status_code, 200)
         self.assertTrue(response.context['dog_gardens_json'])
-    
+
     def test_view_creates_elderly_social_club_json_content(self):
         response = self.client.get(reverse('feed:feed'))
         self.assertEqual(response.status_code, 200)
@@ -58,29 +63,29 @@ class feedTest(TestCase):
     def test_view_creates_community_centers_content(self):
         response = self.client.get(reverse('feed:feed'))
         self.assertEqual(response.status_code, 200)
-        self.assertEqual(response.context['community_centers'].count(),0)
-    
+        self.assertEqual(response.context['community_centers'].count(), 0)
+
     def test_view_creates_dog_gardens_content(self):
         response = self.client.get(reverse('feed:feed'))
         self.assertEqual(response.status_code, 200)
-        self.assertEqual(response.context['dog_gardens'].count(),0)
-    
+        self.assertEqual(response.context['dog_gardens'].count(), 0)
+
     def test_view_creates_elderly_social_club_content(self):
         response = self.client.get(reverse('feed:feed'))
         self.assertEqual(response.status_code, 200)
-        self.assertEqual(response.context['elderly_social_club'].count(),0)
-    
+        self.assertEqual(response.context['elderly_social_club'].count(), 0)
+
     def test_view_creates_playgrounds_content(self):
         response = self.client.get(reverse('feed:feed'))
         self.assertEqual(response.status_code, 200)
-        self.assertEqual(response.context['playgrounds'].count(),0)
-    
+        self.assertEqual(response.context['playgrounds'].count(), 0)
+
     def test_view_creates_sport_facilities_content(self):
         response = self.client.get(reverse('feed:feed'))
         self.assertEqual(response.status_code, 200)
-        self.assertEqual(response.context['sport_facilities'].count(),0)
-    
+        self.assertEqual(response.context['sport_facilities'].count(), 0)
+
     def test_view_creates_urban_nature_content(self):
         response = self.client.get(reverse('feed:feed'))
         self.assertEqual(response.status_code, 200)
-        self.assertEqual(response.context['urban_nature'].count(),0)
+        self.assertEqual(response.context['urban_nature'].count(), 0)
