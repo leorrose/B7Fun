@@ -1,7 +1,3 @@
- # pragma: no cover
-# pylint: disable=line-too-long
-# pylint: disable=invalid-name
-
 """
 Django settings for B7FunDjango project.
 
@@ -96,7 +92,8 @@ else:
             'ENGINE': 'djongo',
             'NAME': 'B7FunDb',
             'CLIENT': {
-                'host': 'mongodb+srv://B7Fun:B7FunDb@b7fun-2ldf3.mongodb.net/test?retryWrites=true&w=majority',
+                'host': 'mongodb+srv://B7Fun:B7FunDb@b7fun-2ldf3.' +
+                'mongodb.net/test?retryWrites=true&w=majority',
                 'username': 'B7Fun',
                 'password': 'B7FunDb',
                 'authMechanism': 'SCRAM-SHA-1'
@@ -187,12 +184,6 @@ if 'test' not in sys.argv:
         'handlers': {
             'console': {
                 'class': 'logging.StreamHandler',
-            },
-        },
-        'loggers': {
-            'django.template': {
-                'handlers': ['console'],
-                'level': os.getenv('DJANGO_LOG_LEVEL', 'DEBUG'),
             },
         },
     }

@@ -1,10 +1,19 @@
+# pylint: disable=missing-module-docstring
+# pylint: disable=missing-function-docstring
+# pylint: disable=missing-class-docstring
+# pylint: disable=too-many-arguments
+# pylint: disable=unused-argument
+# pylint: disable=no-self-use
+
 from django.db import models
-from django.contrib.auth.models import AbstractBaseUser,BaseUserManager
+from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
+
 
 class MyUserManager(BaseUserManager):
     use_in_migrations = True
 
-    def create_user(self, email, user_name, first_name, last_name, password,about=None, profile_image=None):
+    def create_user(self, email, user_name, first_name, last_name, password, about=None,
+                    profile_image=None):
         if not email:
             raise ValueError("user must have an email")
         if not user_name:
@@ -25,7 +34,7 @@ class MyUserManager(BaseUserManager):
         user.save(using=self._db)
         return user
 
-    def create_superuser(self,email, user_name, password,first_name=None, last_name=None, ):
+    def create_superuser(self, email, user_name, password, first_name=None, last_name=None, ):
         user = self.create_user(
             email=self.normalize_email(email),
             user_name=user_name,
@@ -45,13 +54,17 @@ class MyUserManager(BaseUserManager):
 
 class User(AbstractBaseUser):
     email = models.EmailField(verbose_name="email", max_length=60, unique=True)
-    user_name = models.CharField(max_length=30,unique=True, verbose_name="user_name")
+    user_name = models.CharField(
+        max_length=30, unique=True, verbose_name="user_name")
     first_name = models.CharField(max_length=30, verbose_name="first name")
     last_name = models.CharField(max_length=30, verbose_name="last name")
-    date_joined = models.DateField(verbose_name="date joined", auto_now_add=True)
-    last_login = models.DateTimeField(verbose_name="last login", auto_now=True, blank=True, null=True)
+    date_joined = models.DateField(
+        verbose_name="date joined", auto_now_add=True)
+    last_login = models.DateTimeField(
+        verbose_name="last login", auto_now=True, blank=True, null=True)
     about = models.TextField(max_length=500)
-    profile_image = models.ImageField(default='default_profile.png', blank=True)
+    profile_image = models.ImageField(
+        default='default_profile.png', blank=True)
     is_admin = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
@@ -64,8 +77,8 @@ class User(AbstractBaseUser):
     def __str__(self):
         return self.user_name + ' - ' + self.email
 
-    def has_perm(self, perm, obj = None):
+    def has_perm(self, perm, obj=None):
         return self.is_admin
 
-    def has_module_perms(self,app_label):
+    def has_module_perms(self, app_label):
         return True

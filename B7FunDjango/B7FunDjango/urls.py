@@ -1,8 +1,4 @@
-# pylint: disable=line-too-long
-# pylint: disable=invalid-name
-# pylint: disable=missing-module-docstring
-
-
+""" The urls for all apps (global ur"""
 from django.contrib import admin
 from django.urls import path, include
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
@@ -17,7 +13,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('Profile/', include('Profile.urls')),
     path('posts/', include('postsFeed.urls')),
-    path('password-reset/', auth_views.PasswordResetView.as_view(template_name='accounts/password_reset.html', email_template_name="accounts/password_reset_email.html"),
+    path('password-reset/',
+         auth_views.PasswordResetView.as_view(
+             template_name='accounts/password_reset.html',
+             email_template_name="accounts/password_reset_email.html"),
          name='password_reset'),
     path('password-reset-done/',
          auth_views.PasswordResetDoneView.as_view(

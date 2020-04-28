@@ -50,7 +50,15 @@ pipeline {
 			}
 		}
 		
-		stage('Metric 2 - Test Trend Chart') {
+		stage('Metric 2 - pylint python code convention') {
+			steps {
+				dir("B7FunDjango") {
+					sh 'python -m pylint --load-plugins=pylint_django --disable=R0801 accounts'
+				}
+			}
+		}
+		
+		stage('Metric 3 - Test Trend Chart') {
 			steps {
 				dir("B7FunDjango") {
 					junit allowEmptyResults: true, testResults: 'reports/unittest.xml'
