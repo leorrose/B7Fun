@@ -1,6 +1,12 @@
+# pylint: disable=missing-module-docstring
+# pylint: disable=missing-function-docstring
+# pylint: disable=missing-class-docstring
+
 from django.db import models
 
 # Create your models here.
+
+
 class PostFeed(models.Model):
     title = models.TextField()
     body = models.TextField()
