@@ -4,6 +4,7 @@
 
 import json
 from django.shortcuts import render
+import requests
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from .models import community_centers, dog_gardens, elderly_social_club, playgrounds,\
@@ -61,3 +62,16 @@ def filter_data(request, search_term):
                        Q(name__contains=search_term) | Q(address__contains=search_term)).values(),
                    "urban_nature": urban_nature.objects.filter(
                        Q(MainFeature__contains=search_term)).values()})
+
+
+def get_weather():
+    url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=imperial&appid=a34020b19effe33baf44bd412063bb58'
+    city = 'Beer Sheva'
+    city_weather = requests.get(url.format(city)).json()
+    temperature = (float(city_weather['main']['temp']) - 32) // 1.8
+    temperature = str(temperature)
+    weather = {
+        'temperature': temperature,
+        'icon': city_weather['weather'][0]['icon']
+    }
+    return weather
