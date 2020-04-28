@@ -34,10 +34,26 @@
         let sport_facilities_json = {{ sport_facilities_json | safe }};
         let urban_nature_json = {{ urban_nature_json | safe }};
         let timeout = undefined;
+        let interval = 0;
         window.onload = function(){
+            change_weather();
             $('#map').show('slow');
             $('#list').hide();
         }
+        function change_weather() {
+            interval++;
+            if (interval <= 10) {
+                $('#7-weather-day').show('slow');
+                $('#current-day').hide('slow');
+            } else {
+                $('#7-weather-day').hide('slow');
+                $('#current-day').show('slow');
+                interval = interval == 20 ? 0 : interval;
+            }
+            $('#interval').html(interval)
+            setTimeout(change_weather, 1000)
+        }
+
         function show_map() {
             $('#list').hide();
             $('#map').show('slow');
@@ -232,28 +248,41 @@
 
 <div class="container h-100" >
     <div class="row justify-content-center">
-        <div id="weather" class="col-10 p-0">
-            <div class="box">
-                <article class="media">
-                    <div class="media-left">
-                        <figure class="image is-50x50">
-                            <img src="http://openweathermap.org/img/w/{{ icon }}.png" alt="Image">
-                        </figure>
-                     </div>
-                <div class="media-content">
-                   <div class="content">
-                        <p>
-                            <span class="title"> באר שבע </span>
-                            <br>
-                            <span class="subtitle">{{ temperature }} °C</span>
-                            <br>
-                        </p>
-                    </div>
-                </div>
-                 </article>
+        <div id="weather" class="col-10 p-0 mt-1" dir="rtl" style="max-height:125px; min-height:125px;">
+            <div id="7-weather-day">
+                <a class="weatherwidget-io" href="https://forecast7.com/he/31d2534d79/beer-sheva/" data-label_1="באר שבע" data-label_2="תחזית מזג אוויר" data-icons="Climacons Animated" data-mode="Forecast" data-theme="sky" >באר שבע מזג אוויר</a>
+                <script>
+                    !function(d,s,id){
+                        var js,fjs=d.getElementsByTagName(s)[0];
+                        if(!d.getElementById(id)){
+                            js=d.createElement(s);
+                            js.id=id;
+                            js.src='https://weatherwidget.io/js/widget.min.js';
+                            fjs.parentNode.insertBefore(js,fjs);
+                        }
+                    }
+                    (document,'script','weatherwidget-io-js');
+                </script>
+            </div>
+
+            <div id="current-day">
+                <a class="weatherwidget-io" href="https://forecast7.com/he/31d2534d79/beer-sheva/" data-label_1="באר שבע" data-label_2="מזג אוויר נוכחי" data-icons="Climacons Animated" data-mode="Current" data-theme="sky" >באר שבע מזג אוויר</a>
+                <script>        
+                !function(d,s,id){
+                    var js,fjs=d.getElementsByTagName(s)[0];
+                    if(!d.getElementById(id)){
+                        js=d.createElement(s);
+                        js.id=id;
+                        js.src='https://weatherwidget.io/js/widget.min.js';
+                        fjs.parentNode.insertBefore(js,fjs);
+                    }
+                }
+                (document,'script','weatherwidget-io-js');
+                </script>
             </div>
         </div>
     </div>
+    
     <div class="row justify-content-center">
         <div class="col-10 p-0">
             <button id="toggle-map" type="button" class="btn btn-primary" onclick="show_map()">

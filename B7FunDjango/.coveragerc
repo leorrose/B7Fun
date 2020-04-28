@@ -1,0 +1,6 @@
+[run]
+source = .
+omit =
+    *B7FunDjango\settings.py*
+    *B7FunDjango\wsgi.py*
+    *manage.py*

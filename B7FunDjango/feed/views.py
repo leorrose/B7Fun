@@ -13,7 +13,6 @@ from .models import community_centers, dog_gardens, elderly_social_club, playgro
 
 @login_required(login_url='/')
 def feed(request):
-    weather = get_weather()
     return render(request, 'feed/feed.html',
                   {"community_centers_json": json.dumps(list(community_centers.objects.values())),
                    "dog_gardens_json": json.dumps(list(dog_gardens.objects.values())),
@@ -27,9 +26,7 @@ def feed(request):
                    "elderly_social_club": elderly_social_club.objects.values(),
                    "playgrounds": playgrounds.objects.values(),
                    "sport_facilities": sport_facilities.objects.values(),
-                   "urban_nature": urban_nature.objects.values(),
-                   "temperature": weather['temperature'],
-                   "icon": weather['icon']})
+                   "urban_nature": urban_nature.objects.values()})
 
 
 @login_required(login_url='/')
@@ -65,16 +62,3 @@ def filter_data(request, search_term):
                        Q(name__contains=search_term) | Q(address__contains=search_term)).values(),
                    "urban_nature": urban_nature.objects.filter(
                        Q(MainFeature__contains=search_term)).values()})
-
-
-def get_weather():
-    url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=metric&appid=a34020b19effe33baf44bd412063bb58'
-    city = 'Beer Sheva'
-    city_weather = requests.get(url.format(city)).json()
-    temperature = round((float(city_weather['main']['temp'])))
-    temperature = str(temperature)
-    weather = {
-        'temperature': temperature,
-        'icon': city_weather['weather'][0]['icon']
-    }
-    return weather

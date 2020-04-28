@@ -43,7 +43,7 @@ def edit_profile_image(request):
                     "default_profile.png" and os.path.exists(request.user.profile_image.path):
                 os.remove(request.user.profile_image.path)
             if form.cleaned_data.get('profile_image'):
-                request.user.profile_image = form.cleaned_data.get(
+                request.user.profile_image = form.cleaned_data.get(  # pragma: no cover
                     'profile_image')
             else:
                 request.user.profile_image = "default_profile.png"
