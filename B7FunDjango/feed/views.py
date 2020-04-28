@@ -13,6 +13,7 @@ from .models import community_centers, dog_gardens, elderly_social_club, playgro
 
 @login_required(login_url='/')
 def feed(request):
+    weather = get_weather()
     return render(request, 'feed/feed.html',
                   {"community_centers_json": json.dumps(list(community_centers.objects.values())),
                    "dog_gardens_json": json.dumps(list(dog_gardens.objects.values())),
@@ -26,7 +27,9 @@ def feed(request):
                    "elderly_social_club": elderly_social_club.objects.values(),
                    "playgrounds": playgrounds.objects.values(),
                    "sport_facilities": sport_facilities.objects.values(),
-                   "urban_nature": urban_nature.objects.values()})
+                   "urban_nature": urban_nature.objects.values(),
+                   "temperature": weather['temperature'],
+                   "icon": weather['icon']})
 
 
 @login_required(login_url='/')
