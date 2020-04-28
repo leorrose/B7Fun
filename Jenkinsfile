@@ -55,6 +55,7 @@ pipeline {
 				dir("B7FunDjango") {
 					withEnv(["HOME=${env.WORKSPACE}"]) {
 						sh 'python -m pylint --load-plugins=pylint_django --disable=R0801 accounts'
+						sh 'python -m pylint --load-plugins=pylint_django --disable=R0801 feed'
 					}
 				}
 			}
