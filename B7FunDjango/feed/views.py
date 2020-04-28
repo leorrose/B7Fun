@@ -68,14 +68,13 @@ def filter_data(request, search_term):
 
 
 def get_weather():
-    url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=imperial&appid=a34020b19effe33baf44bd412063bb58'
+    url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=metric&appid=a34020b19effe33baf44bd412063bb58'
     city = 'Beer Sheva'
     city_weather = requests.get(url.format(city)).json()
-    temperature = round((float(city_weather['main']['temp']) - 32) / 1.8)
+    temperature = round((float(city_weather['main']['temp'])))
     temperature = str(temperature)
     weather = {
         'temperature': temperature,
         'icon': city_weather['weather'][0]['icon']
     }
-    print(city_weather)
     return weather
