@@ -1,0 +1,26 @@
+{% extends 'baseWithNav.html' %}
+
+{% block  content%}
+    </br>
+    <div class="container d-flex flex-column h-100" >
+        <div class="flex-grow-1"></div>
+        <div class="row justify-content-center">
+            <div class="posts">
+            {% for post in posts %}
+                <div class="card" style="max-width: 40rem;">
+                    {% if post.image %}
+                        <img class="card-img-top" src="{{ post.image.url }}" alt="Card image cap">
+                    {% endif %}
+                    <div class="card-body">
+                        <h5 class="card-title text-right" dir="rtl">{{ post.title }}</h5>
+                        <p class="card-text text-right" dir="rtl"> {{ post.body }} </p>
+                        <p class="card-tex text-muted text-left m-2"><small>{{ post.date }}</small></p>
+                    </div>
+                </div>
+                </br>
+            {% endfor %}
+            </div>
+        </div>
+        <div class="flex-grow-1"></div>
+    </div>
+{% endblock  %}
