@@ -21,6 +21,10 @@
     .django-leaflet-raw-textarea {
         width: 100%;
     }
+    #search-box:focus {
+        outline: none;
+        box-shadow: none;
+    }
 </style>
 {% endblock %}
 
@@ -33,34 +37,265 @@
         let playgrounds_json = {{ playgrounds_json | safe }};
         let sport_facilities_json = {{ sport_facilities_json | safe }};
         let urban_nature_json = {{ urban_nature_json | safe }};
+        let community_centers_json_view = {{ community_centers_json | safe }};
+        let dog_gardens_json_view = {{ dog_gardens_json | safe }};
+        let elderly_social_club_json_view = {{ elderly_social_club_json | safe }};
+        let playgrounds_json_view = {{ playgrounds_json | safe }};
+        let sport_facilities_json_view = {{ sport_facilities_json | safe }};
+        let urban_nature_json_view = {{ urban_nature_json | safe }};
         let timeout = undefined;
         let interval = 0;
+        let myMap;
+        let MyMapOptions;
+        let community_centers_markers=[];
+        let dog_gardens_markers=[];
+        let elderly_social_club_markers=[];
+        let playgrounds_markers=[];
+        let sport_facilities_markers=[];
+        let urban_nature_markers=[];
+        let currentLocationsMarker = null;
+        let displayData = {community_centers:1, dog_gardens:1, elderly_social_club:1, playgrounds:1, sport_facilities:1, urban_nature:1}
+        let wetherTimout = null;
+
+        let communityCentersIcon = new L.Icon({
+            iconUrl: "/media/map_markers/marker-icon-violet.png",
+            shadowUrl: "/media/map_markers/marker-shadow.png",
+            iconSize: [25, 41],
+            iconAnchor: [12, 41],
+            popupAnchor: [1, -34],
+            shadowSize: [41, 41]
+        });
+
+        let dogGardensIcon = new L.Icon({
+            iconUrl: "/media/map_markers/marker-icon-green.png",
+            shadowUrl: "/media/map_markers/marker-shadow.png",
+            iconSize: [25, 41],
+            iconAnchor: [12, 41],
+            popupAnchor: [1, -34],
+            shadowSize: [41, 41]
+        });
+
+        let elderlySocialClubIcon = new L.Icon({
+            iconUrl: "/media/map_markers/marker-icon-orange.png",
+            shadowUrl: "/media/map_markers/marker-shadow.png",
+            iconSize: [25, 41],
+            iconAnchor: [12, 41],
+            popupAnchor: [1, -34],
+            shadowSize: [41, 41]
+        });
+
+        let playgroundsIcon = new L.Icon({
+            iconUrl: "/media/map_markers/marker-icon-gold.png",
+            shadowUrl: "/media/map_markers/marker-shadow.png",
+            iconSize: [25, 41],
+            iconAnchor: [12, 41],
+            popupAnchor: [1, -34],
+            shadowSize: [41, 41]
+        });
+
+        let sportFacilitiesIcon = new L.Icon({
+            iconUrl: "/media/map_markers/marker-icon-red.png",
+            shadowUrl: "/media/map_markers/marker-shadow.png",
+            iconSize: [25, 41],
+            iconAnchor: [12, 41],
+            popupAnchor: [1, -34],
+            shadowSize: [41, 41]
+        });
+
+        let urbanNatureIcon = new L.Icon({
+            iconUrl: "/media/map_markers/marker-icon-blue.png",
+            shadowUrl: "/media/map_markers/marker-shadow.png",
+            iconSize: [25, 41],
+            iconAnchor: [12, 41],
+            popupAnchor: [1, -34],
+            shadowSize: [41, 41]
+        });
+
+        let currentLocationIcon = new L.Icon({
+            iconUrl: "/media/map_markers/location-marker.png",
+            shadowUrl: "/media/map_markers/marker-shadow.png",
+            iconSize: [30, 50],
+            iconAnchor: [12, 41],
+            popupAnchor: [1, -34],
+            shadowSize: [41, 41]
+        });
+
         window.onload = function(){
             change_weather();
-            $('#map').show('slow');
-            $('#list').hide();
-        }
-        function change_weather() {
-            interval++;
-            if (interval <= 10) {
-                $('#7-weather-day').show('slow');
-                $('#current-day').hide('slow');
-            } else {
-                $('#7-weather-day').hide('slow');
-                $('#current-day').show('slow');
-                interval = interval == 20 ? 0 : interval;
-            }
-            $('#interval').html(interval)
-            setTimeout(change_weather, 1000)
+            list_init();
+            $('#search-box').keyup(function(e){ 
+                var code = e.key;
+                if(code==="Enter"){
+                    e.preventDefault();
+                    applyDataManipulation();
+                }
+            });
+            $(window).resize(function(){
+                if ($(window).width() <= 400) {  
+                    if(wetherTimout != null){
+                        clearTimeout(wetherTimout);
+                        $('#7-weather-day').addClass('d-none');
+                        $('#current-day').removeClass('d-none');
+                        wetherTimout = null;
+                    }
+                }
+                else{
+                    if(wetherTimout == null){
+                        change_weather();
+                    }
+                }     
+            });
         }
 
-        function show_map() {
-            $('#list').hide();
-            $('#map').show('slow');
+        function leaflet_init(map, options) {
+            myMap = map;
+            MyMapOptions = options;
+            map_init(map, options);
         }
-        function show_list() {
-            $('#map').hide();
-            $('#list').show('slow');
+
+        function map_init(map, options) {
+            if(currentLocationsMarker != null)
+                myMap.removeLayer(currentLocationsMarker);
+            getCurrentLocation(map, options);
+            if(displayData.community_centers)
+                community_centers_markers = add_collection_to_map(map, options, community_centers_json_view, communityCentersIcon, open_community_center_modal);
+            if(displayData.dog_gardens)
+                dog_gardens_markers = add_collection_to_map(map, options, dog_gardens_json_view, dogGardensIcon, open_dog_gardens_modal);
+            if(displayData.elderly_social_club)
+                elderly_social_club_markers = add_collection_to_map(map, options, elderly_social_club_json_view, elderlySocialClubIcon ,open_elderly_social_club_modal);
+            if(displayData.playgrounds)
+                playgrounds_markers = add_collection_to_map(map, options, playgrounds_json_view, playgroundsIcon, open_playground_modal);
+            if(displayData.sport_facilities)
+                sport_facilities_markers = add_collection_to_map(map, options, sport_facilities_json_view, sportFacilitiesIcon, open_sport_facilities_modal);
+            if(displayData.urban_nature)
+            urban_nature_markers = add_collection_to_map(map, options, urban_nature_json_view, urbanNatureIcon, open_urban_nature_modal);
+        }
+
+        function getCurrentLocation(map, options) {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    currentLocationsMarker = L.marker([position.coords.latitude, position.coords.longitude], {icon: currentLocationIcon}).addTo(map);
+                    map.setView([position.coords.latitude, position.coords.longitude], 14);
+                },
+                function(error){
+                    window.alert("אנא אשר מיקום לשימוש מיטבי במפה");
+                },
+                {timeout:10000 , enableHighAccuracy:true});
+            } else {
+                window.alert("אנא אשר מיקום לשימוש מיטבי במפה");
+            }
+        }
+
+        function list_init(community_centers=true, dog_gardens=true, elderly_social_club=true, playgrounds=true, sport_facilities=true, urban_nature=true) {
+            $('#locations-list-body').empty();
+            if(displayData.community_centers)
+                add_collection_to_list(community_centers_json_view, 'community_centers', 'open_community_center_modal', 'מרכז קהילתי');
+            if(displayData.dog_gardens)
+                add_collection_to_list(dog_gardens_json_view, 'dog_gardens', 'open_dog_gardens_modal', 'גינת כלבים');
+            if(displayData.elderly_social_club)
+                add_collection_to_list(elderly_social_club_json_view, 'elderly_social_club', 'open_elderly_social_club_modal', 'מועדון חברתי לקשיש');
+            if(displayData.playgrounds)
+                add_collection_to_list(playgrounds_json_view, 'playgrounds', 'open_playground_modal', 'מתקן משחקים');
+            if(displayData.sport_facilities)
+                add_collection_to_list(sport_facilities_json_view, 'sport_facilities', 'open_sport_facilities_modal', 'מתקן ספורט');
+            if(displayData.urban_nature)
+                add_collection_to_list(urban_nature_json_view, 'urban_nature', 'open_urban_nature_modal', 'אתר טבע עירוני');
+        }
+
+        function add_collection_to_map(map, options, collection, collectionIcon ,modal_function){
+            let markerList = []
+            Array.prototype.forEach.call(collection, function(mapItem){
+                var myMarker = L.marker([mapItem.lat, mapItem.lon], {icon: collectionIcon}).addTo(map);
+                markerList.push(myMarker);
+                myMarker.on({
+                    click: function (e) {
+                        modal_function(mapItem.id);
+                    }
+                });
+            });
+            return markerList;
+        }
+
+        function add_collection_to_list(collection, coolection_type, modal_function_string , stringType){
+            if(coolection_type=="dog_gardens" || coolection_type=='playgrounds'){
+                Array.prototype.forEach.call(collection, function(element) {
+                    $('#locations-list-body').append(
+                        `<tr class="d-flex" onclick="${modal_function_string}(${element.id})">
+                            <td class="text-right col-4" dir="rtl" scope="row">${stringType}</td>
+                            <td class="text-right col-4" dir="rtl"></td>
+                            <td class="text-right col-4" dir="rtl"> ${ element.name } </td>
+                        </tr>`
+                    );
+                });
+            }
+            else if(coolection_type=="urban_nature"){
+                Array.prototype.forEach.call(collection, function(element) {
+                    $('#locations-list-body').append(
+                        `<tr class="d-flex" onclick="${modal_function_string}(${element.id})">
+                            <td class="text-right col-4" dir="rtl" scope="row">${stringType}</td>
+                            <td class="text-right col-4" dir="rtl"></td>
+                            <td class="text-right col-4" dir="rtl"> ${ element.MainFeature} </td>
+                        </tr>`
+                    );
+                });
+            }
+            else{
+                Array.prototype.forEach.call(collection, function(element) {
+                    $('#locations-list-body').append(
+                        `<tr class="d-flex" onclick="${modal_function_string}(${element.id})">
+                            <td class="text-right col-4" dir="rtl" scope="row">${stringType}</td>
+                            <td class="text-right col-4" dir="rtl"> ${ element.address }</td>
+                            <td class="text-right col-4" dir="rtl"> ${ element.name } </td>
+                        </tr>`
+                    );
+                });
+            }
+        }
+        function applyDataManipulation(){
+            let search_term = $("#search-box").val()
+            filterDataByTerm(search_term);
+            removeMarkesFromMap();
+            map_init(myMap, MyMapOptions);
+            list_init();
+        }
+
+        function filterDataByTerm(term){
+            if(term != null && term != undefined){
+                community_centers_json_view = community_centers_json.filter(x => x.name.includes(term) || x.address.includes(term))
+                dog_gardens_json_view = dog_gardens_json.filter(x => x.name.includes(term))
+                elderly_social_club_json_view = elderly_social_club_json.filter(x => x.name.includes(term) || x.address.includes(term))
+                playgrounds_json_view = playgrounds_json.filter(x => x.name.includes(term))
+                sport_facilities_json_view = sport_facilities_json.filter(x => x.name.includes(term) || x.address.includes(term))
+                urban_nature_json_view = urban_nature_json.filter(x => x.MainFeature.includes(term))
+            }
+        }
+        function removeMarkesFromMap(){
+            community_centers_markers.forEach(x => myMap.removeLayer(x));
+            dog_gardens_markers.forEach(x => myMap.removeLayer(x));
+            elderly_social_club_markers.forEach(x => myMap.removeLayer(x));
+            playgrounds_markers.forEach(x => myMap.removeLayer(x));
+            sport_facilities_markers.forEach(x => myMap.removeLayer(x));
+            urban_nature_markers.forEach(x => myMap.removeLayer(x));
+        }
+
+        function FilterElement(element, filterValue, filterGroup=null){
+            if ($('#' + element.id ).hasClass('active')){
+                $('#' + element.id ).removeClass('active');
+                displayData[filterValue] = 0;
+                applyDataManipulation();
+            }
+            else{
+                $('#' + element.id ).addClass('active');
+                displayData[filterValue] = 1;
+                applyDataManipulation();
+            }     
+        }
+
+        function cleanFilters(){
+            displayData = {community_centers:1, dog_gardens:1, elderly_social_club:1, playgrounds:1, sport_facilities:1, urban_nature:1}
+            $("#search-box").val('')
+            $('.filter-btn').addClass('active');
+            applyDataManipulation();
         }
 
         function open_community_center_modal(id){
@@ -187,68 +422,34 @@
             $("#featureModal").modal("show");
         }
 
-        let Icon = new L.Icon({
-            iconUrl: "",
-            shadowUrl: "/media/map_markers/marker-shadow.png",
-            iconSize: [25, 41],
-            iconAnchor: [12, 41],
-            popupAnchor: [1, -34],
-            shadowSize: [41, 41]
-        });
-        
-        function map_init(map, options) {
-            getCurrentLocation(map, options);
-            add_collection_to_map(map, options, community_centers_json, "/media/map_markers/marker-icon-violet.png", open_community_center_modal);
-            add_collection_to_map(map, options, dog_gardens_json, "/media/map_markers/marker-icon-green.png", open_dog_gardens_modal);
-            add_collection_to_map(map, options, elderly_social_club_json, "/media/map_markers/marker-icon-orange.png", open_elderly_social_club_modal);
-            add_collection_to_map(map, options, playgrounds_json, "/media/map_markers/marker-icon-gold.png", open_playground_modal);
-            add_collection_to_map(map, options, sport_facilities_json, "/media/map_markers/marker-icon-red.png", open_sport_facilities_modal);
-            add_collection_to_map(map, options, urban_nature_json, "/media/map_markers/marker-icon-blue.png", open_urban_nature_modal);
-        }
-
-        function add_collection_to_map(map, options, collection, iconUrl, modal_function){
-            Icon.options.iconUrl = iconUrl;
-            Array.prototype.forEach.call(collection, function(mapItem){
-                var myMarker = L.marker([mapItem.lat, mapItem.lon], {icon: Icon}).addTo(map);
-                myMarker.on({
-                    click: function (e) {
-                        modal_function(mapItem.id);
-                    }
-                });
-            });
-        }
-
-        function getCurrentLocation(map, options) {
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(function(position) {
-                    Icon.options.iconUrl = "/media/map_markers/location-marker.png";
-                    Icon.options.iconSize = [30, 50];
-                    L.marker([position.coords.latitude, position.coords.longitude], {icon: Icon}).addTo(map);
-                    map.setView([position.coords.latitude, position.coords.longitude], 16);
-                },
-                function(error){
-                    window.alert("אנא אשר מיקום לשימוש מיטבי במפה");
-                },
-                {timeout:10000 , enableHighAccuracy:true});
+        function change_weather() {
+            interval++;
+            if (interval <= 10) {
+                $('#7-weather-day').removeClass('d-none');
+                $('#current-day').addClass('d-none');
             } else {
-                window.alert("אנא אשר מיקום לשימוש מיטבי במפה");
+                $('#7-weather-day').addClass('d-none');
+                $('#current-day').removeClass('d-none');
+                interval = interval == 20 ? 0 : interval;
             }
+            $('#interval').html(interval)
+            wetherTimout = setTimeout(change_weather, 1000)
         }
-        function filterData(){
-            let search_term = $("#search-box").val()
-            if(search_term != '' && search_term != undefined){
-                window.location.href = '{% url "feed:feed" %}' + `filter_data/${search_term}`;
-            }
-            else{
-                $("#search-box").blur();
-                $("#search-box").addClass("border border-danger");
-            }        
+
+        function show_map() {
+            $('#list').addClass('d-none');
+            $('#map').removeClass('d-none');
         }
+        function show_list() {
+            $('#map').addClass('d-none');
+            $('#list').removeClass('d-none');
+        }
+
     </script>
 
 <div class="container h-100" >
     <div class="row justify-content-center">
-        <div id="weather" class="col-10 p-0 mt-1" dir="rtl" style="max-height:125px; min-height:125px;">
+        <div id="weather" class="col-10 p-0 mt-1" dir="rtl" style="min-height:150px;">
             <div id="7-weather-day">
                 <a class="weatherwidget-io" href="https://forecast7.com/he/31d2534d79/beer-sheva/" data-label_1="באר שבע" data-label_2="תחזית מזג אוויר" data-icons="Climacons Animated" data-mode="Forecast" data-theme="sky" >באר שבע מזג אוויר</a>
                 <script>
@@ -265,7 +466,7 @@
                 </script>
             </div>
 
-            <div id="current-day">
+            <div id="current-day" class="d-none">
                 <a class="weatherwidget-io" href="https://forecast7.com/he/31d2534d79/beer-sheva/" data-label_1="באר שבע" data-label_2="מזג אוויר נוכחי" data-icons="Climacons Animated" data-mode="Current" data-theme="sky" >באר שבע מזג אוויר</a>
                 <script>        
                 !function(d,s,id){
@@ -295,85 +496,64 @@
     </div>
     <div class="row justify-content-center align-content-start" id="map">
         <div class="col-10 p-0">
-            {% leaflet_map "B7FunMap" callback="window.map_init" %}
+            {% leaflet_map "B7FunMap" callback="window.leaflet_init" %}
         </div>
     </div>
-    <div class="row justify-content-center" id="list">
+    <div class="row justify-content-center d-none" id="list">
         <div class="col-10 p-0 bg-light" style="max-height:600px; min-height:600px; overflow-y: scroll;">
             <table class="table table-hover bg-light mb-0 w-100">
                     <thead class="thead-dark m-0 w-100">
                         <tr class="d-flex">
                             <th class="text-right col-4" scope="col" dir="rtl">סוג מיקום</th>
                             <th class="text-right col-4" scope="col" dir="rtl">כתובת</th>
-                            <th class="text-right col-4" scope="col" dir="rtl">שם</th>
+                            <th class="text-right col-4" scope="col" dir="rtl">שם/תיאור</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        {% for community_center in community_centers %}
-                        <tr class="d-flex" onclick="open_community_center_modal({{community_center.id|safe}})"> 
-                            <td class="text-right col-4" dir="rtl" scope="row">מרכז קהילתי</td>
-                            <td class="text-right col-4" dir="rtl"> {{ community_center.address }}</td>
-                            <td class="text-right col-4" dir="rtl"> {{ community_center.name }} </td>
-                        </tr>
-                        {% endfor %}
-                        {% for dog_garden in dog_gardens %}
-                        <tr class="d-flex" onclick="open_dog_gardens_modal({{dog_garden.id|safe}})">
-                            <td class="text-right col-4" dir="rtl" scope="row">גינת כלבים</td>
-                            <td class="text-right col-4" dir="rtl"></td>
-                            <td class="text-right col-4" dir="rtl"> {{ dog_garden.name }} </td>
-                        </tr>
-                        {% endfor %}
-                        {% for elderly_social_club_item in elderly_social_club %}
-                        <tr class="d-flex" onclick="open_elderly_social_club_modal({{elderly_social_club_item.id|safe}})">
-                            <td class="text-right col-4" dir="rtl" scope="row">מועדון חברתי לקשיש</td>
-                            <td class="text-right col-4" dir="rtl"> {{ elderly_social_club_item.address }}</td>
-                            <td class="text-right col-4" dir="rtl"> {{ elderly_social_club_item.name }} </td>
-                        </tr>
-                        {% endfor %}
-                        {% for playground in playgrounds %}
-                        <tr class="d-flex" onclick="open_playground_modal({{playground.id|safe}})">
-                            <td class="text-right col-4" dir="rtl" scope="row">מתקן משחקים</td>
-                            <td class="text-right col-4" dir="rtl"></td>
-                            <td class="text-right col-4" dir="rtl"> {{ playground.name }} </td>
-                        </tr>
-                        {% endfor %}
-                        {% for sport_facilitie in sport_facilities %}
-                        <tr class="d-flex" onclick="open_sport_facilities_modal({{sport_facilitie.id|safe}})">
-                            <td class="text-right col-4" dir="rtl" scope="row">מתקן ספורט</td>
-                            <td class="text-right col-4" dir="rtl"> {{ sport_facilitie.address }}</td>
-                            <td class="text-right col-4" dir="rtl"> {{ sport_facilitie.name }} </td>
-                        </tr>
-                        {% endfor %}
-                        {% for urban_nature_item in urban_nature %}
-                        <tr class="d-flex" onclick="open_urban_nature_modal({{urban_nature_item.id|safe}})">
-                            <td class="text-right col-4" dir="rtl" scope="row">אתר טבע עירוני</td>
-                            <td class="text-right col-4" dir="rtl"> </td>
-                            <td class="text-right col-4" dir="rtl"> {{ urban_nature_item.MainFeature }} </td>
-                        </tr>
-                        {% endfor %}
+                    <tbody id="locations-list-body">
                     </tbody>
             </table>
         </div>
     </div>
     <div class="row justify-content-center mt-1">
         <div class="col-10 p-0">
-            <div class="form-group">
-                <input id="search-box" type="text" class="form-control text-right" placeholder="חפש מיקום לפי שם, כתובת או מאפיין של אתר טבע" dir="rtl"></input>
-                <button id="search-box-btn" type="button" class="btn btn-primary mt-1" onclick="filterData()">
-                    בצע סינון
+            <div class="d-flex flex-row justify-content-center flex-wrap mb-2 mt-1">
+                <button id="community-centers-btn" type="button" class="btn btn-outline-light m-1 active filter-btn" onclick="FilterElement(this, 'community_centers')">
+                    מרכזים קהילתיים
                 </button>
-            </div> 
+                <button id="dog-gardens-btn" type="button" class="btn btn-outline-light m-1 active filter-btn" onclick="FilterElement(this, 'dog_gardens')">
+                   גינות כלבים
+                </button>
+                <button id="elderly-social-club-btn" type="button" class="btn btn-outline-light m-1 active filter-btn" onclick="FilterElement(this, 'elderly_social_club')">
+                   מועדונים חברתיים לקשיש
+                </button>
+                <button id="playgrounds-btn" type="button" class="btn btn-outline-light m-1 active filter-btn" onclick="FilterElement(this, 'playgrounds')">
+                   מתקני משחק
+                </button>
+                <button id="sport-facilities-btn" type="button" class="btn btn-outline-light m-1 active filter-btn" onclick="FilterElement(this, 'sport_facilities')">
+                    מתקני ספורט
+                </button>
+                <button id="urban-nature-btn" type="button" class="btn btn-outline-light m-1 active filter-btn" onclick="FilterElement(this, 'urban_nature')">
+                    אתרי טבע עירוניים
+                </button>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend ">
+                    <button id="search-box-btn" type="button" class="btn btn-primary mr-1" onclick="cleanFilters()" dir="rtl">
+                        נקה סינונים (הצג הכל)
+                    </button>
+                    <button id="search-box-btn" type="button" class="btn btn-primary" onclick="applyDataManipulation()">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
+                <input id="search-box" type="text" class="form-control text-right" style="min-width:150px;" placeholder="חפש מיקום לפי שם, כתובת או מאפיין של אתר טבע" dir="rtl"></input>
+            </div>
         </div>
-    </div>
-    
-    <div class="row justify-content-center">
-        
     </div>
 </div>  
 
 <!-- modal for marker popup -->
 <div class="modal fade" id="featureModal" tabindex="-1" role="dialog">
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="btn btn btn-outline-dark btn-sm" data-dismiss="modal" aria-label="Close">

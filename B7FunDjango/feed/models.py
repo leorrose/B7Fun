@@ -8,6 +8,7 @@ from django.db import models
 
 
 class community_centers(models.Model):
+    id = models.IntegerField(primary_key=True)
     address = models.CharField(max_length=255, verbose_name="Address")
     lat = models.CharField(max_length=255, verbose_name="lat")
     lon = models.CharField(max_length=255, verbose_name="lon")
@@ -24,6 +25,7 @@ class community_centers(models.Model):
 
 
 class dog_gardens(models.Model):
+    id = models.IntegerField(primary_key=True)
     lat = models.CharField(max_length=255, verbose_name="lat")
     lon = models.CharField(max_length=255, verbose_name="lon")
     name = models.CharField(max_length=255, verbose_name="name")
@@ -40,6 +42,7 @@ class dog_gardens(models.Model):
 
 
 class elderly_social_club(models.Model):
+    id = models.IntegerField(primary_key=True)
     address = models.CharField(max_length=255, verbose_name="Address")
     lat = models.CharField(max_length=255, verbose_name="lat")
     lon = models.CharField(max_length=255, verbose_name="lon")
@@ -55,6 +58,7 @@ class elderly_social_club(models.Model):
 
 
 class playgrounds(models.Model):
+    id = models.IntegerField(primary_key=True)
     carrousel = models.IntegerField(verbose_name="carrousel")
     combined1 = models.IntegerField(verbose_name="combined1")
     combined2 = models.IntegerField(verbose_name="combined2")
@@ -81,6 +85,7 @@ class playgrounds(models.Model):
 
 
 class sport_facilities(models.Model):
+    id = models.IntegerField(primary_key=True)
     Type = models.CharField(max_length=255, verbose_name="shadowing")
     name = models.CharField(max_length=255, verbose_name="name")
     address = models.CharField(max_length=255, verbose_name="address")
@@ -109,6 +114,7 @@ class sport_facilities(models.Model):
 
 
 class urban_nature(models.Model):
+    id = models.IntegerField(primary_key=True)
     MainFeature = models.CharField(max_length=255, verbose_name="MainFeature")
     lat = models.CharField(max_length=255, verbose_name="lat")
     lon = models.CharField(max_length=255, verbose_name="lon")
