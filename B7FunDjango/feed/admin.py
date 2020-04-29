@@ -1,6 +1,7 @@
 # pylint: disable=missing-module-docstring
 # pylint: disable=missing-function-docstring
 # pylint: disable=missing-class-docstring
+# pylint: disable=attribute-defined-outside-init
 
 from django.contrib import admin
 from .models import community_centers, dog_gardens, elderly_social_club,\
