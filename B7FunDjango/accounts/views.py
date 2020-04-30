@@ -36,6 +36,8 @@ def signup_view(request):
 
 def login_view(request):
     if request.user.is_authenticated:
+        if request.user.is_admin:
+            return redirect('admin:login')
         return redirect('feed:feed')
     if request.method == 'POST':
         form = LoginForm(request.POST)
