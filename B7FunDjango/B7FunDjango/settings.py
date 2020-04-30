@@ -15,6 +15,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 import sys
 import os
+from django.contrib.admin import AdminSite
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -191,3 +192,9 @@ if 'test' not in sys.argv:
             },
         },
     }
+
+# admin site settings
+AdminSite.site_header = 'B7Fun administration'
+AdminSite.site_title = 'B7Fun administration'
+AdminSite.site_url = '/feed'
+AdminSite.index_title = 'B7Fun administration'

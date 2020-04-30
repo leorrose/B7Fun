@@ -5,4 +5,9 @@
 from django.contrib import admin
 from .models import PostFeed
 
-admin.site.register(PostFeed)
+@admin.register(PostFeed)
+class PostFeedAdmin(admin.ModelAdmin):
+    list_per_page = 20
+    list_filter = ("date",)
+    list_display = ("title", "body", "date")
+    search_fields = ['title']
