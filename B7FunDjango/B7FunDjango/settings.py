@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'feed',
     'Profile',
     'postsFeed',
+    'reviews',
 ]
 
 MIDDLEWARE = [
