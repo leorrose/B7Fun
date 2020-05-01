@@ -15,8 +15,8 @@ class Review(models.Model):
     rating = models.IntegerField(validators=[MaxValueValidator(5), MinValueValidator(1)],
                                  verbose_name="rating")
 
-    # class Meta:
-    #     db_table = 'reviews'
+    class Meta:
+         db_table = 'reviews'
 
     def __str__(self):
         if len(self.review_content) > 50:
