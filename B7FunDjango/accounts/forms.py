@@ -91,3 +91,8 @@ class LoginForm(forms.Form):
                 'Password does not match user'))
             return None
         return self.cleaned_data
+
+class EmailForm(forms.Form):
+    subject = forms.CharField(label="", required=True, widget=forms.TextInput(attrs={'class': 'my-text-input', 'placeholder':'Subject'}))
+    content = forms.CharField(label="", required=True, widget=forms.Textarea(attrs={'class': 'my-text-area',
+    'placeholder':'Content', 'rows': '30'}))
