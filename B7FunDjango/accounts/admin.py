@@ -68,7 +68,7 @@ class UserAdmin(admin.ModelAdmin):
 
 class EmailsAdmin(admin.ModelAdmin):
     model=Emails
-    list_display = ("subject","content","sent")
+    list_display = ("subject", "truncated_name", "sent")
     list_filter = ("subject", 'sent')
     fieldsets = (
         (None, {

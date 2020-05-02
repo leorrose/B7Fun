@@ -7,6 +7,8 @@
 
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
+from django.template.defaultfilters import truncatechars
+
 
 
 class MyUserManager(BaseUserManager):
@@ -88,6 +90,10 @@ class Emails(models.Model):
     subject = models.CharField(max_length=255)
     content = models.CharField(max_length=500)
     sent=models.TextField()
+
+    @property
+    def truncated_name(self):
+        return truncatechars(self.content, 100)
 
     class Meta:
         db_table = 'Emails'
