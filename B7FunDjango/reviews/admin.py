@@ -14,8 +14,8 @@ class ReviewsAdmin(admin.ModelAdmin):
     list_display = ("date", "sender_user_name", "sender_email", "rating", "review_content")
     search_fields = ['user_name', 'rating']
 
-    def has_add_permission(self, request):
+    def has_add_permission(self, request, obj=None):
         return False
 
-    def has_change_permission(self, request):
+    def has_change_permission(self, request, obj=None):
         return False
