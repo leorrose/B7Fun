@@ -6,13 +6,15 @@ from django.contrib import admin
 from django.contrib.auth.models import Group
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
-from .models import User
+from .models import User,Emails
 from django.core import mail
 from .forms import EmailForm
 
 
 admin.site.unregister(Group)
 @admin.register(User)
+
+
 class UserAdmin(admin.ModelAdmin):
     list_per_page = 20
     list_filter = ("date_joined", 'last_login')
@@ -31,6 +33,16 @@ class UserAdmin(admin.ModelAdmin):
                 connection = mail.get_connection()
                 connection.open()
 
+                newemail = Emails()
+                flag = 0
+                emails =""
+                newemail.subject = email_form.cleaned_data['subject']
+                newemail.content = email_form.cleaned_data['content']
+
+                if (queryset.count() == User.objects.all().count()):
+                    newemail.sent = "sent to all users"
+                    flag = 1
+
                 for user in queryset:
                     email1 = mail.EmailMessage(
                         email_form.cleaned_data['subject'],
@@ -40,9 +52,35 @@ class UserAdmin(admin.ModelAdmin):
                         connection=connection,
                     )
                     email1.send()
+                    if (flag == 0):
+                        emails=emails+str(user.email)+" "
+
+                if (flag == 0):
+                    newemail.sent = emails
+
+                newemail.save()
                 self.message_user(request, "Sent mail to {} users".format(queryset.count()))
                 return HttpResponseRedirect(request.get_full_path())
         return render(request, 'accounts/admin/send_mail.html', context={'users':queryset, 'form':EmailForm()})
 
     actions = ['send_mail']
     send_mail.short_description = "Send Email"
+
+class EmailsAdmin(admin.ModelAdmin):
+    model=Emails
+    list_display = ("subject","content","sent")
+    list_filter = ("subject", 'sent')
+    fieldsets = (
+        (None, {
+            'fields': ('sent', 'subject', 'content')
+        }),
+    )
+
+    def has_add_permission(self, request):
+        return False
+
+    def has_change_permission(self, request):
+        return False
+
+
+admin.site.register(Emails,EmailsAdmin)

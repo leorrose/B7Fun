@@ -82,3 +82,16 @@ class User(AbstractBaseUser):
 
     def has_module_perms(self, app_label):
         return True
+
+class Emails(models.Model):
+
+    subject = models.CharField(max_length=255)
+    content = models.CharField(max_length=500)
+    sent=models.TextField()
+
+    class Meta:
+        db_table = 'Emails'
+        verbose_name_plural ='Emails'
+
+    def __str__(self):
+        return self.subject
