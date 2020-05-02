@@ -16,9 +16,10 @@ class Review(models.Model):
                                  verbose_name="rating")
 
     class Meta:
-         db_table = 'reviews'
+        db_table = 'reviews'
 
     def __str__(self):
         if len(self.review_content) > 50:
             return self.sender_email + ' - ' + self.review_content[:50] + '...'
         return self.sender_email + ' - ' + self.review_content
+
