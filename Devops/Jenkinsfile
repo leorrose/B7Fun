@@ -33,7 +33,7 @@ pipeline {
             steps {
 				dir("B7FunDjango") {
 					withEnv(["HOME=${env.WORKSPACE}"]) {
-						sh "python -m coverage run --source='.' manage.py test"
+						sh "python -m coverage run manage.py test"
 					}
 				}
 			}
@@ -55,7 +55,7 @@ pipeline {
 			steps {
 				dir("B7FunDjango") {
 					withEnv(["HOME=${env.WORKSPACE}"]) {
-						sh 'python -m pylint-fail-under --fail_under 8.0 B7FunDjango accounts feed postsFeed Profile reviews'
+						sh 'python -m pylint B7FunDjango accounts feed postsFeed Profile reviews'
 					}
 				}
 			}
