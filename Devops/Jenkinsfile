@@ -19,9 +19,9 @@ pipeline {
 		}
         stage('Application Setup') {
             steps {
-				dir("B7FunDjango") {
-					withEnv(["HOME=${env.WORKSPACE}"]) {
-						sh 'pip3 install -r requirements.txt --user'
+				withEnv(["HOME=${env.WORKSPACE}"]) {
+					sh 'pip3 install -r requirements.txt --user'
+					dir("B7FunDjango") {
 						sh 'python manage.py makemigrations'
 						sh 'python manage.py migrate'
 					}
@@ -54,7 +54,7 @@ pipeline {
 			steps {
 				dir("B7FunDjango") {
 					withEnv(["HOME=${env.WORKSPACE}"]) {
-						sh 'python -m pylint-fail-under --fail_under 8.0 B7FunDjango accounts feed postsFeed Profile reviews'
+						sh 'pylint-fail-under --fail_under 8.0 B7FunDjango accounts feed postsFeed Profile reviews'
 					}
 				}
 			}
