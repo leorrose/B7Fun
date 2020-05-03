@@ -56,17 +56,13 @@ class MyUserManager(BaseUserManager):
 
 class User(AbstractBaseUser):
     email = models.EmailField(verbose_name="email", max_length=60, unique=True)
-    user_name = models.CharField(
-        max_length=30, unique=True, verbose_name="user_name")
+    user_name = models.CharField(max_length=30, unique=True, verbose_name="user_name")
     first_name = models.CharField(max_length=30, verbose_name="first name")
     last_name = models.CharField(max_length=30, verbose_name="last name")
-    date_joined = models.DateField(
-        verbose_name="date joined", auto_now_add=True)
-    last_login = models.DateTimeField(
-        verbose_name="last login", auto_now=True, blank=True, null=True)
+    date_joined = models.DateField(verbose_name="date joined", auto_now_add=True)
+    last_login = models.DateTimeField(verbose_name="last login", auto_now=True, blank=True, null=True)
     about = models.TextField(max_length=500)
-    profile_image = models.ImageField(
-        default='default_profile.png', blank=True)
+    profile_image = models.ImageField(default='default_profile.png', blank=True)
     is_admin = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
@@ -89,7 +85,7 @@ class Emails(models.Model):
 
     subject = models.CharField(max_length=255)
     content = models.CharField(max_length=500)
-    sent=models.TextField()
+    sent = models.TextField()
 
     @property
     def truncated_name(self):
@@ -97,7 +93,7 @@ class Emails(models.Model):
 
     class Meta:
         db_table = 'Emails'
-        verbose_name_plural ='Emails'
+        verbose_name_plural = 'Emails'
 
     def __str__(self):
         return self.subject
