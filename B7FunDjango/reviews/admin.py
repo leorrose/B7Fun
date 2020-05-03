@@ -1,7 +1,8 @@
 # pylint: disable=missing-module-docstring
 # pylint: disable=missing-function-docstring
 # pylint: disable=missing-class-docstring
-# pylint: disable=attribute-defined-outside-init
+# pylint: disable=unused-argument
+# pylint: disable=arguments-differ
 
 from django.contrib import admin
 from .models import Review
