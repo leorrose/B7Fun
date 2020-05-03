@@ -36,7 +36,7 @@ class PlayGroundsAdmin(admin.ModelAdmin):
 @admin.register(sport_facilities)
 class SportFacilitiesAdmin(admin.ModelAdmin):
     list_per_page = 20
-    list_display = ("name", "address", "neighborhood","lat", "lon")
+    list_display = ("name", "address", "neighborhood", "lat", "lon")
     search_fields = ['address', 'name']
 
 @admin.register(urban_nature)
