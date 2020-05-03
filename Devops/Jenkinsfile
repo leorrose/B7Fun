@@ -54,7 +54,7 @@ pipeline {
 			steps {
 				dir("B7FunDjango") {
 					withEnv(["HOME=${env.WORKSPACE}"]) {
-						sh 'pylint-fail-under --fail_under 8.0 B7FunDjango accounts feed postsFeed Profile reviews'
+						sh 'python -m pylint-fail-under --fail_under 8.0 B7FunDjango accounts feed postsFeed Profile reviews'
 					}
 				}
 			}
