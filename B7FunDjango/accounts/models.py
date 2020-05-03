@@ -84,12 +84,12 @@ class User(AbstractBaseUser):
 class Emails(models.Model):
 
     subject = models.CharField(max_length=255)
-    content = models.CharField(max_length=500)
+    content1 = models.CharField(max_length=500, verbose_name='content')
     sent = models.TextField()
 
     @property
-    def truncated_name(self):
-        return truncatechars(self.content, 100)
+    def content(self):
+        return truncatechars(self.content1, 100)
 
     class Meta:
         db_table = 'Emails'

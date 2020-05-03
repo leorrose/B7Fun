@@ -33,17 +33,12 @@ class UserAdmin(admin.ModelAdmin):
                 connection = mail.get_connection()
                 connection.open()
 
-                newemail = Emails()
-                flag = 0
-                emails = ""
-                newemail.subject = email_form.cleaned_data['subject']
-                newemail.content = email_form.cleaned_data['content']
-
-                if queryset.count() == User.objects.all().count():
-                    newemail.sent = "sent to all users"
-                    flag = 1
 
                 for user in queryset:
+                    newemail = Emails()
+                    newemail.subject = email_form.cleaned_data['subject']
+                    newemail.content1 = email_form.cleaned_data['content']
+
                     email1 = mail.EmailMessage(
                         email_form.cleaned_data['subject'],
                         email_form.cleaned_data['content'],
@@ -52,13 +47,8 @@ class UserAdmin(admin.ModelAdmin):
                         connection=connection,
                     )
                     email1.send()
-                    if flag == 0:
-                        emails = emails+str(user.email)+" "
-
-                if flag == 0:
-                    newemail.sent = emails
-
-                newemail.save()
+                    newemail.sent = str(user.email)
+                    newemail.save()
                 self.message_user(request, "Sent mail to {} users".format(queryset.count()))
                 return HttpResponseRedirect(request.get_full_path())
         return render(request, 'accounts/admin/send_mail.html', context={'users':queryset, 'form':EmailForm()})
@@ -68,11 +58,12 @@ class UserAdmin(admin.ModelAdmin):
 
 @admin.register(Emails)
 class EmailsAdmin(admin.ModelAdmin):
-    list_display = ("subject", "truncated_name", "sent")
+    model = Emails
+    list_display = ("subject", "content", "sent")
     list_filter = ("subject", 'sent')
     fieldsets = (
         (None, {
-            'fields': ('sent', 'subject', 'content')
+            'fields': ('sent', 'subject', 'content1')
         }),
     )
 
