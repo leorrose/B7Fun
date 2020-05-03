@@ -44,7 +44,7 @@ pipeline {
 				dir("B7FunDjango") {
 					withEnv(["HOME=${env.WORKSPACE}"]) {
 						sh 'python -m coverage xml -o ./reports/coverage.xml'
-						sh 'python -m coverage report'
+						sh 'python -m coverage report --fail-under=80'
 						//cobertura coberturaReportFile: 'reports/coverage.xml'
 					}
 				}
@@ -82,7 +82,7 @@ pipeline {
 			body: "SUCCESS: Job '${env.JOB_NAME}' ['${env.BUILD_NUMBER}']: Check console output at '${env.BUILD_URL}' '${env.JOB_NAME}' ['${env.BUILD_NUMBER}']"
 		}
 		always{
-			deltedir()
+			deleteDir()
 		}
 	}
 }
