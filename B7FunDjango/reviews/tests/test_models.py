@@ -2,14 +2,16 @@
 # pylint: disable=missing-function-docstring
 # pylint: disable=missing-class-docstring
 
-from django.test import TestCase
-from reviews.models import Review
 from datetime import datetime
 import pytz
+from django.test import TestCase
 from django.core.exceptions import ValidationError
+from reviews.models import Review
+
+
+
 
 class ReviewTest(TestCase):
-    @classmethod
     def setUp(self):
         self.date = datetime.today()
         self.review = Review.objects.create(date=self.date,
@@ -40,11 +42,11 @@ class ReviewTest(TestCase):
         self.assertEqual(self.review.__str__(), 'test@test.com - test test1')
 
     def test_str_long(self):
-        s = ''
-        for i in range(55):
-            s += 'a'
-        self.review.review_content = s
-        self.assertEqual(self.review.__str__(), 'test@test.com - ' + s[:50] + '...')
+        str_test = ''
+        for _ in range(55):
+            str_test += 'a'
+        self.review.review_content = str_test
+        self.assertEqual(self.review.__str__(), 'test@test.com - ' + str_test[:50] + '...')
 
     def test_review_content_max_length(self):
         self.assertEqual(self.review._meta.get_field('review_content').max_length, 500)
@@ -61,10 +63,11 @@ class ReviewTest(TestCase):
                      sender_email='test@test.com',
                      sender_user_name='test123',
                      rating=0)
-        with self.assertRaises(ValidationError):
-            if rev.full_clean():
-                rev.save()
-        self.assertEqual(Review.objects.filter(rating=0).count(), 0)
+        try:
+            rev.full_clean()
+        except ValidationError as err:
+            self.assertEqual(str(err), "{'rating': ['Ensure this value is greater than or equal to 1.']}")
+
 
     def test_rating_min_validator1(self):
         rev = Review(date=self.date,
@@ -81,10 +84,12 @@ class ReviewTest(TestCase):
                      sender_email='test@test.com',
                      sender_user_name='test123',
                      rating=6)
-        with self.assertRaises(ValidationError):
-            if rev.full_clean():
-                rev.save()
-        self.assertEqual(Review.objects.filter(rating=6).count(), 0)
+
+        try:
+            rev.full_clean()
+        except ValidationError as err:
+            self.assertEqual(str(err), "{'rating': ['Ensure this value is less than or equal to 5.']}")
+
 
     def test_rating_min_validator5(self):
         rev = Review(date=self.date,
@@ -94,4 +99,3 @@ class ReviewTest(TestCase):
                      rating=5)
         rev.save()
         self.assertEqual(Review.objects.filter(rating=5).count(), 1)
-
