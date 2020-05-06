@@ -3,8 +3,8 @@
 # pylint: disable=missing-class-docstring
 
 from django.test import TestCase
-from accounts.forms import SignUpForm, LoginForm
-from accounts.models import User
+from accounts.forms import SignUpForm, LoginForm,EmailForm
+from accounts.models import User,Emails
 
 
 class SignUpFormTest(TestCase):
@@ -154,3 +154,17 @@ class LoginFormTest(TestCase):
         user.save()
         self.form.is_valid()
         self.assertTrue(len(self.form.errors) == 0)
+
+class EmailFormTest(TestCase):
+    def setUp(self):
+        form_data = {'subject': 'test',
+                     'content': 'test test test test test'}
+        self.form = EmailForm(data=form_data)
+
+
+    def test_subject_required(self):
+        self.assertTrue(self.form.fields['subject'].required)
+
+    def test_content_required(self):
+        self.assertTrue(self.form.fields['content'].required)
+

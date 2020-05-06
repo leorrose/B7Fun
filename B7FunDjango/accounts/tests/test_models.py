@@ -3,7 +3,7 @@
 # pylint: disable=missing-class-docstring
 
 from django.test import TestCase
-from accounts.models import User
+from accounts.models import User,Emails
 
 
 class UserModelTest(TestCase):
@@ -134,3 +134,25 @@ class UserModelTest(TestCase):
                                        password="test_user_has_module_perms",
                                        profile_image=None,)
         self.assertTrue(usr.has_module_perms(app_label="test"))
+
+
+class EmailsTest(TestCase):
+    def setUp(self):
+        self.email = Emails.objects.create(subject='test',
+                                            content1='test test test test test',
+                                            )
+
+    def test_subject(self):
+        self.assertEqual(self.email.subject, 'test')
+
+    def test_content1(self):
+        self.assertEqual(self.email.content1, 'test test test test test')
+
+    def test_str(self):
+        self.assertEqual(self.email.__str__(), 'test')
+
+    def test_subject_max_length(self):
+        self.assertEqual(self.email._meta.get_field('subject').max_length, 255)
+
+    def test_content1_max_length(self):
+        self.assertEqual(self.email._meta.get_field('content1').max_length, 500)
