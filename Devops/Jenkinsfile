@@ -33,9 +33,7 @@ pipeline {
             steps {
 				dir("B7FunDjango") {
 					withEnv(["HOME=${env.WORKSPACE}"]) {
-						if (isUnix()) {
-							sh "echo test"
-						}
+						sh "install firefox"
 						sh "python -m coverage run manage.py test"
 					}
 				}
