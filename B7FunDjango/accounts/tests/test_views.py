@@ -63,6 +63,18 @@ class LoginViewTest(TestCase):
         response = self.client.post('/login', data=form_data, follow=True)
         self.assertEqual(response.status_code, 200)
 
+    def test_login_admin_when_logged(self):
+        self.client = Client()
+        self.user = User.objects.create_superuser(email='test_login_admin@text.com',
+                                                  user_name='test_create_super_user',
+                                                  first_name='first name',
+                                                  last_name='last name',
+                                                  password="user password")
+        self.user.save()
+        self.client.force_login(self.user)
+        form_data = {'email': 'test_login_admin@text.com', 'password': 'user password'}
+        response = self.client.post('/login', data=form_data)
+        self.assertEqual(response.status_code, 302)
 
 class SignUpViewTest(TestCase):
     def test_view_url_exists_at_desired_location(self):

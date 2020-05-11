@@ -97,6 +97,3 @@ class Emails(models.Model):
 
     def __str__(self):
         return self.subject
-
-    def test_content_max_length(self):
-        self.assertEqual(self.review._meta.get_field('review_content').max_length, 500)

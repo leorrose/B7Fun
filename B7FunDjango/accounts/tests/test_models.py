@@ -3,7 +3,7 @@
 # pylint: disable=missing-class-docstring
 
 from django.test import TestCase
-from accounts.models import User,Emails
+from accounts.models import User, Emails
 
 
 class UserModelTest(TestCase):
@@ -138,15 +138,17 @@ class UserModelTest(TestCase):
 
 class EmailsTest(TestCase):
     def setUp(self):
-        self.email = Emails.objects.create(subject='test',
-                                            content1='test test test test test',
-                                            )
+        self.email = Emails.objects.create(
+            subject='test',
+            content1="test test test test test test test test test test test test test test test test test test test test test")
 
     def test_subject(self):
         self.assertEqual(self.email.subject, 'test')
 
     def test_content1(self):
-        self.assertEqual(self.email.content1, 'test test test test test')
+        self.assertEqual(
+            self.email.content1,
+            "test test test test test test test test test test test test test test test test test test test test test")
 
     def test_str(self):
         self.assertEqual(self.email.__str__(), 'test')
@@ -156,3 +158,8 @@ class EmailsTest(TestCase):
 
     def test_content1_max_length(self):
         self.assertEqual(self.email._meta.get_field('content1').max_length, 500)
+
+    def test_content(self):
+        self.assertEqual(
+            self.email.content,
+            "test test test test test test test test test test test test test test test test test test test test…")
