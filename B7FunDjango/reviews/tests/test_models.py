@@ -4,13 +4,12 @@
 
 from datetime import datetime
 import pytz
-from django.test import TestCase
+from django.test import TestCase, tag
 from django.core.exceptions import ValidationError
 from reviews.models import Review
 
 
-
-
+@tag('unit-test')
 class ReviewTest(TestCase):
     def setUp(self):
         self.date = datetime.today()

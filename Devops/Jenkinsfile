@@ -29,12 +29,21 @@ pipeline {
 				}
             }
         }
-		stage('Run Tests') {
+		stage('Run Unit Tests') {
             steps {
 				dir("B7FunDjango") {
 					withEnv(["HOME=${env.WORKSPACE}"]) {
-						sh "install firefox"
-						sh "python -m coverage run manage.py test"
+						sh "python -m coverage run manage.py test --tag=unit-test"
+					}
+				}
+			}
+        }
+		
+		stage('Run Integration Tests') {
+            steps {
+				dir("B7FunDjango") {
+					withEnv(["HOME=${env.WORKSPACE}"]) {
+						sh "python -m coverage run -a manage.py test --tag=integration-test"
 					}
 				}
 			}
@@ -46,7 +55,6 @@ pipeline {
 					withEnv(["HOME=${env.WORKSPACE}"]) {
 						sh 'python -m coverage xml -o ./reports/coverage.xml'
 						sh 'python -m coverage report --fail-under=80'
-						//cobertura coberturaReportFile: 'reports/coverage.xml'
 					}
 				}
 			}

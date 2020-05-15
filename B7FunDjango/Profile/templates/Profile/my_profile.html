@@ -15,7 +15,7 @@
                     <button type="button" class="btn bg-light btn-sm" data-toggle="modal" data-target="#updatProfileModal">
                         <i class="fa fa-pencil"></i>
                     </button>
-                    <a href="/Profile/rotate_pic">
+                    <a href="{% url 'Profile:rotate_pic' %}">
                         <button type="button" class="btn bg-light btn-sm">
                             <i class="fa fa-repeat"></i>
                         </button>
@@ -94,7 +94,7 @@
                 <h5 class="modal-title ml-auto" id="updatProfileModalLabel" dir="rtl">עדכון תמונת פרופיל</h5>
             </div>
             <div class="modal-body">
-                <form class="site-form" action="/Profile/edit_profile_image" method="post" enctype="multipart/form-data">
+                <form class="site-form" action="{% url 'Profile:edit_profile_image' %}" method="post" enctype="multipart/form-data">
                     {%csrf_token%}
                     {{UpdateProfileImageForm.profile_image}}
                     {% if UpdateProfileImageForm.profile_image.errors %}
@@ -121,7 +121,7 @@
                 <h5 class="modal-title ml-auto" id="updatProfileModalLabel" dir="rtl">עדכון פרטים אישיים</h5>
             </div>
             <div class="modal-body">
-                <form class="site-form" action="/Profile/edit_user_details" method="post">
+                <form class="site-form" action="{% url 'Profile:edit_user_details' %}" method="post">
                     {%csrf_token%}
                     <div class="row d-flex flex-row">
                         <div class="flex-grow-1"></div>
@@ -191,10 +191,10 @@
                 <button type="button" class="btn btn btn-outline-dark btn-sm" data-dismiss="modal" aria-label="Close">
                     <span class="text-left" aria-hidden="true">&times;</span>
                 </button>
-                <h5 class="modal-title ml-auto" id="passwordChangeLabel" dir="rtl">עדכון תמונת פרופיל</h5>
+                <h5 class="modal-title ml-auto" id="passwordChangeLabel" dir="rtl">עדכון סיסמא</h5>
             </div>
             <div class="modal-body">
-                <form class="site-form"  action="/Profile/change_password" method="post" >
+                <form class="site-form"  action="{% url 'Profile:change_password' %}" method="post" >
                     {%csrf_token%}
                     <p dir="rtl" class="mb-0 text-right"> סיסמא ישנה </p>
                     {{changePasswordForm.old_password}}

@@ -14,8 +14,7 @@ from django.template.defaultfilters import truncatechars
 class MyUserManager(BaseUserManager):
     use_in_migrations = True
 
-    def create_user(self, email, user_name, first_name, last_name, password, about=None,
-                    profile_image=None):
+    def create_user(self, email, user_name, first_name, last_name, password, about="", profile_image=""):
         if not email:
             raise ValueError("user must have an email")
         if not user_name:
@@ -33,24 +32,22 @@ class MyUserManager(BaseUserManager):
         )
 
         user.set_password(password)
-        user.save(using=self._db)
+        user.save()
         return user
 
-    def create_superuser(self, email, user_name, password, first_name=None, last_name=None, ):
+    def create_superuser(self, email, user_name, password, first_name=None, last_name=None):
         user = self.create_user(
-            email=self.normalize_email(email),
+            email=email,
             user_name=user_name,
             password=password,
             first_name=first_name,
             last_name=last_name,
-            about="",
-            profile_image=None
         )
         user.is_admin = True
         user.is_active = True
         user.is_staff = True
         user.is_superuser = True
-        user.save(using=self._db)
+        user.save()
         return user
 
 

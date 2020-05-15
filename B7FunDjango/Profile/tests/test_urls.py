@@ -2,12 +2,12 @@
 # pylint: disable=missing-function-docstring
 # pylint: disable=missing-class-docstring
 
-from django.test import TestCase
+from django.test import TestCase, tag
 from django.urls import resolve, reverse
 from Profile.views import my_profile, edit_profile_image,\
     edit_user_details, change_password, rotate_pic
 
-
+@tag('unit-test')
 class UpdateProfileImageFormTestCase(TestCase):
     def test_my_profile_url_is_resolved(self):
         url = reverse('Profile:my_profile')

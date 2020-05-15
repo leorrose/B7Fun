@@ -8,6 +8,7 @@ from django.shortcuts import redirect, render
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.forms import PasswordChangeForm
+from django.core.cache import cache
 from PIL import Image
 from accounts.models import User
 from .forms import UpdateProfileImage, UpdateUserDetails
@@ -115,4 +116,5 @@ def rotate_pic(request):
         img = Image.open(request.user.profile_image.path)
         img = img.rotate(90, expand=False, fillcolor='white')
         img.save(request.user.profile_image.path)
+        cache.clear()
     return redirect('Profile:my_profile')

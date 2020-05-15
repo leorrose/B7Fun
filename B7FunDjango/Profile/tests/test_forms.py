@@ -3,10 +3,10 @@
 # pylint: disable=missing-class-docstring
 
 import io
-from django.test import TestCase
+from django.test import TestCase, tag
 from Profile.forms import UpdateProfileImage, UpdateUserDetails
 
-
+@tag('unit-test')
 class UpdateProfileImageFormTestCase(TestCase):
     def setUp(self):
         img_file = io.StringIO(
@@ -30,7 +30,7 @@ class UpdateProfileImageFormTestCase(TestCase):
         form = UpdateProfileImage()
         self.assertFalse(form.is_valid())
 
-
+@tag('unit-test')
 class UpdateUserDetailsFormTestCase(TestCase):
     def setUp(self):
         form_data = {'email': 'test@text.com',
