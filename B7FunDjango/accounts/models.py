@@ -59,7 +59,7 @@ class User(AbstractBaseUser):
     date_joined = models.DateField(verbose_name="date joined", auto_now_add=True)
     last_login = models.DateTimeField(verbose_name="last login", auto_now=True, blank=True, null=True)
     about = models.TextField(max_length=500)
-    profile_image = models.ImageField(default='default_profile.png', blank=True)
+    profile_image = models.ImageField(default='default_profile.png')
     is_admin = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)

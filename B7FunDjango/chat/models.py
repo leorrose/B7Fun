@@ -6,6 +6,7 @@ from django.db import models
 
 # Create your models here.
 class ChatMessage(models.Model):
+    id = models.IntegerField(primary_key=True)
     date = models.DateTimeField(verbose_name="Time sent", auto_now_add=True)
     message = models.TextField(verbose_name="message")
     sender_email = models.EmailField(verbose_name="sender email", max_length=60)
