@@ -31,4 +31,4 @@ RUN /usr/sbin/adduser -D pillow && \
     chown -R pillow:pillow /vpy3
 
 COPY requirements.txt .
-RUN pip3 install -r requirements.txt
+RUN pip install -r requirements.txt
