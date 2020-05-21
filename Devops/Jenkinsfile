@@ -20,13 +20,13 @@ pipeline {
         stage('Application Setup') {
             steps {
 				withEnv(["HOME=${env.WORKSPACE}"]) {
-					sh 'python3 -m pip install --upgrade pip --user'
+					sh 'python3 -m pip3 install --upgrade pip --user'
 					dir("Devops") {
-						sh 'python -m pip install -r requirements.txt --user'
+						sh 'python3 -m pip3 install -r requirements.txt --user'
 					}
 					dir("B7FunDjango") {
-						sh 'python manage.py makemigrations'
-						sh 'python manage.py migrate'
+						sh 'python3 manage.py makemigrations'
+						sh 'python3 manage.py migrate'
 					}
 				}
             }
@@ -35,7 +35,7 @@ pipeline {
             steps {
 				dir("B7FunDjango") {
 					withEnv(["HOME=${env.WORKSPACE}"]) {
-						sh "python -m coverage run manage.py test --tag=unit-test"
+						sh "python3 -m coverage run manage.py test --tag=unit-test"
 					}
 				}
 			}
@@ -45,7 +45,7 @@ pipeline {
             steps {
 				dir("B7FunDjango") {
 					withEnv(["HOME=${env.WORKSPACE}"]) {
-						sh "python -m coverage run -a manage.py test --tag=integration-test"
+						sh "python3 -m coverage run -a manage.py test --tag=integration-test"
 					}
 				}
 			}
@@ -55,8 +55,8 @@ pipeline {
 			steps {
 				dir("B7FunDjango") {
 					withEnv(["HOME=${env.WORKSPACE}"]) {
-						sh 'python -m coverage xml -o ./reports/coverage.xml'
-						sh 'python -m coverage report --fail-under=80'
+						sh 'python3 -m coverage xml -o ./reports/coverage.xml'
+						sh 'python3 -m coverage report --fail-under=80'
 					}
 				}
 			}
@@ -66,7 +66,7 @@ pipeline {
 			steps {
 				dir("B7FunDjango") {
 					withEnv(["HOME=${env.WORKSPACE}"]) {
-						sh 'python -m pylint B7FunDjango accounts feed postsFeed Profile reviews'
+						sh 'python3 -m pylint B7FunDjango accounts feed postsFeed Profile reviews'
 					}
 				}
 			}

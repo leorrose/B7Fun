@@ -25,8 +25,8 @@ RUN apk --no-cache add python3 \
                        fribidi-dev
  
 RUN /usr/sbin/adduser -D pillow && \
-    python -m pip install --upgrade pip && \
-    pip install olefile pytest pytest-cov
+    python3 -m pip install --upgrade pip && \
+    pip3 install olefile pytest pytest-cov
 
 COPY requirements.txt .
-RUN pip install -r requirements.txt
+RUN pip3 install -r requirements.txt
