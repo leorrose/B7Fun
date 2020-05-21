@@ -3,7 +3,6 @@
 # pylint: disable=missing-class-docstring
 
 from datetime import datetime
-import pytz
 from django.test import TestCase, tag
 from django.core.exceptions import ValidationError
 from reviews.models import Review
@@ -20,7 +19,7 @@ class ReviewTest(TestCase):
                                             rating=3)
 
     def test_date(self):
-        self.date = datetime(2013, 11, 20, 20, 8, 7, 127325, tzinfo=pytz.UTC)
+        self.date = datetime(2013, 11, 20, 20, 8, 7, 127325)
         self.review.date = self.date
         self.review.save()
         self.assertEqual(self.date, self.review.date)

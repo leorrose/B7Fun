@@ -48,6 +48,8 @@ INSTALLED_APPS = [
     'Profile',
     'postsFeed',
     'reviews',
+    'chat',
+    'channels'
 ]
 
 MIDDLEWARE = [
@@ -80,6 +82,15 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'B7FunDjango.wsgi.application'
 
+ASGI_APPLICATION = 'B7FunDjango.routing.application'
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            "hosts": [('127.0.0.1', 6379)]
+        },
+    },
+}
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
@@ -132,10 +143,10 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
-TIME_ZONE = 'Asia/Jerusalem'
+TIME_ZONE = 'Israel'
 USE_I18N = True
 USE_L10N = True
-USE_TZ = True
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)

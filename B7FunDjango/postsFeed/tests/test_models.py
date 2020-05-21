@@ -3,7 +3,6 @@
 # pylint: disable=missing-class-docstring
 
 from datetime import datetime
-import pytz
 from django.test import TestCase, tag
 from postsFeed.models import PostFeed
 
@@ -28,7 +27,7 @@ class PostFeedModelTest(TestCase):
 
     def test_date(self):
         #Arrange
-        self.date = datetime(2013, 11, 20, 20, 8, 7, 127325, tzinfo=pytz.UTC)
+        self.date = datetime(2013, 11, 20, 20, 8, 7, 127325)
 
         #Act
         self.post.date = self.date

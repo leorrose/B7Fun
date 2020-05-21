@@ -310,6 +310,7 @@
                 $("#feature-info").append(`<div class="row"><p class="col-6"> כתובת:</p><p class="col-6"> ${res.address} </p></div>`);
             if(res.neighborhood != '' && res.neighborhood != undefined)
                 $("#feature-info").append(`<div class="row"><p class="col-6"> שכונה:</p><p class="col-6"> ${res.neighborhood} </p></div>`);
+            $("#chat-button").html(`<a class="btn btn-primary" href="/chat/community_centers/${id}" role="button">צ'אט</a>`);    
             $("#featureModal").modal("show");
         }
 
@@ -323,6 +324,7 @@
                 $("#feature-info").append(`<div class="row"><p class="col-6"> שם:</p><p class="col-6"> ${res.name} </p></div>`);
             if(res.SHAPE_Area != '' && res.SHAPE_Area != undefined && !isNaN(res.SHAPE_Area))
                 $("#feature-info").append(`<div class="row"><p class="col-6"> גודל שטח (במטר):</p><p class="col-6"> ${parseInt(res.SHAPE_Area)} </p></div>`);
+            $("#chat-button").html(`<a class="btn btn-primary" href="/chat/dog_gardens/${id}" role="button">צ'אט</a>`);  
             $("#featureModal").modal("show");
         }
 
@@ -338,6 +340,7 @@
                 $("#feature-info").append(`<div class="row"><p class="col-6"> כתובת:</p><p class="col-6"> ${res.address} </p></div>`);
             if(res.Type != '' && res.Type != undefined)
                 $("#feature-info").append(`<div class="row"><p class="col-6"> סוג:</p><p class="col-6"> ${res.Type} </p></div>`);
+            $("#chat-button").html(`<a class="btn btn-primary" href="/chat/elderly_social_club/${id}" role="button">צ'אט</a>`);  
             $("#featureModal").modal("show");
         }
 
@@ -375,6 +378,7 @@
                 $("#feature-info").append(`<div class="row"><p class="col-6"> כמות נדנדות</p><p class="col-6"> ${res.Swing}  </p></div>`);
             if(res.other != '' && res.other != undefined)
                 $("#feature-info").append(`<div class="row"><p class="col-6"> עוד פרטים:</p><p class="col-6"> ${res.other}  </p></div>`);
+            $("#chat-button").html(`<a class="btn btn-primary" href="/chat/playgrounds/${id}" role="button">צ'אט</a>`);  
             $("#featureModal").modal("show");
         }
 
@@ -408,6 +412,7 @@
                 $("#feature-info").append(`<div class="row"><p class="col-6"> סוג ספורט:</p><p class="col-6"> ${res.SportType}  </p></div>`);
             if(res.ForSchool != '' && res.ForSchool != undefined)
                 $("#feature-info").append(`<div class="row"><p class="col-6"> שייך לביה"ס בשם:</p><p class="col-6"> ${res.ForSchool}  </p></div>`);
+            $("#chat-button").html(`<a class="btn btn-primary" href="/chat/sport_facilities/${id}" role="button">צ'אט</a>`);  
             $("#featureModal").modal("show");
         }
 
@@ -419,6 +424,7 @@
             $("#feature-info").empty()
             if(res.MainFeature != '' && res.MainFeature != undefined)
                 $("#feature-info").append(`<div class="row"><p class="col-6"> תיאור:</p><p class="col-6"> ${res.MainFeature} </p></div>`);
+            $("#chat-button").html(`<a class="btn btn-primary" href="/chat/urban_nature/${id}" role="button">צ'אט</a>`);  
             $("#featureModal").modal("show");
         }
 
@@ -444,7 +450,6 @@
             $('#map').addClass('d-none');
             $('#list').removeClass('d-none');
         }
-
     </script>
 
 <div class="container h-100" >
@@ -504,9 +509,9 @@
             <table class="table table-hover bg-light mb-0 w-100">
                     <thead class="thead-dark m-0 w-100">
                         <tr class="d-flex">
-                            <th class="text-right col-4" scope="col" dir="rtl">סוג מיקום</th>
-                            <th class="text-right col-4" scope="col" dir="rtl">כתובת</th>
-                            <th class="text-right col-4" scope="col" dir="rtl">שם/תיאור</th>
+                            <th class="text-right col-3" scope="col" dir="rtl">סוג מיקום</th>
+                            <th class="text-right col-3" scope="col" dir="rtl">כתובת</th>
+                            <th class="text-right col-3" scope="col" dir="rtl">שם/תיאור</th>
                         </tr>
                     </thead>
                     <tbody id="locations-list-body">
@@ -562,6 +567,7 @@
         <h5 class="modal-title ml-auto" id="feature-title" dir="rtl"></h5>
       </div>
       <div class="modal-body text-right" id="feature-info" dir="rtl"></div>
+      <div class="modal-footer text-right" id="chat-button" dir="rtl"></div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->

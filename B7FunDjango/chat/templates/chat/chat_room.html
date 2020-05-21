@@ -1,0 +1,171 @@
+{% extends 'baseWithNav.html' %}
+{% block  content%}
+    <div class="container d-flex flex-column h-100 flex-wrap">
+        <div class="flex-grow-1"></div>
+        <div class="row justify-content-center">
+            <div class="p-1 w-100 bg-dark text-white">
+                <h3 class="text-center">{{room_description}}</h3>
+            </div>
+            <div id="chat-log" style="height: 600px; max-height: 100%; overflow-y: auto;" class="p-1 w-100 bg-dark text-white">
+                <div id="chat-scroll-down"></div>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <button id="chat-message-submit" class="btn btn-primary" type="button" value="Send" dir="rtl">שלח/י</button>
+                </div>
+                <input id="chat-message-input" type="text" class="form-control" placeholder="תוכן הודעה" aria-label="תוכן הודעה" aria-describedby="basic-addon1" dir="rtl">
+            </div>
+        </div>
+        <div class="flex-grow-1"></div>       
+    </div>
+    {{ room_type|json_script:"room-type" }}
+    {{ room_id|json_script:"room-id" }}
+    {{ user.email|json_script:"user-email"}}
+    <script>
+        let indexOfMessages = 0;
+        const user_email = JSON.parse(document.getElementById('user-email').textContent);
+        let no_more_messages = false;
+
+        const roomType = JSON.parse(document.getElementById('room-type').textContent);
+        const roomID = JSON.parse(document.getElementById('room-id').textContent);
+        
+        const chatSocket = new WebSocket( 'ws://' + window.location.host + '/ws/chat/' + roomType + '/' + roomID + '/');
+
+        chatSocket.onmessage = function(e) {
+            const data = JSON.parse(e.data);
+            if(data.command == 'fetch_messages'){
+                no_more_messages = data.messages.length  == 0;
+                let first_elem = null;
+                if(!data.scroll_to_end){
+                    first_elem = $("#chat-log").children().first();
+                }
+                Array.prototype.forEach.call(data.messages, function(elem){
+                    if(user_email == elem.sender){
+                        $("#chat-log").prepend(
+                            `<div class="row w-75 p-1 m-1 bg-light text-dark rounded pull-right">
+                                <div class="col-2 mb-auto p-0">
+                                    <a class="nav-link p-0" href="">
+                                        <img src="/media/${elem.profile_image}" class="rounded-circle z-depth-0" alt="avatar image" height="35">
+                                    </a>
+                                </div>
+                                <div class="col-10 m-auto">
+                                    <p dir="rtl" class="d-inline">${elem.message}</p>
+                                    <p><small class="text-muted pull-right"> ${elem.date} ${elem.time}</small></p>
+                                </div>
+                            </div>`
+                        ); 
+                    }
+                    else{
+                        $("#chat-log").prepend(
+                            `<div class="row w-75 p-1 m-1 bg-light text-dark rounded pull-left">
+                                <div class="col-2 mb-auto p-0">
+                                    <a class="nav-link p-0" href="">
+                                        <img src="/media/${elem.profile_image}" class="rounded-circle z-depth-0" alt="avatar image" height="35">
+                                    </a>
+                                </div>
+                                <div class="col-10 m-auto">
+                                    <p dir="rtl" class="d-inline">${elem.message}</p>
+                                    <p><small class="text-muted pull-right"> ${elem.date} ${elem.time}</small></p>
+                                </div>
+                            </div>`
+                        ); 
+                    }
+                       
+                });
+                if(data.scroll_to_end){
+                    ScrollToEnd();
+                }
+                else{
+                    var previous_height = 0;
+                    first_elem.prevAll().each(function() {
+                        previous_height += $(this).outerHeight();
+                    });
+                    $("#chat-log").scrollTop(previous_height);
+                }
+            }
+            else if(data.command == 'new_messages'){
+                if(user_email == data.sender){
+                    $("#chat-scroll-down").before(
+                        `<div class="row w-75 p-1 m-1 bg-light text-dark rounded pull-right">
+                            <div class="col-2 mb-auto p-0">
+                                <a class="nav-link p-0" href="">
+                                    <img src="/media/${data.profile_image}" class="rounded-circle z-depth-0" alt="avatar image" height="35">
+                                </a>
+                            </div>
+                            <div class="col-10 m-auto">
+                                <p dir="rtl" class="d-inline">${data.message}</p>
+                                <p><small class="text-muted pull-right"> ${data.date} ${data.time}</small></p>
+                            </div>
+                        </div>`
+                    );
+                }
+                else{
+                    $("#chat-scroll-down").before(
+                        `<div class="row w-75 p-1 m-1 bg-light text-dark rounded pull-left">
+                            <div class="col-2 mb-auto p-0">
+                                <a class="nav-link p-0" href="">
+                                    <img src="/media/${data.profile_image}" class="rounded-circle z-depth-0" alt="avatar image" height="35">
+                                </a>
+                            </div>
+                            <div class="col-10 m-auto">
+                                <p dir="rtl" class="d-inline">${data.message}</p>
+                                <p><small class="text-muted pull-right"> ${data.date} ${data.time}</small></p>
+                            </div>
+                        </div>`
+                    );
+                }
+                ScrollToEnd();
+            }
+        };
+
+        chatSocket.onopen = function(e) {
+            chatSocket.send(JSON.stringify({
+                'command': 'fetch_messages',
+                'index': indexOfMessages,
+                'scroll_to_end': true
+            }));
+            indexOfMessages += 1;
+            $('#chat-log').scroll(function() {
+                if(!no_more_messages){
+                    var pos = $('#chat-log').scrollTop();
+                    if (pos == 0) {
+                        chatSocket.send(JSON.stringify({
+                            'command': 'fetch_messages',
+                            'index': indexOfMessages,
+                            'scroll_to_end': false
+                        }));
+                        indexOfMessages += 1;
+                    }
+                }
+            });
+        };
+
+        chatSocket.onclose = function(e) {
+            window.alert('Invalid Chat please contact site administration if problem returns');
+            window.location = "{% url 'feed:feed' %}"
+        };
+
+        document.querySelector('#chat-message-input').onkeyup = function(e) {
+            if (e.keyCode === 13) {  // enter, return
+                document.querySelector('#chat-message-submit').click();
+            }
+        };
+
+        document.querySelector('#chat-message-submit').onclick = function(e) {
+            const messageInputDom = document.querySelector('#chat-message-input');
+            const message = messageInputDom.value;
+            chatSocket.send(JSON.stringify({
+                'message': message,
+                'command': 'new_messages'
+            }));
+            messageInputDom.value = '';
+        };
+
+        function ScrollToEnd() {
+            // Scroll
+            $("#chat-log").animate({
+                scrollTop: $('#chat-log').prop("scrollHeight")
+            }, 1000);
+        }
+    </script>
+{% endblock  %}

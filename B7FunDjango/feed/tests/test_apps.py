@@ -9,4 +9,5 @@ from feed.apps import FeedConfig
 @tag('unit-test')
 class ProfileAppsTestCase(TestCase):
     def test_apps_name(self):
+        #Assert
         self.assertEqual(FeedConfig.name, "feed")

@@ -8,4 +8,5 @@ from postsFeed.apps import PostsfeedConfig
 @tag('unit-test')
 class ProfileAppsTestCase(TestCase):
     def test_apps_name(self):
+        #Assert
         self.assertEqual(PostsfeedConfig.name, "postsFeed")

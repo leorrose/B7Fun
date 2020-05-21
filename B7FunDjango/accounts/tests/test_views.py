@@ -116,8 +116,6 @@ class LoginViewTest(TestCase):
     @tag('integration-test')
     def test_login_and_logout_admin(self):
         #Arrange
-        #Arrange
-        #Arrange
         User.objects.create_superuser(email='test_login_and_logout_admin@text.com',
                                       user_name='test_create_super_user',
                                       first_name='first name', last_name='last name',
