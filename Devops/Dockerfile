@@ -25,15 +25,8 @@ RUN apk --no-cache add python3 \
                        fribidi-dev
  
 RUN /usr/sbin/adduser -D pillow && \
-    pip3 install virtualenv && virtualenv /vpy3 && \
-    /vpy3/bin/pip install --upgrade pip && \
-    /vpy3/bin/pip install olefile pytest pytest-cov && \
-    chown -R pillow:pillow /vpy3
+    python -m pip install --upgrade pip && \
+    pip install olefile pytest pytest-cov
 
 COPY requirements.txt .
 RUN pip install -r requirements.txt
-
-ENV PYTHONUNBUFFERED 1
-
-USER pillow
-CMD ["test.sh"]
