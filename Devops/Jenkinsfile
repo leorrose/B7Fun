@@ -21,7 +21,9 @@ pipeline {
             steps {
 				withEnv(["HOME=${env.WORKSPACE}"]) {
 					sh 'python3 -m pip install --upgrade pip --user'
-					sh 'python3 -m pip install -r requirements.txt --user'
+					dir("Devops") {
+						sh 'python3 -m pip install -r requirements.txt --user'
+					}
 					dir("B7FunDjango") {
 						sh 'python3 manage.py makemigrations'
 						sh 'python3 manage.py migrate'
