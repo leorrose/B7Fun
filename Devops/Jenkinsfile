@@ -1,7 +1,7 @@
 pipeline {
     agent {
 		docker {
-			image 'leorrose13/b7fun:latest'
+			image 'python:3.6.10-buster'
 		}
 	}
 	triggers {
