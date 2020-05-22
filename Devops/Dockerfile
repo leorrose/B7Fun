@@ -28,6 +28,6 @@ COPY requirements.txt .
 
 RUN pip3 install --upgrade pip && \
 	pip3 install virtualenv && \
-	pip install --no-cache-dir -r requirements.txt
+	pip3 install --no-cache-dir -r requirements.txt
 
-CMD ["python"]
+CMD ["python3"]
