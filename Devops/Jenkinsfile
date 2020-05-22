@@ -20,7 +20,7 @@ pipeline {
         stage('Application Setup') {
             steps {
 				withEnv(["HOME=${env.WORKSPACE}"]) {
-					dir("B7FunDjango") {
+					dir("Devops") {
 						sh 'python -m pip install --upgrade pip --user'
 						sh 'python -m pip install -r requirements.txt'
 					}
