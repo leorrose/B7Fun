@@ -20,7 +20,7 @@ pipeline {
         stage('Application Setup') {
             steps {
 				withEnv(["HOME=${env.WORKSPACE}"]) {
-					sh 'python3 -m pip install --upgrade pip'
+					sh 'python3 -m pip install --upgrade pip --user'
 					sh 'python3 -m pip install -r requirements.txt'
 					dir("B7FunDjango") {
 						sh 'python3 manage.py makemigrations'
