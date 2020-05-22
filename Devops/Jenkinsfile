@@ -19,11 +19,9 @@ pipeline {
 		}
         stage('Application Setup') {
             steps {
-				withEnv(["HOME=${env.WORKSPACE}"]) {
-					dir("B7FunDjango") {
-						sh 'python3 manage.py makemigrations'
-						sh 'python3 manage.py migrate'
-					}
+				dir("B7FunDjango") {
+					sh 'python3 manage.py makemigrations'
+					sh 'python3 manage.py migrate'
 				}
             }
         }
