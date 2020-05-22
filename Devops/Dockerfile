@@ -35,4 +35,4 @@ COPY ./requirements.txt .
 RUN pip install -r requirements.txt
 
 USER pillow
-CMD ["python"]
+ENTRYPOINT ["/bin/bash"]
