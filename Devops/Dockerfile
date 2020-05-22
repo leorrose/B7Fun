@@ -24,15 +24,10 @@ RUN apk --no-cache add python3 \
                        harfbuzz-dev \
                        fribidi-dev
 
-RUN /usr/sbin/adduser -D pillow && \
-    pip3 install virtualenv && virtualenv /vpy3 && \
-    /vpy3/bin/pip install --upgrade pip && \
-    /vpy3/bin/pip install olefile pytest pytest-cov && \
-    /vpy3/bin/pip install numpy --only-binary=:all: || true && \
-    chown -R pillow:pillow /vpy3
+COPY requirements.txt .
 
-COPY ./requirements.txt .
-RUN pip install -r requirements.txt
+RUN pip3 install --upgrade pip && \
+	pip3 install virtualenv && \
+	pip install --no-cache-dir -r requirements.txt
 
-USER pillow
-ENTRYPOINT ["/bin/bash"]
+CMD ["python"]
