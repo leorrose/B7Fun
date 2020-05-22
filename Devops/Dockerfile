@@ -23,10 +23,16 @@ RUN apk --no-cache add python3 \
                        tcl-dev \
                        harfbuzz-dev \
                        fribidi-dev
- 
-RUN /usr/sbin/adduser -D pillow && \
-    python3 -m pip install --upgrade pip && \
-    pip3 install olefile pytest pytest-cov
 
-COPY requirements.txt .
-RUN pip3 install -r requirements.txt
+RUN /usr/sbin/adduser -D pillow && \
+    pip3 install virtualenv && virtualenv /vpy3 && \
+    /vpy3/bin/pip install --upgrade pip && \
+    /vpy3/bin/pip install olefile pytest pytest-cov && \
+    /vpy3/bin/pip install numpy --only-binary=:all: || true && \
+    chown -R pillow:pillow /vpy3
+
+COPY ./requirements.txt .
+RUN pip install -r requirements.txt
+
+USER pillow
+CMD ["python"]
