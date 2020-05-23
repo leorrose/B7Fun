@@ -20,8 +20,7 @@ def review(request):
                                            sender_user_name=request.user.user_name,
                                            rating=form.cleaned_data.get('rating'),
                                            id=id)
-            print(review.review_content)
-            print(type(review.rating))
+
             return redirect('reviews:reviews_list')
     else:
         form = ReviewForm()
