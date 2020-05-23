@@ -6,7 +6,7 @@ from django.db import models
 
 # Create your models here.
 class ChatMessage(models.Model):
-    id = models.IntegerField(primary_key=True)
+    message_id = models.IntegerField(primary_key=True)
     date = models.DateTimeField(verbose_name="Time sent", auto_now_add=True)
     message = models.TextField(verbose_name="message")
     sender_email = models.EmailField(verbose_name="sender email", max_length=60)
@@ -16,3 +16,12 @@ class ChatMessage(models.Model):
     class Meta:
         verbose_name_plural = 'Chat Messages'
         db_table = 'Chat Messages'
+
+class AbusiveChatMessage(models.Model):
+    abusive_message_id = models.IntegerField(primary_key=True)
+    message = models.TextField(verbose_name="message")
+    sender_email = models.EmailField(verbose_name="sender email", max_length=60)
+
+    class Meta:
+        verbose_name_plural = 'Abusive Chat Messages'
+        db_table = 'Abusive Chat Messages'

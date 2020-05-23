@@ -12,8 +12,7 @@ from asgiref.sync import async_to_sync
 from channels.generic.websocket import WebsocketConsumer
 from accounts.models import User
 from feed.models import community_centers, dog_gardens, elderly_social_club, playgrounds, sport_facilities, urban_nature
-from .models import ChatMessage
-
+from .models import ChatMessage, AbusiveChatMessage
 
 class ChatConsumer(WebsocketConsumer):
     def connect(self):
@@ -67,6 +66,7 @@ class ChatConsumer(WebsocketConsumer):
         for i in messages:
             messages_list += [{
                 'message': i.message,
+                'message_id': i.message_id,
                 'sender': i.sender_email,
                 'date': i.date.strftime('%d/%m/%Y'),
                 'time': i.date.strftime('%H:%M'),
@@ -80,8 +80,12 @@ class ChatConsumer(WebsocketConsumer):
         }))
 
     def send_chat_messages(self, text_data_json):
-        message = text_data_json['message']
-        new_message = ChatMessage(message=message, sender_email=self.scope['user'].email, chat_room_id=self.room_id,
+        temp_id = 0
+        message = text_data_json["message"]
+        max_id = ChatMessage.objects.all().order_by('message_id').last()
+        if max_id:
+            temp_id = max_id.message_id + 1
+        new_message = ChatMessage(message_id=temp_id, message=message, sender_email=self.scope['user'].email, chat_room_id=self.room_id,
                                   chat_room_type=self.room_type)
         new_message.save()
 
@@ -91,6 +95,7 @@ class ChatConsumer(WebsocketConsumer):
             {
                 'type': 'chat_message',
                 'message': message,
+                'message_id': new_message.message_id,
                 'sender': self.scope['user'].email,
                 'date': new_message.date.strftime('%d/%m/%Y'),
                 'time': new_message.date.strftime('%H:%M'),
@@ -102,6 +107,7 @@ class ChatConsumer(WebsocketConsumer):
     # Receive message from room group
     def chat_message(self, event):
         message = event['message']
+        message_id = event['message_id']
         sender = event['sender']
         date = event['date']
         time = event['time']
@@ -111,6 +117,7 @@ class ChatConsumer(WebsocketConsumer):
         # Send message to WebSocket
         self.send(text_data=json.dumps({
             'message': message,
+            'message_id': message_id,
             'sender': sender,
             'date': date,
             'time': time,
@@ -118,4 +125,12 @@ class ChatConsumer(WebsocketConsumer):
             'command': command
         }))
 
-    commands = {'fetch_messages' : fetch_messages, 'new_messages': send_chat_messages}
+    def report_message(self, text_data_json):
+        message = text_data_json["message"]
+        sender_email = text_data_json["sender_email"]
+        message_id = text_data_json["message_id"]
+        messages = AbusiveChatMessage.objects.filter(abusive_message_id=message_id)
+        if not messages:
+            AbusiveChatMessage.objects.create(abusive_message_id=message_id, message=message, sender_email=sender_email)
+
+    commands = {'fetch_messages' : fetch_messages, 'new_messages': send_chat_messages, 'report_message': report_message}

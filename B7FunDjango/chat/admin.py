@@ -5,7 +5,7 @@
 # pylint: disable=arguments-differ
 
 from django.contrib import admin
-from .models import ChatMessage
+from .models import ChatMessage, AbusiveChatMessage
 
 @admin.register(ChatMessage)
 class UserAdmin(admin.ModelAdmin):
@@ -18,3 +18,15 @@ class UserAdmin(admin.ModelAdmin):
         }),
     )
     search_fields = ['message', 'sender_email', 'chat_room_type', 'chat_room_id']
+
+@admin.register(AbusiveChatMessage)
+class UserAdmin(admin.ModelAdmin):
+    list_per_page = 20
+    list_filter = ('sender_email',)
+    list_display = ('message', 'sender_email')
+    fieldsets = (
+        (None, {
+            'fields': ('message', 'sender_email')
+        }),
+    )
+    search_fields = ['message', 'sender_email']

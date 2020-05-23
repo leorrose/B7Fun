@@ -2,7 +2,7 @@
 {% block  content%}
     <div class="container d-flex flex-column h-100 flex-wrap">
         <div class="flex-grow-1"></div>
-        <div class="row justify-content-center">
+        <div class="row justify-content-center mt-1">
             <div class="p-1 w-100 bg-dark text-white">
                 <h3 class="text-center">{{room_description}}</h3>
             </div>
@@ -42,31 +42,61 @@
                 Array.prototype.forEach.call(data.messages, function(elem){
                     if(user_email == elem.sender){
                         $("#chat-log").prepend(
-                            `<div class="row w-75 p-1 m-1 bg-light text-dark rounded pull-right">
-                                <div class="col-2 mb-auto p-0">
-                                    <a class="nav-link p-0" href="">
-                                        <img src="/media/${elem.profile_image}" class="rounded-circle z-depth-0" alt="avatar image" height="35">
-                                    </a>
-                                </div>
-                                <div class="col-10 m-auto">
-                                    <p dir="rtl" class="d-inline">${elem.message}</p>
-                                    <p><small class="text-muted pull-right"> ${elem.date} ${elem.time}</small></p>
-                                </div>
+                            `<div class="row w-75 bg-light mr-1 mb-1 text-dark rounded pull-right message-element">
+                                <table class="table bg-light">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" class="border-0 d-row d-flex">
+                                                <div class="mr-2"> 
+                                                    <a class="nav-link p-0" href="">
+                                                        <img src="/media/${elem.profile_image}" class="rounded-circle z-depth-0" alt="avatar image" height="35">
+                                                    </a>
+                                                </div>
+                                                <div> 
+                                                    <p dir="rtl" class="d-inline message-content">${elem.message}</p>
+                                                    <p style="display:none;" class="sender_email">${elem.sender}</p>
+                                                    <p style="display:none;" class="message_id">${elem.message_id}</p>  
+                                                </div>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row" class="border-0 pr-0 pt-0 pb-0"><small class="text-muted pull-left"> ${elem.date} ${elem.time}</small></p></th>
+                                            <th scope="row" class="border-0 pl-0 pt-0 pb-0 text-muted pull-right"><i class="fa fa-frown-o text-primary report" style="cursor:pointer;" title="דווח על הודעה פוגענית"></th>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>`
                         ); 
                     }
                     else{
                         $("#chat-log").prepend(
-                            `<div class="row w-75 p-1 m-1 bg-light text-dark rounded pull-left">
-                                <div class="col-2 mb-auto p-0">
-                                    <a class="nav-link p-0" href="">
-                                        <img src="/media/${elem.profile_image}" class="rounded-circle z-depth-0" alt="avatar image" height="35">
-                                    </a>
-                                </div>
-                                <div class="col-10 m-auto">
-                                    <p dir="rtl" class="d-inline">${elem.message}</p>
-                                    <p><small class="text-muted pull-right"> ${elem.date} ${elem.time}</small></p>
-                                </div>
+                            `<div class="row w-75 bg-light ml-1 mb-1 text-dark rounded pull-left message-element">
+                                <table class="table bg-light">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" class="border-0 d-row d-flex">
+                                                <div class="mr-2"> 
+                                                    <a class="nav-link p-0" href="">
+                                                        <img src="/media/${elem.profile_image}" class="rounded-circle z-depth-0" alt="avatar image" height="35">
+                                                    </a>
+                                                </div>
+                                                <div> 
+                                                    <p dir="rtl" class="d-inline message-content">${elem.message}</p>
+                                                    <p style="display:none;" class="sender_email">${elem.sender}</p>
+                                                    <p style="display:none;" class="message_id">${elem.message_id}</p>
+                                                </div>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row" class="border-0 pr-0 pt-0 pb-0"><small class="text-muted pull-left"> ${elem.date} ${elem.time}</small></p></th>
+                                            <th scope="row" class="border-0 pl-0 pt-0 pb-0 text-muted pull-right"><i class="fa fa-frown-o text-primary report" style="cursor:pointer;" title="דווח על הודעה פוגענית"></th>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>`
                         ); 
                     }
@@ -86,36 +116,67 @@
             else if(data.command == 'new_messages'){
                 if(user_email == data.sender){
                     $("#chat-scroll-down").before(
-                        `<div class="row w-75 p-1 m-1 bg-light text-dark rounded pull-right">
-                            <div class="col-2 mb-auto p-0">
-                                <a class="nav-link p-0" href="">
-                                    <img src="/media/${data.profile_image}" class="rounded-circle z-depth-0" alt="avatar image" height="35">
-                                </a>
-                            </div>
-                            <div class="col-10 m-auto">
-                                <p dir="rtl" class="d-inline">${data.message}</p>
-                                <p><small class="text-muted pull-right"> ${data.date} ${data.time}</small></p>
-                            </div>
+                        `<div class="row w-75 bg-light mr-1 mb-1 text-dark rounded pull-right message-element">
+                            <table class="table bg-light">
+                                <thead>
+                                    <tr>
+                                        <th scope="col" class="border-0 d-row d-flex">
+                                            <div class="mr-2"> 
+                                                <a class="nav-link p-0" href="">
+                                                    <img src="/media/${data.profile_image}" class="rounded-circle z-depth-0" alt="avatar image" height="35">
+                                                </a>
+                                            </div>
+                                            <div> 
+                                                <p dir="rtl" class="d-inline message-content">${data.message}</p>
+                                                <p style="display:none;" class="sender_email">${data.sender}</p>
+                                                <p style="display:none;" class="message_id">${data.message_id}</p>  
+                                            </div>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row" class="border-0 pr-0 pt-0 pb-0"><small class="text-muted pull-left"> ${data.date} ${data.time}</small></p></th>
+                                        <th scope="row" class="border-0 pl-0 pt-0 pb-0 text-muted pull-right"><i class="fa fa-frown-o text-primary report" style="cursor:pointer;" title="דווח על הודעה פוגענית"></th>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>`
                     );
                 }
                 else{
                     $("#chat-scroll-down").before(
-                        `<div class="row w-75 p-1 m-1 bg-light text-dark rounded pull-left">
-                            <div class="col-2 mb-auto p-0">
-                                <a class="nav-link p-0" href="">
-                                    <img src="/media/${data.profile_image}" class="rounded-circle z-depth-0" alt="avatar image" height="35">
-                                </a>
-                            </div>
-                            <div class="col-10 m-auto">
-                                <p dir="rtl" class="d-inline">${data.message}</p>
-                                <p><small class="text-muted pull-right"> ${data.date} ${data.time}</small></p>
-                            </div>
+                        `<div class="row w-75 bg-light ml-1 mb-1 text-dark rounded pull-left message-element">
+                            <table class="table bg-light">
+                                <thead>
+                                    <tr>
+                                        <th scope="col" class="border-0 d-row d-flex">
+                                            <div class="mr-2"> 
+                                                <a class="nav-link p-0" href="">
+                                                    <img src="/media/${data.profile_image}" class="rounded-circle z-depth-0" alt="avatar image" height="35">
+                                                </a>
+                                            </div>
+                                            <div> 
+                                                <p dir="rtl" class="d-inline message-content">${data.message}</p>
+                                                <p style="display:none;" class="sender_email">${data.sender}</p>
+                                                <p style="display:none;" class="message_id">${data.message_id}</p> 
+                                            </div>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row" class="border-0 pr-0 pt-0 pb-0"><small class="text-muted pull-left"> ${data.date} ${data.time}</small></p></th>
+                                        <th scope="row" class="border-0 pl-0 pt-0 pb-0 text-muted pull-right"><i class="fa fa-frown-o text-primary report" style="cursor:pointer;" title="דווח על הודעה פוגענית"></th>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>`
                     );
                 }
                 ScrollToEnd();
             }
+            $(".report").click(submit_chat_abusive_report);
         };
 
         chatSocket.onopen = function(e) {
@@ -166,6 +227,19 @@
             $("#chat-log").animate({
                 scrollTop: $('#chat-log').prop("scrollHeight")
             }, 1000);
+        }
+
+
+        function submit_chat_abusive_report(){
+            let message = $(this).closest('.message-element').find('.message-content').text();
+            let sender = $(this).closest('.message-element').find('.sender_email').text();
+            let message_id = $(this).closest('.message-element').find('.message_id').text();
+            chatSocket.send(JSON.stringify({
+                'command': 'report_message',
+                'message': message,
+                'sender_email': sender,
+                'message_id': message_id
+            }));
         }
     </script>
 {% endblock  %}
