@@ -59,8 +59,14 @@
                     <li class="nav-item active text-right collapse-border-top">
                         <a class="nav-link" href="{% url 'postsFeed:admin_posts' %}" dir="rtl"> פיד באר שבע </span></a>
                     </li>
+                    <li class="nav-item active text-right collapse-border-top">
+                        <a class="nav-link" href="{% url 'reviews:reviews_list' %}" dir="rtl"> ביקורות </span></a>
+                    </li>
                 </ul>
                 <ul class="navbar-nav nav-flex-icons text-right ml-auto pr-2 border-right collapse-border-top" id="profile-image">
+                      <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'reviews:review' %}">דרג אותנו</a>
+                    </li>
                     <li class="nav-item avatar">
                         <a class="nav-link p-0" href="{% url 'Profile:my_profile' %}">
                             {% if user.profile_image %}
