@@ -11,6 +11,7 @@ from django.contrib.auth.forms import PasswordChangeForm
 from django.core.cache import cache
 from PIL import Image
 from accounts.models import User
+from chat.models import ChatMessage, AbusiveChatMessage
 from .forms import UpdateProfileImage, UpdateUserDetails
 
 
@@ -66,22 +67,23 @@ def edit_user_details(request):
             error_message = [] if form.errors == {} else [form.errors.values()]
             if(form.cleaned_data.get('user_name') != request.user.user_name and
                len(User.objects.filter(user_name=form.cleaned_data.get('user_name'))) > 0):
-                error_message.append(
-                    "user name already exists, please choose different user name")
+                error_message.append("user name already exists, please choose different user name")
             else:
                 request.user.user_name = form.cleaned_data.get('user_name')
 
             if(form.cleaned_data.get('email') != request.user.email and
                len(User.objects.filter(email=form.cleaned_data.get('email'))) > 0):
-                error_message.append(
-                    "user email already exists, please choose different email")
+                error_message.append("user email already exists, please choose different email")
             else:
+                ChatMessage.objects.filter(sender_email=request.user.email).update(sender_email=form.cleaned_data.get('email'))
+                AbusiveChatMessage.objects.filter(sender_email=request.user.email).update(sender_email=form.cleaned_data.get('email'))
                 request.user.email = form.cleaned_data.get('email')
 
             request.user.first_name = form.cleaned_data.get('first_name')
             request.user.last_name = form.cleaned_data.get('last_name')
             request.user.about = form.cleaned_data.get('about')
             request.user.save()
+
             if error_message != []:
                 return redirect('Profile:my_profile', err=", ".join(error_message))
         else:
