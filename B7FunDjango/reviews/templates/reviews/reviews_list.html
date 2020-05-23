@@ -1,0 +1,31 @@
+{% extends 'baseWithNav.html' %}
+
+{% block  content%}
+    </br>
+    <div class="container d-flex flex-column h-100" >
+        <div class="flex-grow-1"></div>
+        <div class="row justify-content-center">
+            <div class="posts">
+            {% for review in reviews %}
+                <div class="card" style="max-width: 40rem;">
+                    <div class="card-body">
+                        <style>
+                            .checked {
+                                color: orange;
+                            }
+                         </style>
+                        <h5 class="card-title text-right" dir="rtl">{{ review.sender_user_name }}</h5>
+                        <p class="card-text text-right" dir="rtl"> {{ review.review_content }} </p>
+                        <p class="card-tex text-muted text-left m-2"><small>{{ review.date }}</small></p>
+                        {% for i in review.rating %}
+                            <span style="font-size:40px;cursor:pointer;"  class="fa fa-star checked"></span>
+                        {% endfor %}
+                    </div>
+                </div>
+                </br>
+            {% endfor %}
+            </div>
+        </div>
+        <div class="flex-grow-1"></div>
+    </div>
+{% endblock  %}

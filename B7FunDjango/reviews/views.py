@@ -22,9 +22,19 @@ def review(request):
                                            id=id)
             print(review.review_content)
             print(type(review.rating))
-            return redirect('feed:feed')
+            return redirect('reviews:reviews_list')
     else:
         form = ReviewForm()
         return render(request, 'reviews/review.html', {'form': form})
 
 
+def reviews_list(request):
+    reviews = Review.objects.all().order_by('-date')
+    reviews_list = list_with_rating_range(reviews)
+    return render(request, 'reviews/reviews_list.html', {'reviews': reviews_list})
+
+
+def list_with_rating_range(reviews):
+    for review in reviews:
+        review.rating = range(review.rating)
+    return reviews
