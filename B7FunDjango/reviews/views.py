@@ -14,13 +14,15 @@ def review(request):
     if request.method == 'POST':
         form = ReviewForm(request.POST)
         if form.is_valid():
+            id = Review.objects.count() + 1
             review = Review.objects.create(review_content=form.cleaned_data.get('review_content'),
                                            sender_email=request.user.email,
                                            sender_user_name=request.user.user_name,
-                                           rating=form.cleaned_data.get('rating'))
+                                           rating=form.cleaned_data.get('rating'),
+                                           id=id)
             print(review.review_content)
-            review.save()
-            redirect('feed:feed')
+            print(type(review.rating))
+            return redirect('feed:feed')
     else:
         form = ReviewForm()
         return render(request, 'reviews/review.html', {'form': form})
