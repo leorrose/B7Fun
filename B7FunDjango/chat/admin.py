@@ -46,7 +46,12 @@ class AbusiveChatMessageAdmin(admin.ModelAdmin):
         connection.open()
 
         for obj in queryset:
-            user = User.objects.filter(email=obj.sender_email)[0]
+            user = User.objects.filter(email=obj.sender_email)
+            if len(user) > 0:
+                user = user[0]
+            else:
+                continue
+
             if user.warnings < 2:
                 html_message = loader.render_to_string('chat/warning.html', {'user_name': user.user_name})
                 html_message = strip_tags(html_message)
@@ -71,7 +76,9 @@ class AbusiveChatMessageAdmin(admin.ModelAdmin):
             email.send()
 
             # delete message
-            ChatMessage.objects.filter(message_id=obj.abusive_message_id)[0].delete()
+            chatMessage = ChatMessage.objects.filter(message_id=obj.abusive_message_id)
+            if len(chatMessage) > 1 :
+                chatMessage[0].delete()
 
             # delete marked as abusive message
             obj.delete()
