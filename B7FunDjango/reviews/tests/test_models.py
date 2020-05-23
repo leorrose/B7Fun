@@ -16,7 +16,8 @@ class ReviewTest(TestCase):
                                             review_content='test test1',
                                             sender_email='test@test.com',
                                             sender_user_name='test123',
-                                            rating=3)
+                                            rating=3,
+                                            id=1)
 
     def test_date(self):
         self.date = datetime(2013, 11, 20, 20, 8, 7, 127325)
@@ -60,7 +61,8 @@ class ReviewTest(TestCase):
                      review_content='test test1',
                      sender_email='test@test.com',
                      sender_user_name='test123',
-                     rating=0)
+                     rating=0,
+                     id=0)
         try:
             rev.full_clean()
         except ValidationError as err:
@@ -72,7 +74,8 @@ class ReviewTest(TestCase):
                      review_content='test test1',
                      sender_email='test@test.com',
                      sender_user_name='test123',
-                     rating=1)
+                     rating=1,
+                     id=0)
         rev.save()
         self.assertEqual(Review.objects.filter(rating=1).count(), 1)
 
@@ -81,7 +84,8 @@ class ReviewTest(TestCase):
                      review_content='test test1',
                      sender_email='test@test.com',
                      sender_user_name='test123',
-                     rating=6)
+                     rating=6,
+                     id=0)
 
         try:
             rev.full_clean()
@@ -94,6 +98,7 @@ class ReviewTest(TestCase):
                      review_content='test test1',
                      sender_email='test@test.com',
                      sender_user_name='test123',
-                     rating=5)
+                     rating=5,
+                     id=0)
         rev.save()
         self.assertEqual(Review.objects.filter(rating=5).count(), 1)
