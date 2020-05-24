@@ -4,8 +4,7 @@
 
 from django.test import TestCase, tag
 from django.urls import resolve, reverse
-from Profile.views import my_profile, edit_profile_image,\
-    edit_user_details, change_password, rotate_pic
+from Profile.views import my_profile, edit_profile_image, edit_user_details, change_password, rotate_pic, show_user_profile
 
 @tag('unit-test')
 class UpdateProfileImageFormTestCase(TestCase):
@@ -28,3 +27,11 @@ class UpdateProfileImageFormTestCase(TestCase):
     def test_rotate_pic_url_is_resolved(self):
         url = reverse('Profile:rotate_pic')
         self.assertEqual(resolve(url).func, rotate_pic)
+
+    def test_show_user_profile_is_resolved(self):
+        url = reverse('Profile:show_user_profile_no_arg')
+        self.assertEqual(resolve(url).func, show_user_profile)
+
+    def test_show_user_profile_with_arg_is_resolved(self):
+        url = reverse('Profile:show_user_profile', kwargs={'user_email':'test@gmail.com'})
+        self.assertEqual(resolve(url).func, show_user_profile)

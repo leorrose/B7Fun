@@ -1,0 +1,58 @@
+{% extends 'baseWithNav.html' %}
+{%block content%}
+</br>
+<div class="container d-flex flex-column h-100" >
+    <div class="row justify-content-center">
+    <div class="flex-grow-1"></div>
+        <div class="posts">
+            <div class="card" style="max-width: 40rem;">
+                {% if VMuser.profile_image %}
+                <img class="card-img-top img-fluid img-thumbnail" src="{{ VMuser.profile_image.url }}" alt="Card image cap">
+                {% else %}
+                <img class="card-img-top img-fluid img-thumbnail" src="/media/default_profile.png" alt="Card image cap">
+                {% endif %}
+                <div class="card-header bg-white w-100">
+                    <h3 class="card-title text-center" dir="rtl">{{ VMuser.user_name }}</h3>
+                    <div class="row">
+                        <div class="col-6 text-muted">
+                        {% if VMuser.user_name %}
+                            <p class="card-text text-muted text-left" dir="rtl"> {{ VMuser.first_name }} {{VMuser.last_name }} </p>
+                        {% else %}
+                            <p class="card-text text-muted text-left" dir="rtl"> - </p>
+                        {% endif %}
+                        </div>
+                        <div class="col-6">
+                            <p class="card-text text-right" dir="rtl"> שם מלא</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                        {% if VMuser.user_name %}
+                            <p class="card-text text-muted text-left">{{ VMuser.email }}</p>
+                        {% else %}
+                            <p class="card-text text-muted text-left" dir="rtl"> - </p>
+                        {% endif %}
+                        </div>
+                        <div class="col-6">
+                            <p class="card-text text-right" dir="rtl"> דוא"ל</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                        {% if VMuser.user_name %}
+                            <p class="card-text text-muted text-left">{{ VMuser.about }}</p>
+                        {% else %}
+                            <p class="card-text text-muted text-left" dir="rtl"> - </p>
+                        {% endif %}
+                        </div>
+                        <div class="col-6">
+                            <p class="card-text text-right" dir="rtl"> קצת על עצמי</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </br>
+    </div>
+    <div class="flex-grow-1"></div>
+</div>
+{%endblock%}

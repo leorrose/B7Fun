@@ -558,3 +558,26 @@ class RotatePicTest(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTrue(response.context['user'].is_authenticated)
         self.assertTemplateUsed(response, 'Profile/my_profile.html')
+
+class ViewUserProfileTest(TestCase):
+    def setUp(self):
+        self.user = User.objects.create(email='ViewUserProfileTest_picTest@text.com',
+                                        user_name='editrotate_picTest user name',
+                                        first_name='first name',
+                                        last_name='last name',
+                                        about='This is test',
+                                        profile_image="test-rotate.png")
+        self.user.set_password('user password')
+        self.user.save()
+
+    @tag('unit-test')
+    def test_view_url(self):
+        #Arrange
+        self.client.login(email=self.user.email, password='user password')
+
+        #Act
+        response = self.client.get(reverse('Profile:show_user_profile', kwargs={'user_email':'ViewUserProfileTest_picTest@text.com'}),
+                                   follow=True)
+
+        #Assert
+        self.assertEqual(response.status_code, 200)

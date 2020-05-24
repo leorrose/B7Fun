@@ -120,3 +120,7 @@ def rotate_pic(request):
         img.save(request.user.profile_image.path)
         cache.clear()
     return redirect('Profile:my_profile')
+
+@login_required(login_url='/')
+def show_user_profile(request, user_email=None):
+    return render(request, 'Profile/view_profile.html', {'VMuser': User.objects.get(email=user_email)})
