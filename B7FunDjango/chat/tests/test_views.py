@@ -95,7 +95,7 @@ class ChatRoomTest(TestCase):
         #Arrange
         self.client.force_login(self.user)
         obj = elderly_social_club.objects.create(name='name test', address='address test', Type='Type test', lat='lat test',
-                                                      lon='lon test', id=0)
+                                                 lon='lon test', id=0)
 
         #Act
         response = self.client.get(reverse('chat:chat_room', kwargs={'room_type':'elderly_social_club', 'room_id':0}))
@@ -124,7 +124,7 @@ class ChatRoomTest(TestCase):
         obj = sport_facilities.objects.create(name='name test', Type='Type test', address='address test', neighborhood='neighborhood test',
                                               Operator='Operator test', Seats=10, Activity='Activity test', fencing='fencing test',
                                               lighting='lighting test', handicapped='handicapped test', condition='condition test',
-                                              Owner='Owner test', ForSchool='ForSchool test', association='association test', 
+                                              Owner='Owner test', ForSchool='ForSchool test', association='association test',
                                               SportType='SportType test', lat='lat test', lon='lon test', id=0)
 
         #Act

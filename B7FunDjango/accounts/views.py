@@ -5,6 +5,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, logout
 from django.contrib.auth.decorators import login_required
+from django.forms import ValidationError
 from .forms import SignUpForm, LoginForm
 from .models import User
 
@@ -44,10 +45,13 @@ def login_view(request):
         if form.is_valid():
             email = form.cleaned_data.get('email')
             user = User.objects.get(email=email,)
-            login(request, user)
-            if user.is_admin:
-                return redirect('admin:index')
-            return redirect('feed:feed')
+            if not user.blocked:
+                login(request, user)
+                if user.is_admin:
+                    return redirect('admin:index')
+                return redirect('feed:feed')
+            form.add_error(None, ValidationError("User is blocked"))
+            return render(request, 'accounts/login.html', {'form': form})
     else:
         form = LoginForm()
     return render(request, 'accounts/login.html', {'form': form})

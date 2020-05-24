@@ -3,14 +3,15 @@
 # pylint: disable=missing-class-docstring
 # pylint: disable=unused-argument
 # pylint: disable=arguments-differ
+# pylint: disable= expression-not-assigned
 
 from django.contrib import admin
-from .models import ChatMessage, AbusiveChatMessage
-from accounts.models import User
-from .models import ChatMessage
 from django.template import loader
 from django.core import mail
 from django.utils.html import strip_tags
+from django.contrib.sessions.models import Session
+from accounts.models import User
+from .models import ChatMessage, AbusiveChatMessage
 
 @admin.register(ChatMessage)
 class ChatMessageAdmin(admin.ModelAdmin):
@@ -58,13 +59,14 @@ class AbusiveChatMessageAdmin(admin.ModelAdmin):
                 subject = "אזהרה על תוכן פוגעני"
                 user.warnings += 1
                 user.save()
-            elif user.warnings == 2 :
+            elif user.warnings >= 2:
                 html_message = loader.render_to_string('chat/blocked.html', {'user_name': user.user_name})
                 html_message = strip_tags(html_message)
                 subject = "חסימה מאתר B7Fun"
                 user.warnings += 1
                 user.blocked = True
                 user.save()
+                [s.delete() for s in Session.objects.all() if s.get_decoded().get('_auth_user_id') == str(user.id)]
 
             email = mail.EmailMessage(
                 subject,
@@ -76,9 +78,9 @@ class AbusiveChatMessageAdmin(admin.ModelAdmin):
             email.send()
 
             # delete message
-            chatMessage = ChatMessage.objects.filter(message_id=obj.abusive_message_id)
-            if len(chatMessage) > 1 :
-                chatMessage[0].delete()
+            chat_message = ChatMessage.objects.filter(message_id=obj.abusive_message_id)
+            if len(chat_message) == 1:
+                chat_message[0].delete()
 
             # delete marked as abusive message
             obj.delete()

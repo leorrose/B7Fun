@@ -5,7 +5,6 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from feed.models import community_centers, dog_gardens, elderly_social_club, playgrounds, sport_facilities, urban_nature
-from django.http import HttpResponseRedirect
 
 @login_required(login_url='/')
 def chat_room(request, room_type, room_id):

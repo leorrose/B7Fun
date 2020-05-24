@@ -1,6 +1,7 @@
 # pylint: disable=missing-module-docstring
 # pylint: disable=missing-function-docstring
 # pylint: disable=missing-class-docstring
+# pylint: disable=attribute-defined-outside-init
 
 from datetime import datetime
 from django.test import TestCase, tag

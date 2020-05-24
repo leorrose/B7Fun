@@ -14,6 +14,14 @@ from accounts.models import User
 from feed.models import community_centers, dog_gardens, elderly_social_club, playgrounds, sport_facilities, urban_nature
 from .models import ChatMessage, AbusiveChatMessage
 
+def report_message(text_data_json):
+    message = text_data_json["message"]
+    sender_email = text_data_json["sender_email"]
+    message_id = text_data_json["message_id"]
+    messages = AbusiveChatMessage.objects.filter(abusive_message_id=message_id)
+    if not messages:
+        AbusiveChatMessage.objects.create(abusive_message_id=message_id, message=message, sender_email=sender_email)
+
 class ChatConsumer(WebsocketConsumer):
     def connect(self):
         self.room_type = self.scope['url_route']['kwargs']['room_type']
@@ -124,13 +132,5 @@ class ChatConsumer(WebsocketConsumer):
             'profile_image': profile_image,
             'command': command
         }))
-
-    def report_message(self, text_data_json):
-        message = text_data_json["message"]
-        sender_email = text_data_json["sender_email"]
-        message_id = text_data_json["message_id"]
-        messages = AbusiveChatMessage.objects.filter(abusive_message_id=message_id)
-        if not messages:
-            AbusiveChatMessage.objects.create(abusive_message_id=message_id, message=message, sender_email=sender_email)
 
     commands = {'fetch_messages' : fetch_messages, 'new_messages': send_chat_messages, 'report_message': report_message}
