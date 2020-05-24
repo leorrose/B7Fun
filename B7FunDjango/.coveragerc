@@ -1,6 +1,10 @@
 [run]
 source = .
 omit =
-    *B7FunDjango\settings.py*
-    *B7FunDjango\wsgi.py*
+    *settings.py*
+    *wsgi.py*
     *manage.py*
+    *routing.py*
+    *routing.py*
+    *admin.py*
+    *consumers.py*
