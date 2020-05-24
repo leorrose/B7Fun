@@ -8,12 +8,15 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.conf.urls.static import static
 from django.conf import settings
 from django.contrib.auth import views as auth_views
+from django.contrib.auth.decorators import login_required
+
+admin.autodiscover()
+admin.site.login = login_required(admin.site.login)
 
 
 urlpatterns = [
     path('', include('accounts.urls')),
     path('feed/', include('feed.urls')),
-    path('admin/', admin.site.urls),
     path('Profile/', include('Profile.urls')),
     path('posts/', include('postsFeed.urls')),
     path('reviews/', include('reviews.urls')),
@@ -35,6 +38,7 @@ urlpatterns = [
          auth_views.PasswordResetCompleteView.as_view(
              template_name='accounts/password_reset_complete.html'),
          name='password_reset_complete'),
+    path('admin/', admin.site.urls),
 ]
 
 urlpatterns += staticfiles_urlpatterns()
