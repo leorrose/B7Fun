@@ -66,7 +66,7 @@ pipeline {
 			steps {
 				dir("B7FunDjango") {
 					withEnv(["HOME=${env.WORKSPACE}"]) {
-						sh 'python -m pylint B7FunDjango accounts feed postsFeed Profile reviews'
+						sh 'python -m pylint B7FunDjango accounts feed postsFeed Profile reviews chat'
 					}
 				}
 			}
