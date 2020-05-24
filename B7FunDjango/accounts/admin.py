@@ -3,11 +3,13 @@
 # pylint: disable=missing-class-docstring
 # pylint: disable=unused-argument
 # pylint: disable=arguments-differ
+# pylint: disable=expression-not-assigned
 
 from django.contrib import admin
 from django.contrib.auth.models import Group
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
+from django.contrib.sessions.models import Session
 from django.core import mail
 from .models import User, Emails
 from .forms import EmailForm
@@ -17,11 +19,11 @@ admin.site.unregister(Group)
 @admin.register(User)
 class UserAdmin(admin.ModelAdmin):
     list_per_page = 20
-    list_filter = ("date_joined", 'last_login')
-    list_display = ("email", "user_name", "first_name", "last_name")
+    list_filter = ("date_joined", 'last_login', 'warnings', 'blocked')
+    list_display = ("email", "user_name", "first_name", "last_name", 'warnings', 'blocked')
     fieldsets = (
         (None, {
-            'fields': ('email', 'user_name', 'first_name', 'last_name', 'about', 'profile_image')
+            'fields': ('email', 'user_name', 'first_name', 'last_name', 'about', 'profile_image', 'warnings', 'blocked')
         }),
     )
     search_fields = ['first_name', 'last_name']
@@ -53,8 +55,23 @@ class UserAdmin(admin.ModelAdmin):
                 return HttpResponseRedirect(request.get_full_path())
         return render(request, 'accounts/admin/send_mail.html', context={'users':queryset, 'form':EmailForm()})
 
-    actions = ['send_mail']
+    def block_users(self, request, queryset):
+        self.message_user(request, "Blocked {} users".format(queryset.count()))
+        for obj in queryset:
+            obj.blocked = True
+            [s.delete() for s in Session.objects.all() if s.get_decoded().get('_auth_user_id') == str(obj.id)]
+            obj.save()
+
+    def unblock_users(self, request, queryset):
+        self.message_user(request, "Unblocked {} users".format(queryset.count()))
+        for obj in queryset:
+            obj.blocked = False
+            obj.save()
+
+    actions = ['send_mail', 'block_users', 'unblock_users']
     send_mail.short_description = "Send Email"
+    block_users.short_description = "Block Users"
+    unblock_users.short_description = "Unblock Users"
 
 @admin.register(Emails)
 class EmailsAdmin(admin.ModelAdmin):
