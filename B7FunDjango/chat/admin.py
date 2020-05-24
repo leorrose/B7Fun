@@ -83,6 +83,6 @@ class AbusiveChatMessageAdmin(admin.ModelAdmin):
             # delete marked as abusive message
             obj.delete()
 
-    actions = ['mark_as_abusive', mark_as_nonabusive]
+    actions = ['mark_as_abusive', 'mark_as_nonabusive']
     mark_as_abusive.short_description = "Mark message as abusive"
     mark_as_nonabusive.short_description = "Mark message as nonabusive"

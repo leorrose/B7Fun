@@ -17,6 +17,7 @@ urlpatterns = [
     path('Profile/', include('Profile.urls')),
     path('posts/', include('postsFeed.urls')),
     path('reviews/', include('reviews.urls')),
+    path('chat/', include('chat.urls')),
     path('password-reset/',
          auth_views.PasswordResetView.as_view(
              template_name='accounts/password_reset.html',
@@ -34,7 +35,6 @@ urlpatterns = [
          auth_views.PasswordResetCompleteView.as_view(
              template_name='accounts/password_reset_complete.html'),
          name='password_reset_complete'),
-    path('chat/', include('chat.urls'))
 ]
 
 urlpatterns += staticfiles_urlpatterns()

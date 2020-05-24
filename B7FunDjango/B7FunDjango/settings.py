@@ -49,7 +49,7 @@ INSTALLED_APPS = [
     'postsFeed',
     'reviews',
     'chat',
-    'channels'
+    'channels',
 ]
 
 MIDDLEWARE = [
