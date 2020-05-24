@@ -44,7 +44,7 @@
     </style>
 </head>
 
-<body style="height: 100vh;">
+<body style="height: 100vh; overflow-y: hidden;">
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
         <div class="container-fluid">
             <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#main-nav-bar" aria-controls="main-nav-bar" aria-expanded="true" aria-label="Toggle navigation">
@@ -56,17 +56,14 @@
                     <li class="nav-item active">
                         <a class="navbar-brand nav-link" href="{% url 'feed:feed' %}">B7Fun</a>
                     </li>
-                    <li class="nav-item active text-right collapse-border-top">
+                    <li class="nav-item text-right collapse-border-top">
                         <a class="nav-link" href="{% url 'postsFeed:admin_posts' %}" dir="rtl"> פיד באר שבע </span></a>
                     </li>
-                    <li class="nav-item active text-right collapse-border-top">
+                    <li class="nav-item text-right collapse-border-top">
                         <a class="nav-link" href="{% url 'reviews:reviews_list' %}" dir="rtl"> ביקורות </span></a>
                     </li>
                 </ul>
                 <ul class="navbar-nav nav-flex-icons text-right ml-auto pr-2 border-right collapse-border-top" id="profile-image">
-                      <li class="nav-item active">
-                        <a class="nav-link" href="{% url 'reviews:review' %}">דרג אותנו</a>
-                    </li>
                     <li class="nav-item avatar">
                         <a class="nav-link p-0" href="{% url 'Profile:my_profile' %}">
                             {% if user.profile_image %}
@@ -83,8 +80,9 @@
                             <i class="fa fa-cog fa-lg"></i>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item text-right" href="{% url 'reviews:review' %}" dir="rtl"> דרג/י אותנו </a>
+                            <div class="dropdown-divider"></div>
                             <a class="dropdown-item text-right" href="{% url 'accounts:logout' %}" dir="rtl"> התנתקת/י </a>
-                            <!-- <div class="dropdown-divider"></div> -->
                         </div>
                     </li>
                 </ul>
@@ -92,7 +90,7 @@
             </div>
         </div>
     </nav>
-    <div class="append-content h-100" style="background: linear-gradient(180deg,#00416A, #fff) !important;">
+    <div class="append-content h-100" style="background: linear-gradient(180deg,#00416A, #fff) !important; overflow-y: scroll;">
         {% block content %}
         {% endblock %}
     </div>

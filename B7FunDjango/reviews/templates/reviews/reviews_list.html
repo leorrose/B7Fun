@@ -1,31 +1,29 @@
 {% extends 'baseWithNav.html' %}
 
+{% block extra_style %}
+<style>
+    .checked {
+        color: orange;
+    }
+</style>
+{% endblock %}
+
 {% block  content%}
     </br>
     <div class="container d-flex flex-column h-100" >
-        <div class="flex-grow-1"></div>
         <div class="row justify-content-center">
-            <div class="posts">
             {% for review in reviews %}
-                <div class="card" style="max-width: 40rem;">
-                    <div class="card-body">
-                        <style>
-                            .checked {
-                                color: orange;
-                            }
-                         </style>
+                <div class="card m-2 pl-1 pr-1" style="max-width: 40rem;">
+                    <div class="card-body pb-1 pt-1">
                         <h5 class="card-title text-right" dir="rtl">{{ review.sender_user_name }}</h5>
-                        <p class="card-text text-right" dir="rtl"> {{ review.review_content }} </p>
-                        <p class="card-tex text-muted text-left m-2"><small>{{ review.date }}</small></p>
+                        <p class="card-text text-right mb-4" dir="rtl"> {{ review.review_content }} </p>
                         {% for i in review.rating %}
-                            <span style="font-size:40px;cursor:pointer;"  class="fa fa-star checked"></span>
+                            <span style="font-size:35px;cursor:pointer;"  class="fa fa-star checked mb-2"></span>
                         {% endfor %}
+                        <p class="card-tex text-muted text-left pb-0"><small>{{ review.date |date:'d-m-Y H:i'}}</small></p>
                     </div>
                 </div>
-                </br>
             {% endfor %}
-            </div>
         </div>
-        <div class="flex-grow-1"></div>
     </div>
 {% endblock  %}

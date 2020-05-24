@@ -31,7 +31,7 @@
     </style>
 </head>
 
-<body style="height: 100vh;">
+<body style="height: 100vh; overflow-y: hidden;">
     <nav class="navbar navbar-dark bg-dark">
         <div class="container-fluid">
             <div class="navbar-nav">
@@ -39,7 +39,7 @@
             </div>    
         </div>
     </nav>
-    <div class="append-content h-100" style="background: linear-gradient(180deg,#00416A, #fff) !important;">
+    <div class="append-content h-100" style="background: linear-gradient(180deg,#00416A, #fff) !important; overflow-y: scroll;">
         {% block content %}
         {% endblock %}
     </div>

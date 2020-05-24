@@ -1,4 +1,12 @@
 {% extends 'baseWithNav.html' %}
+{% block extra_style %}
+<style>
+    .checked {
+        color: orange;
+    }
+</style>
+{% endblock %}
+
 {%block content%}
     <div class="container d-flex flex-column h-100" >
         <div class="flex-grow-1"></div>
@@ -21,17 +29,12 @@
                                 <div style="display:none;">
                                     {{form.rating}}
                                 </div>
-                                    <style>
-                                        .checked {
-                                            color: orange;
-                                        }
-                                     </style>
                                 </br>
-                                <span  onclick="starmark(this)" id="1one" style="font-size:40px;cursor:pointer;"  class="fa fa-star checked"></span>
-                                <span  onclick="starmark(this)" id="2one"  style="font-size:40px;cursor:pointer;" class="fa fa-star checked"></span>
-                                <span  onclick="starmark(this)" id="3one"  style="font-size:40px;cursor:pointer;" class="fa fa-star checked"></span>
-                                <span  onclick="starmark(this)" id="4one"  style="font-size:40px;cursor:pointer;" class="fa fa-star checked"></span>
-                                <span  onclick="starmark(this)" id="5one"  style="font-size:40px;cursor:pointer;" class="fa fa-star checked"></span>
+                                <span  onclick="starmark(this)" id="1one" style="font-size:35px;cursor:pointer;"  class="fa fa-star checked"></span>
+                                <span  onclick="starmark(this)" id="2one"  style="font-size:35px;cursor:pointer;" class="fa fa-star checked"></span>
+                                <span  onclick="starmark(this)" id="3one"  style="font-size:35px;cursor:pointer;" class="fa fa-star checked"></span>
+                                <span  onclick="starmark(this)" id="4one"  style="font-size:35px;cursor:pointer;" class="fa fa-star checked"></span>
+                                <span  onclick="starmark(this)" id="5one"  style="font-size:35px;cursor:pointer;" class="fa fa-star checked"></span>
                                 <br/>
                                 {% if form.rating.errors %}
                                     {% for error in form.rating.errors%}
@@ -46,7 +49,6 @@
                                 </br>
                                 <button type="submit" class="btn btn-primary btn-lg btn-block"> דרג </button>
                             </div>
-
                             <div class="flex-grow-1"></div>
                         </div>
                     </form>
@@ -58,19 +60,19 @@
     </div>
 
 <script>
-var count;
-function starmark(item){
-    count=item.id[0];
-    var subid= item.id.substring(1);
-    for(var i=0;i<5;i++){
-        if(i<count){
-            document.getElementById((i+1)+subid).style.color="orange";
+    var count;
+    function starmark(item){
+        count=item.id[0];
+        var subid= item.id.substring(1);
+        for(var i=0;i<5;i++){
+            if(i<count){
+                document.getElementById((i+1)+subid).style.color="orange";
+            }
+            else{
+                document.getElementById((i+1)+subid).style.color="black";
+            }
         }
-        else{
-            document.getElementById((i+1)+subid).style.color="black";
-        }
+        document.getElementsByName("rating")[0].value = count;
     }
-    document.getElementsByName("rating")[0].value = count;
-}
 </script>
 {%endblock%}
