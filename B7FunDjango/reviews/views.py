@@ -27,6 +27,7 @@ def review(request):
         return render(request, 'reviews/review.html', {'form': form})
 
 
+@login_required(login_url='/')
 def reviews_list(request):
     reviews = Review.objects.all().order_by('-date')
     reviews_list = list_with_rating_range(reviews)
