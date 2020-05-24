@@ -10,5 +10,3 @@ class ReviewForm(forms.Form):
         attrs={'class': 'form-control', 'dir': 'rtl', 'placeholder': 'כתוב תגובה'}))
     rating = forms.IntegerField(label='דרג', required=True,
                                 validators=[MaxValueValidator(5), MinValueValidator(1)])
-
-

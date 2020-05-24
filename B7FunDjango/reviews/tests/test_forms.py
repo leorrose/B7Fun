@@ -3,15 +3,13 @@
 # pylint: disable=missing-class-docstring
 
 from django.test import TestCase, tag
-from reviews.forms import ReviewForm
-from reviews.models import Review
 from django.core.exceptions import ValidationError
+from reviews.forms import ReviewForm
 
 @tag('unit-test')
 class ReviewFormTest(TestCase):
     def setUp(self):
-        self.data = {'review_content': 'review_content',
-                     'rating': 3}
+        self.data = {'review_content': 'review_content', 'rating': 3}
         self.form = ReviewForm(data=self.data)
 
     def test_review_content_label(self):
