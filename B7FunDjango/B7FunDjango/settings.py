@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'reviews',
     'chat',
     'channels',
+    'reports',
 ]
 
 MIDDLEWARE = [
