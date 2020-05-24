@@ -17,6 +17,7 @@ urlpatterns = [
     path('Profile/', include('Profile.urls')),
     path('posts/', include('postsFeed.urls')),
     path('reviews/', include('reviews.urls')),
+    path('reports/', include('reports.urls')),
     path('chat/', include('chat.urls')),
     path('password-reset/',
          auth_views.PasswordResetView.as_view(
