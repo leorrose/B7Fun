@@ -65,6 +65,48 @@ class ReviewViewTest(TestCase):
         self.assertFalse(response.context['user'].is_authenticated)
         self.assertTemplateUsed(response, 'accounts/login.html')
 
+    def test_review_post(self):
+        form_data = {'review_content': 'content', 'rating': 3}
+
+        # Act
+        response = self.client.post(reverse('reviews:review'), data=form_data, follow=True)
+
+        # assert
+        self.assertEqual(response.status_code, 200)
+        self.assertRedirects(response, '/?next=/reviews/')
+
+    def test_create_review_correct_form_data(self):
+        user = User.objects.create(email='test_login_user@text.com', user_name='test_login_user user name',
+                                   first_name='first name', last_name='last name', about='This is test',
+                                   profile_image=None)
+        user.set_password('user password')
+        user.save()
+        form_data = {'review_content': 'content', 'rating': 3}
+
+        # Act
+        self.client.login(email='test_login_user@text.com', password="user password")
+        self.client.post(reverse('reviews:review'), data=form_data, follow=True)
+
+        review = Review.objects.get(id=2)
+        self.assertEqual(review.review_content, 'content')
+        self.assertEqual(review.rating, 3)
+
+    def test_create_review_correct_user_data(self):
+        user = User.objects.create(email='test_login_user@text.com', user_name='test_login_user user name',
+                                   first_name='first name', last_name='last name', about='This is test',
+                                   profile_image=None)
+        user.set_password('user password')
+        user.save()
+        form_data = {'review_content': 'content', 'rating': 3}
+
+        # Act
+        self.client.login(email='test_login_user@text.com', password="user password")
+        self.client.post(reverse('reviews:review'), data=form_data, follow=True)
+
+        review = Review.objects.get(id=2)
+        self.assertEqual(review.sender_email, 'test_login_user@text.com')
+        self.assertEqual(review.sender_user_name, 'test_login_user user name')
+
 
 class ReviewListTest(TestCase):
     def setUp(self):
@@ -107,7 +149,7 @@ class ReviewListTest(TestCase):
         self.assertTemplateUsed(response, 'reviews/reviews_list.html')
 
     @tag('unit-test')
-    def test_view_has_posts(self):
+    def test_view_has_reviews(self):
         #Arrange
         self.client.force_login(self.user)
 
@@ -125,7 +167,7 @@ class ReviewListTest(TestCase):
                             profile_image=None, password="user password")
 
         #Act
-        response = self.client.get(reverse('postsFeed:admin_posts'), follow=True)
+        response = self.client.get(reverse('reviews:reviews_list'), follow=True)
 
         #Assert
         self.assertEqual(response.status_code, 200)

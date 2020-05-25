@@ -10,6 +10,7 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 # Create your models here.
 class reports(models.Model):
 
+    id = models.IntegerField(primary_key=True)
     date = models.DateTimeField(auto_now_add=True, verbose_name="date")
     subject = models.CharField(max_length=255, verbose_name="subject")
     content = models.TextField(max_length=500, verbose_name="content")
