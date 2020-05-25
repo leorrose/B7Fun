@@ -55,8 +55,8 @@ and more.
 
 <hr/>
 <br/>
-<pre>
+
 Run project (on Windows):  
 1. Run runWin.bat  
-</pre>
+
 
