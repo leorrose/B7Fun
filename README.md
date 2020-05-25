@@ -25,7 +25,8 @@ Application includes 2 types of users (Resident and Admin).
 10. View admin posts.
 11. and more.
 ### <u> Resident Demo:</u>
-![ALT "A resident demo video"]('url')
+![ALT "A resident demo video"](https://github.com/leorrose/B7Fun/blob/master/Demos/UserDemoPart1.gif)
+![ALT "A resident demo video"](https://github.com/leorrose/B7Fun/blob/master/Demos/UserDemoPart2.gif)
 
 ### <u> Admin actions:</u>
 
