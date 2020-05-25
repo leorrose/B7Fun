@@ -1,4 +1,6 @@
 # B7Fun
+
+### Project Explanation
 A sport and fun activities social network for beersheba city.
 
 The target of this Project is to create a social network focused on connecting people by sports and fun places 
