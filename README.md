@@ -13,7 +13,7 @@ JQuery, Leaflet, Chart.js, HTML5 </b>.
 
 Application includes 2 types of users (Resident and Admin).
 
-##### <u> Resident actions </u>:
+##### <u> Resident actions:</u>
 <pre>
 1.  View fun and sport location on map based on current location in beer sheva city.
 2.  View fun and sport location by list.
