@@ -37,7 +37,7 @@ and more.
 4.  Can view reported abusive content.
 5.  Can send mails to users.
 6.  Can manage all Databases.
-and more. 
+7.  and more. 
 
 
 
