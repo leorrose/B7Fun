@@ -9,7 +9,7 @@ The target of this Project is to create a social network focused on connecting p
 This project is part of open data beer sheva.
 
 This Project was created with Python(Django + Django Channals + Djongo), MongoDb, CSS3, Bootstrap4, JavaScript,
-JQuery, Chart.js, HTML5. 
+JQuery, Leaflet, Chart.js, HTML5. 
 
 Application includes 2 types of users (Resident and Admin), each user has different options.
 
