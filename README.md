@@ -31,7 +31,7 @@ Application includes 2 types of users (Resident and Admin).
 
 Admin actions:
 <pre>
-1.  
+1.  Use all resident functionality.
 2.  
 3.  
 4.  
