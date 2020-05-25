@@ -14,12 +14,12 @@ JQuery, Leaflet, Chart.js, HTML5.
 Application includes 2 types of users (Resident and Admin).
 
 Resident actions:
-&nbsp;1.
-&nbsp;2.
-&nbsp;3.
-&nbsp;4.
+&nbsp;1. View fun and sport location on map based on current location in beer sheva city.
+&nbsp;2. View fun and sport location by list.
+&nbsp;3. Filter location by location type and by search term.
+&nbsp;4. 
 &nbsp;5.
-&nbsp;6.
+&nbsp;6. View admin posts.
 &nbsp;7.
 &nbsp;8.
 &nbsp;9.
@@ -42,7 +42,7 @@ Admin actions:
 &nbsp;12.
 
 
-
+### Demo
 
 <hr/>
 <br/>
