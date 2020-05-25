@@ -38,7 +38,7 @@ Admin actions:
 5.  Report abusive behaviour in chats.
 6.  View other users profile.
 7.  Maintain its profile.
-8.  Report problems in site.
+8.  
 9.  
 10. 
 </pre>
