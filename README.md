@@ -52,13 +52,14 @@ Application includes 2 types of users (Resident and Admin).
 
 ### Project Setup (Linux):
 
-1. Clone repository  
+1. Clone repository.
 2. Run installationWin.bat and wait untill console closes. then run project 
 
 <hr/>
 <br/>
 
 ## Project Run:
+
 ### Project Run (on Windows):
 
 1. Run runWin.bat
