@@ -34,7 +34,7 @@ Admin actions:
 1.  View fun and sport location on map based on current location in beer sheva city.
 2.  View fun and sport location by list.
 3.  Filter location by location type and by search term.
-4.  Join group chats based on a specific location.
+4.  
 5.  
 6.  
 7.  
