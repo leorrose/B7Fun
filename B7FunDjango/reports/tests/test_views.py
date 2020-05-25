@@ -64,6 +64,7 @@ class reportsViewTest(TestCase):
         self.assertFalse(response.context['user'].is_authenticated)
         self.assertTemplateUsed(response, 'accounts/login.html')
 
+    @tag('unit-test')
     def test_report_post(self):
         form_data = {'content': 'content', 'subject': 'subject'}
 
@@ -74,6 +75,7 @@ class reportsViewTest(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertRedirects(response, '/?next=/reports/')
 
+    @tag('unit-test')
     def test_create_report_correct_form_data(self):
         user = User.objects.create(email='test_login_user@text.com', user_name='test_login_user user name',
                                    first_name='first name', last_name='last name', about='This is test',
@@ -90,6 +92,7 @@ class reportsViewTest(TestCase):
         self.assertEqual(report.content, 'content')
         self.assertEqual(report.subject, 'subject')
 
+    @tag('unit-test')
     def test_create_report_correct_user_data(self):
         user = User.objects.create(email='test_login_user@text.com', user_name='test_login_user user name',
                                    first_name='first name', last_name='last name', about='This is test',
