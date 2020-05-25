@@ -34,7 +34,7 @@ Admin actions:
 <pre>
 1.  Use all resident functionality.
 2.  View statistics on user logins and registration.
-3.  Can block\unblock user.
+3.  Can block\unblock users.
 4.  Can view reported abusive content.
 5.  Can send mails to users.
 6.  Can manage all Databases.
