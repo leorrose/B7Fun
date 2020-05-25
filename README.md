@@ -62,6 +62,10 @@ and more.
 ## Project Run:
 ### Project Run (on Windows):
 
-1. Run runWin.bat  
+1. Run runWin.bat
+
+### Project Run (on Linunx):
+
+1. Run runWin.bat 
 
 
