@@ -37,7 +37,7 @@ Admin actions:
 4.  Join group chats based on a specific location.
 5.  Report abusive behaviour in chats.
 6.  View other users profile.
-7.  Maintain its profile.
+7.  
 8.  
 9.  
 10. 
