@@ -27,7 +27,7 @@ Application includes 2 types of users (Resident and Admin).
 10. View admin posts.
 11. and more.
 ### <u> Resident Demo:</u>
-
+![ALT "A resident demo video"]('url')
 
 ### <u> Admin actions:</u>
 
@@ -39,9 +39,8 @@ Application includes 2 types of users (Resident and Admin).
 6.  Can manage all Databases.
 7.  and more. 
 
-
-
 ### <u> Admin Demo: </u>
+![ALT "A admin demo video"]('url')
 
 <hr/>
 <br/>
