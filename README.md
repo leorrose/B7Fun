@@ -53,6 +53,9 @@ and more.
 
 ### Project Setup (Linux):
 
+1. Clone repository  
+2. Run installationWin.bat and wait untill console closes. then run project 
+
 <hr/>
 <br/>
 
