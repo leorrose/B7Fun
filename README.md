@@ -45,12 +45,13 @@ and more.
 
 <hr/>
 <br/>
-### Project Setup (Windows):
+## Project Setup:
+## Project Setup (Windows):
 <pre>
 1. Clone repository  
 2. Run installationWin.bat and wait untill console closes. then run project  
 </pre>
-### Project Setup (Linux):
+## Project Setup (Linux):
 
 <hr/>
 <br/>
