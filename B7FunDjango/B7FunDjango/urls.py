@@ -22,6 +22,7 @@ urlpatterns = [
     path('reviews/', include('reviews.urls')),
     path('reports/', include('reports.urls')),
     path('chat/', include('chat.urls')),
+    path('adminStats/', include('adminStats.urls')),
     path('password-reset/',
          auth_views.PasswordResetView.as_view(
              template_name='accounts/password_reset.html',
