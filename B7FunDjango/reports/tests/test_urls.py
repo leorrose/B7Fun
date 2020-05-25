@@ -4,7 +4,7 @@
 
 from django.test import TestCase, tag
 from django.urls import resolve, reverse
-from reports.views import reports
+from reports.views import report
 
 @tag('unit-test')
 class AccountsUrlsTest(TestCase):
