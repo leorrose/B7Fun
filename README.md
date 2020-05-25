@@ -32,7 +32,7 @@ Application includes 2 types of users (Resident and Admin).
 Admin actions:
 <pre>
 1.  View fun and sport location on map based on current location in beer sheva city.
-2.  View fun and sport location by list.
+2.  
 3.  
 4.  
 5.  
