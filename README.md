@@ -36,7 +36,7 @@ Admin actions:
 3.  Filter location by location type and by search term.
 4.  Join group chats based on a specific location.
 5.  Report abusive behaviour in chats.
-6.  View other users profile.
+6.  
 7.  
 8.  
 9.  
