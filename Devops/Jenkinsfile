@@ -55,7 +55,7 @@ pipeline {
 			steps {
 				dir("B7FunDjango") {
 					withEnv(["HOME=${env.WORKSPACE}"]) {
-						sh 'python -m coverage xml -o ./reports/coverage.xml'
+						sh 'python -m coverage xml -o ./test_reports/coverage.xml'
 						sh 'python -m coverage report --fail-under=80'
 					}
 				}
