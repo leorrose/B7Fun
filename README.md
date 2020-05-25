@@ -6,6 +6,11 @@ The target of this Project is to create a social network focused on connecting p
 
 This project is part of open data beer sheva.
 
+This Project was created with asp.net MVC, html, css, javaScript, jQuery, signalR, MySQL. 
+application includes 4 types of users (Student, Faculty, Lecturer and Admin), each user has different options.
+
+
+
 <hr/>
 <br/>
 <pre>
