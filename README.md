@@ -36,6 +36,7 @@ Admin actions:
 2.  View statistics on user logins and registration.
 3.  Can block\unblock user.
 4.  Can view reported abusive content.
+5.  Can send mails to users.
 
 and more. 
 </pre>
