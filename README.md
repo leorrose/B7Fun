@@ -21,7 +21,7 @@ Application includes 2 types of users (Resident and Admin).
 4.  Join group chats based on a specific location.
 5.  Report abusive behaviour in chats.
 6.  View other users profile.
-	7.  Maintain its profile.
+7.  Maintain its profile.
 	8.  Report problems in site.
 	9.  Rate and view site ratings.
 	10. View admin posts.
