@@ -15,11 +15,12 @@ application includes 4 types of users (Student, Faculty, Lecturer and Admin), ea
 
 <hr/>
 <br/>
+### Project Setup (Windows):
 <pre>
-Setup project (on Windows):  
 1. Clone repository  
 2. Run installationWin.bat and wait untill console closes. then run project  
 </pre>
+### Project Setup (Linux):
 
 <hr/>
 <br/>
