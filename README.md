@@ -25,6 +25,7 @@ Application includes 2 types of users (Resident and Admin).
 8.  Report problems in site.
 9.  Rate and view site ratings.
 10. View admin posts.
+and more.
 </pre>
 ##### Resident Demo:
 
@@ -32,15 +33,12 @@ Application includes 2 types of users (Resident and Admin).
 Admin actions:
 <pre>
 1.  Use all resident functionality.
-2.  
-3.  
-4.  
-5.  
-6.  
-7.  
-8.  
-9.  
-10. 
+2.  View statistics on user logins and registration.
+3.  Can block\unblock user.
+4.  Can view reported abusive content.
+5.  Can send mails to users.
+6.  Can manage all Databases
+and more. 
 </pre>
 
 
