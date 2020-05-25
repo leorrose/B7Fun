@@ -6,7 +6,7 @@ The target of this Project is to create a social network focused on connecting p
 
 This project is part of open data beer sheva.
 
-This Project was created with Python(Django), . 
+This Project was created with Python(Django), MongoDb, HTML5, . 
 application includes 4 types of users (Student, Faculty, Lecturer and Admin), each user has different options.
 
 
