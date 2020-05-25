@@ -47,7 +47,8 @@ Application includes 2 types of users (Resident and Admin).
 2. Make sure Python is in path (if not follow this guide [Add python to path](https://datatofish.com/add-python-to-windows-path/))
 3. Make sure pip is in path (if not follow this guide [Add pip to pathe](https://appuals.com/fix-pip-is-not-recognized-as-an-internal-or-external-command/))
 4. Clone repository.
-2. Run installationWin.bat and wait untill console closes. then run project  
+5. Run installationWin.bat and wait untill console closes.
+6.
 
 ### Project Setup (Linux):
 
