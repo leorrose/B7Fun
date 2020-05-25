@@ -26,22 +26,22 @@ Application includes 2 types of users (Resident and Admin).
 9.  Rate and view site ratings.
 10. View admin posts.
 </pre>
-Demo:
+##### Resident Demo:
 
 
 Admin actions:
-&nbsp;1.
-&nbsp;2.
-&nbsp;3.
-&nbsp;4.
-&nbsp;5.
-&nbsp;6.
-&nbsp;7.
-&nbsp;8.
-&nbsp;9.
-&nbsp;10.
-&nbsp;11.
-&nbsp;12.
+<pre>
+1.  View fun and sport location on map based on current location in beer sheva city.
+2.  View fun and sport location by list.
+3.  Filter location by location type and by search term.
+4.  Join group chats based on a specific location.
+5.  Report abusive behaviour in chats.
+6.  View other users profile.
+7.  Maintain its profile.
+8.  Report problems in site.
+9.  Rate and view site ratings.
+10. View admin posts.
+</pre>
 
 
 ### Demo
