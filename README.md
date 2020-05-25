@@ -27,7 +27,7 @@ Application includes 2 types of users (Resident and Admin).
 10. View admin posts.
 and more.
 </pre>
-##### <u> Resident Demo </u>:
+##### <u> Resident Demo:</u>
 
 
 ##### <u> Admin actions:</u>
