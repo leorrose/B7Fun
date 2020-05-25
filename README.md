@@ -60,7 +60,8 @@ and more.
 <br/>
 
 ## Project Run:
-Run project (on Windows):  
+### Project Run (on Windows):
+
 1. Run runWin.bat  
 
 
