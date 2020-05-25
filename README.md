@@ -39,7 +39,7 @@ Admin actions:
 6.  View other users profile.
 7.  Maintain its profile.
 8.  Report problems in site.
-9.  Rate and view site ratings.
+9.  
 10. 
 </pre>
 
