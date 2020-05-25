@@ -40,9 +40,6 @@ Application includes 2 types of users (Resident and Admin).
 ### <u> Admin Demo: </u>
 ![ALT "A admin demo video"]('url')
 
-<hr/>
-<br/>
-
 ## Project Setup:
 
 ### Project Setup (Windows):
@@ -54,9 +51,6 @@ Application includes 2 types of users (Resident and Admin).
 
 1. Clone repository.
 2. Run installationWin.bat and wait untill console closes. then run project 
-
-<hr/>
-<br/>
 
 ## Project Run:
 
