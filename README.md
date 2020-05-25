@@ -1,5 +1,7 @@
 # B7Fun
-A sport and fun activities social network for beersheba city. part of opendata project.
+A sport and fun activities social network for beersheba city.
+The Pupose of this Project 
+part of opendata project.
 
 <hr/>
 <br/>
