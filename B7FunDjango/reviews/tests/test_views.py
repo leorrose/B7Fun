@@ -65,6 +65,7 @@ class ReviewViewTest(TestCase):
         self.assertFalse(response.context['user'].is_authenticated)
         self.assertTemplateUsed(response, 'accounts/login.html')
 
+    @tag('unit-test')
     def test_review_post(self):
         form_data = {'review_content': 'content', 'rating': 3}
 
@@ -75,6 +76,7 @@ class ReviewViewTest(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertRedirects(response, '/?next=/reviews/')
 
+    @tag('unit-test')
     def test_create_review_correct_form_data(self):
         user = User.objects.create(email='test_login_user@text.com', user_name='test_login_user user name',
                                    first_name='first name', last_name='last name', about='This is test',
@@ -91,6 +93,7 @@ class ReviewViewTest(TestCase):
         self.assertEqual(review.review_content, 'content')
         self.assertEqual(review.rating, 3)
 
+    @tag('unit-test')
     def test_create_review_correct_user_data(self):
         user = User.objects.create(email='test_login_user@text.com', user_name='test_login_user user name',
                                    first_name='first name', last_name='last name', about='This is test',
