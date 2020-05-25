@@ -2,12 +2,13 @@
 # pylint: disable=missing-function-docstring
 # pylint: disable=missing-class-docstring
 
+from datetime import datetime
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, logout
 from django.contrib.auth.decorators import login_required
 from django.forms import ValidationError
 from .forms import SignUpForm, LoginForm
-from .models import User
+from .models import User, Logins
 
 
 def signup_view(request):
@@ -49,6 +50,9 @@ def login_view(request):
                 login(request, user)
                 if user.is_admin:
                     return redirect('admin:index')
+                max_id = Logins.objects.all().order_by('id').last()
+                max_id = max_id.id if max_id else -1
+                Logins.objects.create(id=max_id+1, user_email=user.email, login_month=datetime.now().month, login_year=datetime.now().year)
                 return redirect('feed:feed')
             form.add_error(None, ValidationError("User is blocked"))
             return render(request, 'accounts/login.html', {'form': form})

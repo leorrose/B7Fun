@@ -6,11 +6,20 @@
 {% endblock  %}
 
 {%block content%}
-<div class="container d-flex flex-column h-100 flex-wrap">
-    <div class="flex-grow-1"></div>
+<div class="container-fluid d-flex flex-column h-100">
     <div class="row justify-content-center mt-1 p-1">
-        <div class="col-10 bg-light">
+        <div class="col-10 m-2 p-2">
+            <h1 class="text-center text-light"> Lets Get Some Info</h1>
+        </div>
+    </div>
+    <div class="row justify-content-center mt-5 p-1">
+        <div class="col-10 bg-light m-2 p-2">
             <canvas id="sign_ups_chart"></canvas>
+        </div>
+    </div>
+    <div class="row justify-content-center mt-5 p-1">
+        <div class="col-10 bg-light m-2 p-2">
+            <canvas id="sign_ins_chart"></canvas>
         </div>
     </div>
     <div class="flex-grow-1"></div>       
@@ -19,10 +28,14 @@
 {{ labels|json_script:"labels" }}
 {{ sign_ups|json_script:"sign_ups" }}
 {{ graph_sign_up_title|json_script:"graph_sign_up_title" }}
+{{ sign_ins|json_script:"sign_ins" }}
+{{ graph_sign_in_title|json_script:"graph_sign_in_title" }}
 <script>
     const labels = JSON.parse(document.getElementById('labels').textContent);
     const sign_ups = JSON.parse(document.getElementById('sign_ups').textContent);
     const graph_sign_up_title = JSON.parse(document.getElementById('graph_sign_up_title').textContent);
+    const sign_ins = JSON.parse(document.getElementById('sign_ins').textContent);
+    const graph_sign_in_title = JSON.parse(document.getElementById('graph_sign_in_title').textContent);
 
     window.onload = function(){
         $( document ).ready(function() {
@@ -35,7 +48,7 @@
                 data: {
                     labels: labels,
                     datasets: [{
-                        label: 'Number of sign ups',
+                        label: 'Number of sign up`s',
                         backgroundColor: 'rgb(255, 99, 132)',
                         borderColor: 'rgb(255, 99, 132)',
                         data: sign_ups
@@ -48,6 +61,31 @@
                     title: {
                         display: true,
                         text: graph_sign_up_title
+                    }
+                }
+            });
+            var ctx = document.getElementById('sign_ins_chart').getContext('2d');
+            var sigh_ups_chart = new Chart(ctx, {
+                // The type of chart we want to create
+                type: 'bar',
+
+                // The data for our dataset
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Number of sign in`s',
+                        backgroundColor: 'rgb(255, 99, 132)',
+                        borderColor: 'rgb(255, 99, 132)',
+                        data: sign_ins
+                    }]
+                },
+
+                // Configuration options go here
+                options: {
+                    legend: { display: false },
+                    title: {
+                        display: true,
+                        text: graph_sign_in_title
                     }
                 }
             });

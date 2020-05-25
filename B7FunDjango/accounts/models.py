@@ -96,3 +96,13 @@ class Emails(models.Model):
 
     def __str__(self):
         return self.subject
+
+class Logins(models.Model):
+    id = models.IntegerField(primary_key=True)
+    user_email = models.EmailField(verbose_name="user email", max_length=60)
+    login_month = models.IntegerField()
+    login_year = models.IntegerField()
+
+    class Meta:
+        db_table = 'user logins'
+        verbose_name_plural = 'User logins'

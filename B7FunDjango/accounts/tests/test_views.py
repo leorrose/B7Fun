@@ -55,6 +55,22 @@ class LoginViewTest(TestCase):
         self.assertRedirects(response, reverse('feed:feed'))
 
     @tag('unit-test')
+    def test_login_user_blocked(self):
+        #Arrange
+        User.objects.create(email='test_login_user@text.com', user_name='test_login_user user name',
+                            first_name='first name', last_name='last name', about='This is test',
+                            profile_image=None, password="user password", blocked=True)
+        
+        form_data = {'email': 'test_login_user@text.com', 'password': 'user password'}
+
+        #Act
+        response = self.client.post(reverse('accounts:login'), data=form_data, follow=True)
+
+        #assert
+        self.assertEqual(response.status_code, 200)
+        self.assertFalse(response.context['user'].is_authenticated)
+
+    @tag('unit-test')
     def test_login_admin(self):
         #Arrange
         User.objects.create_superuser(email='test_login_admin@text.com',

@@ -9,5 +9,6 @@ from . import views
 app_name = 'adminStats'
 
 urlpatterns = [
+    path('', views.show_stats, name='show_stats_no_year'),
     path('<int:year>', views.show_stats, name='show_stats'),
 ]
