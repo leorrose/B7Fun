@@ -19,7 +19,7 @@ Application includes 2 types of users (Resident and Admin).
 	2.  View fun and sport location by list.
 	3.  Filter location by location type and by search term.
 	4.  Join group chats based on a specific location.
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.  Report abusive behaviour in chats.
+	5.  Report abusive behaviour in chats.
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.  View other users profile.
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.  Maintain its profile.
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8.  Report problems in site.
