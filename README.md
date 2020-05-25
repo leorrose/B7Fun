@@ -1,7 +1,8 @@
 # B7Fun
 A sport and fun activities social network for beersheba city.
+
 The Pupose of this Project is to create a social network focused on connecting people by sports and fun places 
-(e.g sport faciliteis, dog gardens, elderly social clubs, play grounds, 
+(e.g sport faciliteis, dog gardens, elderly social clubs, play grounds, urban nature)
 part of opendata project.
 
 <hr/>
