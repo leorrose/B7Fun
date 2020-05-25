@@ -1,6 +1,6 @@
 # B7Fun
 
-### Project Explanation
+## Project Explanation
 A sport and fun activities social network for beersheba city.
 
 The target of this Project is to create a social network focused on connecting people by sports and fun places 
@@ -13,7 +13,7 @@ JQuery, Leaflet, Chart.js, HTML5 </b>.
 
 Application includes 2 types of users (Resident and Admin).
 
-##### _ Resident actions:
+### _ Resident actions:
 
 1.  View fun and sport location on map based on current location in beer sheva city.
 2.  View fun and sport location by list.
@@ -26,7 +26,7 @@ Application includes 2 types of users (Resident and Admin).
 9.  Rate and view site ratings.
 10. View admin posts.
 and more.
-##### <u> Resident Demo:</u>
+### <u> Resident Demo:</u>
 
 
 ##### <u> Admin actions:</u>
