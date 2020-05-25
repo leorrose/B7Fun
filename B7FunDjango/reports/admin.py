@@ -5,14 +5,12 @@
 # pylint: disable=arguments-differ
 
 from django.contrib import admin
-from .models import reports
+from .models import Reports
 # Register your models here.
 
 
 
-@admin.register(reports)
-
-
+@admin.register(Reports)
 class ReportsAdmin(admin.ModelAdmin):
     list_per_page = 20
     list_display = ("subject", "sender_email", "date")

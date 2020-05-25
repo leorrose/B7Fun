@@ -5,22 +5,17 @@
 from django import forms
 
 ch = [
-             ('מרכזים קהילתיים', ' מרכזים קהילתיים'),
-             ('גינות כלבים', 'גינות כלבים'),
-             ('ועדונים חברתיים לקשיש', 'מועדונים חברתיים לקשיש'),
-             ('מתקני משחק','מתקני משחק'),
-             ('מתקני ספורט','מתקני ספורט'),
-             ('אתרי טבע עירוניים','אתרי טבע עירוניים'),
-             ('אחר','אחר')
-
+    ('מרכזים קהילתיים', 'מרכזים קהילתיים'),
+    ('גינות כלבים', 'גינות כלבים'),
+    ('ועדונים חברתיים לקשיש', 'מועדונים חברתיים לקשיש'),
+    ('מתקני משחק', 'מתקני משחק'),
+    ('מתקני ספורט', 'מתקני ספורט'),
+    ('אתרי טבע עירוניים', 'אתרי טבע עירוניים'),
+    ('אחר', 'אחר')
 ]
 
-class reportsForm(forms.Form):
-
+class ReportsForm(forms.Form):
     subject = forms.CharField(label='נושא', required=True, widget=forms.Select(
         choices=ch, attrs={'class': 'form-control', 'dir': 'rtl', 'placeholder': 'כתוב נושא'}))
     content = forms.CharField(label='דיווח', required=True, widget=forms.Textarea(
         attrs={'class': 'form-control', 'dir': 'rtl', 'placeholder': 'כתוב דיווח'}))
-
-
-

@@ -4,20 +4,18 @@
 
 from datetime import datetime
 from django.test import TestCase, tag
-from django.core.exceptions import ValidationError
-from reports.models import reports
+from reports.models import Reports
 
 
 @tag('unit-test')
-class reportsTest(TestCase):
+class ReportsTest(TestCase):
     def setUp(self):
         self.date = datetime.today()
-        self.report = reports.objects.create(date=self.date,
+        self.report = Reports.objects.create(date=self.date,
                                              content='test test1',
                                              subject='test',
                                              sender_email='test@test.com',
-                                             id = 1
-                                            )
+                                             id=1)
 
     def test_date(self):
         self.date = datetime(2019, 9, 20, 20, 8, 7, 127325)

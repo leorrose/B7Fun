@@ -3,12 +3,8 @@
 # pylint: disable=missing-class-docstring
 
 from django.db import models
-from django.core.validators import MaxValueValidator, MinValueValidator
 
-
-
-# Create your models here.
-class reports(models.Model):
+class Reports(models.Model):
 
     id = models.IntegerField(primary_key=True)
     date = models.DateTimeField(auto_now_add=True, verbose_name="date")

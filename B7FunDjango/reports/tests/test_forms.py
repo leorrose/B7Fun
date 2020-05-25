@@ -3,13 +3,13 @@
 # pylint: disable=missing-class-docstring
 
 from django.test import TestCase, tag
-from reports.forms import reportsForm
+from reports.forms import ReportsForm
 
 @tag('unit-test')
-class reportsFormTest(TestCase):
+class ReportsFormTest(TestCase):
     def setUp(self):
         self.data = {'subject': 'subject', 'content': 'content'}
-        self.form = reportsForm(data=self.data)
+        self.form = ReportsForm(data=self.data)
 
     def test__label(self):
         #Assert

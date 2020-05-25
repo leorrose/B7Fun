@@ -6,7 +6,7 @@
 from django.test import TestCase, tag
 from django.urls import reverse
 from accounts.models import User
-from reports.models import reports
+from reports.models import Reports
 
 
 class reportsViewTest(TestCase):
@@ -18,8 +18,7 @@ class reportsViewTest(TestCase):
                                         last_name='last name',
                                         about='This is test',
                                         profile_image=None)
-        self.report = reports.objects.create(
-                                             content='test test1',
+        self.report = Reports.objects.create(content='test test1',
                                              subject='test',
                                              sender_email='test@test.com',
                                              id=1)
@@ -87,7 +86,7 @@ class reportsViewTest(TestCase):
         self.client.login(email='test_login_user@text.com', password="user password")
         self.client.post(reverse('reports:report'), data=form_data, follow=True)
 
-        report = reports.objects.get(id=2)
+        report = Reports.objects.get(id=2)
         self.assertEqual(report.content, 'content')
         self.assertEqual(report.subject, 'subject')
 
@@ -102,7 +101,5 @@ class reportsViewTest(TestCase):
         self.client.login(email='test_login_user@text.com', password="user password")
         self.client.post(reverse('reports:report'), data=form_data, follow=True)
 
-        report = reports.objects.get(id=2)
+        report = Reports.objects.get(id=2)
         self.assertEqual(report.sender_email, 'test_login_user@text.com')
-
-
