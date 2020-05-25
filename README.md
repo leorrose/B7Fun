@@ -37,7 +37,7 @@ Admin actions:
 3.  Can block\unblock user.
 4.  Can view reported abusive content.
 5.  Can send mails to users.
-
+6.  Can manage all Databases.
 and more. 
 </pre>
 
