@@ -43,7 +43,7 @@ Application includes 2 types of users (Resident and Admin).
 ## Project Setup:
 
 ### Project Setup (Windows):
-1. make sure you have python on your computer (
+1. make sure you have python on your computer (if not install python 3.6.1 from here [Python download](https://www.python.org/downloads/windows/))
 2. Make sure Python is in path (if not 
 3. Make sure pip is in path (if not 
 1. Clone repository.
