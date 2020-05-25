@@ -47,9 +47,9 @@ Application includes 2 types of users (Resident and Admin).
 2. Make sure Python is in path (if not follow this guide [Add python to path](https://datatofish.com/add-python-to-windows-path/))
 3. Make sure pip is in path (if not follow this guide [Add pip to pathe](https://appuals.com/fix-pip-is-not-recognized-as-an-internal-or-external-command/))
 4. Make sure you got docker on your computer (if not dwnload here [Docker Download](https://docs.docker.com/docker-for-windows/install-windows-home/))
-4. Clone repository.
-5. Run installationWin.bat and wait untill console closes.
-6. Thats it, you are all set up to run.
+5. Clone repository.
+6. Run installationWin.bat and wait untill console closes.
+7. Thats it, you are all set up to run.
 
 ### Project Setup (Linux):
 
