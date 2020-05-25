@@ -22,7 +22,7 @@ Resident actions:
 <br/>&nbsp;6. View other users profile.
 <br/>&nbsp;7. Maintain its profile.
 <br/>&nbsp;8. Report problems in site.
-<br/>&nbsp;9. Rate and view site 
+<br/>&nbsp;9. Rate and view site ratings.
 <br/>&nbsp;10. View admin posts.
 <br/>&nbsp;11.
 <br/>&nbsp;12.
