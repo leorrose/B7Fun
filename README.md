@@ -44,7 +44,7 @@ Admin actions:
 </pre>
 
 
-### Demo
+##### Admin Demo
 
 <hr/>
 <br/>
