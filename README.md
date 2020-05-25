@@ -17,13 +17,13 @@ Resident actions:
 &nbsp;1. View fun and sport location on map based on current location in beer sheva city.
 &nbsp;2. View fun and sport location by list.
 &nbsp;3. Filter location by location type and by search term.
-&nbsp;4. 
-&nbsp;5.
-&nbsp;6. View admin posts.
+&nbsp;4. Join group chats based on a specific location.
+&nbsp;5. Report abusive behaviour in chats.
+&nbsp;6. 
 &nbsp;7.
 &nbsp;8.
 &nbsp;9.
-&nbsp;10.
+&nbsp;10. View admin posts.
 &nbsp;11.
 &nbsp;12.
 
