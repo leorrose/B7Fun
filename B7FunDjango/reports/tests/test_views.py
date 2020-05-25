@@ -18,7 +18,7 @@ class reportsViewTest(TestCase):
                                         last_name='last name',
                                         about='This is test',
                                         profile_image=None)
-        self.report = reports.objects.create(date=self.date,
+        self.report = reports.objects.create(
                                              content='test test1',
                                              subject='test',
                                              sender_email='test@test.com',
@@ -106,4 +106,3 @@ class reportsViewTest(TestCase):
         self.assertEqual(report.sender_email, 'test_login_user@text.com')
 
 
-c
