@@ -23,7 +23,7 @@ Application includes 2 types of users (Resident and Admin).
 	6.  View other users profile.
 	7.  Maintain its profile.
 	8.  Report problems in site.
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9.  Rate and view site ratings.
+	9.  Rate and view site ratings.
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10. View admin posts.
 
 Demo:
