@@ -13,19 +13,20 @@ JQuery, Leaflet, Chart.js, HTML5.
 
 Application includes 2 types of users (Resident and Admin).
 
-Resident actions:
-<br/>&nbsp;1. View fun and sport location on map based on current location in beer sheva city.
-<br/>&nbsp;2. View fun and sport location by list.
-<br/>&nbsp;3. Filter location by location type and by search term.
-<br/>&nbsp;4. Join group chats based on a specific location.
-<br/>&nbsp;5. Report abusive behaviour in chats.
-<br/>&nbsp;6. View other users profile.
-<br/>&nbsp;7. Maintain its profile.
-<br/>&nbsp;8. Report problems in site.
-<br/>&nbsp;9. Rate and view site ratings.
-<br/>&nbsp;10. View admin posts.
-<br/>&nbsp;11.
-<br/>&nbsp;12.
+##### Resident actions:
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.  View fun and sport location on map based on current location in beer sheva city.
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.  View fun and sport location by list.
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.  Filter location by location type and by search term.
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.  Join group chats based on a specific location.
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.  Report abusive behaviour in chats.
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.  View other users profile.
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.  Maintain its profile.
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8.  Report problems in site.
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9.  Rate and view site ratings.
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10. View admin posts.
+
+Demo:
+
 
 Admin actions:
 &nbsp;1.
