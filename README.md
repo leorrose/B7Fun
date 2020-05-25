@@ -30,7 +30,7 @@ and more.
 ##### <u> Resident Demo </u>:
 
 
-##### <u>Admin actions</u>:
+##### <u> Admin actions </u>:
 <pre>
 1.  Use all resident functionality.
 2.  View statistics on user logins and registration.
