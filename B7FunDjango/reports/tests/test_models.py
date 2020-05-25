@@ -51,5 +51,5 @@ class reportsTest(TestCase):
     def test_sender_email_max_length(self):
         self.assertEqual(self.report._meta.get_field('sender_email').max_length, 60)
 
-    def test_subject_name_max_length(self):
+    def test_subject_max_length(self):
         self.assertEqual(self.report._meta.get_field('subject').max_length, 255)
