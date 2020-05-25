@@ -60,7 +60,7 @@ class LoginViewTest(TestCase):
         User.objects.create(email='test_login_user@text.com', user_name='test_login_user user name',
                             first_name='first name', last_name='last name', about='This is test',
                             profile_image=None, password="user password", blocked=True)
-        
+
         form_data = {'email': 'test_login_user@text.com', 'password': 'user password'}
 
         #Act
