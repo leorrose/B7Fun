@@ -1,5 +1,3 @@
-# B7Fun
-
 ## Project Explanation
 A sport and fun activities social network for beersheba city.
 
@@ -44,7 +42,9 @@ Application includes 2 types of users (Resident and Admin).
 
 <hr/>
 <br/>
+
 ## Project Setup:
+
 ### Project Setup (Windows):
 
 1. Clone repository  
