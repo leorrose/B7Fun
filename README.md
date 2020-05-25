@@ -44,7 +44,7 @@ Application includes 2 types of users (Resident and Admin).
 
 ### Project Setup (Windows):
 1. make sure you have python on your computer.
-2. 
+2. Make sure Python is in path (if not 
 1. Clone repository.
 2. Run installationWin.bat and wait untill console closes. then run project  
 
