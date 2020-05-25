@@ -22,7 +22,7 @@ Application includes 2 types of users (Resident and Admin).
 	5.  Report abusive behaviour in chats.
 	6.  View other users profile.
 	7.  Maintain its profile.
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8.  Report problems in site.
+	8.  Report problems in site.
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9.  Rate and view site ratings.
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10. View admin posts.
 
