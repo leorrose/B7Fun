@@ -9,7 +9,7 @@ from accounts.models import User
 from reports.models import Reports
 
 
-class reportsViewTest(TestCase):
+class ReportsViewTest(TestCase):
     def setUp(self):
         #Arrange
         self.user = User.objects.create(email='testPostsFeedTest@text.com',
