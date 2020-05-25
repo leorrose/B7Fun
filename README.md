@@ -42,7 +42,7 @@ and more.
 </pre>
 
 
-##### Admin Demo
+##### Admin Demo:
 
 <hr/>
 <br/>
