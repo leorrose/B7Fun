@@ -46,7 +46,7 @@ Application includes 2 types of users (Resident and Admin).
 1. make sure you have python on your computer (if not install python 3.6.1 from here [Python download](https://www.python.org/downloads/windows/))
 2. Make sure Python is in path (if not follow this guide [Add python to path](https://datatofish.com/add-python-to-windows-path/))
 3. Make sure pip is in path (if not follow this guide [Add pip to pathe](https://appuals.com/fix-pip-is-not-recognized-as-an-internal-or-external-command/))
-1. Clone repository.
+4. Clone repository.
 2. Run installationWin.bat and wait untill console closes. then run project  
 
 ### Project Setup (Linux):
