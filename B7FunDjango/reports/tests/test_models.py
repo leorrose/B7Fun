@@ -15,7 +15,8 @@ class reportsTest(TestCase):
         self.report = reports.objects.create(date=self.date,
                                              content='test test1',
                                              subject='test',
-                                             sender_email='test@test.com'
+                                             sender_email='test@test.com',
+                                             id = 1
                                             )
 
     def test_date(self):
