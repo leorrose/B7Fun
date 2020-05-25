@@ -4,8 +4,7 @@ A sport and fun activities social network for beersheba city.
 The target of this Project is to create a social network focused on connecting people by sports and fun places 
 (e.g sport faciliteis, dog gardens, elderly social clubs, play grounds, urban nature).
 
-This project is
-part of opendata project.
+This project is part of open data beer sheva.
 
 <hr/>
 <br/>
