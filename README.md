@@ -35,7 +35,7 @@ Admin actions:
 2.  View fun and sport location by list.
 3.  Filter location by location type and by search term.
 4.  Join group chats based on a specific location.
-5.  Report abusive behaviour in chats.
+5.  
 6.  
 7.  
 8.  
