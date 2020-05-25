@@ -21,7 +21,7 @@ Resident actions:
 <br/>&nbsp;5. Report abusive behaviour in chats.
 <br/>&nbsp;6. View other users profile.
 <br/>&nbsp;7. Maintain its profile.
-<br/>&nbsp;8. Report problems in site
+<br/>&nbsp;8. Report problems in site.
 <br/>&nbsp;9.
 <br/>&nbsp;10. View admin posts.
 <br/>&nbsp;11.
