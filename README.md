@@ -61,7 +61,7 @@ Application includes 2 types of users (Resident and Admin).
 4. Make sure you got docker on your computer (if not download here [Docker Download](https://docs.docker.com/engine/install/ubuntu/))
 5. Run redis docker image (for chat), run in cmd **docker run -p 6379:6379 -d redis:5**
 5. Clone repository.
-6. Run Devops Scripts\installationWin.bat and wait untill console closes.
+6. Run Devops Scripts\installationLinux.bat and wait untill console closes.
 7. Thats it, you are all set up to run.
 
 ## Project Run:
@@ -72,6 +72,6 @@ Application includes 2 types of users (Resident and Admin).
 
 ### Project Run (on Linunx):
 
-1. Run runWin.bat 
+1. Run runLinux.bat 
 
 
