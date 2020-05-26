@@ -22,6 +22,8 @@ def signup_view(request):
             last_name = form.cleaned_data.get('last_name')
             about = form.cleaned_data.get('about')
             profile_image = form.cleaned_data.get('profile_image')
+            if not profile_image:
+                profile_image = 'default_profile.png'
             new_user = User.objects.create_user(email=email,
                                                 user_name=user_name,
                                                 password=password,
