@@ -39,7 +39,7 @@ Application includes 2 types of users (Resident and Admin).
 7.  and more. 
 
 ### <u> Admin Demo: </u>
-![ALT "A admin demo video"]('url')
+![ALT "A admin demo video"](https://github.com/leorrose/B7Fun/blob/master/Demos/AdminDemo.gif)
 
 ## Project Setup:
 
