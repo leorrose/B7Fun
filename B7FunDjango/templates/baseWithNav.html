@@ -83,8 +83,10 @@
                             <a class="dropdown-item text-right" href="{% url 'reviews:review' %}" dir="rtl"> דרג/י אותנו </a>
                             <a class="dropdown-item text-right" href="{% url 'reports:report' %}">דווח/י על בעיה</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item text-right" href="{% url 'admin:index' %}" dir="rtl"> אדמין </a>
+                            {% if user.is_admin %}
+                            <a class="dropdown-item text-right" href="{% url 'admin:index' %}" dir="rtl"> ניהול </a>
                             <div class="dropdown-divider"></div>
+                            {% endif %}
                             <a class="dropdown-item text-right" href="{% url 'accounts:logout' %}" dir="rtl"> התנתקת/י </a>
                         </div>
                     </li>

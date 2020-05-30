@@ -20,7 +20,7 @@ class ChatMessageAdmin(admin.ModelAdmin):
     list_display = ('message', 'date', 'sender_email', 'chat_room_type', 'chat_room_id')
     fieldsets = (
         (None, {
-            'fields': ('message', 'date', 'sender_email', 'chat_room_type', 'chat_room_id')
+            'fields': ('message', 'sender_email', 'chat_room_type', 'chat_room_id')
         }),
     )
     search_fields = ['message', 'sender_email', 'chat_room_type', 'chat_room_id']

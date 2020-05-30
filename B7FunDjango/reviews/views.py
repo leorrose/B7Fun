@@ -15,7 +15,10 @@ def review(request):
     if request.method == 'POST':
         form = ReviewForm(request.POST)
         if form.is_valid():
-            review_id = Review.objects.count() + 1
+            report_id = 0
+            max_id = Review.objects.all().order_by('id').last()
+            if max_id:
+                review_id = max_id.id + 1
             Review.objects.create(review_content=form.cleaned_data.get('review_content'), sender_email=request.user.email,
                                   sender_user_name=request.user.user_name, rating=form.cleaned_data.get('rating'), id=review_id)
             return redirect('reviews:reviews_list')

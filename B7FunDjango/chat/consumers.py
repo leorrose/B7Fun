@@ -14,7 +14,7 @@ from accounts.models import User
 from feed.models import community_centers, dog_gardens, elderly_social_club, playgrounds, sport_facilities, urban_nature
 from .models import ChatMessage, AbusiveChatMessage
 
-def report_message(text_data_json):
+def report_message(obj, text_data_json):
     message = text_data_json["message"]
     sender_email = text_data_json["sender_email"]
     message_id = text_data_json["message_id"]

@@ -18,4 +18,4 @@ class ReportsForm(forms.Form):
     subject = forms.CharField(label='נושא', required=True, widget=forms.Select(
         choices=ch, attrs={'class': 'form-control', 'dir': 'rtl', 'placeholder': 'כתוב נושא'}))
     content = forms.CharField(label='דיווח', required=True, widget=forms.Textarea(
-        attrs={'class': 'form-control', 'dir': 'rtl', 'placeholder': 'כתוב דיווח'}))
+        attrs={'class': 'form-control', 'dir': 'rtl', 'placeholder': 'משהו שתרצה/י לדווח?'}))
