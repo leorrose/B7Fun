@@ -15,7 +15,7 @@ def review(request):
     if request.method == 'POST':
         form = ReviewForm(request.POST)
         if form.is_valid():
-            report_id = 0
+            review_id = 0
             max_id = Review.objects.all().order_by('id').last()
             if max_id:
                 review_id = max_id.id + 1
