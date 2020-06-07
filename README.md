@@ -1,13 +1,12 @@
 ## Project Explanation
-A sport and fun activities social network for beersheba city.
+A sport and fun activities social network for Beersheba city.
 
-The target of this Project is to create a social network focused on connecting people by sports and fun places 
-(e.g sport faciliteis, dog gardens, elderly social clubs, play grounds, urban nature).
+The target of this Project is to create a social network focused on connecting people by sports and fun places (e.g. sport facilities, dog gardens, elderly social clubs, playgrounds, urban nature).
 
 This project is part of open data beer sheva.
 
-This Project was created with <b> Python(Django + Django Channals + Djongo), MongoDb, CSS3, Bootstrap4, JavaScript,
-JQuery, Leaflet, Chart.js, HTML5 </b>. 
+This Project was created with <b> Python(Django + Django Channels + Djongo), MongoDB, CSS3, Bootstrap4, JavaScript,
+jQuery, Leaflet, Chart.js, HTML5 </b>. 
 
 Application includes 2 types of users (Resident and Admin).
 
@@ -51,8 +50,8 @@ Application includes 2 types of users (Resident and Admin).
 4. Make sure you got docker on your computer (if not download here [Docker Download](https://docs.docker.com/docker-for-windows/install-windows-home/))
 5. Run redis docker image (for chat), run in cmd **docker run -p 6379:6379 -d redis:5**
 5. Clone repository.
-6. Run Devops Scripts\installationWin.bat and wait untill console closes.
-7. Thats it, you are all set up to run.
+6. Run Devops Scripts\installationWin.bat and wait until console closes.
+7. That’s it, you are all set up to run.
 
 ### Project Setup (Linux):
 
@@ -61,17 +60,17 @@ Application includes 2 types of users (Resident and Admin).
 4. Make sure you got docker on your computer (if not download here [Docker Download](https://docs.docker.com/engine/install/ubuntu/))
 5. Run redis docker image (for chat), run in cmd **docker run -p 6379:6379 -d redis:5**
 5. Clone repository.
-6. Run Devops Scripts\installationLinux.bat and wait untill console closes.
-7. Thats it, you are all set up to run.
+6. Run Devops Scripts\installationLinux.bat and wait until console closes.
+7. That’s it, you are all set up to run.
 
 ## Project Run:
 
 ### Project Run (on Windows):
 
-1. Run runWin.bat
+1. Run runWin.bat (in Devops Scripts folder).
 
-### Project Run (on Linunx):
+### Project Run (on Linux):
 
-1. Run runLinux.bat 
+1. Run runLinux.bat (in Devops Scripts folder).
 
 
