@@ -78,7 +78,8 @@ class ChatConsumer(WebsocketConsumer):
                 'sender': i.sender_email,
                 'date': i.date.strftime('%d/%m/%Y'),
                 'time': i.date.strftime('%H:%M'),
-                'profile_image': User.objects.filter(email=i.sender_email)[0].profile_image.name
+                'profile_image': User.objects.filter(email=i.sender_email)[0].profile_image.name,
+                'user_name': User.objects.filter(email=i.sender_email)[0].user_name,
             }]
 
         self.send(text_data=json.dumps({
@@ -108,6 +109,7 @@ class ChatConsumer(WebsocketConsumer):
                 'date': new_message.date.strftime('%d/%m/%Y'),
                 'time': new_message.date.strftime('%H:%M'),
                 'profile_image': self.scope['user'].profile_image.name,
+                'user_name': self.scope['user'].user_name,
                 'command': 'new_messages'
             }
         )
@@ -120,6 +122,7 @@ class ChatConsumer(WebsocketConsumer):
         date = event['date']
         time = event['time']
         profile_image = event['profile_image']
+        user_name = event['user_name']
         command = event['command']
 
         # Send message to WebSocket
@@ -130,6 +133,7 @@ class ChatConsumer(WebsocketConsumer):
             'date': date,
             'time': time,
             'profile_image': profile_image,
+            'user_name': user_name,
             'command': command
         }))
 

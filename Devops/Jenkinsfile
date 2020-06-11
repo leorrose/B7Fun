@@ -75,7 +75,7 @@ pipeline {
 		stage('Metric 3 - Test Trend Chart') {
 			steps {
 				dir("B7FunDjango") {
-					junit allowEmptyResults: true, testResults: 'test_reports/unittest.xml'
+					junit allowEmptyResults: true, testResults: 'test_reports/coverage.xml'
 				}
 			}
 		}
@@ -85,7 +85,7 @@ pipeline {
 		failure{
 			mail to: 'B7FunService@gmail.com',
 			subject: "Failed: Job '${env.JOB_NAME}' ['${env.BUILD_NUMBER}']",
-			body: 'Failed: Job ${env.JOB_NAME} [${env.BUILD_NUMBER}]: Check console output at ${env.BUILD_URL} ${env.JOB_NAME} [${env.BUILD_NUMBER}]'
+			body: "Failed: Job '${env.JOB_NAME}' ['${env.BUILD_NUMBER}']: Check console output at '${env.BUILD_URL}' '${env.JOB_NAME}' ['${env.BUILD_NUMBER}']"
 		}
 		success{
 			mail to: 'B7FunService@gmail.com',

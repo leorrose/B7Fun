@@ -49,12 +49,12 @@
                                         <tr>
                                             <th scope="col" class="border-0 d-row d-flex">
                                                 <div class="mr-2"> 
-                                                    <a class="nav-link p-0" href="${user_profile_link}">
+                                                    <a class="nav-link p-0" href="${user_profile_link}" title="${elem.user_name}">
                                                         <img src="/media/${elem.profile_image}" class="rounded-circle z-depth-0" alt="avatar image" height="35">
                                                     </a>
                                                 </div>
-                                                <div> 
-                                                    <p dir="rtl" class="d-inline message-content">${elem.message}</p>
+                                                <div class="w-100"> 
+                                                    <p dir="rtl" class="text-right message-content">${elem.message}</p>
                                                     <p style="display:none;" class="sender_email">${elem.sender}</p>
                                                     <p style="display:none;" class="message_id">${elem.message_id}</p>  
                                                 </div>
@@ -80,12 +80,12 @@
                                         <tr>
                                             <th scope="col" class="border-0 d-row d-flex">
                                                 <div class="mr-2"> 
-                                                    <a class="nav-link p-0" href="${user_profile_link}">
+                                                    <a class="nav-link p-0" href="${user_profile_link}" title="${elem.user_name}">
                                                         <img src="/media/${elem.profile_image}" class="rounded-circle z-depth-0" alt="avatar image" height="35">
                                                     </a>
                                                 </div>
-                                                <div> 
-                                                    <p dir="rtl" class="d-inline message-content">${elem.message}</p>
+                                                <div class="w-100"> 
+                                                    <p dir="rtl" class="text-right message-content">${elem.message}</p>
                                                     <p style="display:none;" class="sender_email">${elem.sender}</p>
                                                     <p style="display:none;" class="message_id">${elem.message_id}</p>
                                                 </div>
@@ -125,12 +125,12 @@
                                     <tr>
                                         <th scope="col" class="border-0 d-row d-flex">
                                             <div class="mr-2"> 
-                                                <a class="nav-link p-0" href="${user_profile_link}">
+                                                <a class="nav-link p-0" href="${user_profile_link}" title="${data.user_name}">
                                                     <img src="/media/${data.profile_image}" class="rounded-circle z-depth-0" alt="avatar image" height="35">
                                                 </a>
                                             </div>
-                                            <div> 
-                                                <p dir="rtl" class="d-inline message-content">${data.message}</p>
+                                            <div class="w-100"> 
+                                                <p dir="rtl" class="text-right message-content">${data.message}</p>
                                                 <p style="display:none;" class="sender_email">${data.sender}</p>
                                                 <p style="display:none;" class="message_id">${data.message_id}</p>  
                                             </div>
@@ -156,12 +156,12 @@
                                     <tr>
                                         <th scope="col" class="border-0 d-row d-flex">
                                             <div class="mr-2"> 
-                                                <a class="nav-link p-0" href="${user_profile_link}">
+                                                <a class="nav-link p-0" href="${user_profile_link}" title="${data.user_name}">
                                                     <img src="/media/${data.profile_image}" class="rounded-circle z-depth-0" alt="avatar image" height="35">
                                                 </a>
                                             </div>
-                                            <div> 
-                                                <p dir="rtl" class="d-inline message-content">${data.message}</p>
+                                            <div class="w-100"> 
+                                                <p dir="rtl" class="text-right message-content">${data.message}</p>
                                                 <p style="display:none;" class="sender_email">${data.sender}</p>
                                                 <p style="display:none;" class="message_id">${data.message_id}</p> 
                                             </div>
@@ -234,7 +234,7 @@
         }
 
 
-        function submit_chat_abusive_report(){
+        function submit_chat_abusive_report(event){
             let message = $(this).closest('.message-element').find('.message-content').text();
             let sender = $(this).closest('.message-element').find('.sender_email').text();
             let message_id = $(this).closest('.message-element').find('.message_id').text();
@@ -245,6 +245,7 @@
                 'message_id': message_id
             }));
             window.alert("Message was reported!");
+            event.stopPropagation()
         }
     </script>
 {% endblock  %}

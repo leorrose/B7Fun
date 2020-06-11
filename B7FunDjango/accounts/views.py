@@ -31,6 +31,9 @@ def signup_view(request):
                                                 last_name=last_name,
                                                 about=about,
                                                 profile_image=profile_image)
+            max_id = Logins.objects.all().order_by('id').last()
+            max_id = max_id.id if max_id else -1
+            Logins.objects.create(id=max_id+1, user_email=email, login_month=datetime.now().month, login_year=datetime.now().year)
             login(request, new_user)
             return redirect('feed:feed')
     else:
