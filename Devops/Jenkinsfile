@@ -75,7 +75,12 @@ pipeline {
 		stage('Metric 3 - Test Trend Chart') {
 			steps {
 				dir("B7FunDjango") {
-					junit allowEmptyResults: true, testResults: 'test_reports/coverage.xml'
+					withEnv(["HOME=${env.WORKSPACE}"]) {
+						sh "python -m coverage run -a manage.py test"
+					}
+				}
+				dir("B7FunDjango") {
+					junit allowEmptyResults: true, testResults: 'test_reports/unittest.xml'
 				}
 			}
 		}
