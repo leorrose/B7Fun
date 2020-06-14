@@ -22,20 +22,20 @@ class LoginViewTest(TestCase):
     def test_view_url_exists_at_desired_location(self):
         #Arrange
         self.client.force_login(self.admin_user)
-        
+
         #Act
         response = self.client.get(reverse('adminStats:show_stats', kwargs={'year':2020}))
-        
+
         #Assert
         self.assertEqual(response.status_code, 200)
-    
+
     @tag('unit-test')
     def test_view_view_with_user_redirects(self):
         #Arrange
         self.client.force_login(self.regular_user)
-        
+
         #Act
         response = self.client.get(reverse('adminStats:show_stats', kwargs={'year':2020}))
-        
+
         #Assert
         self.assertEqual(response.status_code, 302)

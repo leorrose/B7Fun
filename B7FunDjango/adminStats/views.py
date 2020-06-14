@@ -1,5 +1,9 @@
-from django.shortcuts import redirect, render
+# pylint: disable=missing-module-docstring
+# pylint: disable=missing-function-docstring
+# pylint: disable=missing-class-docstring
+
 from datetime import datetime
+from django.shortcuts import redirect, render
 from django.contrib.auth.decorators import login_required
 from accounts.models import User, Logins
 
