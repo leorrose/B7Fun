@@ -71,6 +71,6 @@ Application includes 2 types of users (Resident and Admin).
 
 ### Project Run (on Linux):
 
-1. Run runLinux.sh (in Devops Scripts folder).
+1. Run runLinux.sh (in Devops Scripts folder)
 
 
