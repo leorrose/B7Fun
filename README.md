@@ -1,7 +1,3 @@
-<p align="center">
-   <img src="https://img.shields.io/badge/-Collage%20Project-informational" />
-</p>
-
 # B7Fun
 
 ## Project Explanation
